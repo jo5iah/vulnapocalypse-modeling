@@ -1,0 +1,32 @@
+# Conda environment for the vulnapocalypse notebooks (ODEtoVuln.ipynb, Differential.ipynb).
+#
+#   conda env create -f environment.yml
+#   conda activate aysu
+#   python -m ipykernel install --user --name aysu --display-name "Python (aysu)"
+#
+# ODEtoVuln.ipynb needs only: python, numpy, scipy, matplotlib, ffmpeg, jupyterlab.
+#   - numpy arrives with scipy/matplotlib
+#   - ffmpeg is required by cell 16 to encode the 360-frame 3-D phase-portrait mp4;
+#     without it matplotlib has no video writer and that cell fails
+# The pip block below is unrelated to these notebooks (LLM tooling that also lives in this
+# env) — drop it if you only want to run the ODE work.
+#
+# For byte-identical versions on linux-64, use environment.lock.yml instead.
+name: aysu
+channels:
+  - defaults
+dependencies:
+  - pip
+  - python=3.13
+  - jupyterlab
+  - matplotlib
+  - scipy
+  - ffmpeg
+  - pip:
+      - anthropic==0.75.0
+      - chromadb==1.3.7
+      - langchain==1.2.0
+      - langchain-community==0.4.1
+      - langchain-openai==1.1.6
+      - pypdf==6.4.2
+      - python-docx==1.2.0
