@@ -8,34 +8,62 @@ acquisition is in `VulnData.ipynb`; figures and their derivations are in `ODEtoV
 
 ## Executive summary
 
-Vulnerabilities are discovered, disclosed, sometimes exploited, and eventually removed, and counting them at
-any single moment says little about which changes would help, because each population responds to a change on
-its own timescale — some in weeks, some over a decade. This model tracks five such populations with rates
-measured from public data, so the effect of changing any one input can be followed through to the number of
-vulnerabilities under active exploitation. Parameters come from NVD, the CISA KEV catalogue and published
-incident telemetry, for the global software ecosystem and for Microsoft SharePoint as an instance of enterprise
-server software, and the result is tested against a quantity that was not used to fit it.
+Security programs are measured on how fast they patch. This model asks what actually sets the number of
+vulnerabilities under active exploitation at any moment, from rates measured in public data — NVD, the CISA KEV
+catalog, and published incident telemetry — for the whole software ecosystem and for Microsoft SharePoint as
+a stand-in for enterprise server software. Four findings bear on where a program should spend.
 
-- **Finishing remediations matters far more than accelerating them.** Only about a quarter of exploited
-  vulnerabilities are ever fully patched, so the remainder persist until the affected software leaves service —
-  which makes the completeness of remediation the dominant influence on how many vulnerabilities are under
-  exploitation, and the speed of patching nearly irrelevant to it.
-- **The volume of newly discovered vulnerabilities barely moves exploitation.** Attackers already have roughly
-  three times more weaponizable material than they convert, so a tenfold rise in discovery raises exploitation
-  by under half while merely tripling their production capacity nearly doubles it; and no population examined
-  here shows discovery slowing, including a two-decade-old product.
-- **The counts being measured lag reality by years and are still rising.** The populations that matter have
-  five-year memories and stand at roughly 57% of the level that today's discovery rate already implies, so
-  exploitation counts cannot be used to judge a control introduced last quarter, and a discovery surge that
-  fades entirely still leaves exploitation climbing afterwards.
+- **Completing remediation beats accelerating it.** Only about a quarter of exploited vulnerabilities are ever
+  fully patched; the rest stay exploitable until the software is retired. Cutting patch delay by 30% changes the
+  standing count by **0.4%**. Getting 30% more remediations to completion changes it by **10.5%**, and retiring
+  old software 30% faster by **22.6%**. Speed is the metric most programs optimize and the one that matters
+  least.
+- **More disclosed vulnerabilities will not mean proportionally more exploitation.** Attackers already pass over
+  roughly two of every three vulnerabilities they could weaponize: the binding constraint is their capacity to
+  build and deploy exploits, not the supply of targets. A tenfold rise in disclosure volume would raise
+  exploitation by **under half**, while tripling attacker capacity would **nearly double** it. That divergence
+  is now measured rather than modeled: across 2025–2026 disclosure rose **95%** a year while additions to the
+  exploitation catalog rose **31%**, so the vulnerabilities published per cataloged exploit went from 204 to
+  **303**, and to **385** over the last ninety days. Nor will the flow taper on its own: no population examined
+  here shows discovery slowing, including a product two decades old, whose 2026 is its heaviest year on record.
+  Rising CVE counts are a poor alarm; attacker productivity is the thing to watch, and no public index of it
+  exists.
+- **The vulnerabilities you count are not the ones being exploited.** Over the past year the Linux kernel led
+  CVE volume with 3,413 and sits **25th** in the exploitation catalog; Windows Server leads exploitation and is
+  only **fourth** by volume. One product family appears in the top three of both lists. Prioritizing by counts,
+  or by any single estate-wide average of risk, points at the wrong software.
+- **Nothing you change will show up in these numbers for years.** The populations that drive exploitation turn
+  over on a five-year clock and sit at roughly **57%** of the level today's disclosure rate already implies.
+  Exploitation keeps climbing for years even if disclosure stops accelerating tomorrow — so next quarter's
+  exploited count cannot evaluate a control introduced last quarter, and a rise in it is not evidence that a
+  program is failing. Nor is the level they are climbing toward fixed. The standing count is, to within a
+  tenth of a percent, the cataloged exploitation rate multiplied by a 1,480-day residence time, so a catalog
+  rate rising 31% a year lifts the destination in step — from 1,206 to roughly **1,580** on a further year at
+  that rate. Exploitation is growing; it is growing far more slowly than the vulnerability counts that get
+  reported, and that gap is the whole of the good news.
 
-Taken together, these shift attention away from the speed of response and the volume of disclosure, and toward
-the completeness of remediation and the retirement of old software — both of which act slowly enough that
-starting late is the main way to lose. The principal limitation is that the model counts vulnerabilities rather
-than compromised systems, so a single flaw exploited across millions of hosts registers exactly as one
-exploited once. Extending the model to exposure-weighted outcomes, and stratifying vulnerabilities by how
-exposed they are, are the two developments most likely to change these conclusions; both are set out in the
-closing section on future work.
+The practical implication is to move effort from response time toward finishing remediations and retiring
+unsupported software, and to expect neither to register quickly.
+
+Two cautions on how far to push the numbers. The absolute counts are the least settled part of the result: the
+standard sanity check on them — KEV's size discounted by the 26% ever-patched share — is arithmetically invalid,
+and putting it on a consistent footing leaves the model 10% above the catalog rather than in agreement (§2).
+The level also moved 20% on nothing more than a choice about how to average KEV additions since 2022. The
+rankings above survive both; the absolute figures are orders of magnitude, not estimates. Separately, the model
+counts vulnerabilities and not compromised systems, so one flaw exploited across a million hosts counts the same
+as one exploited once — which understates precisely the scenario that cheaper automated exploitation makes more
+likely. Exposure-weighted outcomes and stratification by exposure are the two extensions most likely to change
+these conclusions, and the concentration in the third finding is already measurable, so the second no longer
+waits on new data. Both are set out in the closing section on future work.
+
+One ambiguity sits underneath the exploitation figures and cannot be settled from public data. KEV records what
+CISA catalogs, not what attackers do; its annual additions ran 555, 187 and 186 across 2022 to 2024 on
+cataloging policy rather than on anything in the world. The widening gap between disclosure and cataloged
+exploitation is therefore consistent with two readings that point opposite ways: attackers saturating, which is
+what this model assumes and what makes rising CVE counts tolerable, or the catalog falling behind, in which
+case every exploitation figure here is low by a margin that is itself growing. Telling them apart needs
+exploitation telemetry no public source provides, and until it exists the exploitation numbers should be read
+as a floor that is rising at least as fast as stated.
 
 ## Contents of this repository
 

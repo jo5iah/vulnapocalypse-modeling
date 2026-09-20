@@ -1,7 +1,7 @@
 """Diagnostics behind the exploited-stock anchor correction in ODEtoVuln_daily.md §2.
 
 The anchor `1665 x (1 - 0.26) = 1,232` applies the completed limit for patching and the zero
-limit for decommissioning at the same instant. The document replaces it with the same catalogue
+limit for decommissioning at the same instant. The document replaces it with the same catalog
 run through the exit kernel the model integrates,
 
     implied(T) = SUM_i [ f e^{-(pr+lam) a_i} + (1-f) e^{-lam a_i} ],   a_i = T - onset_i
@@ -61,8 +61,8 @@ TARGET = GLOBAL.fixed_point()["E"]
 IDS = KEV_IDS[GLOBAL.label]
 
 
-def catalogue_age():
-    print("age of the catalogue, in days before the snapshot")
+def catalog_age():
+    print("age of the catalog, in days before the snapshot")
     for proxy in ("added", "published"):
         a = onset_ages(IDS, proxy)
         print(f"  onset = {proxy:<10} median {np.median(a):>7,.0f}   mean {a.mean():>7,.0f}   "
@@ -164,7 +164,7 @@ def constrains_lam():
 if __name__ == "__main__":
     print(f"KEV entries {len(IDS):,}   f = {F:.5f}   1/(pr+lam) = {1 / (PR + LAM):.1f} d   "
           f"1/lam = {1 / LAM:,.0f} d = {1 / LAM / DPY:.2f} yr\n")
-    catalogue_age()
+    catalog_age()
     anchors()
     independence()
     influx()

@@ -43,8 +43,8 @@ every defender parameter are constants, so neither side can adapt — step 4.
   consistent with anything from 3 to 8 years, and $\lambda$ sets the residence time of the compartment
   holding ~40× what the remediable one does. Fit it to how long KEV-listed CVEs stay observable in
   internet-exposure scans. This is Future work §2 in the document.
-- **KEV measures cataloguing, not attacker behavior.** Its additions swung 555 / 187 / 186 across
-  2022–2024 on policy alone, so the widening gap between disclosure and catalogued exploitation
+- **KEV measures cataloging, not attacker behavior.** Its additions swung 555 / 187 / 186 across
+  2022–2024 on policy alone, so the widening gap between disclosure and cataloged exploitation
   supports two readings that point opposite ways. Nothing public separates them.
 - **$\gamma$ is not stationary.** Publication acceleration has been positive for 67 months and the
   recent quarter runs 1.7× the trailing year, so any equilibrium computed from a trailing-year rate

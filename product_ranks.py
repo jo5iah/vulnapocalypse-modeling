@@ -148,7 +148,7 @@ def report(payload, path):
     lines = [
         f"# Product rankings — snapshot {payload['snapshot']}",
         "",
-        f"Exploited: the whole CISA KEV catalogue, {ex['cves']:,} CVEs, "
+        f"Exploited: the whole CISA KEV catalog, {ex['cves']:,} CVEs, "
         f"{ex['with_cpe'] / ex['cves']:.0%} carrying CPE applicability.  ",
         f"Vulnerable: every CVE published {vu['window_start']} to {payload['snapshot']} "
         f"({payload['window_days']} days), {vu['cves']:,} CVEs, "
@@ -161,7 +161,7 @@ def report(payload, path):
         "added during NVD analysis, so records still awaiting analysis drop out entirely, "
         "which censors the most recent weeks hardest.",
         "",
-        "## Top exploited families (whole KEV catalogue)",
+        "## Top exploited families (whole KEV catalog)",
         "",
         table(top(ex_fam), ex["with_cpe"], "vendor:product family"),
         "",
@@ -175,7 +175,7 @@ def report(payload, path):
                     f"{list(ex_fam).index(k) + 1}, vulnerable rank {list(vu_fam).index(k) + 1}"
                     for k in both) if both else "_none_"),
         "",
-        "## Where each top-ten vulnerable family sits in the exploitation catalogue",
+        "## Where each top-ten vulnerable family sits in the exploitation catalog",
         "",
         "| vulnerable rank | family | exploited rank |",
         "|---:|---|---:|",
@@ -224,7 +224,7 @@ if __name__ == "__main__":
     kev_counts, kev_fams, kev_analyzed = tally(kev_records)
     print(f"exploited: {len(kev_records):,} KEV CVEs, {kev_analyzed:,} with CPE applicability "
           f"({kev_analyzed / len(kev_records):.0%})")
-    show("Top exploited product FAMILIES (CISA KEV, whole catalogue)", kev_fams, kev_analyzed)
+    show("Top exploited product FAMILIES (CISA KEV, whole catalog)", kev_fams, kev_analyzed)
     show("Top exploited products, CPE granularity (each release is its own product)",
          kev_counts, kev_analyzed)
 

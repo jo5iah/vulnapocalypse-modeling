@@ -1,11 +1,11 @@
 # Product rankings — snapshot 2026-09-20
 
-Exploited: the whole CISA KEV catalogue, 1,716 CVEs, 100% carrying CPE applicability.  
+Exploited: the whole CISA KEV catalog, 1,716 CVEs, 100% carrying CPE applicability.  
 Vulnerable: every CVE published 2025-09-20 to 2026-09-20 (365 days), 84,864 CVEs, 49% carrying CPE applicability.
 
 Both sides are counted in one taxonomy — `vendor:product` parsed from NVD's `configurations[].nodes[].cpeMatch[].criteria` — so the two rankings are directly comparable. Counts are CVE-product pairs, not a partition of the corpus: a CVE listing eight affected products contributes to all eight. CPE applicability is added during NVD analysis, so records still awaiting analysis drop out entirely, which censors the most recent weeks hardest.
 
-## Top exploited families (whole KEV catalogue)
+## Top exploited families (whole KEV catalog)
 
 | rank | vendor:product family | CVEs | share |
 |---:|---|---:|---:|
@@ -54,7 +54,7 @@ Both sides are counted in one taxonomy — `vendor:product` parsed from NVD's `c
 - `google:chrome` — exploited rank 8, vulnerable rank 2
 - `apple:macos` — exploited rank 9, vulnerable rank 5
 
-## Where each top-ten vulnerable family sits in the exploitation catalogue
+## Where each top-ten vulnerable family sits in the exploitation catalog
 
 | vulnerable rank | family | exploited rank |
 |---:|---|---:|
