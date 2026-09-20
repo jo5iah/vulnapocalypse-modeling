@@ -4,43 +4,49 @@ A continuous-time model of how vulnerabilities move from discovery to exploitati
 from public vulnerability data and evaluated for two populations: the **global software ecosystem** and
 **Microsoft SharePoint** as an instance of enterprise server software. Time is in days throughout. Data
 acquisition is in `VulnData.ipynb`; figures and their derivations are in `ODEtoVuln_daily.ipynb`. Snapshot:
-**2026-08-27**.
+**2026-09-20**.
 
 ## Executive summary
 
-Security programmes are measured on how fast they patch. This model asks what actually sets the number of
+Security programs are measured on how fast they patch. This model asks what actually sets the number of
 vulnerabilities under active exploitation at any moment, from rates measured in public data — NVD, the CISA KEV
 catalogue, and published incident telemetry — for the whole software ecosystem and for Microsoft SharePoint as
-a stand-in for enterprise server software. Four findings bear on where a programme should spend.
+a stand-in for enterprise server software. Four findings bear on where a program should spend.
 
 - **Completing remediation beats accelerating it.** Only about a quarter of exploited vulnerabilities are ever
   fully patched; the rest stay exploitable until the software is retired. Cutting patch delay by 30% changes the
   standing count by **0.4%**. Getting 30% more remediations to completion changes it by **10.5%**, and retiring
-  old software 30% faster by **22.6%**. Speed is the metric most programmes optimize and the one that matters
+  old software 30% faster by **22.6%**. Speed is the metric most programs optimize and the one that matters
   least.
 - **More disclosed vulnerabilities will not mean proportionally more exploitation.** Attackers already pass over
   roughly two of every three vulnerabilities they could weaponize: the binding constraint is their capacity to
   build and deploy exploits, not the supply of targets. A tenfold rise in disclosure volume would raise
-  exploitation by **under half**, while tripling attacker capacity would **nearly double** it. Nor will the flow
-  taper on its own: no population examined here shows discovery slowing, including a product two decades old,
-  whose 2026 is its heaviest year on record. Rising CVE counts are a poor alarm; attacker productivity is the
+  exploitation by **under half**, while tripling attacker capacity would **nearly double** it. That divergence
+  is now measured rather than modelled: across 2025–2026 disclosure rose **95%** a year while additions to the
+  exploitation catalogue rose **31%**, so the vulnerabilities published per catalogued exploit went from 204 to
+  **303**, and to **385** over the last ninety days. Nor will the flow taper on its own: no population examined
+  here shows discovery slowing, including a product two decades old, whose 2026 is its heaviest year on record. Rising CVE counts are a poor alarm; attacker productivity is the
   thing to watch, and no public index of it exists.
 - **The vulnerabilities you count are not the ones being exploited.** Over the past year the Linux kernel led
-  CVE volume with 3,929 and sits **25th** in the exploitation catalogue; Windows Server leads exploitation and is
+  CVE volume with 3,413 and sits **25th** in the exploitation catalogue; Windows Server leads exploitation and is
   only **fourth** by volume. One product family appears in the top three of both lists. Prioritizing by counts,
   or by any single estate-wide average of risk, points at the wrong software.
 - **Nothing you change will show up in these numbers for years.** The populations that drive exploitation turn
-  over on a five-year clock and sit at roughly **60%** of the level today's disclosure rate already implies.
+  over on a five-year clock and sit at roughly **57%** of the level today's disclosure rate already implies.
   Exploitation keeps climbing for years even if disclosure stops accelerating tomorrow — so next quarter's
   exploited count cannot evaluate a control introduced last quarter, and a rise in it is not evidence that a
-  programme is failing.
+  program is failing. Nor is the level they are climbing toward fixed. The standing count is, to within a
+  tenth of a percent, the catalogued exploitation rate multiplied by a 1,480-day residence time, so a catalogue
+  rate rising 31% a year lifts the destination in step — from 1,206 to roughly **1,580** on a further year at
+  that rate. Exploitation is growing; it is growing far more slowly than the vulnerability counts that get
+  reported, and that gap is the whole of the good news.
 
 The practical implication is to move effort from response time toward finishing remediations and retiring
 unsupported software, and to expect neither to register quickly.
 
 Two cautions on how far to push the numbers. The absolute counts are the least settled part of the result: the
 standard sanity check on them — KEV's size discounted by the 26% ever-patched share — is arithmetically invalid,
-and putting it on a consistent footing leaves the model 16% above the catalogue rather than in agreement (§2).
+and putting it on a consistent footing leaves the model 10% above the catalogue rather than in agreement (§2).
 The level also moved 20% on nothing more than a choice about how to average KEV additions since 2022. The
 rankings above survive both; the absolute figures are orders of magnitude, not estimates. Separately, the model
 counts vulnerabilities and not compromised systems, so one flaw exploited across a million hosts counts the same
@@ -48,6 +54,15 @@ as one exploited once — which understates precisely the scenario that cheaper 
 likely. Exposure-weighted outcomes and stratification by exposure are the two extensions most likely to change
 these conclusions, and the concentration in the third finding is already measurable, so the second no longer
 waits on new data. Both are set out in the closing section on future work.
+
+One ambiguity sits underneath the exploitation figures and cannot be settled from public data. KEV records what
+CISA catalogues, not what attackers do; its annual additions ran 555, 187 and 186 across 2022 to 2024 on
+cataloguing policy rather than on anything in the world. The widening gap between disclosure and catalogued
+exploitation is therefore consistent with two readings that point opposite ways: attackers saturating, which is
+what this model assumes and what makes rising CVE counts tolerable, or the catalogue falling behind, in which
+case every exploitation figure here is low by a margin that is itself growing. Telling them apart needs
+exploitation telemetry no public source provides, and until it exists the exploitation numbers should be read
+as a floor that is rising at least as fast as stated.
 
 Contents
 
@@ -60,6 +75,7 @@ Contents
     - [Measured quantities](#measured-quantities)
     - [How each parameter is obtained](#how-each-parameter-is-obtained)
     - [Measurement biases in the source data](#measurement-biases-in-the-source-data)
+    - [The shape of the inflow](#the-shape-of-the-inflow)
     - [Tests against quantities not used in calibration](#tests-against-quantities-not-used-in-calibration)
 - [3. Results, and the visualization establishing each](#3-results-and-the-visualization-establishing-each)
     - [Visualization 1 — what sets the level, and a test against unused data](#viz-1)
@@ -195,15 +211,20 @@ integrated states.
 | **MITRE** (`cveawg.mitre.org`) | CNA publication timestamps, used to confirm NVD's dates are not materially lagged |
 | Published telemetry | Verizon 2026 DBIR (remediation completeness and delay), CrowdStrike 2026 (pre-disclosure share), Mandiant M-Trends 2026 (time-to-exploit), ZDI (monthly vendor volumes), Synopsys OSSRA (vulnerability age) |
 
+Acquisition is in `VulnData.ipynb`, which writes every model input. Two analyses sit outside the model and
+beside it: `anchor_gap.py` reproduces the anchor correction in full, and `product_ranks.py` builds the
+per-product rankings quoted in the executive summary, writing `product_ranks_<snapshot>.md` as a standalone
+report. The rankings are not model outputs and nothing in the model depends on them.
+
 ### Measured quantities
 
 | Quantity | Global | SharePoint |
 |---|---|---|
-| CVE corpus | 383,528 | 693 (across 8 CPE product names) |
-| Publication rate | **212/day** trailing year; 330/day most recent quarter | **0.178/day** 3-year (used); 0.378/day trailing year |
+| CVE corpus | 395,617 | 709 (across 8 CPE product names) |
+| Publication rate | **234/day** trailing year; 396/day most recent quarter | **0.191/day** 3-year (used); 0.414/day trailing year |
 | Publication history | 2008–2026: 5,652 → 89,022/yr, CAGR **+32%** for 2021–2026 | 2003–2026; 2026 annualizes to 188, the highest on record |
-| Known-exploited (KEV) | 1,682 = 0.44% of corpus; influx **0.81/day**, 2022 to the snapshot | 21 = **3.0%**, i.e. **6.9×** the global rate |
-| Disclosure → exploitation lag | median 266 d (p10 0, p90 2,660) | median 105 d |
+| Known-exploited (KEV) | 1,716 = 0.43% of corpus; influx **0.81/day**, 2022 to the snapshot | 21 = **3.0%**, i.e. **6.8×** the global rate |
+| Disclosure → exploitation lag | median 251 d (p10 0, p90 2,627) | median 105 d |
 | Exploited by publication day | 12.8% in KEV; **42%** in broader telemetry | 3 of 21 |
 | Network-reachable (CVSS AV:N/A) | 75.0% | 76.9% |
 | Ever fully patched | **26%**; median delay **43 days** for those that are | same figure applied |
@@ -231,9 +252,9 @@ Three act in a known direction and are not corrected for.
 **Publication-date rates are undercounts.** A window's count is not fixed when the window closes: NVD keeps
 ingesting records whose publication date falls inside it. The window 2026-05-07 → 2026-08-06 returned 25,148
 when first counted on 2026-08-06 and **25,361 eight days later — +0.85%**. Re-queried again at this snapshot,
-thirteen days later still, it returned 25,361 unchanged: the late-arrival tail is front-loaded, essentially
-complete within a fortnight. The corpus meanwhile grew at 462/day against a windowed publication rate of
-330/day. Every $\gamma$ here is therefore low, by more for the most recent weeks, and the acceleration signal is
+forty-five days later still, it returned 25,361 unchanged: the late-arrival tail is front-loaded,
+essentially complete within a fortnight. The corpus meanwhile grew at 484/day against a windowed
+publication rate of 396/day. Every $\gamma$ here is therefore low, by more for the most recent weeks, and the acceleration signal is
 understated rather than overstated. The 2008–2026 history used for the transient runs is as-measured and not
 back-corrected.
 
@@ -250,30 +271,71 @@ current year contribute at its true weight instead of as a full year. 2021 is ex
 November and its 311 additions are a backfill of pre-existing exploitation, not a rate. Even so, exploitation
 influx — and therefore the throughput $C$ calibrated from it — is a floor.
 
+### The shape of the inflow
+
+![Velocity, acceleration and jerk of CVE publication and of KEV additions, on a monthly grid
+over 2008-2026 and a daily grid over the recent window](figure:inflow_derivatives)
+
+The bias above says the acceleration is understated; this says what is being understated. Both
+inflows are differentiated as cumulative counts, so the rows are the publication rate itself,
+its rate of change, and whether *that* is turning.
+
+Two grids, because one cannot do both jobs. A filter wide enough to resolve a turning point in
+nineteen years of monthly counts extrapolates across its own half-window at each end, and for
+publications that half-window is two years — precisely the two years over which the rate went
+from about 110/day to about 400/day. The monthly columns are therefore about history and say
+nothing reliable about the present; the daily columns are about the present and say nothing
+about history. Both are shown rather than one being made to pretend to the other.
+
+On the monthly grid the publication series has no turning point at all. Acceleration has been
+positive continuously since **2018-12** and jerk since **2019-09** — each far longer than the
+24-month dwell a sign change must clear — so the inflow is not merely growing but growing by a
+growing amount, and has been for most of a decade. Nothing in the record shows that reversing.
+KEV resolves no *acceleration* on either test, which at 0.8 additions/day against a 25-month
+window is the expected answer rather than a finding. Its level is emphatically not flat: the
+smoothed rate runs 0.15/day in early 2023 to 0.69/day by mid-2025, and annual rates give
+0.51, 0.51, 0.67 and 0.88 per day for 2023 to 2026. What the two series show is a divergence
+in pace, not one series moving and the other still. Over 2025 to 2026 disclosure rose **95%**
+a year and catalogued exploitation **31%**, so the vulnerabilities published per catalogued
+exploit went **204 → 303**, and **385** across the last ninety days. That widening ratio is
+what the throughput ceiling $C$ describes, and it is the only place in this document where
+the saturation the model assumes is visible directly in the data rather than inferred.
+
+The daily columns show the present regime and one artefact worth naming. Smoothed publication
+runs from **243/day** on 2026-06-13 to **523/day** on 2026-08-17 inside the measured interior —
+the rate more than doubled in nine weeks. Their acceleration and jerk oscillate on a visible
+monthly beat, which is vendor release cadence, not the system turning: a centred 7-day mean
+removes the weekly cycle but nothing removes the monthly one, so no daily sign change is
+counted unless it outlasts a full cadence, and none does.
+
+This is the measurement behind the shelf life claimed for the parameters in §2. A $\gamma$ read
+off a trailing year is an average over a window in which the rate itself more than doubled.
+
 ### Tests against quantities not used in calibration
 
-1. **Exploited stock, global.** KEV holds 1,682 entries. The obvious anchor — 26% are ever fully patched, so
-   ~1,245 should remain unremediated — is not one, because it applies the *completed* limit for patching and the
+1. **Exploited stock, global.** KEV holds 1,716 entries. The obvious anchor — 26% are ever fully patched, so
+   ~1,270 should remain unremediated — is not one, because it applies the *completed* limit for patching and the
    *zero* limit for decommissioning at the same instant. KEV opened 2021-11-03 and was backfilled to 2002, so by
    publication date **43% of its entries are older than one residual residence time** and have already been
    decommissioned. Running the catalogue's onset history through the exit kernel the model integrates,
    $\sum_i [\,f e^{-(\rho/(1+\tau)+\delta+\lambda) a_i} + (1-f) e^{-\lambda a_i}\,]$ for onset ages $a_i$, puts
-   both sides on one clock and gives **607 [572, 750]**, the bracket spanning the two defensible onset proxies
-   (NVD publication at the low end, CISA's addition date at the high). Today's state is **704** — ratio
-   **1.16**, inside the bracket but at its upper end; the equilibrium target 1,193 gives 1.97. The transient is
-   the correct comparison, since the anchor is itself an accumulated quantity. That the target 1,193 lands near
-   the naive 1,245 is a coincidence of two errors cancelling, not a second agreement.
-2. **Exploited stock, SharePoint.** Its 21 KEV entries give a kernel anchor of **10.1 [9.6, 11.5]** against
-   today's **12.0** — ratio 1.19, within one Poisson standard error at $n$ = 21, which is 22% — and a target of
+   both sides on one clock and gives **627 [593, 769]**, the bracket spanning the two defensible onset proxies
+   (NVD publication at the low end, CISA's addition date at the high). Today's state is **687** — ratio
+   **1.10**, inside the bracket; the equilibrium target 1,206 gives 1.92. The transient is
+   the correct comparison, since the anchor is itself an accumulated quantity. That the target 1,206 lands near
+   the naive 1,270 is a coincidence of two errors cancelling, not a second agreement.
+2. **Exploited stock, SharePoint.** Its 21 KEV entries give a kernel anchor of **9.7 [9.3, 11.2]** against
+   today's **11.7** — ratio 1.21, within one Poisson standard error at $n$ = 21, which is 22% — and a target of
    15.3, ratio 1.52. This test also fixes a parameter: at SharePoint's 10-year support horizon the ratios
    degrade to 1.62 and 2.54, identifying decommissioning of exploited instances as a ~5-year process. Support
    duration governs patch availability ($\phi$); it does not govern removal from service ($\lambda$).
 3. **Backlog size.** A pool fed at $\gamma$ and drained by retirement and exploitation settles at
-   $\mu N/(\phi + \mathrm{conv}\,\beta_x)$: **385,394** against NVD's 383,528 — **+0.5%**, from a 5-year support
-   horizon that was assumed rather than fitted — and **609** against 693, 12% low. The SharePoint shortfall runs
-   in the direction expected from CVEs outliving their support horizon; the global figure, which was 5% low at
-   the previous snapshot, has been carried across the mark by a quarter of accelerating publication, so its
-   present near-exactness should be read as the right order of magnitude rather than as precision.
+   $\mu N/(\phi + \mathrm{conv}\,\beta_x)$: **424,741** against NVD's 395,617 — **+7.4%**, from a 5-year support
+   horizon that was assumed rather than fitted — and **655** against 709, 7.6% low. The SharePoint shortfall runs
+   in the direction expected from CVEs outliving their support horizon. The global figure has now overshot: it
+   was 5% low two snapshots ago and near-exact at the last, and a quarter of accelerating publication has
+   carried it 7.4% high. A check that swings 12 points in six weeks is an order-of-magnitude test, not a
+   calibration — the equilibrium it computes assumes a $\gamma$ that is no longer stationary.
 4. **Is discovery supply-limited?** Fitting saturating curves to 19 years of cumulative discovery leaves the
    reservoir unidentified. The Gompertz form runs $U$ to **4.3 billion** — four orders of magnitude past the
    observed corpus — against the fit's upper bound, where the covariance estimate collapses to zero; a
@@ -284,26 +346,29 @@ influx — and therefore the throughput $C$ calibrated from it — is a floor.
    not the binding constraint at either scale.**
 
 Items 1 and 2 are weaker than the heading implies, and the correction to item 1 is what exposes it. $C$ is
-calibrated from the KEV rate, and 80% of the corrected global anchor — 486 of 607 — comes from onsets after the
+calibrated from the KEV rate, and 80% of the corrected global anchor — 504 of 627 — comes from onsets after the
 catalogue opened, inside the window calibration used. What survives as independent content is the *shape* of
-the onset history rather than its level: observed onsets per day run 0.34, 0.74, 1.17 and 0.80 times the
+the onset history rather than its level: observed onsets per day run 0.38, 0.79, 1.21 and 0.84 times the
 model's realized conversion $I(t)$ over 2008–2015, 2016–2020, 2021–2023 and 2024–2026. The early shortfall runs
-in the direction KEV's documented incompleteness predicts; the 0.80 in the current window is the same 16%
+in the direction KEV's documented incompleteness predicts; the 0.84 in the current window is the same 10%
 overshoot that item 1 reports, seen as a rate rather than a stock. The exit kernel is tested on top of that,
-and only loosely: the ratio is flat at about 0.86 for $1/\lambda$ anywhere from 3 to 8 years, falling to 0.77
-at 12 and 0.65 at 20, so the anchor excludes a decade-plus horizon but cannot pick a value inside 3–8.
+and only loosely: the ratio is flat at about 0.90 for $1/\lambda$ anywhere from 3 to 8 years, falling to 0.81
+at 12 and 0.69 at 20, so the anchor excludes a decade-plus horizon but cannot pick a value inside 3–8.
 
 ## 3. Results, and the visualization establishing each
 
-**Two mechanisms set the level of exploitation, and they separate cleanly — Visualization 1.** A waterfall
-isolates each. Were every exploited vulnerability eventually patched, the standing exploited population would
-be **100**; at the measured 26% completeness with unconstrained conversion it would be **3,573**; with the
-throughput ceiling applied it is **1,193**. The right panel sets that against the KEV-derived anchors — **607
-[572, 750]** global and **10.1 [9.6, 11.5]** SharePoint, the catalogue run through the model's own exit kernel so
-that both sides count over the same window — and against today's history-driven state, **704** globally. The
+**Two mechanisms set the level of exploitation, and they separate cleanly — Visualization 1.** The model states
+the level as $E = I \times T$, realized influx times influx-weighted mean residence time: **0.81/day × 1,480
+days = 1,206**. Factoring that product one mechanism at a time, from the **303** at full conversion and full
+remediation, the throughput ceiling divides by **3.0** to **101** — the level if every exploited
+vulnerability were eventually patched — and incomplete remediation multiplies by **11.9**, stretching $T$ from
+the 124-day remediable residence to 1,480 days. Lifting the ceiling rather than applying it would give
+**3,612**. The lower panel sets that against the KEV-derived anchors — **627
+[593, 769]** global and **9.7 [9.3, 11.2]** SharePoint, the catalogue run through the model's own exit kernel so
+that both sides count over the same window — and against today's history-driven state, **687** globally. The
 figure shows the level to be the product of two independently measured facts, how little is ever remediated and
 how little supply is converted, rather than a fitted outcome. It also carries the marker for the anchor the
-kernel replaces, 1,245, which is the same catalogue with no decommissioning applied at all.
+kernel replaces, 1,270, which is the same catalogue with no decommissioning applied at all.
 
 **Discovery volume is nearly inert; throughput is not — Visualization 2.** $E^*$ contoured over a discovery
 multiplier and a throughput multiplier. The contours asymptote to horizontal: a 10× increase in discovery moves
@@ -333,25 +398,25 @@ throughput increase +80%. The figure also carries the model's largest sensitivit
 5.5-year horizon jointly set the level to within a factor of three.
 
 **The flow structure is thin at the point that matters — Visualization 6.** The stock-and-flow diagram with
-measured rates, arrow widths scaled to flow, and the conversion node drawn explicitly. Globally 212 CVEs a day
-enter and 0.81 a day are converted — **1 in 263** — with 33% of gross opportunity realized; for SharePoint the
-ratio is 1 in 16. The residual compartment holds 1,165 of the global 1,193. The diagram is also where
+measured rates, arrow widths scaled to flow, and the conversion node drawn explicitly. Globally 234 CVEs a day
+enter and 0.81 a day are converted — **1 in 287** — with 33% of gross opportunity realized; for SharePoint the
+ratio is 1 in 17. The residual compartment holds 1,178 of the global 1,206. The diagram is also where
 conservation is visible: every box balances and unconverted opportunities remain in their pools.
 
 **The choice of discovery future barely propagates — Visualization 7.** Four trajectories for $\gamma$ — an
-exogenous fade, a permanent step to the measured 1.56×, compounding at +44%/yr capped at 10×, and a 10×
+exogenous fade, a permanent step to the measured 1.70×, compounding at +70%/yr capped at 10×, and a 10×
 efficiency jump against the finite reservoir — with the resulting $E$. Every path rises steeply from today's
-704, to between 1,187 and 1,690 over thirty years, because the slow compartments are still filling whatever
-discovery does. But three of the four land within **13% of one another**; only sustained compounding separates,
+687, to between 1,200 and 1,708 over thirty years, because the slow compartments are still filling whatever
+discovery does. But three of the four land within **16% of one another**; only sustained compounding separates,
 and the reservoir case turns over without any behavioural assumption. The choice of discovery future is worth
 less than the fact that the backlog has not finished draining into exploitation.
 
 **The system has two clocks — Visualization 8.** Each stock along the measured 2008–2026 publication history,
 continued at today's rate for forty years, against its equilibrium target. The fast pools have overshot theirs:
-hidden and disclosed sit at **115%** of target globally and **290%** for SharePoint, because a stock whose
+hidden and disclosed sit at **114%** of target globally and **278%** for SharePoint, because a stock whose
 residence time is weeks tracks a rising inflow instead of lagging it. The slow ones are nowhere near — the known
-backlog is at **50%** of target and needs **8 more years** to reach 90% of it, and the residual exploited
-compartment is at **58%**, needing **9**. SharePoint's backlog is at 72%, its residual at 78%. This is the
+backlog is at **48%** of target and needs **8 more years** to reach 90% of it, and the residual exploited
+compartment is at **56%**, needing **9**. SharePoint's backlog is at 69%, its residual at 76%. This is the
 quantitative reason exploitation counts cannot evaluate a control introduced last quarter: most of the movement
 still to come was already committed by publications that happened years ago.
 
@@ -361,7 +426,7 @@ the ever-patched share and decommissioning move it 10.5% and 22.6% but take **14
 worse on both counts — 3.4% over 22 years. Controls acting directly on the exploited compartments are fast and
 weak; controls acting through stocks are slow and strong.
 
-**The two levers programmes control move the outcome least — Visualization 10.** Realized exploitation over
+**The two levers programs control move the outcome least — Visualization 10.** Realized exploitation over
 patch delay and reachable surface. Across the full plausible plane the outcome varies less than a 3× change in
 throughput produces, because $\tau$ acts only on the 26% remediable share and surface reduction removes supply
 that was not being converted.
@@ -387,10 +452,10 @@ and is why its $\dot X = 0$ nullcline is a straight line.
 3. **$C$ is calibrated, not measured**, so it absorbs every unmodelled mechanism, including defender
    interdiction — Future work §4.
 4. **The 26% ever-patched figure is one survey median** and carries more of the result than any other value. At
-   50%, $E^*$ is 806 rather than 1,193; at 75%, 403.
+   50%, $E^*$ is 815 rather than 1,206; at 75%, 407.
 5. **KEV is a floor.** Exploitation is identified elsewhere a median 3 days and a mean 28 days earlier, in
    two-thirds of shared cases.
-6. **No defender adaptation.** $f$, $\tau$ and $C$ are constants; coordinated disclosure programmes are attempts
+6. **No defender adaptation.** $f$, $\tau$ and $C$ are constants; coordinated disclosure programs are attempts
    to move $f$ and $\delta_d$, and the model cannot represent their effect — Future work §4.
 7. **Non-stationarity.** 2026 is running at 243.7 CVEs/day against 2025's 136.9, so equilibrium statements
    describe a moving target. Thirteen days of fresh data moved $\gamma$ by 7% and carried the backlog check
@@ -419,13 +484,13 @@ catalogue, which vendors and which classes dominate it, without being fitted to 
 
 ### 2. Tighten the decommissioning rate, which the anchor no longer constrains
 
-The near-factor-of-two anchor gap this section previously listed as unexplained — 1,245 against a state of 704
+The near-factor-of-two anchor gap this section previously listed as unexplained — 1,270 against a state of 687
 at this snapshot — was mostly an artifact of the anchor's definition, not a defect in the model. §2 gives the
 correction: the naive anchor removes the 26% that are ever patched while removing none of the software that
 leaves service, and once the catalogue's onset history is run through the model's own exit kernel the anchor
-becomes 607 [572, 750] against 704 — a residual of 16%, inside the onset-proxy bracket, where the naive
-comparison showed 77%. Of the four causes once listed, the accumulation-window mismatch accounts for all but
-that 16%; positing a KEV-specific ever-patched share is no longer needed to explain anything. The remaining
+becomes 627 [593, 769] against 687 — a residual of 10%, inside the onset-proxy bracket, where the naive
+comparison showed 85%. Of the four causes once listed, the accumulation-window mismatch accounts for all but
+that 10%; positing a KEV-specific ever-patched share is no longer needed to explain anything. The remaining
 overshoot and the argument for recalibrating $C$ point the same way, and §2's onset-history comparison
 localizes it: the model's realized conversion runs about a quarter above observed KEV onsets in the current
 window, which is the same discrepancy expressed as a rate.

@@ -17,7 +17,7 @@ The exploited side reads the cached KEV mirror. The vulnerable side needs a swee
 the window, which is ~36 NVD pages; those pages are aggregated as they arrive rather than cached,
 since keeping them would cost ~500 MB for a table of counts. Only the aggregate is written.
 
-    python3 product_ranks.py [--window-days 365] [--snapshot 2026-08-27]
+    python3 product_ranks.py [--window-days 365] [--snapshot 2026-09-20]
 """
 
 import argparse
@@ -126,6 +126,77 @@ def sweep(start, end):
     return counts, fams, analyzed, total_seen
 
 
+
+def report(payload, path):
+    """Render the saved payload as a standalone markdown report.
+
+    Written off the JSON rather than off the in-memory counters so the report can be
+    regenerated with --report-only, which matters because the vulnerable side costs a
+    full sweep of the window and is not cached.
+    """
+    ex, vu = payload["exploited"], payload["vulnerable"]
+    top = lambda d, n=15: list(d.items())[:n]
+
+    def table(rows, total, head):
+        out = [f"| rank | {head} | CVEs | share |", "|---:|---|---:|---:|"]
+        for i, (name, n) in enumerate(rows, 1):
+            out.append(f"| {i} | `{name}` | {n:,} | {n / total:.1%} |")
+        return "\n".join(out)
+
+    ex_fam, vu_fam = ex["families"], vu["families"]
+    both = [k for k in list(ex_fam)[:10] if k in list(vu_fam)[:10]]
+    lines = [
+        f"# Product rankings — snapshot {payload['snapshot']}",
+        "",
+        f"Exploited: the whole CISA KEV catalogue, {ex['cves']:,} CVEs, "
+        f"{ex['with_cpe'] / ex['cves']:.0%} carrying CPE applicability.  ",
+        f"Vulnerable: every CVE published {vu['window_start']} to {payload['snapshot']} "
+        f"({payload['window_days']} days), {vu['cves']:,} CVEs, "
+        f"{vu['with_cpe'] / vu['cves']:.0%} carrying CPE applicability.",
+        "",
+        "Both sides are counted in one taxonomy — `vendor:product` parsed from NVD's "
+        "`configurations[].nodes[].cpeMatch[].criteria` — so the two rankings are directly "
+        "comparable. Counts are CVE-product pairs, not a partition of the corpus: a CVE "
+        "listing eight affected products contributes to all eight. CPE applicability is "
+        "added during NVD analysis, so records still awaiting analysis drop out entirely, "
+        "which censors the most recent weeks hardest.",
+        "",
+        "## Top exploited families (whole KEV catalogue)",
+        "",
+        table(top(ex_fam), ex["with_cpe"], "vendor:product family"),
+        "",
+        "## Top vulnerable families (publication window)",
+        "",
+        table(top(vu_fam), vu["with_cpe"], "vendor:product family"),
+        "",
+        "## Families appearing in both top tens",
+        "",
+        ("\n".join(f"- `{k}` — exploited rank "
+                    f"{list(ex_fam).index(k) + 1}, vulnerable rank {list(vu_fam).index(k) + 1}"
+                    for k in both) if both else "_none_"),
+        "",
+        "## Where each top-ten vulnerable family sits in the exploitation catalogue",
+        "",
+        "| vulnerable rank | family | exploited rank |",
+        "|---:|---|---:|",
+    ]
+    ex_order = list(ex_fam)
+    for i, k in enumerate(list(vu_fam)[:10], 1):
+        pos = f"{ex_order.index(k) + 1}" if k in ex_order else "not in top 50"
+        lines.append(f"| {i} | `{k}` | {pos} |")
+    lines += [
+        "",
+        "## CISA's own free-text product names, as a cross-check",
+        "",
+        "| rank | vendorProject / product | entries |",
+        "|---:|---|---:|",
+    ]
+    for i, (name, n) in enumerate(top(ex["cisa_free_text"], 10), 1):
+        lines.append(f"| {i} | {name} | {n:,} |")
+    lines.append("")
+    path.write_text("\n".join(lines))
+
+
 def show(title, counts, n_cves, top=10):
     print(f"\n{title}")
     print(f"  {'rank':<5}{'vendor:product':<44}{'CVEs':>8}{'share':>8}")
@@ -136,8 +207,16 @@ def show(title, counts, n_cves, top=10):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--window-days", type=int, default=365)
-    ap.add_argument("--snapshot", default="2026-08-27")
+    ap.add_argument("--snapshot", default="2026-09-20")
+    ap.add_argument("--report-only", action="store_true",
+                    help="rebuild the markdown report from the saved JSON, no NVD calls")
     args = ap.parse_args()
+
+    if args.report_only:
+        src = DATA / f"product_ranks_{args.snapshot}.json"
+        dst = Path(__file__).resolve().parent / f"product_ranks_{args.snapshot}.md"
+        report(json.loads(src.read_text()), dst)
+        raise SystemExit(f"wrote {dst.name} from {src.name}")
     snap = dt.date.fromisoformat(args.snapshot)
 
     kev_path = DATA / f"nvd_kev_{args.snapshot}.json"
@@ -178,4 +257,6 @@ if __name__ == "__main__":
                        "counts": dict(counts.most_common(50)),
                        "families": dict(fams.most_common(50))},
     }, indent=1))
-    print(f"\nwrote {out.relative_to(DATA.parent)}")
+    md = Path(__file__).resolve().parent / f"product_ranks_{args.snapshot}.md"
+    report(json.loads(out.read_text()), md)
+    print(f"\nwrote {out.relative_to(DATA.parent)} and {md.name}")
