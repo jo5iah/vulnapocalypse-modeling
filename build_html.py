@@ -2,16 +2,17 @@
 """Assemble a fully self-contained HTML edition of the model document.
 
 Inputs, for stem S (default ODEtoVuln_daily)
-  S.md          the model document, embedded verbatim and rendered in-browser
-  S.ipynb       source of the figures: each "## Visualization" markdown cell paired with
-                the figure the code cells below it emit, plus any code cell tagging
-                itself FIGURE_NAME for inlining at a `figure:<name>` marker in S.md
-  vendor/       katex.min.{js,css} + fonts/*.woff2, markdown-it.min.js, and the
-                web-encoded animation named below
+  S.md          the model document, embedded verbatim and rendered in-browser; every
+                figure appears in it at a `figure:<name>` image marker
+  S.ipynb       source of the figures: each "## Visualization N" markdown cell names the
+                figure the code cells below it emit as `viz-N`, and any code cell tagging
+                itself FIGURE_NAME supplies the figure of that name
+  vendor/       katex.min.{js,css} + fonts/*.woff2, markdown-it.min.js
 
 Output
-  S.html        one file, zero network requests: libraries, fonts, figures and the
-                animation are all inlined as base64 data URIs.
+  S.html        one file, zero network requests: libraries, fonts and figures are all
+                inlined as base64 data URIs. The text comes from S.md alone; the notebook
+                contributes figures and nothing else, so there is one source for every number.
 
 Usage
   python build_html.py                        # builds ODEtoVuln_daily.html
@@ -35,7 +36,6 @@ OUT_STEM = sys.argv[2] if len(sys.argv) > 2 else STEM
 MD_PATH = ROOT / f"{STEM}.md"
 NB_PATH = ROOT / f"{STEM}.ipynb"
 OUT_PATH = ROOT / f"{OUT_STEM}.html"
-VIDEO_PATH = VENDOR / "phase3d_daily_web.mp4"
 
 KATEX_VERSION, MARKDOWNIT_VERSION = "0.16.11", "14.1.0"
 
@@ -63,12 +63,13 @@ def inline_js(name: str) -> str:
     return (VENDOR / name).read_text().replace("</script", r"<\/script")
 
 
-def visualizations(nb: dict) -> list[dict]:
-    """Pair each '## Visualization' markdown cell with the last figure the cells below it emit."""
-    cells, out = nb["cells"], []
+def visualizations(nb: dict) -> dict:
+    """Name the last figure below each '## Visualization N' markdown cell `viz-N`."""
+    cells, out = nb["cells"], {}
     for i, cell in enumerate(cells):
         source = "".join(cell["source"])
-        if cell["cell_type"] != "markdown" or not source.startswith("## Visualization"):
+        m = re.match(r"## Visualization (\d+)", source)
+        if cell["cell_type"] != "markdown" or not m:
             continue
         png = None
         for follower in cells[i + 1:]:
@@ -79,8 +80,7 @@ def visualizations(nb: dict) -> list[dict]:
                     png = base64.b64decode(output["data"]["image/png"])
         if png is None:
             raise SystemExit(f"no figure found after markdown cell {i}")
-        title = source.splitlines()[0].lstrip("# ").strip()
-        out.append({"markdown": source, "png": png, "title": title})
+        out[f"viz-{m.group(1)}"] = png
     return out
 
 
@@ -96,32 +96,6 @@ def named_figures(nb: dict) -> dict:
             if "image/png" in output.get("data", {}):
                 found[m.group(1)] = base64.b64decode(output["data"]["image/png"])
     return found
-
-
-def figure_block(viz: dict, is_video: bool) -> str:
-    """One visualization: its notebook commentary, then the figure (or the animation)."""
-    caption = f"From <code>{NB_PATH.name}</code> — {viz['title']}"
-    if is_video:
-        media = (
-            f'<video controls loop muted playsinline preload="metadata"\n'
-            f'         poster="{data_uri("image/png", viz["png"])}">\n'
-            f'    <source src="{data_uri("video/mp4", VIDEO_PATH.read_bytes())}" type="video/mp4">\n'
-            f"    Your browser cannot play the embedded MP4; see the .mp4 beside this file.\n"
-            f"  </video>"
-        )
-        caption += " · 360 viewpoints, 30 fps · press play"
-    else:
-        media = f'<img alt="{viz["title"]}" src="{data_uri("image/png", viz["png"])}">'
-    return (
-        '<section class="viz">\n'
-        '  <script type="text/plain" class="viz-md">\n'
-        f"{viz['markdown']}\n"
-        "  </script>\n"
-        f"  <figure>\n  {media}\n"
-        f"    <figcaption>{caption}</figcaption>\n"
-        "  </figure>\n"
-        "</section>"
-    )
 
 
 PAGE = """<!DOCTYPE html>
@@ -259,22 +233,10 @@ PAGE = """<!DOCTYPE html>
   .katex {{ font-size: 1.05em; }}
   .katex-display > .katex {{ font-size: 1.12em; }}
 
-  /* Figures carry their own commentary, lifted from the notebook. */
-  #figures {{
-    margin-top: 3rem;
-    padding-top: 2.5rem;
-    border-top: 2px solid var(--accent);
-  }}
-  .figures-note {{
-    font-family: ui-sans-serif, system-ui, sans-serif;
-    font-size: 0.9rem;
-    color: var(--muted);
-    margin: 0 0 1rem;
-  }}
   figure {{
     margin: 1.5rem 0 2.5rem;
   }}
-  figure img, figure video {{
+  figure img {{
     display: block;
     width: 100%;
     height: auto;
@@ -291,7 +253,6 @@ PAGE = """<!DOCTYPE html>
   figcaption code {{ background: none; padding: 0; }}
 
   h2[id], h3[id] {{ scroll-margin-top: 1rem; }}
-  section.viz {{ scroll-margin-top: 1rem; }}
   .toc {{
     background: var(--accent-soft);
     border-left: 3px solid var(--accent);
@@ -306,7 +267,6 @@ PAGE = """<!DOCTYPE html>
   .toc li {{ margin: 0.18rem 0; }}
   .toc a {{ color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); }}
   .toc a:hover {{ border-bottom-color: var(--accent); }}
-  .toc .toc-note {{ color: var(--muted); font-size: 0.85rem; margin: 0.5rem 0 0; }}
 
   footer {{
     margin-top: 1.75rem;
@@ -321,17 +281,12 @@ PAGE = """<!DOCTYPE html>
 <main>
   <article>
     <div id="content"></div>
-    <div id="figures">
-      <p class="figures-note">The sections below are generated by <code>{notebook}</code>: each
-      one carries that notebook's own commentary followed by the figure it produces.</p>
-{figure_blocks}
-    </div>
   </article>
   <footer>Rendered from <code>{markdown_file}</code> &middot; figures from
   <code>{notebook}</code> &middot; built by <code>build_html.py</code></footer>
 </main>
 
-<!-- Figures inlined into the document body at `figure:<name>` markers -->
+<!-- Every figure, inlined into the document body at its `figure:<name>` marker -->
 <script id="inline-figures" type="application/json">{inline_figures}</script>
 
 <!-- Markdown source, verbatim from the source document -->
@@ -403,17 +358,13 @@ window.addEventListener('DOMContentLoaded', function () {{
     var box = document.createElement('nav');
     box.className = 'toc';
     var list = marker.nextElementSibling;
-    var note = list ? list.nextElementSibling : null;
     marker.parentNode.insertBefore(box, marker);
     box.appendChild(marker);
     if (list) {{ box.appendChild(list); }}
-    if (note && note.tagName === 'P' && note.textContent.indexOf('Links resolve') === 0) {{
-      note.className = 'toc-note';
-      box.appendChild(note);
-    }}
   }}
 
-  // resolve `figure:<name>` image markers against the inlined figure data
+  // resolve `figure:<name>` image markers against the inlined figure data; an image that
+  // is alone in its paragraph replaces the paragraph, so the figure is not nested in a <p>
   var figures = JSON.parse(document.getElementById('inline-figures').textContent || '{{}}');
   document.querySelectorAll('#content img[src^="figure:"]').forEach(function (img) {{
     var key = img.getAttribute('src').slice('figure:'.length);
@@ -422,20 +373,13 @@ window.addEventListener('DOMContentLoaded', function () {{
       var fig = document.createElement('figure');
       var cap = document.createElement('figcaption');
       cap.textContent = img.getAttribute('alt') || '';
-      img.parentNode.insertBefore(fig, img);
+      var host = img.parentNode;
+      var alone = host.tagName === 'P' && host.childNodes.length === 1;
+      (alone ? host.parentNode : host).insertBefore(fig, alone ? host : img);
       fig.appendChild(img);
       fig.appendChild(cap);
+      if (alone) {{ host.remove(); }}
     }}
-  }});
-
-  // Each visualization's commentary sits beside its figure; render it in place.
-  document.querySelectorAll('section.viz').forEach(function (section) {{
-    var holder = section.querySelector('script.viz-md');
-    var prose = document.createElement('div');
-    prose.innerHTML = renderMarkdown(holder.textContent);
-    section.insertBefore(prose, section.querySelector('figure'));
-    holder.remove();
-    addHeadingIds(section);
   }});
 
   // a hash present at load only resolves once the headings above exist
@@ -454,9 +398,15 @@ window.addEventListener('DOMContentLoaded', function () {{
 
 def main() -> None:
     nb = json.loads(NB_PATH.read_text())
-    inline = {k: data_uri("image/png", v) for k, v in named_figures(nb).items()}
-    vizzes = visualizations(nb)
-    blocks = [figure_block(v, is_video="3-D" in v["title"]) for v in vizzes]
+    pngs = {**named_figures(nb), **visualizations(nb)}
+    markdown = MD_PATH.read_text()
+    # every figure the notebook produces must be placed, and every marker must resolve
+    markers = re.findall(r"\]\(figure:([A-Za-z0-9_-]+)\)", markdown)
+    missing, unplaced = sorted(set(markers) - set(pngs)), sorted(set(pngs) - set(markers))
+    if missing or unplaced:
+        raise SystemExit(f"figure markers without a figure: {missing or 'none'}; "
+                         f"figures without a marker: {unplaced or 'none'}")
+    inline = {k: data_uri("image/png", pngs[k]) for k in markers}
 
     html = PAGE.format(
         katex_v=KATEX_VERSION,
@@ -464,8 +414,7 @@ def main() -> None:
         katex_css=inline_css(),
         katex_js=inline_js("katex.min.js"),
         markdownit_js=inline_js("markdown-it.min.js"),
-        figure_blocks="\n".join(blocks),
-        markdown=MD_PATH.read_text(),
+        markdown=markdown,
         markdown_file=MD_PATH.name,
         notebook=NB_PATH.name,
         inline_figures=json.dumps(inline),
@@ -478,11 +427,12 @@ def main() -> None:
         raise SystemExit(f"embedded markdown does not match {MD_PATH.name}")
 
     print(f"{OUT_PATH.name}: {OUT_PATH.stat().st_size / 1e6:.2f} MB, "
-          f"{len(vizzes)} visualizations ({', '.join(v['title'].split('—')[0].strip() for v in vizzes)})")
+          f"{len(inline)} figures inlined in document order: {', '.join(inline)}")
     # XML namespace URIs (w3.org) are identifiers, not fetches; the markdown-it banner is a comment.
+    # URLs written in the document are text for the reader, not requests the page makes.
     benign = ("www.w3.org", "markdown-it/markdown-it")
-    external = [u for u in re.findall(r"https?://[^\"' )]+", html) if not any(b in u for b in benign)]
-    print(f"inlined document figures: {list(inline) or 'none'}")
+    external = [u for u in (m.rstrip(".,;:") for m in re.findall(r"https?://[^\"'\s)<>\]`]+", html))
+                if not any(b in u for b in benign) and u not in markdown]
     print("network requests:", external or "none — fully self-contained")
 
 

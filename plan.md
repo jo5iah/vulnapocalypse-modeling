@@ -17,9 +17,9 @@ removal, parameterized from public data for the global ecosystem and for Microso
 twelve visualizations establishing each result.
 
 What it answers: what sets the standing count of exploited, unremediated vulnerabilities, and which
-control moves it. Headline results at the 2026-09-20 snapshot — completeness of remediation beats
-speed of patching by an order of magnitude; discovery volume is nearly inert because conversion is
-capacity-limited; the measured state sits at 57% of the level today's inflow already implies.
+control moves it. Headline results at the 2026-10-14 snapshot — completeness of remediation beats
+speed of patching by more than an order of magnitude, and reducing reachable surface does too; discovery volume is nearly inert because conversion is
+capacity-limited; the measured state sits at 54% of the level today's inflow already implies.
 
 Delivered alongside the model:
 
@@ -41,13 +41,13 @@ every defender parameter are constants, so neither side can adapt — step 4.
 
 - **$1/\lambda$ has no tight constraint.** The corrected anchor excludes a decade-plus horizon but is
   consistent with anything from 3 to 8 years, and $\lambda$ sets the residence time of the compartment
-  holding ~40× what the remediable one does. Fit it to how long KEV-listed CVEs stay observable in
+  holding 99% of the exploited population. Fit it to how long KEV-listed CVEs stay observable in
   internet-exposure scans. This is Future work §2 in the document.
 - **KEV measures cataloging, not attacker behavior.** Its additions swung 555 / 187 / 186 across
   2022–2024 on policy alone, so the widening gap between disclosure and cataloged exploitation
   supports two readings that point opposite ways. Nothing public separates them.
-- **$\gamma$ is not stationary.** Publication acceleration has been positive for 67 months and the
-  recent quarter runs 1.7× the trailing year, so any equilibrium computed from a trailing-year rate
+- **$\gamma$ is not stationary.** Publication acceleration has been positive for 68 months and the
+  recent quarter runs 1.8× the trailing year, so any equilibrium computed from a trailing-year rate
   has a shelf life of months. Re-snapshot before quoting absolute levels.
 
 ---
@@ -68,9 +68,9 @@ decommissioning $\lambda$. Four axes, all already present in records the acquisi
 | **Exposure** | CVSS attack vector and privileges required | internet-facing pre-auth versus local/adjacent is the split most likely to dominate the others |
 
 **The motivating evidence already exists.** `product_ranks.py` measures a composition mismatch the
-present model cannot represent: the Linux kernel leads CVE volume at 3,413 and sits **25th** in the
+present model cannot represent: the Linux kernel is second in CVE volume at 3,047 and sits **25th** in the
 exploitation catalog, while Windows Server leads exploitation and is only **fourth** by volume;
-Firefox is 10th by volume and 47th by exploitation. A single population average cannot produce that,
+Firefox is 7th by volume and 47th by exploitation. A single population average cannot produce that,
 and today the model simply does not try.
 
 **The test that justifies the work.** A class-stratified calibration should reproduce the *composition*
@@ -81,7 +81,7 @@ model could falsify rather than absorb.
 **Watch for.** Severity and exposure are strongly correlated through the CVSS vector, so they are not
 four independent axes and should not be modeled as if they were; start with exposure, add type, and
 treat severity as a check rather than a dimension until the correlation is measured. CPE applicability
-is missing from ~51% of records in the trailing year, censoring recent months hardest.
+is missing from ~54% of records in the trailing year, censoring recent months hardest.
 
 ---
 

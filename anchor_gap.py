@@ -1,6 +1,6 @@
 """Diagnostics behind the exploited-stock anchor correction in ODEtoVuln_daily.md §2.
 
-The anchor `1665 x (1 - 0.26) = 1,232` applies the completed limit for patching and the zero
+The naive anchor, KEV size x (1 - 0.26 ever patched), applies the completed limit for patching and the zero
 limit for decommissioning at the same instant. The document replaces it with the same catalog
 run through the exit kernel the model integrates,
 
