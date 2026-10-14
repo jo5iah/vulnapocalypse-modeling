@@ -630,7 +630,7 @@ rotating view to `ODEtoVuln_daily_phase3d.mp4`; the still below is one viewpoint
 
 ## References
 
-Numbers in brackets in the text refer to this list. Links were last checked on 2026-09-29.
+Numbers in brackets in the text refer to this list. Links were last checked on 2026-10-14.
 
 **Data sources**
 
