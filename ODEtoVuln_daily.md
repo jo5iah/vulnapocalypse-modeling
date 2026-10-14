@@ -29,7 +29,7 @@ Four findings bear on where a program should spend.
   kernel was second in CVE volume with 3,047 and ranks **25th** in the exploitation catalog; Windows Server
   leads exploitation and is **fourth** by volume. Prioritizing by counts points at the wrong software.
 - **Nothing a program changes will show in these numbers for years.** The populations that drive
-  exploitation turn over on a five-year clock and sit at **54%** of the level today's disclosure rate already
+  exploitation turn over on a five-year clock and sit at **50%** of the level today's disclosure rate already
   implies. The standing count is the cataloged exploitation rate times a 1,480-day residence time, so a
   catalog rate rising 33% a year lifts the destination from 1,211 to about **1,620** in one more year. Next
   quarter's exploited count cannot evaluate a control introduced last quarter.
@@ -44,7 +44,7 @@ that point opposite ways. Either attackers are saturating, which is what the mod
 rising CVE counts tolerable, or the catalog is falling behind, in which case every exploitation figure here is
 low by a growing margin. Until exploitation telemetry separates them, read the exploitation numbers as a floor.
 Beyond that, the absolute counts are orders of magnitude rather than estimates: tested against the catalog on a
-consistent footing, the model runs 4% high (§2), and calibrating to 2025's KEV rate alone (0.671/day) rather
+consistent footing, the model runs 4% low (§2), and calibrating to 2025's KEV rate alone (0.671/day) rather
 than the pooled 2022-onward rate (0.819/day) would lower the level by 18%, since the level scales in proportion
 to the calibrated influx. The rankings survive both. Finally, the model counts vulnerabilities rather than
 compromised systems, so one flaw exploited on a million hosts counts the same as one exploited once. That
@@ -115,13 +115,13 @@ $$
 
 $X$ is the **known backlog**: disclosed, aged, mostly patch-available, and by far the largest stock. It empties
 by retirement at rate $\phi$, when the affected version leaves support, and by exploitation at hazard
-$\beta_x$. Its residence time $1/(\phi + \mathrm{conv}\,\beta_x)$ is 1,823 days, so $X$ is a **slow** state:
+$\beta_x$. Its residence time $1/(\phi + \mathrm{conv}\,\beta_x)$ is 1,821 days, so $X$ is a **slow** state:
 five years against 45 days for $H$. That ratio produces most of the model's dynamic behavior.
 
-The per-vulnerability hazards differ by two orders of magnitude: a vulnerability in $H$ or $N$ is far likelier
-to be attacked on a given day than one in $X$. Because $X$ is so much larger, the two sources supply comparable
-totals. At equilibrium $H$ and $X$ each supply 42% of weaponizable opportunity and $N$ the remaining 16%.
-Today, with $X$ at under half its equilibrium size, $H$ supplies 56% and $X$ 23%.
+The per-vulnerability hazards differ by more than an order of magnitude: on a given day a vulnerability in $N$
+is 24 times as likely to be attacked as one in $X$, and one in $H$ 9 times. Because $X$ is so much larger, it supplies the most all the same.
+At equilibrium $X$ supplies 62% of weaponizable opportunity, $N$ 24% and $H$ 13%. Today, with $X$ at under half
+its equilibrium size, $X$ supplies 40%, $N$ 38% and $H$ 21%.
 
 ### Conversion: from opportunity to exploitation
 
@@ -199,9 +199,11 @@ except Visualization 7, where $U$ is evolved separately to generate $\gamma(t)$.
 | **CISA KEV** [2] | which CVEs are known-exploited, and the date CISA added each | the exploitation influx that calibrates $C$; the anchor test |
 | **MITRE CVE Services** [3] | CNA publication timestamps | confirming NVD's dates are not materially lagged |
 | Verizon 2026 DBIR [4] | 26% of known-exploited flaws ever fully patched; 43-day median time to fix for those that are | $f$, $\tau$ |
-| CrowdStrike 2026 [5] | 42% of exploitation before disclosure | pre-disclosure share, hence $\beta_h$ |
-| Mandiant M-Trends 2026 [6] | mean time-to-exploit of −7 days | corroborates the pre-disclosure channel |
-| ZDI, July 2026 [7] | Microsoft shipped 621 CVEs with 2 under active exploit, 6.6× its 2025 monthly volume | Visualization 2 |
+| CrowdStrike 2026 [5] | a 42% rise in zero-days exploited before public disclosure | context for the pre-disclosure channel; a growth rate, not a share |
+| VulnCheck [20, 21] | 28.3% of newly exploited CVEs evidenced within a day of publication; its lead over KEV | the fast n-day share, hence $\beta_n$; the KEV bias below |
+| Mandiant M-Trends 2026 [6] | time-to-exploit estimated at −7 days for 2025 | corroborates the pre-disclosure channel |
+| ZDI, July 2026 [7]; Tenable [25] | Microsoft shipped 621 CVEs with 2 under active exploit; 6.6× its 2025 monthly average of 94 | Visualization 2 |
+| Verizon 2025 DBIR [22]; Imperva [23]; EPSS v3 [24] | where exploitation concentrates, and its breadth per vulnerability | Limitations 1 and 2 |
 | Synopsys OSSRA [8] | mean open-source vulnerability age 2.5+ years; a quarter of codebases carry decade-old flaws | $1/\lambda$ |
 | Anthropic *n-days* [9]; CVE-Genie [10]; Pesoli, Errico & Cavallaro [11] | machine-generated exploits under an hour after a patch ships; reproduction at a few dollars per CVE and privilege-escalation chains at about $2,000 each; the caveat that these are reproductions rather than production chains | the throughput axis of Visualization 2; Future work §4 |
 | FIRST EPSS [14] | exploit-prediction scores | Limitation 1; Future work §1 |
@@ -220,7 +222,7 @@ rankings are not model outputs and nothing in the model depends on them.
 | Publication history | 2008–2026: 5,664 → 105,352/yr (2026 annualized), CAGR **+37%** for 2021–2026 | 2003–2026; 2026 annualizes to 223, the highest on record |
 | Known-exploited (KEV) | 1,741 = 0.43% of corpus; influx **0.819/day**, 2022 to the snapshot | 22 = **3.0%**, i.e. **6.9×** the global rate |
 | Disclosure → KEV lag | median 245 d (p10 0, p90 2,627) | median 85 d |
-| Exploited by publication day | 13.4% in KEV; **42%** in broader telemetry | 3 of 22 |
+| Exploited by publication day | **13.4%** in KEV, a floor | 3 of 22 |
 | Network-reachable (CVSS AV:N/A) | 75.5% | 78.5% |
 | Ever fully patched | **26%**; median time to fix **43 days** for those that are | same figure applied |
 
@@ -230,12 +232,12 @@ rankings are not model outputs and nothing in the model depends on them.
 |---|---|---|---|---|---|
 | $\gamma$ | publication rate | 259.7/day; 0.224/day | measured | NVD, trailing 364 days; SharePoint over three years (see biases) | Viz 7, 8 |
 | $I$ | realized exploitation influx | 0.819/day; 0.0121/day | measured | KEV additions pooled from 2022; SharePoint's 22 entries over five years | anchor check |
-| — | pre-disclosure share of exploitation | 42%; 14% | measured | CrowdStrike 2026 [5]; SharePoint 3 of 22 KEV entries | — |
+| — | pre-disclosure share of exploitation | 13.4%; 14% | measured | KEV entries exploited on or before NVD publication, global and SharePoint; a floor, since CISA dates exploitation by its evidence | — |
 | $\varepsilon$ | reachable share of supply | 0.755; 0.785 | measured | CVSS attack vector of KEV entries / SharePoint CVEs | Viz 10 |
 | $\tau$ | days before patch adoption begins | 43 d | measured | DBIR median time to fix [4] | Viz 4, 9, 10 |
 | — | ever-fully-patched share | 26% | measured | DBIR [4] | Viz 5 |
 | $f$ | share routed to the remediable compartment | 0.265; 0.266 | calibrated | set so the realized ever-patched share is 26% | Viz 4, 5 |
-| — | share of post-disclosure exploitation within one day of disclosure | 28% | measured | published telemetry; source not recorded (References) | — |
+| — | share of post-disclosure exploitation within one day of disclosure | 28% | measured | VulnCheck 2025 Q1 [20]: 28.3% of 159 newly exploited CVEs; the source counts all exploitation, not only post-disclosure, so the split is approximate | — |
 | $\beta_h, \beta_n, \beta_x$ | exploitation hazards | — | calibrated | set so supply splits into the measured pre-disclosure, fast n-day and aged shares | — |
 | $C$ | attacker throughput ceiling | 1.228/day; 0.018/day | calibrated | set so $I$ equals the KEV rate at today's supply, given $P/C$ | Viz 2 |
 | $P/C$ | supply relative to throughput | 2 | **assumed** | the one free structural ratio; it fixes the elasticities to capacity (2/3) and to supply (1/3), and makes $C$ a floor rather than an estimate | — |
@@ -271,8 +273,8 @@ understated rather than overstated. The 2008–2026 history used for the transie
 averaged year by year: 1,430 additions from 2022-01-01 to the snapshot over 1,747 days, **0.819/day**. Pooling
 damps the year-to-year swing and gives the partial current year its true weight. 2021 is excluded because KEV
 opened that November and its 311 additions are a backfill of earlier exploitation, not a rate. Exploitation is
-also identified elsewhere a median 3 days and a mean 28 days before KEV lists it, in two-thirds of shared
-cases. The influx, and the throughput $C$ calibrated from it, are floors.
+listed earlier by VulnCheck's catalog in two-thirds (67.6%) of the 376 CVEs the two shared in 2024–2025, by a
+mean of 28 days and a median of 3 [21]. The influx, and the throughput $C$ calibrated from it, are floors.
 
 ### The shape of the inflow
 
@@ -314,8 +316,8 @@ from 149 a day in its first quarter to 460 in its last, which is the shelf life 
    decommissioned. Running the catalog's onset history through the exit kernel the model integrates,
    $\sum_i [\,f e^{-(\delta + 1/(\tau+1/\rho)+\lambda) a_i} + (1-f) e^{-\lambda a_i}\,]$ for onset ages $a_i$,
    puts both sides on one clock and gives **627 [596, 770]**. The bracket spans the two defensible onset
-   proxies, NVD publication at the low end and CISA's addition date at the high. Today's state is **655**, a
-   ratio of **1.04**, inside the bracket; the equilibrium target of 1,211 gives 1.93. The transient is the
+   proxies, NVD publication at the low end and CISA's addition date at the high. Today's state is **604**, a
+   ratio of **0.96**, inside the bracket; the equilibrium target of 1,211 gives 1.93. The transient is the
    right comparison, since the anchor is itself an accumulated quantity. That the target lands near the naive
    1,288 is two errors cancelling, not a second agreement.
 2. **Exploited stock, SharePoint.** Its 22 KEV entries give a kernel anchor of **9.8 [9.3, 11.3]** against
@@ -340,11 +342,11 @@ from 149 a day in its first quarter to 460 in its last, which is the shelf life 
 Checks 1 and 2 are less independent than they look. $C$ is calibrated from the KEV rate, and 80% of the
 corrected global anchor, 503 of 627, comes from onsets after the catalog opened, inside the window calibration
 used. What survives as independent content is the *shape* of the onset history rather than its level. Observed
-onsets per day run 0.42, 0.87, 1.29 and 0.88 times the model's realized conversion $I(t)$ over 2008–2015,
+onsets per day run 0.42, 0.95, 1.40 and 0.96 times the model's realized conversion $I(t)$ over 2008–2015,
 2016–2020, 2021–2023 and 2024–2026. The early shortfall is what KEV's documented incompleteness predicts. In the
-current window the model converts 14% more per day than the catalog records, which accumulates into the 4%
-overshoot of the stock in check 1. The exit kernel is tested only loosely: the ratio of anchor to model is flat
-at about 0.95 for $1/\lambda$ anywhere from 3 to 8 years, falling to 0.86 at 12 and 0.74 at 20, so the anchor
+current window the model converts 4% less per day than the catalog records, which accumulates into the 4%
+shortfall of the stock in check 1. The exit kernel is tested only loosely: the ratio of anchor to model is flat
+at 1.00 to 1.04 for $1/\lambda$ anywhere from 3 to 8 years, falling to 0.93 at 12 and 0.79 at 20, so the anchor
 excludes a decade-plus horizon but cannot choose a value inside 3–8.
 
 ## 3. Results
@@ -365,8 +367,8 @@ vulnerability entered the remediable compartment. Incomplete remediation then mu
 73% of the influx to a compartment that drains only by decommissioning stretches $T$ from the 41-day
 remediable residence to 1,480 days. Lifting the ceiling instead of applying it would give 3,626, which is why
 the two steps are shown separately. The equilibrium is a target. Driven by the measured 2008–2026 publication
-history, today's global exploited population is **655**, 54% of the way there. The lower panel places today's
-state against the KEV anchors from §2: 1.04× the global anchor and 1.18× SharePoint's, with the naive anchor
+history, today's global exploited population is **604**, 50% of the way there. The lower panel places today's
+state against the KEV anchors from §2: 0.96× the global anchor and 1.18× SharePoint's, with the naive anchor
 marked for comparison.
 
 ![Visualization 1 — the level as influx times residence time, factored one mechanism at a time, and tested against the KEV catalog](figure:viz-1)
@@ -377,9 +379,9 @@ marked for comparison.
 throughput multiplier. The contours flatten toward horizontal: a 10× increase in discovery moves $E^*$
 **+43%**, while tripling throughput moves it **+80%**, and both together **3.9×**. These are the assumed
 $P/C$ = 2 at work (§1), not independent findings. The observation consistent with them is vendor-level:
-Microsoft's July 2026 release shipped 621 CVEs, 6.6× its 2025 monthly volume, with 2 under active exploit
-(ZDI [7]). The right panel pairs each scenario's eventual target with the value five years from today: 953 with
-no change, 1,282 under 10× discovery, 1,460 under 3× throughput. No scenario delivers more than 60% of its
+Microsoft's July 2026 release shipped 621 CVEs with 2 under active exploit (ZDI [7]), 6.6× its 2025 monthly
+average [25]. The right panel pairs each scenario's eventual target with the value five years from today: 912 with
+no change, 1,247 under 10× discovery, 1,380 under 3× throughput. No scenario delivers more than 60% of its
 eventual movement within a planning horizon. CVE counts measure the saturating axis. Throughput, the one that
 does not saturate, has no published index, though machine-generated exploits landing within an hour of a patch [9, 12, 13]
 and exploit reproduction at a few dollars per CVE [10] show it moving, with the caveat that these are
@@ -445,9 +447,9 @@ arrow widths scaled to flow, each box carrying its target and today's value. Glo
 and 0.818 a day are converted, **1 in 317**; for SharePoint the ratio is 1 in 19, consistent with its 6.9×
 higher KEV rate. Weaponizable supply reaches 2.45 a day against a throughput of 1.23, so 33% is converted and
 the rest stays in the pools. The residual compartment holds 1,202 of the global 1,211 (99%), because it drains
-only through decommissioning. The pre-disclosure channel carries as much supply as the aged backlog does, so a
-structure in which exploitation follows disclosure would get the causal order wrong for close to half of it.
-Every box balances.
+only through decommissioning. The pre-disclosure channel carries 13% of supply at equilibrium and 21% today,
+while the backlog is still filling; a structure in which exploitation only follows disclosure would omit it,
+and since KEV dates exploitation by its evidence, 13% is a floor. Every box balances.
 
 ![Visualization 6 — five stocks with measured flows for both ecosystems](figure:viz-6)
 
@@ -460,8 +462,8 @@ the compounding rate are arbitrary. The measured 2021–2026 growth rate is 37% 
 is an upper bound. The reservoir case uses $U_0$ = 1.0 million remaining, a lower bound since the reservoir is
 unidentified (Visualization 3), with $\psi$ pinned so $\psi U_0$ equals today's discovery rate and
 replenishment set equal to it. Its surge decays on a timescale of $U_0/(10\gamma)$, about thirteen months,
-without any assumption about behavior. Starting from today's 655, every path rises over 25 years, to between
-1,205 and 1,715, because the slow compartments are still filling whatever discovery does. Three of the four end
+without any assumption about behavior. Starting from today's 604, every path rises over 25 years, to between
+1,203 and 1,712, because the slow compartments are still filling whatever discovery does. Three of the four end
 within **17%** of one another; only sustained compounding separates.
 
 ![Visualization 7 — four discovery trajectories and the exploited count each produces](figure:viz-7)
@@ -473,7 +475,7 @@ today's rate, against its equilibrium target. The fast pools have overshot their
 **273–274%** for SharePoint: a stock whose residence time is weeks tracks a rising inflow, and the target is
 computed at a trailing-year rate the current quarter exceeds. The slow ones are far short. The known backlog is
 at **45%** of target and needs **8 more years** to reach 90% of it. The residual exploited compartment is at
-**54%** and needs **10**. SharePoint's backlog is at 64% and its residual at 71%. Most of the movement still to
+**50%** and needs **11**. SharePoint's backlog is at 64% and its residual at 71%. Most of the movement still to
 come was committed by publications that happened years ago, which is why exploitation counts cannot evaluate a
 recent control. Publication history is interpolated linearly between annual rates and seeded in 2008 from the
 equilibrium that year's rate implies.
@@ -488,11 +490,11 @@ to reach 90% of it. "Equal effort" is a normalization, not a cost model.
 
 | Control (30% improvement) | Eventual change in $E^*$ | After 5 years | Time to 90% |
 |---|---|---|---|
-| decommissioning rate $\lambda$ | −22.9% | −14.2% | 16.1 yr |
-| reachable surface $\varepsilon$ | −12.5% | −9.9% | 11.9 yr |
-| ever-patched share | −10.5% | −7.5% | 13.6 yr |
-| retirement rate $\phi$ | −3.4% | −0.9% | 22.2 yr |
-| patch delay $\tau$ | −0.2% | −0.2% | 0.3 yr |
+| decommissioning rate $\lambda$ | −22.9% | −14.0% | 17.0 yr |
+| reachable surface $\varepsilon$ | −12.5% | −10.4% | 11.7 yr |
+| ever-patched share | −10.5% | −7.6% | 14.1 yr |
+| retirement rate $\phi$ | −5.3% | −1.6% | 21.9 yr |
+| patch delay $\tau$ | −0.2% | −0.2% | 1.7 yr |
 
 Patch delay acts on the remediable compartment directly and is fast and weak. The other four act through
 multi-year stocks and are slow and, retirement excepted, strong. For SharePoint, retirement does not reach 90%
@@ -508,17 +510,17 @@ reachable share (0.05–1.0). The contours are nearly horizontal: across the ful
 changes by about 2%, because $\tau$ acts only on the remediable compartment. Reachable surface spans
 **0.14× to 1.01×** of the target. That is a larger movement than tripling throughput produces (1.80×), because
 cutting supply is not damped by saturation the way raising it is (§1). With no change, the count five years
-from today is 0.79× the target (0.86× for SharePoint).
+from today is 0.75× the target (0.86× for SharePoint).
 
 ![Visualization 10 — equilibrium exploited count over patch delay and reachable surface](figure:viz-10)
 
 ## Limitations
 
-1. **Mean-field.** One hazard per pool, where a top decile of vulnerabilities by exploit-prediction score [14]
-   concentrates most observed exploitation and 22% of initial access now runs through edge devices and VPNs,
-   up from 3%. Stratifying is the extension most likely to change the results (Future work §1).
-2. **$E$ counts vulnerabilities, not compromised systems.** A single vulnerability drawing 11.5 million or more
-   attack attempts scores as 1, so a rise in breadth per vulnerability is invisible (Future work §3).
+1. **Mean-field.** One hazard per pool, where the 3.5% of vulnerabilities scoring 0.36 or more on the
+   exploit-prediction score [14] hold 68% of observed exploitation [24], and edge devices and VPNs were the
+   target in 22% of breaches involving vulnerability exploitation, up from 3% the year before [22]. Stratifying is the extension most likely to change the results (Future work §1).
+2. **$E$ counts vulnerabilities, not compromised systems.** CitrixBleed 2 (CVE-2025-5777) drew more than 11.5
+   million attack attempts against thousands of sites within weeks of disclosure [23] and scores as 1, so a rise in breadth per vulnerability is invisible (Future work §3).
 3. **$C$ is calibrated, not measured, and $P/C$ is assumed.** $C$ absorbs every unmodeled mechanism,
    including defender interdiction, and $P/C$ fixes every attacker-side sensitivity (Future work §4).
 4. **The 26% ever-patched figure is one survey median** and carries more of the result than any other
@@ -563,13 +565,13 @@ remain observable in internet-exposure scans**, which measures removal from serv
 inferring it from the age of flaws still present. The input is per-CVE scan telemetry tracked over years. The
 test is whether the fitted horizon lands inside the 3-to-8-year window and whether SharePoint's shorter horizon
 survives against its own scan history. The same work bears on the one discrepancy the anchor leaves: the model
-converts 14% more per day than the catalog records in the current window, which recalibrating $C$ against a
+converts 4% less per day than the catalog records in the current window, which recalibrating $C$ against a
 better $\lambda$ would either remove or confirm.
 
 ### 3. A layer above: exploited systems
 
 The present layer counts vulnerabilities. Harm accrues to systems, and the two are not proportional: one
-vulnerability drew 11.5 million or more attack attempts, and this model scores it as 1. The remedy is a second
+vulnerability drew more than 11.5 million attack attempts [23], and this model scores it as 1. The remedy is a second
 layer that consumes this one's output rather than modifying it. For each vulnerability in the exploited
 compartments it would carry a susceptible installed base $S_i$ and a compromised count $Q_i$, with $\dot Q_i$
 driven by scan-and-exploit contact against $S_i$ and drained by instance-level remediation: an epidemic layer
@@ -604,13 +606,13 @@ geometry behind it and check the timescale separation numerically; no result abo
 
 ### Visualization 11 — phase portrait
 
-$H$, $N$ and $E_p$ relax in 45, 30 and 41 days against 1,823 days for $X$ and 2,000 for $E_r$, so the slow
+$H$, $N$ and $E_p$ relax in 45, 30 and 41 days against 1,821 days for $X$ and 2,000 for $E_r$, so the slow
 dynamics reduce to the $(X, E_r)$ plane with the fast states held at their equilibrium values. The
 $\dot X = 0$ nullcline is **vertical** because nothing in $\dot X$ depends on $E_r$: the backlog's balance
 involves only $N$, $X$ and the conversion share, and conversion depends on the pools, not on the exploited
 stock. The $\dot E_r = 0$ nullcline rises with $X$ and **flattens** as realized exploitation saturates at $C$.
 They cross once, and the crossing is stable. The measured history, drawn from 2008, is still travelling toward
-it: today the backlog is at 45% of target and the residual at 54%. The reduction's error is bounded by the
+it: today the backlog is at 45% of target and the residual at 50%. The reduction's error is bounded by the
 timescale ratio, at least 45:1 between $E_p$ and $E_r$ and wider for $H$ and $N$.
 
 ![Visualization 11 — the slow plane with nullclines, flow field and the measured path from 2008](figure:viz-11)
@@ -622,7 +624,7 @@ values so the collapse of $N$ is isolated. Every orbit reaches the $\dot N = 0$ 
 $N = \delta_d H^* / (\mu + \mathrm{conv}\,\beta_n)$, within weeks and then travels along it for decades. The
 surface depends on $X$ only through $\mathrm{conv}$, and $\mathrm{conv}\,\beta_n$ is under a thousandth of
 $\mu$, so it is flat to within that margin and drawn as a plane. Along the measured history $N$ stays within
-−8.8% to +1.9% of this relation while $X$ and $E_r$ remain at 45% and 54% of target: being on the nullcline
+−8.8% to +1.9% of this relation while $X$ and $E_r$ remain at 45% and 50% of target: being on the nullcline
 means $N$ tracks $H$ with a 30-day lag, not that the system has arrived anywhere. The notebook also writes the
 rotating view to `ODEtoVuln_daily_phase3d.mp4`; the still below is one viewpoint.
 
@@ -649,10 +651,18 @@ Numbers in brackets in the text refer to this list. Links were last checked on 2
 4. Verizon. *2026 Data Breach Investigations Report.*
    [verizon.com/business/resources/reports/dbir](https://www.verizon.com/business/resources/reports/dbir/).
    Source of the 26% ever-fully-patched share and the 43-day median time to fix.
-5. CrowdStrike. 2026 threat reporting. Source of the 42% share of exploitation occurring before disclosure.
-6. Mandiant. *M-Trends 2026*, as reported in secondary coverage. Source of the −7-day mean time-to-exploit.
-7. Trend Micro Zero Day Initiative. Review of Microsoft's July 2026 security updates: 621 CVEs, 2 under active
-   exploit.
+5. CrowdStrike. *2026 Global Threat Report*, executive summary.
+   [crowdstrike.com](https://www.crowdstrike.com/en-us/resources/reports/global-threat-report-executive-summary-2026/).
+   Source of the 42% *increase* in zero-day vulnerabilities exploited prior to public disclosure, a growth rate.
+   Earlier editions of this document read it as a 42% share and calibrated $\beta_h$ to it; the share is now
+   measured from KEV.
+6. Mandiant. *M-Trends 2026*, as reported by Help Net Security, "Attackers are handing off access in 22
+   seconds, Mandiant finds," 2026-03-24.
+   [helpnetsecurity.com](https://www.helpnetsecurity.com/2026/03/24/mandiant-m-trends-2026-report/). Source of
+   the time-to-exploit estimated at −7 days for 2025.
+7. D. Childs, Trend Micro Zero Day Initiative. "The July 2026 Security Update Review." 2026-07-14.
+   [zerodayinitiative.com](https://www.zerodayinitiative.com/blog/2026/7/14/the-july-2026-security-update-review).
+   Source of the 621 CVEs with 2 under active exploit.
 8. Synopsys. *Open Source Security and Risk Analysis* report. Source of the 2.5-year mean open-source
    vulnerability age and the share of codebases carrying decade-old flaws.
 
@@ -695,9 +705,25 @@ Numbers in brackets in the text refer to this list. Links were last checked on 2
 19. SecurityWeek. "SharePoint vulnerability exploited shortly after PoC release."
     [securityweek.com](https://www.securityweek.com/sharepoint-vulnerability-exploited-shortly-after-poc-release/).
 
-**Figures carried without a recorded source.** Five figures in the text entered in earlier editions, and no
-source for them survives in this repository or its history: the 28% share of post-disclosure exploitation
-occurring within a day of disclosure, which is a calibration input; the concentration of exploitation in the
-top decile by exploit-prediction score; the 22% of initial access through edge devices and VPNs, up from 3%;
-KEV's median 3-day and mean 28-day lag behind other sources; and the 11.5 million attack attempts against a
-single vulnerability. Each should be attributed or removed before the next snapshot.
+**Exploitation telemetry**
+
+20. P. Garrity, VulnCheck. "2025 Q1 Trends in Vulnerability Exploitation." 2025-04-24.
+    [vulncheck.com](https://www.vulncheck.com/blog/exploitation-trends-q1-2025). Source of the 28.3% of 159
+    newly exploited CVEs with exploitation evidence within a day of publication.
+21. T. Embry, VulnCheck. "What 28 Days of Faster Vulnerability Intelligence Is Worth." 2026-02-11.
+    [vulncheck.com](https://www.vulncheck.com/blog/economic-value-lead-time). Source of the lead over KEV: a mean
+    of 28.13 days and a median of 3 across 376 shared CVEs, VulnCheck first in 254 (67.6%).
+22. Verizon. *2025 Data Breach Investigations Report*, Figure 17 and accompanying text.
+    [verizon.com](https://www.verizon.com/business/resources/reports/2025-dbir-data-breach-investigations-report.pdf).
+    Source of edge devices and VPNs as the target in 22% of breaches involving vulnerability exploitation
+    (n = 1,930), against 3% in the 2024 report.
+23. G. Sharadin, A. Reich, Imperva. "CVE-2025-5777 Exposes Citrix NetScaler to Dangerous Memory Leak Attacks."
+    2025-07-11. [imperva.com](https://www.imperva.com/blog/cve-2025-5777-exposes-citrix-netscaler-to-dangerous-memory-leak-attacks/).
+    Source of the more than 11.5 million attack attempts against CitrixBleed 2.
+24. J. Jacobs, S. Romanosky, O. Suciu, B. Edwards, A. Sarabi. "Enhancing Vulnerability Prioritization:
+    Data-Driven Exploit Predictions with Community-Driven Insights" (EPSS v3). 2023.
+    [arXiv:2302.14172](https://arxiv.org/abs/2302.14172). Source of the F1 operating point: scores of 0.36 and
+    above flag 3.5% of CVEs and cover 67.8% of exploited ones, at 78.5% efficiency.
+25. Tenable. "Microsoft Patch Tuesday 2025 Year in Review."
+    [tenable.com](https://www.tenable.com/blog/microsoft-patch-tuesday-2025-year-in-review). Source of the 1,130
+    CVEs Microsoft patched in 2025, 94 a month, against which July 2026's 621 is 6.6×.

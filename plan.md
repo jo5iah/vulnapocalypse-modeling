@@ -19,7 +19,7 @@ twelve visualizations establishing each result.
 What it answers: what sets the standing count of exploited, unremediated vulnerabilities, and which
 control moves it. Headline results at the 2026-10-14 snapshot — completeness of remediation beats
 speed of patching by more than an order of magnitude, and reducing reachable surface does too; discovery volume is nearly inert because conversion is
-capacity-limited; the measured state sits at 54% of the level today's inflow already implies.
+capacity-limited; the measured state sits at 50% of the level today's inflow already implies.
 
 Delivered alongside the model:
 

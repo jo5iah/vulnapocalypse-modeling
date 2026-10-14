@@ -28,7 +28,7 @@ Four findings bear on where a program should spend.
   kernel was second in CVE volume with 3,047 and ranks **25th** in the exploitation catalog; Windows Server
   leads exploitation and is **fourth** by volume. Prioritizing by counts points at the wrong software.
 - **Nothing a program changes will show in these numbers for years.** The populations that drive
-  exploitation turn over on a five-year clock and sit at **54%** of the level today's disclosure rate already
+  exploitation turn over on a five-year clock and sit at **50%** of the level today's disclosure rate already
   implies. The standing count is the cataloged exploitation rate times a 1,480-day residence time, so a
   catalog rate rising 33% a year lifts the destination from 1,211 to about **1,620** in one more year. Next
   quarter's exploited count cannot evaluate a control introduced last quarter.
@@ -43,7 +43,7 @@ that point opposite ways. Either attackers are saturating, which is what the mod
 rising CVE counts tolerable, or the catalog is falling behind, in which case every exploitation figure here is
 low by a growing margin. Until exploitation telemetry separates them, read the exploitation numbers as a floor.
 Beyond that, the absolute counts are orders of magnitude rather than estimates: tested against the catalog on a
-consistent footing, the model runs 4% high (§2), and calibrating to 2025's KEV rate alone (0.671/day) rather
+consistent footing, the model runs 4% low (§2), and calibrating to 2025's KEV rate alone (0.671/day) rather
 than the pooled 2022-onward rate (0.819/day) would lower the level by 18%, since the level scales in proportion
 to the calibrated influx. The rankings survive both. Finally, the model counts vulnerabilities rather than
 compromised systems, so one flaw exploited on a million hosts counts the same as one exploited once. That
