@@ -3,7 +3,10 @@
 
 A continuous-time model of how vulnerabilities move from discovery to exploitation to removal, parameterized
 from public vulnerability data and evaluated for two populations: the **global software ecosystem** and
-**Microsoft SharePoint** as an instance of enterprise server software. Time is in days throughout. Data
+**Microsoft SharePoint** as an instance of enterprise server software. It is a compartment model of ordinary
+differential equations, chosen for explicability: every result traces to a named rate with a stated source or
+assumption, so disagreement with a conclusion can be located in a specific parameter rather than in a fitted
+predictor's weights. Time is in days throughout. Data
 acquisition is in `VulnData.ipynb`; the model and every figure are computed in `ODEtoVuln_daily.ipynb`; this
 document is the only written account of what they show. Snapshot: **2026-10-14**.
 
