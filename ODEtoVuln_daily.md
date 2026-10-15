@@ -203,7 +203,7 @@ except Visualization 7, where $U$ is evolved separately to generate $\gamma(t)$.
 | CrowdStrike 2026 [5] | a 42% rise in zero-days exploited before public disclosure | context for the pre-disclosure channel; a growth rate, not a share |
 | VulnCheck [20, 21] | 28.3% of newly exploited CVEs evidenced within a day of publication; its lead over KEV | the fast n-day share, hence $\beta_n$; the KEV bias below |
 | Mandiant M-Trends 2026 [6] | time-to-exploit estimated at −7 days for 2025 | corroborates the pre-disclosure channel |
-| ZDI, July 2026 [7]; Tenable [25] | Microsoft shipped 621 CVEs with 2 under active exploit; 6.6× its 2025 monthly average of 94 | Visualization 2 |
+| ZDI, July 2026 [7]; Tenable [25]; MSRC [26] | Microsoft shipped 621 CVEs with 3 under active exploit (2 on release day, a third flagged the next); 6.6× its 2025 monthly average of 94 | Visualization 2; Future work §5 |
 | Verizon 2025 DBIR [22]; Imperva [23]; EPSS v3 [24] | where exploitation concentrates, and its breadth per vulnerability | Limitations 1 and 2 |
 | Synopsys OSSRA 2024 [8] | mean open-source vulnerability age over 2.5 years; nearly a quarter of codebases carry flaws more than 10 years old | $1/\lambda$ |
 | Anthropic *n-days* [9]; CVE-Genie [10]; Pesoli, Errico & Cavallaro [11] | machine-generated exploits under an hour after a patch ships; reproduction at a few dollars per CVE and privilege-escalation chains at about $2,000 each; the caveat that these are reproductions rather than production chains | the throughput axis of Visualization 2; Future work §4 |
@@ -381,7 +381,8 @@ marked for comparison.
 throughput multiplier. The contours flatten toward horizontal: a 10× increase in discovery moves $E^*$
 **+43%**, while tripling throughput moves it **+80%**, and both together **3.9×**. These are the assumed
 $P/C$ = 2 at work (§1), not independent findings. The observation consistent with them is vendor-level:
-Microsoft's July 2026 release shipped 621 CVEs with 2 under active exploit (ZDI [7]), 6.6× its 2025 monthly
+Microsoft's July 2026 release shipped 621 CVEs with 3 under active exploit (ZDI [7] counted 2 on release day;
+Microsoft flagged a third the next [26]), 6.6× its 2025 monthly
 average [25]. The right panel pairs each scenario's eventual target with the value five years from today: 912 with
 no change, 1,247 under 10× discovery, 1,380 under 3× throughput. No scenario delivers more than 60% of its
 eventual movement within a planning horizon. CVE counts measure the saturating axis. Throughput, the one that
@@ -611,7 +612,11 @@ Every exploitation quantity in this document is a catalog entry, and catalogs la
 disclosure → KEV lag is 245 days (p90 2,627); VulnCheck lists exploitation before KEV in 67.6% of the CVEs the
 two share, by a median of 3 days and a mean of 28 [21]; and NVD keeps adding records to publication windows that
 have already closed (§2). Zero-days are announced first by vendors, responders and the press, often before a CVE
-is published. The remedy is to read that earlier record directly: structured vendor exploitation flags, such as
+is published. Vendor records move too. Microsoft published the SharePoint flaw CVE-2026-58644 on 2026-07-14
+without its exploited flag, corrected the flag the next day, and CISA listed it on 2026-07-16, so July's
+exploited count was 2 on release day and 3 a day later. Its fix had shipped in June with the CVE left out of
+that release [26]: for a month the fix existed with no public record of the flaw it fixed.
+The remedy is to read that earlier record directly: structured vendor exploitation flags, such as
 the `Exploited` field of the Microsoft Security Update Guide [26] and the `exploit_status` threat category of
 CSAF 2.0 advisories [27]; the fixed phrasings of browser, mobile and edge-device advisories ("may have been
 exploited", "aware that an exploit … exists in the wild"); curated trackers such as Project Zero's list of
@@ -698,7 +703,8 @@ Numbers in brackets in the text refer to this list. Links were last checked on 2
    the time-to-exploit estimated at −7 days for 2025.
 7. D. Childs, Trend Micro Zero Day Initiative. "The July 2026 Security Update Review." 2026-07-14.
    [zerodayinitiative.com](https://www.zerodayinitiative.com/blog/2026/7/14/the-july-2026-security-update-review).
-   Source of the 621 CVEs with 2 under active exploit.
+   Source of the 621 CVEs, and of the 2 under active exploit on release day; Microsoft flagged a third on
+   2026-07-15 (Future work §5).
 8. Synopsys. *2024 Open Source Security and Risk Analysis Report* (ninth edition), as summarized in "New Synopsys
    Report Finds 74% of Codebases Contained High-Risk Open Source Vulnerabilities, Surging 54% Since Last Year,"
    2024-02-27. [news.synopsys.com](https://news.synopsys.com/2024-02-27-New-Synopsys-Report-Finds-74-of-Codebases-Contained-High-Risk-Open-Source-Vulnerabilities,-Surging-54-Since-Last-Year).
