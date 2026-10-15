@@ -90,7 +90,7 @@ is missing from ~54% of records in the trailing year, censoring recent months ha
 **Depends on step 2 for per-class structure; needs data step 1 does not collect.**
 
 The present layer counts vulnerabilities; harm accrues to systems, and the two are not proportional.
-One vulnerability drew 11.5M+ attack attempts and this model scores it as 1.
+CitrixBleed 2 drew more than 11.5M attack attempts (Imperva) and this model scores it as 1.
 
 A second layer consumes step 1's output rather than modifying it. For each vulnerability in the
 exploited compartments, carry a susceptible installed base $S_i$ and a compromised count $Q_i$, with

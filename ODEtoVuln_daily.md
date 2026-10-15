@@ -420,8 +420,10 @@ columns are the same model at different completeness, so a disagreement about wh
 retirement matters more is, in this model, a disagreement about what fraction of exploited vulnerabilities an
 organization finishes remediating. Throughput, discovery, surface and weaponization are unaffected by
 completeness because they act on the influx rather than on either drain; the last three share one elasticity,
-+0.33, because each enters only through $P$. The pale bars, for the count five years out, are smaller in
-magnitude and keep the same order.
++0.33, because each enters only through $P$. The pale bars, for the count five years out, keep decommissioning
+(−0.52) and throughput (+0.45) on top but reorder below them: surface and weaponization (+0.28) pass
+completeness (−0.25), and maturation (−0.08) passes retirement, which falls from −0.21 to −0.06. Maturation and
+patch delay are the only levers not smaller at five years than at equilibrium.
 
 ![Visualization 4 — elasticities of the equilibrium exploited count, measured and at full remediation](figure:viz-4)
 
