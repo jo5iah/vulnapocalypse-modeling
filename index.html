@@ -400,7 +400,7 @@ except Visualization 7, where $U$ is evolved separately to generate $\gamma(t)$.
 | Mandiant M-Trends 2026 [6] | time-to-exploit estimated at −7 days for 2025 | corroborates the pre-disclosure channel |
 | ZDI, July 2026 [7]; Tenable [25] | Microsoft shipped 621 CVEs with 2 under active exploit; 6.6× its 2025 monthly average of 94 | Visualization 2 |
 | Verizon 2025 DBIR [22]; Imperva [23]; EPSS v3 [24] | where exploitation concentrates, and its breadth per vulnerability | Limitations 1 and 2 |
-| Synopsys OSSRA [8] | mean open-source vulnerability age 2.5+ years; a quarter of codebases carry decade-old flaws | $1/\lambda$ |
+| Synopsys OSSRA 2024 [8] | mean open-source vulnerability age over 2.5 years; nearly a quarter of codebases carry flaws more than 10 years old | $1/\lambda$ |
 | Anthropic *n-days* [9]; CVE-Genie [10]; Pesoli, Errico & Cavallaro [11] | machine-generated exploits under an hour after a patch ships; reproduction at a few dollars per CVE and privilege-escalation chains at about $2,000 each; the caveat that these are reproductions rather than production chains | the throughput axis of Visualization 2; Future work §4 |
 | FIRST EPSS [14] | exploit-prediction scores | Limitation 1; Future work §1 |
 
@@ -859,8 +859,12 @@ Numbers in brackets in the text refer to this list. Links were last checked on 2
 7. D. Childs, Trend Micro Zero Day Initiative. "The July 2026 Security Update Review." 2026-07-14.
    [zerodayinitiative.com](https://www.zerodayinitiative.com/blog/2026/7/14/the-july-2026-security-update-review).
    Source of the 621 CVEs with 2 under active exploit.
-8. Synopsys. *Open Source Security and Risk Analysis* report. Source of the 2.5-year mean open-source
-   vulnerability age and the share of codebases carrying decade-old flaws.
+8. Synopsys. *2024 Open Source Security and Risk Analysis Report* (ninth edition), as summarized in "New Synopsys
+   Report Finds 74% of Codebases Contained High-Risk Open Source Vulnerabilities, Surging 54% Since Last Year,"
+   2024-02-27. [news.synopsys.com](https://news.synopsys.com/2024-02-27-New-Synopsys-Report-Finds-74-of-Codebases-Contained-High-Risk-Open-Source-Vulnerabilities,-Surging-54-Since-Last-Year).
+   Source of the mean open-source vulnerability age of over 2.5 years and of nearly a quarter of codebases
+   containing vulnerabilities more than 10 years old. The report series is now published by Black Duck
+   ([blackduck.com/ossra](https://www.blackduck.com/ossra)); its 2026 edition does not report vulnerability age.
 
 **Automated exploit generation**
 
