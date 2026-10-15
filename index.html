@@ -238,7 +238,8 @@ what CISA catalogs, not what attackers do; its annual additions ran 555, 187 and
 cataloging policy. The widening gap between disclosure and cataloged exploitation therefore has two readings
 that point opposite ways. Either attackers are saturating, which is what the model assumes and what makes
 rising CVE counts tolerable, or the catalog is falling behind, in which case every exploitation figure here is
-low by a growing margin. Until exploitation telemetry separates them, read the exploitation numbers as a floor.
+low by a growing margin. Until exploitation telemetry separates them (Future work §5), read the exploitation
+numbers as a floor.
 Beyond that, the absolute counts are orders of magnitude rather than estimates: tested against the catalog on a
 consistent footing, the model runs 4% low (§2), and calibrating to 2025's KEV rate alone (0.671/day) rather
 than the pooled 2022-onward rate (0.819/day) would lower the level by 18%, since the level scales in proportion
@@ -471,6 +472,7 @@ damps the year-to-year swing and gives the partial current year its true weight.
 opened that November and its 311 additions are a backfill of earlier exploitation, not a rate. Exploitation is
 listed earlier by VulnCheck's catalog in two-thirds (67.6%) of the 376 CVEs the two shared in 2024–2025, by a
 mean of 28 days and a median of 3 [21]. The influx, and the throughput $C$ calibrated from it, are floors.
+Future work §5 measures exploitation from vendor announcements, ahead of the catalog.
 
 ### The shape of the inflow
 
@@ -733,9 +735,11 @@ from today is 0.75× the target (0.86× for SharePoint).
 
 ## Future work
 
-The four items are ordered by dependency: the first two complete the present layer, the third builds a layer
-above it, and the fourth a layer above that. Each later layer consumes the one beneath it. The same sequence is
-kept in `plan.md`.
+The first four items are ordered by dependency: the first two complete the present layer, the third builds a
+layer above it, and the fourth a layer above that. Each later layer consumes the one beneath it. The fifth depends
+on none of them and can be done before any of them: it replaces the lagging catalog measurements every layer
+reads, so doing it first improves the inputs the other four consume.
+The same structure is kept in `plan.md`.
 
 ### 1. Stratify by type, severity, product and exposure
 
@@ -796,6 +800,36 @@ return, whether optimal attacker throughput scales with a hundredfold fall in ex
 target selection and monetization, and whether a defender's best response shifts from speed toward
 completeness as attacker costs fall. It would also settle one the current model cannot pose: whether the
 historical stability of exploitation rates is coincidence or an equilibrium between two adapting parties.
+
+### 5. Independent of all four: an exploitation signal ahead of the catalog
+
+Every exploitation quantity in this document is a catalog entry, and catalogs lag events. The median
+disclosure → KEV lag is 245 days (p90 2,627); VulnCheck lists exploitation before KEV in 67.6% of the CVEs the
+two share, by a median of 3 days and a mean of 28 [21]; and NVD keeps adding records to publication windows that
+have already closed (§2). Zero-days are announced first by vendors, responders and the press, often before a CVE
+is published. The remedy is to read that earlier record directly: structured vendor exploitation flags, such as
+the `Exploited` field of the Microsoft Security Update Guide [26] and the `exploit_status` threat category of
+CSAF 2.0 advisories [27]; the fixed phrasings of browser, mobile and edge-device advisories ("may have been
+exploited", "aware that an exploit … exists in the wild"); curated trackers such as Project Zero's list of
+zero-days exploited in the wild [28]; and the trade press, which supplies first timestamps but not counts, since
+it over-samples prominent vendors. Each claim reduces to a first public timestamp per vulnerability and a coded
+strength of claim, alongside the vendor's own patch statement: fix available, workaround only, no fix planned, or
+end of life.
+
+Four measurements follow, each replacing something the present layer assumes or brackets. The lag from first
+claim to CVE publication to KEV addition replaces the onset bracket in the anchor test (§2). Publications per
+exploitation claim, set beside publications per KEV addition, separates the two readings of the widening gap in
+the executive summary: if the advisory ratio widens as KEV's does, attackers are saturating; if claims rise with
+disclosure while catalog additions do not, the catalog is falling behind and every exploitation figure here is
+low by a growing margin. Claims for the current month, scaled by the measured claim-to-catalog ratio, estimate
+the influx $I$ before the catalog catches up. And the share of exploited vulnerabilities whose vendor states no
+fix or end of life is a direct lower bound on $1 - f$, which today rests on one survey median. A fifth
+measurement extends the population rather than the timing: vendors also fix security flaws without issuing a
+CVE, and matching shipped fixes (release notes, changelogs, upstream commits) against the CVEs that cite them
+measures attack surface absent from every rate here, $\gamma$ included. The test is that advisory-derived onsets
+reproduce KEV's addition dates shifted by a lag consistent with VulnCheck's published median and mean, without
+being fitted to them. Vendor exploitation language is itself policy, as KEV additions are, so each vendor's flag
+rate is tracked over time and a change of phrasing is treated as a change of instrument.
 
 ## Appendix: the slow-manifold reduction
 
@@ -929,6 +963,17 @@ Numbers in brackets in the text refer to this list. Links were last checked on 2
 25. Tenable. "Microsoft Patch Tuesday 2025 Year in Review."
     [tenable.com](https://www.tenable.com/blog/microsoft-patch-tuesday-2025-year-in-review). Source of the 1,130
     CVEs Microsoft patched in 2025, 94 a month, against which July 2026's 621 is 6.6×.
+
+**Exploitation announcements**
+
+26. Microsoft Security Response Center. *Security Update Guide.*
+    [msrc.microsoft.com/update-guide](https://msrc.microsoft.com/update-guide). Read through the CVRF API,
+    `https://api.msrc.microsoft.com/cvrf/v3.0/`, whose per-CVE threat notes carry `Exploited:Yes` or `Exploited:No`.
+27. OASIS. *Common Security Advisory Framework Version 2.0*, OASIS Standard, 2022.
+    [docs.oasis-open.org](https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html). Defines the
+    `exploit_status` category of a vulnerability's `threats`.
+28. Google Project Zero. *0day "In the Wild".*
+    [googleprojectzero.blogspot.com/p/0day.html](https://googleprojectzero.blogspot.com/p/0day.html).
 </script>
 
 <script>

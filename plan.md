@@ -1,11 +1,13 @@
 # Plan
 
-Four steps. Step 1 is built; steps 2 to 4 are layers above it, each consuming the one below rather
-than modifying it. The ordering is by dependency, not by appeal: step 4 needs the harm denominator
-step 3 produces, and step 3 is far more useful once step 2 has split the population it counts.
+Four steps and one parallel track. Step 1 is built; steps 2 to 4 are layers above it, each consuming
+the one below rather than modifying it. The ordering is by dependency, not by appeal: step 4 needs the
+harm denominator step 3 produces, and step 3 is far more useful once step 2 has split the population it
+counts. Track A replaces the lagging catalog measurements that every step reads and depends on none of
+them, so it can be done before any of them; doing it first improves the inputs steps 2 to 4 consume.
 
-`ODEtoVuln_daily.md` carries its own **Future work** section covering steps 2 to 4 in more technical
-detail. That section and this file must be kept in step; where they disagree, this file is the plan
+`ODEtoVuln_daily.md` carries its own **Future work** section covering steps 2 to 4 (its §1, §3, §4), the
+first open item below (§2) and track A (§5) in more technical detail. That section and this file must be kept in step; where they disagree, this file is the plan
 and that section is the specification.
 
 ---
@@ -45,10 +47,77 @@ every defender parameter are constants, so neither side can adapt — step 4.
   internet-exposure scans. This is Future work §2 in the document.
 - **KEV measures cataloging, not attacker behavior.** Its additions swung 555 / 187 / 186 across
   2022–2024 on policy alone, so the widening gap between disclosure and cataloged exploitation
-  supports two readings that point opposite ways. Nothing public separates them.
+  supports two readings that point opposite ways. No catalog separates them; track A is the
+  measurement designed to.
 - **$\gamma$ is not stationary.** Publication acceleration has been positive for 68 months and the
   recent quarter runs 1.8× the trailing year, so any equilibrium computed from a trailing-year rate
   has a shelf life of months. Re-snapshot before quoting absolute levels.
+
+---
+
+## Track A — an exploitation signal ahead of the catalog · independent; can be done first
+
+**No dependency on steps 2 to 4; feeds all of them and step 1's calibration.** It needs only what
+`VulnData.ipynb` already caches (the CVE records and the KEV catalog) as join keys. Its coverage
+measurement can run by vendor and product family now, and by exposure class from the CVSS attack vector
+already in those records, without waiting for step 2's model.
+
+Every exploitation quantity the model reads is a catalog entry, and catalogs lag events. The median
+disclosure → KEV lag is 245 days (p90 2,627); VulnCheck lists exploitation before KEV in 67.6% of the
+CVEs the two share, by a median of 3 days and a mean of 28; NVD keeps ingesting records into closed
+publication windows, and ~54% of the trailing year still lacks CPE applicability. Zero-days are
+announced first by vendors, responders and the press, often before a CVE is published at all. The
+present model therefore measures exploitation as it stood weeks to months ago, filtered by cataloging
+policy.
+
+**Sources, by how structured the exploitation claim is.**
+
+| Tier | Source | Exploitation field or language |
+|---|---|---|
+| Structured vendor | Microsoft MSRC CVRF/CSAF API; CSAF 2.0 provider feeds (Cisco, Siemens, Red Hat and others) | MSRC "Exploited: Yes" and exploitability index; CSAF `threats[].category = exploit_status` |
+| Semi-structured vendor | Apple security releases, Chrome Releases, Android and Pixel bulletins, Mozilla advisories, PSIRTs for edge devices (Fortinet, Ivanti, Citrix, Palo Alto, Cisco ASA) | fixed phrasings: "may have been exploited", "aware that an exploit … exists in the wild", "limited, targeted exploitation" |
+| Curated trackers | Project Zero *0day In the Wild*; VulnCheck KEV; national CSIRT advisories | first-seen dates and exploitation references per CVE |
+| Unstructured | trade press, vendor threat-intelligence blogs, researcher posts | free text, extracted to (CVE or pre-CVE identifier, product, claim, hedging level, first timestamp) |
+
+Each claim is reduced to a first public timestamp per vulnerability, deduplicated across re-reporting,
+and coded on an ordinal scale from "exploitation detected" through "limited, targeted" and "may have
+been" to "PoC public" and "exploitation more likely". The same records carry the vendor's patch
+statement: fix available, workaround or mitigation only, no fix planned, or end of life.
+
+**What it measures.**
+
+- **The onset distribution the anchor currently brackets.** The KEV anchor brackets unobserved onset
+  between NVD publication and CISA's `dateAdded`. First public claim → CVE publication → NVD analysis →
+  KEV addition, per CVE, replaces the bracket with a measured lag.
+- **The divergence test.** Publications per exploitation claim, monthly, beside publications per KEV
+  addition (204 → 322 → 439 today). If the advisory-derived ratio widens as KEV's does, attackers are
+  saturating and the model's $P/C = 2$ reading holds; if advisory claims rise with disclosure while KEV
+  additions do not, the catalog is falling behind and every exploitation figure is low by a growing margin.
+  This is the measurement the second open item says no catalog provides.
+- **Catalog coverage by class.** The share of claimed-exploited vulnerabilities that never reach KEV, by
+  vendor, product family and exposure class — a less policy-filtered composition target for step 2.
+- **A nowcast of the influx $I$.** Claims for the current month, scaled by the measured claim → KEV
+  ratio, estimate this month's influx before the catalog catches up; vendor advisory volume does the same
+  for $\gamma$ ahead of NVD.
+- **Completeness and decommissioning at the source.** The share of exploited vulnerabilities whose vendor
+  states no fix or end of life is a direct lower bound on the residual share $1 - f$, which today rests on
+  one survey median; "workaround only" bears on $\delta$, which today is assumed.
+- **Silent patching.** Vendors fix security flaws without issuing a CVE or advisory. Matching shipped
+  security fixes (release notes, changelogs, upstream commits, patch diffs) against the CVEs and
+  advisories that cite them measures the share of fixed vulnerabilities that never enter the record —
+  attack surface that every rate in this model, including $\gamma$, omits.
+
+**The test that justifies the work.** Advisory-derived onsets should reproduce KEV's addition dates
+shifted by a lag distribution consistent with VulnCheck's published 3-day median and 28-day mean, without
+being fitted to them. If they do, the advisory stream is a calibrated leading indicator; if they do not,
+the disagreement localizes which source is lagging.
+
+**Watch for.** Vendor exploitation language is policy, exactly as KEV additions are: track each vendor's
+flag rate over time and treat a change in phrasing as a change in instrument. Press coverage over-samples
+high-profile vendors, so unstructured sources set first timestamps and never counts. Claims are retracted
+and re-attributed; keep the claim history, not only the latest state. Pre-CVE announcements need a join
+key that survives CVE assignment. Backfilling history needs archived copies of advisory pages, and
+scraped sources carry terms-of-use constraints that structured feeds do not.
 
 ---
 

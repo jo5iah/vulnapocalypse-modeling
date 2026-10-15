@@ -41,7 +41,8 @@ what CISA catalogs, not what attackers do; its annual additions ran 555, 187 and
 cataloging policy. The widening gap between disclosure and cataloged exploitation therefore has two readings
 that point opposite ways. Either attackers are saturating, which is what the model assumes and what makes
 rising CVE counts tolerable, or the catalog is falling behind, in which case every exploitation figure here is
-low by a growing margin. Until exploitation telemetry separates them, read the exploitation numbers as a floor.
+low by a growing margin. Until exploitation telemetry separates them (Future work §5), read the exploitation
+numbers as a floor.
 Beyond that, the absolute counts are orders of magnitude rather than estimates: tested against the catalog on a
 consistent footing, the model runs 4% low (§2), and calibrating to 2025's KEV rate alone (0.671/day) rather
 than the pooled 2022-onward rate (0.819/day) would lower the level by 18%, since the level scales in proportion
@@ -63,7 +64,7 @@ adding a layer of compromised systems are the extensions most likely to change t
 | `product_ranks.py` | Top products by CVE count and by observed exploitation, both derived from NVD's CPE applicability data so the two rankings share one taxonomy, with a documented rollup that recovers product families from per-release CPE names. The exploited side reads the cached KEV mirror; the vulnerable side sweeps every CVE in a publication window and aggregates page by page rather than caching ~500 MB of responses. Writes `data/product_ranks_<snapshot>.json` and a standalone report, `product_ranks_<snapshot>.md`; `--report-only` rebuilds the report from the saved JSON without repeating the sweep. |
 | `anchor_gap.py` | Diagnostics behind the exploited-stock anchor in §2 of the document: the decomposition of the discrepancy the naive anchor produced, how much of the corrected anchor lies inside the window that calibrates throughput, the KEV onset history against the model's realized conversion, and how weakly the anchor constrains the decommissioning rate. Imports the model by executing the notebook's first cell rather than restating it, so it cannot drift from the figures. |
 | `data/` | Cached API responses and the three derived inputs: `derived_params.json` (parameters), `global_history.json` (per-year publication rates), `sharepoint_union.json` (the de-duplicated CVE set for the SharePoint CPE family). Included so the work reproduces without re-querying the sources; delete a file to refetch it. |
-| `plan.md` | The four-step roadmap. Step 1 — the vulnerability-count layer in this repository — is built; steps 2 to 4 stratify the population, model exploit-affected systems, and close with the economics of attack versus defense. |
+| `plan.md` | The four-step roadmap and one independent track. Step 1 — the vulnerability-count layer in this repository — is built; steps 2 to 4 stratify the population, model exploit-affected systems, and close with the economics of attack versus defense. Track A measures exploitation from vendor zero-day announcements ahead of the catalog, and silent patching, and can be done before any of the steps. |
 | `product_ranks_<snapshot>.md` | Standalone rankings report: top exploited and top vulnerable product families in one taxonomy, and where each volume leader sits in the exploitation catalog. |
 | `vendor/` | Build inputs only, not needed to read anything: KaTeX with its web fonts and markdown-it. |
 | `environment.yml` | Conda environment for running the notebooks. `conda env create -f environment.yml`, then register the kernel. |
