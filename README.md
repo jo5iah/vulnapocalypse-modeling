@@ -7,12 +7,7 @@ to a compartment model of ordinary differential equations, explicable as epidemi
 traces to a named rate with a stated source or assumption, so disagreement with a conclusion can be located in a specific parameter rather than in a fitted
 predictor's weights. Time is in days throughout. Data
 acquisition is in `VulnData.ipynb`; the model and every figure are computed in `ODEtoVuln_daily.ipynb`; this
-document is the only written account of what they show. Snapshot: **2026-10-14**.
-
-> **Data ahead of the document.** `data/` and `VulnData.ipynb` are at the **2026-11-16** snapshot; the
-> document, its figures and the numbers on this page are still at 2026-10-14 and have not been
-> reconciled. Re-running `ODEtoVuln_daily.ipynb` now produces 11-16 figures the prose does not match.
-> `plan.md` records what moved.
+document is the only written account of what they show. Snapshot: **2026-11-16**.
 
 ## Executive summary
 
@@ -30,15 +25,15 @@ Four findings bear on where a program should spend.
   assumption.** The model assumes weaponizable supply runs at twice attacker capacity. On that assumption a
   tenfold rise in disclosures raises exploitation **43%**, tripling attacker capacity raises it **80%**, and
   both figures follow directly from the assumed ratio. What is measured is the divergence it is meant to
-  explain. From 2025 to 2026 the disclosure rate rose **111%** and cataloged exploitation **33%**, so
-  publications per cataloged exploit went from 204 to **322**, and to **439** over the last ninety days.
+  explain. From 2025 to 2026 the disclosure rate rose **130%** and cataloged exploitation **38%**, so
+  publications per cataloged exploit went from 204 to **339**, and to **414** over the last ninety days.
 - **The software with the most CVEs is not the software being exploited.** Over the past year the Linux
-  kernel was second in CVE volume with 3,047 and ranks **25th** in the exploitation catalog; Windows Server
+  kernel was second in CVE volume with 3,338 and ranks **25th** in the exploitation catalog; Windows Server
   leads exploitation and is **fourth** by volume. Prioritizing by counts points at the wrong software.
 - **Nothing a program changes will show in these numbers for years.** The populations that drive
-  exploitation turn over on a five-year clock and sit at **50%** of the level today's disclosure rate already
+  exploitation turn over on a five-year clock and sit at **47%** of the level today's disclosure rate already
   implies. The standing count is the cataloged exploitation rate times a 1,480-day residence time, so a
-  catalog rate rising 33% a year lifts the destination from 1,211 to about **1,620** in one more year. Next
+  catalog rate rising 38% a year lifts the destination from 1,221 to about **1,690** in one more year. Next
   quarter's exploited count cannot evaluate a control introduced last quarter.
 
 The practical implication is to move effort from response time toward completing remediations, reducing
@@ -52,11 +47,12 @@ rising CVE counts tolerable, or the catalog is falling behind, in which case eve
 low by a growing margin. Until exploitation telemetry separates them (Future work §5), read the exploitation
 numbers as a floor.
 Beyond that, the absolute counts are orders of magnitude rather than estimates: tested against the catalog on a
-consistent footing, the model runs 4% low (§2), and calibrating to 2025's KEV rate alone (0.671/day) rather
-than the pooled 2022-onward rate (0.819/day) would lower the level by 18%, since the level scales in proportion
-to the calibrated influx. The rankings survive both. Finally, the model counts vulnerabilities rather than
-compromised systems, so one flaw exploited on a million hosts counts the same as one exploited once. That
-understates the scenario cheaper automated exploitation makes most likely. Stratifying by exposure class and
+consistent footing, the model runs 11% low (§2), and calibrating to 2025's KEV rate alone (0.671/day) rather
+than the pooled 2022-onward rate (0.826/day) would lower the level by 19%, while calibrating to the last ninety
+days (1.23/day) would raise it by 49%, since the level scales in proportion to the calibrated influx. The
+rankings survive all three. Finally, the model counts vulnerabilities rather than compromised systems, so one
+flaw exploited on a million hosts counts the same as one exploited once. That understates the scenario cheaper
+automated exploitation makes most likely. Stratifying by exposure class and
 adding a layer of compromised systems are the extensions most likely to change these conclusions (Future work).
 
 ## Contents of this repository
