@@ -104,56 +104,62 @@ def elasticity(e, kw):
     return (e.fixed_point(**{kw: 1.01})["E"] - e.fixed_point(**{kw: 0.99})["E"]) / (0.02 * base)
 
 
-rows = {}
-for snap in SNAPSHOTS:
+
+def main():
+    rows = {}
+    for snap in SNAPSHOTS:
+        for mode in MODES:
+            ns = run(snap, mode)
+            out = {}
+            for e in ns["ECOS"]:
+                fp, st = e.fixed_point(), ns["TRANSIENT"][e.label]["state"]
+                lo, hi = ns["ANCHOR_BRACKET"][e.label]
+                I_now, pc_now = realized_today(e, st)
+                out[e.label] = dict(
+                    gamma=e.gamma, gamma_cal=e.gamma_cal or e.gamma, b_x=e.hazards[2], C=e.C,
+                    target=fp["E"], today=st["E"], anchor=ns["ANCHOR"][e.label], lo=lo, hi=hi,
+                    ratio=st["E"] / ns["ANCHOR"][e.label], inside=lo <= st["E"] <= hi,
+                    pc_eq=fp["supply"] / e.C, pc_now=pc_now, I_eq=fp["influx"], I_now=I_now,
+                    el_gamma=elasticity(e, "gmult"), el_C=elasticity(e, "cmult"),
+                    levers=levers(ns, e))
+            out["kev91"] = kev_rate_last(snap)
+            out["kev_pooled"] = ns["MEAS"]["kev_influx_per_day"]
+            rows[(snap, mode)] = out
+
+    G, S = "global ecosystem", "Microsoft SharePoint"
+
+    print("1. today's state against the corrected KEV anchor")
+    print(f"{'snapshot':<11}{'mode':<10}{'gamma':>7}{'g_cal':>7}{'today':>7}{'anchor [bracket]':>21}"
+          f"{'ratio':>7}{'inside':>8}{'target':>8}{'today/tgt':>10}   SharePoint today/anchor")
+    for (snap, mode), o in rows.items():
+        g, s = o[G], o[S]
+        print(f"{snap:<11}{mode:<10}{g['gamma']:>7.1f}{g['gamma_cal']:>7.1f}{g['today']:>7.0f}"
+              f"{g['anchor']:>8.0f} [{g['lo']:>4.0f}, {g['hi']:>4.0f}]{g['ratio']:>7.2f}"
+              f"{'yes' if g['inside'] else 'NO':>8}{g['target']:>8,.0f}{g['today'] / g['target']:>10.0%}"
+              f"   {s['today']:.1f} / {s['anchor']:.1f} = {s['ratio']:.2f} {'in' if s['inside'] else 'OUT'}")
+
+    print("   KEV additions per day, last 91 days: " + "  ".join(
+        f"{s} {rows[(s, 'trailing')]['kev91']:.3f}" for s in SNAPSHOTS))
+    print("\n2. snapshot-to-snapshot movement, global (08-14 -> 11-16)")
     for mode in MODES:
-        ns = run(snap, mode)
-        out = {}
-        for e in ns["ECOS"]:
-            fp, st = e.fixed_point(), ns["TRANSIENT"][e.label]["state"]
-            lo, hi = ns["ANCHOR_BRACKET"][e.label]
-            I_now, pc_now = realized_today(e, st)
-            out[e.label] = dict(
-                gamma=e.gamma, gamma_cal=e.gamma_cal or e.gamma, b_x=e.hazards[2], C=e.C,
-                target=fp["E"], today=st["E"], anchor=ns["ANCHOR"][e.label], lo=lo, hi=hi,
-                ratio=st["E"] / ns["ANCHOR"][e.label], inside=lo <= st["E"] <= hi,
-                pc_eq=fp["supply"] / e.C, pc_now=pc_now, I_eq=fp["influx"], I_now=I_now,
-                el_gamma=elasticity(e, "gmult"), el_C=elasticity(e, "cmult"),
-                levers=levers(ns, e))
-        out["kev91"] = kev_rate_last(snap)
-        out["kev_pooled"] = ns["MEAS"]["kev_influx_per_day"]
-        rows[(snap, mode)] = out
+        seq = [rows[(s, mode)][G] for s in SNAPSHOTS]
+        for key, fmt in (("b_x", "{:.3e}"), ("today", "{:,.0f}"), ("ratio", "{:.2f}"), ("target", "{:,.0f}")):
+            vals = [x[key] for x in seq]
+            steps = [pct(b, a) for a, b in zip(vals, vals[1:])]
+            print(f"   {mode:<9}{key:<7}" + "  ".join(fmt.format(v) for v in vals)
+                  + f"    steps % " + " ".join(f"{s:+.1f}" for s in steps))
 
-G, S = "global ecosystem", "Microsoft SharePoint"
+    print("\n3. attacker-side responses and the lever ranking, 11-16")
+    for mode in MODES:
+        g = rows[("2026-11-16", mode)][G]
+        print(f"   {mode:<9} P/C at equilibrium {g['pc_eq']:.2f}, today {g['pc_now']:.2f}   "
+              f"elasticity to gamma {g['el_gamma']:+.2f}, to C {g['el_C']:+.2f}")
+        print(f"   {'':<9} realized conversion: equilibrium {g['I_eq']:.3f}/d, today {g['I_now']:.3f}/d   "
+              f"(KEV pooled {rows[('2026-11-16', mode)]['kev_pooled']:.3f}/d, last 91 days "
+              f"{rows[('2026-11-16', mode)]['kev91']:.3f}/d)")
+        ranked = sorted(g["levers"].items(), key=lambda kv: kv[1])
+        print("   " + " " * 9 + "  ".join(f"{k} {v:+.1f}%" for k, v in ranked))
 
-print("1. today's state against the corrected KEV anchor")
-print(f"{'snapshot':<11}{'mode':<10}{'gamma':>7}{'g_cal':>7}{'today':>7}{'anchor [bracket]':>21}"
-      f"{'ratio':>7}{'inside':>8}{'target':>8}{'today/tgt':>10}   SharePoint today/anchor")
-for (snap, mode), o in rows.items():
-    g, s = o[G], o[S]
-    print(f"{snap:<11}{mode:<10}{g['gamma']:>7.1f}{g['gamma_cal']:>7.1f}{g['today']:>7.0f}"
-          f"{g['anchor']:>8.0f} [{g['lo']:>4.0f}, {g['hi']:>4.0f}]{g['ratio']:>7.2f}"
-          f"{'yes' if g['inside'] else 'NO':>8}{g['target']:>8,.0f}{g['today'] / g['target']:>10.0%}"
-          f"   {s['today']:.1f} / {s['anchor']:.1f} = {s['ratio']:.2f} {'in' if s['inside'] else 'OUT'}")
 
-print("   KEV additions per day, last 91 days: " + "  ".join(
-    f"{s} {rows[(s, 'trailing')]['kev91']:.3f}" for s in SNAPSHOTS))
-print("\n2. snapshot-to-snapshot movement, global (08-14 -> 11-16)")
-for mode in MODES:
-    seq = [rows[(s, mode)][G] for s in SNAPSHOTS]
-    for key, fmt in (("b_x", "{:.3e}"), ("today", "{:,.0f}"), ("ratio", "{:.2f}"), ("target", "{:,.0f}")):
-        vals = [x[key] for x in seq]
-        steps = [pct(b, a) for a, b in zip(vals, vals[1:])]
-        print(f"   {mode:<9}{key:<7}" + "  ".join(fmt.format(v) for v in vals)
-              + f"    steps % " + " ".join(f"{s:+.1f}" for s in steps))
-
-print("\n3. attacker-side responses and the lever ranking, 11-16")
-for mode in MODES:
-    g = rows[("2026-11-16", mode)][G]
-    print(f"   {mode:<9} P/C at equilibrium {g['pc_eq']:.2f}, today {g['pc_now']:.2f}   "
-          f"elasticity to gamma {g['el_gamma']:+.2f}, to C {g['el_C']:+.2f}")
-    print(f"   {'':<9} realized conversion: equilibrium {g['I_eq']:.3f}/d, today {g['I_now']:.3f}/d   "
-          f"(KEV pooled {rows[('2026-11-16', mode)]['kev_pooled']:.3f}/d, last 91 days "
-          f"{rows[('2026-11-16', mode)]['kev91']:.3f}/d)")
-    ranked = sorted(g["levers"].items(), key=lambda kv: kv[1])
-    print("   " + " " * 9 + "  ".join(f"{k} {v:+.1f}%" for k, v in ranked))
+if __name__ == "__main__":
+    main()

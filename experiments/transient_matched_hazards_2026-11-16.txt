@@ -1,0 +1,61 @@
+1. today's state against the corrected KEV anchor
+snapshot   calibration            C  today     anchor [bracket]  ratio  inside  target today/tgt   SharePoint today/anchor
+2026-08-14 trailing (main)    1.205    665     596 [ 562,  734]   1.12     yes   1,188       56%   11.4 / 8.8 = 1.29
+2026-08-14 transient 2022+    1.530    982     596 [ 562,  734]   1.65      NO   1,643       60%   14.1 / 8.8 = 1.60
+2026-08-14 transient 2023+    1.098    705     596 [ 562,  734]   1.18     yes   1,178       60%   14.1 / 8.8 = 1.60
+2026-08-14 transient 2024+    1.103    708     596 [ 562,  734]   1.19     yes   1,184       60%   14.1 / 8.8 = 1.60
+2026-08-27 trailing (main)    1.210    647     602 [ 568,  743]   1.08     yes   1,193       54%   11.9 / 9.6 = 1.24
+2026-08-27 transient 2022+    1.561    985     602 [ 568,  743]   1.64      NO   1,686       58%   14.8 / 9.6 = 1.55
+2026-08-27 transient 2023+    1.125    710     602 [ 568,  743]   1.18     yes   1,215       58%   14.8 / 9.6 = 1.55
+2026-08-27 transient 2024+    1.130    714     602 [ 568,  743]   1.19     yes   1,221       58%   14.8 / 9.6 = 1.55
+2026-09-20 trailing (main)    1.223    629     621 [ 588,  762]   1.01     yes   1,206       52%   11.6 / 9.2 = 1.27
+2026-09-20 transient 2022+    1.620    996     621 [ 588,  762]   1.60      NO   1,758       57%   14.8 / 9.2 = 1.62
+2026-09-20 transient 2023+    1.178    724     621 [ 588,  762]   1.17     yes   1,279       57%   14.8 / 9.2 = 1.62
+2026-09-20 transient 2024+    1.184    728     621 [ 588,  762]   1.17     yes   1,285       57%   14.8 / 9.2 = 1.62
+2026-10-14 trailing (main)    1.228    604     627 [ 596,  770]   0.96     yes   1,211       50%   11.5 / 9.8 = 1.18
+2026-10-14 transient 2022+    1.666   1002     627 [ 596,  770]   1.60      NO   1,826       55%   15.5 / 9.8 = 1.58
+2026-10-14 transient 2023+    1.218    733     627 [ 596,  770]   1.17     yes   1,335       55%   15.5 / 9.8 = 1.58
+2026-10-14 transient 2024+    1.224    736     627 [ 596,  770]   1.17     yes   1,341       55%   15.5 / 9.8 = 1.58
+2026-11-16 trailing (main)    1.239    575     645 [ 616,  787]   0.89      NO   1,221       47%   11.5 / 9.4 = 1.22
+2026-11-16 transient 2022+    1.717   1008     645 [ 616,  787]   1.56      NO   1,909       53%   13.4 / 9.4 = 1.42
+2026-11-16 transient 2023+    1.266    744     645 [ 616,  787]   1.15     yes   1,407       53%   13.4 / 9.4 = 1.42
+2026-11-16 transient 2024+    1.268    745     645 [ 616,  787]   1.15     yes   1,409       53%   13.4 / 9.4 = 1.42
+   noise scale at 11-16: bracket 0.95-1.22 of the anchor (onset proxy); Poisson error of the 1,038 post-launch onsets 3.1%
+
+2. snapshot-to-snapshot movement, global
+   trailing (main)  today  665  647  629  604  575    steps % -2.6 -2.8 -4.0 -4.8
+   trailing (main)  target 1,188  1,193  1,206  1,211  1,221    steps % +0.4 +1.1 +0.4 +0.9
+   trailing (main)  ratio  1.12  1.08  1.01  0.96  0.89    steps % -3.6 -5.8 -5.1 -7.4
+   trailing (main)  C      1.205  1.210  1.223  1.228  1.239    steps % +0.4 +1.1 +0.4 +0.9
+   transient 2022+  today  982  985  996  1,002  1,008    steps % +0.3 +1.0 +0.6 +0.7
+   transient 2022+  target 1,643  1,686  1,758  1,826  1,909    steps % +2.6 +4.3 +3.8 +4.5
+   transient 2022+  ratio  1.65  1.64  1.60  1.60  1.56    steps % -0.7 -2.0 -0.5 -2.1
+   transient 2022+  C      1.530  1.561  1.620  1.666  1.717    steps % +2.0 +3.8 +2.8 +3.1
+   transient 2023+  today  705  710  724  733  744    steps % +0.8 +1.9 +1.2 +1.4
+   transient 2023+  target 1,178  1,215  1,279  1,335  1,407    steps % +3.1 +5.2 +4.4 +5.4
+   transient 2023+  ratio  1.18  1.18  1.17  1.17  1.15    steps % -0.3 -1.1 +0.1 -1.3
+   transient 2023+  C      1.098  1.125  1.178  1.218  1.266    steps % +2.5 +4.7 +3.4 +3.9
+   transient 2024+  today  708  714  728  736  745    steps % +0.8 +1.9 +1.2 +1.2
+   transient 2024+  target 1,184  1,221  1,285  1,341  1,409    steps % +3.1 +5.2 +4.4 +5.0
+   transient 2024+  ratio  1.19  1.19  1.17  1.17  1.15    steps % -0.2 -1.1 +0.1 -1.6
+   transient 2024+  C      1.103  1.130  1.184  1.224  1.268    steps % +2.5 +4.7 +3.4 +3.6
+
+3. attacker-side responses and the lever ranking, 11-16
+   trailing (main)  P/C today 1.32, at the target 2.00   elasticity to gamma +0.33, to C +0.67
+                    lam +30% -22.9%  surface -30% -12.5%  ever-patched +30% -10.5%  retirement +30% -5.3%  patch delay -30% -0.2%  10x discovery +43.0%  3x throughput +79.7%
+   transient 2022+  P/C today 2.00, at the target 3.01   elasticity to gamma +0.25, to C +0.75
+                    lam +30% -22.9%  ever-patched +30% -10.5%  surface -30% -9.6%  retirement +30% -4.0%  patch delay -30% -0.2%  10x discovery +28.9%  3x throughput +99.9%
+   transient 2023+  P/C today 2.00, at the target 3.01   elasticity to gamma +0.25, to C +0.75
+                    lam +30% -22.9%  ever-patched +30% -10.5%  surface -30% -9.6%  retirement +30% -4.0%  patch delay -30% -0.2%  10x discovery +28.9%  3x throughput +100.0%
+   transient 2024+  P/C today 2.00, at the target 3.01   elasticity to gamma +0.25, to C +0.75
+                    lam +30% -22.9%  ever-patched +30% -10.5%  surface -30% -9.6%  retirement +30% -4.0%  patch delay -30% -0.2%  10x discovery +28.9%  3x throughput +100.0%
+
+4. not fitted: the last 91 days, and the onset history by window (11-16)
+   trailing (main)  model conversion over the last 91 days 61 against 115 KEV additions (Poisson error 11); today 0.706/d
+                    observed onsets / model I(t): 2008-2015 0.056/0.115 = 0.48  2016-2020 0.244/0.228 = 1.07  2021-2023 0.516/0.344 = 1.50  2024-2026 0.573/0.557 = 1.03
+   transient 2022+  model conversion over the last 91 days 100 against 115 KEV additions (Poisson error 11); today 1.145/d
+                    observed onsets / model I(t): 2008-2015 0.056/0.230 = 0.24  2016-2020 0.244/0.435 = 0.56  2021-2023 0.516/0.630 = 0.82  2024-2026 0.573/0.943 = 0.61
+   transient 2023+  model conversion over the last 91 days 73 against 115 KEV additions (Poisson error 11); today 0.844/d
+                    observed onsets / model I(t): 2008-2015 0.056/0.170 = 0.33  2016-2020 0.244/0.321 = 0.76  2021-2023 0.516/0.465 = 1.11  2024-2026 0.573/0.695 = 0.82
+   transient 2024+  model conversion over the last 91 days 73 against 115 KEV additions (Poisson error 11); today 0.845/d
+                    observed onsets / model I(t): 2008-2015 0.056/0.170 = 0.33  2016-2020 0.244/0.321 = 0.76  2021-2023 0.516/0.465 = 1.11  2024-2026 0.573/0.696 = 0.82
