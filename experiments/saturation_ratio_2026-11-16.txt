@@ -1,5 +1,5 @@
 snapshot 2026-11-16; anchor bracket 616-787; measured publications per KEV addition 204 (2025) -> 339 (2026), x1.66; KEV additions per day 0.671 -> 0.928 (+38%); KEV additions in the last 91 days 115
-model drive: publication rate 2025 -> 2026 +40% (measured +130%; linear interpolation of annual rates)
+model drive (annual): publication rate 2025 -> 2026 +40% (measured +130%)
 
   P/C calibration           today  target  /anchor   in  P/C tgt  I 25->26  91-day    10x disc  3x thr surf-30 patch+30   onsets/model by window
     1 equilibrium (main)      478   1,221     0.74   no     1.00     +32%       57        +82%    +50%  -17.6%   -10.5%   0.69 1.45 1.93 1.18

@@ -59,11 +59,17 @@ def inputs_for(snap):
     return derived, hist, sp
 
 
-def run(snap, mode):
+def run(snap, mode, drive="annual", saturation=None):
+    """Cell 1 at `snap`. drive "annual" reproduces the saved outputs; "monthly" needs that snapshot's
+    data/trend_series file (2026-09-20 onward)."""
+    src = CELL1.replace('HISTORY_DRIVE = "monthly"', f"HISTORY_DRIVE = {drive!r}", 1)
+    if saturation is not None:
+        assert src.count("SATURATION = 2.0 ") == 1
+        src = src.replace("SATURATION = 2.0 ", f"SATURATION = {float(saturation)!r} ", 1)
     derived, hist, sp = inputs_for(snap)
     ns = {"__DERIVED__": derived, "__HISTORY__": hist, "__SP__": sp, "__MODE__": mode}
     with contextlib.redirect_stdout(io.StringIO()):
-        exec(CELL1, ns)
+        exec(src, ns)
     return ns
 
 

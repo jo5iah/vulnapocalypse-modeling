@@ -1,0 +1,26 @@
+1. annual against monthly drive, P/C = 2
+snapshot    calibration         drive      today  target  /anchor  in bracket
+2026-09-20  equilibrium (main)  annual       629   1,206     1.01         yes
+2026-09-20  equilibrium (main)  monthly      581   1,206     0.94          no
+2026-09-20  transient 2023+     annual       724   1,279     1.17         yes
+2026-09-20  transient 2023+     monthly      726   1,423     1.17         yes
+2026-10-14  equilibrium (main)  annual       604   1,211     0.96         yes
+2026-10-14  equilibrium (main)  monthly      553   1,211     0.88          no
+2026-10-14  transient 2023+     annual       733   1,335     1.17         yes
+2026-10-14  transient 2023+     monthly      735   1,517     1.17         yes
+2026-11-16  equilibrium (main)  annual       575   1,221     0.89          no
+2026-11-16  equilibrium (main)  monthly      521   1,221     0.81          no
+2026-11-16  transient 2023+     annual       744   1,407     1.15         yes
+2026-11-16  transient 2023+     monthly      746   1,634     1.16         yes
+
+2. year-on-year growth at 2026-11-16, monthly drive, transient-matched calibration
+                           2023->2024  2024->2025  2025->2026   2023->2026   pubs per exploit 25->26
+   publications                  +31%        +23%       +130%        +271%
+   KEV additions                  -1%        +32%        +38%         +81%                     x1.66
+   model, P/C = 0.1              +21%        +21%        +54%        +127%                     x1.49
+   model, P/C = 0.5              +19%        +19%        +43%        +102%                     x1.61
+   model, P/C = 1                +17%        +16%        +34%         +82%                     x1.72
+   model, P/C = 2                +14%        +13%        +24%         +59%                     x1.85
+   model, P/C = 3                +11%        +10%        +19%         +46%                     x1.94
+   model, P/C = 5                 +9%         +8%        +13%         +32%                     x2.03
+   model, P/C = 10                +5%         +5%         +7%         +18%                     x2.14

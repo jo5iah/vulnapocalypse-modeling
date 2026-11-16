@@ -12,7 +12,7 @@ Measured evidence that bears on the ratio, all of it noisy:
   * the last 91 days: model conversion against KEV additions, fitted by neither calibration.
 KEV additions are cataloging policy (555 / 187 / 186 for 2022-2024), so none of these is sharp.
 
-    python experiments/saturation_ratio.py          # from the repository root, 2026-11-16 snapshot
+    python experiments/saturation_ratio.py [--drive annual|monthly]   # repository root, 2026-11-16
 """
 import contextlib
 import datetime as dt
@@ -32,14 +32,8 @@ RATIOS = [1.0, 2.0, 3.0, 5.0, 10.0]
 START = dt.date(2023, 1, 1)
 
 
-def run_ratio(r):
-    assert W.CELL1.count("SATURATION = 2.0 ") == 1
-    src = W.CELL1.replace("SATURATION = 2.0 ", f"SATURATION = {r!r} ", 1)
-    derived, hist, sp = W.inputs_for(SNAP)
-    ns = {"__DERIVED__": derived, "__HISTORY__": hist, "__SP__": sp, "__MODE__": "trailing"}
-    with contextlib.redirect_stdout(io.StringIO()):
-        exec(src, ns)
-    return ns
+def run_ratio(r, drive="annual"):
+    return W.run(SNAP, "trailing", drive=drive, saturation=r)
 
 
 def install(ns, e):
@@ -82,7 +76,7 @@ def metrics(ns, e, added):
                 q=integral(ns, d, I, q0, snap), lev=lev, shape=shape)
 
 
-def main():
+def main(drive="annual"):
     added = kev_added(SNAP)
     snap_d = dt.date.fromisoformat(SNAP)
     q_kev = sum(1 for v in added.values() if snap_d - dt.timedelta(days=91) < v <= snap_d)
@@ -96,20 +90,20 @@ def main():
 
     rows = []
     for r in RATIOS:
-        ns = run_ratio(r)
+        ns = run_ratio(r, drive)
         rows.append((r, "equilibrium (main)", metrics(ns, ns["GLOBAL"], added)))
         e = calibrate_transient(ns, ns["GLOBAL"], START, adds)
         install(ns, e)
         rows.append((r, "transient 2023+", metrics(ns, e, added)))
 
-    a = run_ratio(2.0)["ANCHOR_BRACKET"][G]
+    a = run_ratio(2.0, drive)["ANCHOR_BRACKET"][G]
     print(f"snapshot {SNAP}; anchor bracket {a[0]:.0f}-{a[1]:.0f}; measured publications per KEV "
           f"addition {g25 / (k25 / 365):.0f} (2025) -> {g26 / (k26 / hist['2026']['days']):.0f} "
           f"(2026), x{meas:.2f}; KEV additions per day {k25 / 365:.3f} -> "
           f"{k26 / hist['2026']['days']:.3f} ({k26 / hist['2026']['days'] / (k25 / 365) - 1:+.0%}); "
           f"KEV additions in the last 91 days {q_kev}")
-    print(f"model drive: publication rate 2025 -> 2026 {rows[0][2]['g_growth']:+.0%} "
-          f"(measured {g26 / g25 - 1:+.0%}; linear interpolation of annual rates)")
+    print(f"model drive ({drive}): publication rate 2025 -> 2026 {rows[0][2]['g_growth']:+.0%} "
+          f"(measured {g26 / g25 - 1:+.0%})")
     print(f"\n{'P/C':>5} {'calibration':<20}{'today':>7}{'target':>8}{'/anchor':>9}{'in':>5}"
           f"{'P/C tgt':>9}{'I 25->26':>10}{'91-day':>8}   "
           f"{'10x disc':>9}{'3x thr':>8}{'surf-30':>8}{'patch+30':>9}   onsets/model by window")
@@ -122,4 +116,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[sys.argv.index("--drive") + 1] if "--drive" in sys.argv else "annual")
