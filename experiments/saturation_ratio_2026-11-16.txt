@@ -1,0 +1,14 @@
+snapshot 2026-11-16; anchor bracket 616-787; measured publications per KEV addition 204 (2025) -> 339 (2026), x1.66; KEV additions per day 0.671 -> 0.928 (+38%); KEV additions in the last 91 days 115
+model drive: publication rate 2025 -> 2026 +40% (measured +130%; linear interpolation of annual rates)
+
+  P/C calibration           today  target  /anchor   in  P/C tgt  I 25->26  91-day    10x disc  3x thr surf-30 patch+30   onsets/model by window
+    1 equilibrium (main)      478   1,221     0.74   no     1.00     +32%       57        +82%    +50%  -17.6%   -10.5%   0.69 1.45 1.93 1.18
+    1 transient 2023+         717   1,648     1.11  yes     1.51     +27%       80        +56%    +67%  -14.6%   -10.5%   0.42 0.90 1.23 0.81
+    2 equilibrium (main)      575   1,221     0.89   no     2.00     +23%       61        +43%    +80%  -12.5%   -10.5%   0.48 1.07 1.50 1.03
+    2 transient 2023+         744   1,407     1.15  yes     3.01     +18%       73        +29%   +100%   -9.6%   -10.5%   0.33 0.76 1.11 0.82
+    3 equilibrium (main)      645   1,222     1.00  yes     2.99     +18%       64        +29%   +100%   -9.7%   -10.5%   0.38 0.88 1.28 0.95
+    3 transient 2023+         764   1,292     1.19  yes     4.52     +14%       70        +19%   +120%   -7.2%   -10.5%   0.28 0.68 1.04 0.84
+    5 equilibrium (main)      742   1,222     1.15  yes     4.99     +13%       66        +18%   +125%   -6.7%   -10.5%   0.28 0.69 1.06 0.87
+    5 transient 2023+         795   1,180     1.23   no     7.54      +9%       66        +12%   +143%   -4.8%   -10.5%   0.22 0.59 0.97 0.85
+   10 equilibrium (main)      877   1,222     1.36   no     9.98      +8%       69         +9%   +154%   -3.8%   -10.5%   0.18 0.51 0.87 0.79
+   10 transient 2023+         840   1,079     1.30   no    15.08      +5%       62         +6%   +167%   -2.6%   -10.5%   0.17 0.50 0.89 0.86
