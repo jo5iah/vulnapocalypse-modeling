@@ -1,0 +1,119 @@
+[
+ {"cve": "CVE-2026-39808", "vendor": "Fortinet", "product": "FortiSandbox", "added": "2026-07-16",
+  "campaign": "FortiSandbox June 2026 exploitation",
+  "campaign_note": "VulnCheck (June 9) and Defused (June 11) reported exploitation of FortiSandbox flaws; CyberScoop says researchers have not determined how many customers are impacted, and Fortinet's advisory FG-IR-26-100 still showed 'Known Exploited: No' when fetched on 2026-11-16.",
+  "first_exploitation_claim": {"date": "2026-06-09", "source": "VulnCheck (reported by CyberScoop, 2026-06-17)", "url": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/"},
+  "evidence": [
+   {"kind": "attack_volume", "value": 49, "counts_what": "exploitation events over a six-day period against a pair of FortiSandbox defects (in the article's context CVE-2026-39808 and CVE-2026-39813; CVE-2026-25089 is described separately as a third flaw)", "measured_by": "Defused", "measured_on": "", "url": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/", "quote": "the firm observed 49 exploitation events from 11 distinct IPs against the pair of defects", "primary_opened": false},
+   {"kind": "attack_volume", "value": 11, "counts_what": "distinct source IPs behind those 49 exploitation events (the same article also says Defused traced the activity to 13 sources in nine countries)", "measured_by": "Defused", "measured_on": "", "url": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/", "quote": "the firm observed 49 exploitation events from 11 distinct IPs against the pair of defects", "primary_opened": false},
+   {"kind": "other", "value": "Known Exploited: No", "counts_what": "vendor advisory exploitation status field, contradicting the KEV listing", "measured_by": "Fortinet PSIRT (FG-IR-26-100)", "measured_on": "2026-11-16", "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-100", "quote": "Known Exploited: No", "primary_opened": true}
+  ],
+  "searches_run": 1, "verdict": "attack_volume_only"},
+
+ {"cve": "CVE-2026-25089", "vendor": "Fortinet", "product": "FortiSandbox", "added": "2026-07-16",
+  "campaign": "FortiSandbox June 2026 exploitation",
+  "campaign_note": "Defused reported attackers attempting to exploit this flaw alongside CVE-2026-39808/CVE-2026-39813 in June 2026 (search results attribute to Defused the view that the only public exploit was faulty); no event, exposure or victim count specific to this CVE was found, and Fortinet's advisory FG-IR-26-141 showed 'Known Exploited: No' on 2026-11-16.",
+  "first_exploitation_claim": {"date": "2026-06-17", "source": "Defused (reported by CyberScoop; Help Net Security on 2026-06-16 reported a Defused warning of three FortiSandbox flaws being exploited without naming numbers)", "url": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/"},
+  "evidence": [
+   {"kind": "other", "value": "attempted exploitation, no count", "counts_what": "qualitative report of exploitation attempts against CVE-2026-25089", "measured_by": "Defused", "measured_on": "", "url": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/", "quote": "Attackers are also attempting to exploit a third FortiSandox vulnerability, CVE-2026-25089", "primary_opened": false},
+   {"kind": "other", "value": "Known Exploited: No", "counts_what": "vendor advisory exploitation status field, contradicting the KEV listing", "measured_by": "Fortinet PSIRT (FG-IR-26-141)", "measured_on": "2026-11-16", "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-141", "quote": "Known Exploited: No", "primary_opened": true}
+  ],
+  "searches_run": 1, "verdict": "qualitative_only"},
+
+ {"cve": "CVE-2025-68686", "vendor": "Fortinet", "product": "FortiOS", "added": "2026-07-27",
+  "campaign": "",
+  "campaign_note": "Patch bypass for the FortiOS symlink post-exploitation persistence mechanism; the advisory (published 2026-02-10) says it can only be abused after a device was compromised through another vulnerability and showed 'Known Exploited: No' on 2026-11-16; no dedicated search was run (Fortinet group search budget spent on FortiSandbox and FortiMail) and no impact figures were found.",
+  "first_exploitation_claim": {"date": "2026-07-27", "source": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
+  "evidence": [
+   {"kind": "other", "value": "Known Exploited: No", "counts_what": "vendor advisory exploitation status field, contradicting the KEV listing", "measured_by": "Fortinet PSIRT (FG-IR-25-934)", "measured_on": "2026-11-16", "url": "https://fortiguard.fortinet.com/psirt/FG-IR-25-934", "quote": "Known Exploited: No", "primary_opened": true}
+  ],
+  "searches_run": 0, "verdict": "nothing_found"},
+
+ {"cve": "CVE-2025-25249", "vendor": "Fortinet", "product": "Multiple Products", "added": "2026-09-09",
+  "campaign": "",
+  "campaign_note": "Heap overflow in FortiOS/FortiSwitchManager/FortiSASE published 2026-01-13; advisory showed 'Known Exploited: No' on 2026-11-16; no dedicated search was run (Fortinet group search budget spent on FortiSandbox and FortiMail) and no impact figures were found.",
+  "first_exploitation_claim": {"date": "2026-09-09", "source": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
+  "evidence": [
+   {"kind": "other", "value": "Known Exploited: No", "counts_what": "vendor advisory exploitation status field, contradicting the KEV listing", "measured_by": "Fortinet PSIRT (FG-IR-25-084)", "measured_on": "2026-11-16", "url": "https://fortiguard.fortinet.com/psirt/FG-IR-25-084", "quote": "Known Exploited: No", "primary_opened": true}
+  ],
+  "searches_run": 0, "verdict": "nothing_found"},
+
+ {"cve": "CVE-2026-104286", "vendor": "Fortinet", "product": "FortiMail", "added": "2026-10-01",
+  "campaign": "FortiMail zero-day (FG-IR-26-175)",
+  "campaign_note": "Fortinet disclosed the flaw on 2026-10-01 as already exploited in the wild and published two attacker IPs and log indicators; BleepingComputer and Help Net Security both state Fortinet has not disclosed how many systems were compromised, and no Shadowserver or other exposure count was found.",
+  "first_exploitation_claim": {"date": "2026-10-01", "source": "Fortinet PSIRT FG-IR-26-175", "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-175"},
+  "evidence": [
+   {"kind": "other", "value": "exploited in the wild, no count", "counts_what": "vendor confirmation of in-the-wild exploitation (advisory lists two attacker IPs, 79.141.169.187 and 45.129.0.192, as indicators of compromise)", "measured_by": "Fortinet PSIRT", "measured_on": "2026-10-01", "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-175", "quote": "This has been reported to be exploited in the wild, customers are urged to apply the workaround below.", "primary_opened": true},
+   {"kind": "other", "value": "compromise count undisclosed", "counts_what": "trade-press statement that no compromise count exists publicly", "measured_by": "BleepingComputer", "measured_on": "2026-10-01", "url": "https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-fortiMail-flaw-exploited-in-zero-day-attacks/", "quote": "Fortinet has not disclosed when the flaw was first exploited, how many systems were compromised", "primary_opened": true}
+  ],
+  "searches_run": 1, "verdict": "qualitative_only"},
+
+ {"cve": "CVE-2026-60004", "vendor": "Gitea", "product": "Gitea", "added": "2026-08-25",
+  "campaign": "",
+  "campaign_note": "Fixed in Gitea 1.27.1 (2026-07-27); the only publicly described intrusion is one self-hosted instance used for cryptomining (developer's Habr post), while Shadowserver counted 8,393 still-vulnerable IPs two days after the KEV addition.",
+  "first_exploitation_claim": {"date": null, "source": "Developer incident report on Habr (undated in coverage; described by Help Net Security 2026-08-26); earliest dated claim is the CISA KEV addition of 2026-08-25", "url": "https://www.helpnetsecurity.com/2026/08/26/gitea-cve-2026-60004-exploited-in-the-wild/"},
+  "evidence": [
+   {"kind": "exposed", "value": 8393, "counts_what": "IPs running Gitea found vulnerable to CVE-2026-60004 (vulnerable, not merely exposed product)", "measured_by": "Shadowserver", "measured_on": "2026-08-27", "url": "https://bleepingcomputer.com/news/security/over-8-300-gitea-servers-vulnerable-to-code-execution-attacks", "quote": "8393 IPs found vulnerable on 2026-08-27", "primary_opened": false},
+   {"kind": "exposed", "value": "roughly 5,000", "counts_what": "internet-exposed Gitea instances of undetermined patch status (exposed product; earlier Shadowserver figure, superseded by the vulnerable-IP scan)", "measured_by": "Shadowserver (via BleepingComputer, as cited in a Cloud Security Alliance research note)", "measured_on": "", "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-gitea-cve-2026-60004-active-exploitation-2/", "quote": "Endpoint-scanning vendor Shadowserver tracks roughly 5,000 internet-exposed Gitea instances of undetermined patch status", "primary_opened": false},
+   {"kind": "compromised", "value": "1 self-reported instance", "counts_what": "a single self-hosted Gitea server reported by its operator as hijacked for cryptomining; not a measured count", "measured_by": "Anonymous developer on Habr (https://habr.com/ru/articles/1072030/), via Help Net Security", "measured_on": "", "url": "https://www.helpnetsecurity.com/2026/08/26/gitea-cve-2026-60004-exploited-in-the-wild/", "quote": "According to the developer, the active part of the attack took about 11 seconds.", "primary_opened": false}
+  ],
+  "searches_run": 2, "verdict": "exposure_only"},
+
+ {"cve": "CVE-2021-39935", "vendor": "GitLab", "product": "Community and Enterprise Editions", "added": "2026-02-03",
+  "campaign": "GitLab 2021 SSRF flaws added to KEV, February 2026",
+  "campaign_note": "A 2021 CI Lint API SSRF added to KEV on 2026-02-03; coverage does not say what prompted the addition or who observed exploitation, no pre-2026 or 2026 compromise or attack-volume figures were found, and the only number is a Shodan count of exposed GitLab instances that is not specific to vulnerable versions.",
+  "first_exploitation_claim": {"date": "2026-02-03", "source": "CISA KEV", "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-five-year-old-gitlab-flaw-exploited-in-attacks/"},
+  "evidence": [
+   {"kind": "exposed", "value": "over 49,000", "counts_what": "devices with a GitLab fingerprint exposed online (exposed product, not confirmed vulnerable; nearly 27,000 on port 443)", "measured_by": "Shodan (reported by BleepingComputer)", "measured_on": "2026-02-04", "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-five-year-old-gitlab-flaw-exploited-in-attacks/", "quote": "Shodan is currently tracking over 49,000 devices with a GitLab fingerprint exposed online", "primary_opened": false}
+  ],
+  "searches_run": 1, "verdict": "exposure_only"},
+
+ {"cve": "CVE-2021-22175", "vendor": "GitLab", "product": "GitLab", "added": "2026-02-18",
+  "campaign": "GitLab 2021 SSRF flaws added to KEV, February 2026",
+  "campaign_note": "A 2021 webhook SSRF added to KEV on 2026-02-18, two weeks after CVE-2021-39935; no reputable source was found explaining the trigger, and no exposure, compromise or attack-volume figures (pre-2026 or 2026) were found for this CVE.",
+  "first_exploitation_claim": {"date": "2026-02-18", "source": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
+  "evidence": [],
+  "searches_run": 1, "verdict": "nothing_found"},
+
+ {"cve": "CVE-2026-85706", "vendor": "GitLab", "product": "Community Edition and Enterprise Edition", "added": "2026-09-11",
+  "campaign": "GitLab commits API path traversal (September 2026)",
+  "campaign_note": "watchTowr reported in-the-wild probing/exploitation attempts starting about 06:00 UTC on 2026-09-11, one day after GitLab's patch, and CISA listed it the same day; no count of vulnerable instances, attacking IPs or victims was found.",
+  "first_exploitation_claim": {"date": "2026-09-11", "source": "watchTowr (reported by SecurityWeek and The Hacker News)", "url": "https://www.securityweek.com/gitlab-vulnerability-exploited-one-day-after-disclosure/"},
+  "evidence": [
+   {"kind": "attack_volume", "value": "probing since 06:00 UTC 2026-09-11, no count", "counts_what": "start time of observed in-the-wild probes for unpatched GitLab servers; no volume figure given", "measured_by": "watchTowr (via The Hacker News)", "measured_on": "2026-09-11", "url": "https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html", "quote": "since 06:00 UTC on September 11, 2026", "primary_opened": false}
+  ],
+  "searches_run": 1, "verdict": "qualitative_only"},
+
+ {"cve": "CVE-2020-9715", "vendor": "Adobe", "product": "Acrobat", "added": "2026-04-13",
+  "campaign": "",
+  "campaign_note": "A 2020 Acrobat use-after-free (APSB20-48) added to KEV on 2026-04-13; two searches found only catalog mirrors and no report naming a campaign, the trigger for the 2026 addition, or any impact figure from 2020 or 2026 (Adobe's bulletin returned HTTP 403).",
+  "first_exploitation_claim": {"date": "2026-04-13", "source": "CISA KEV", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
+  "evidence": [],
+  "searches_run": 2, "verdict": "nothing_found"},
+
+ {"cve": "CVE-2009-3459", "vendor": "Adobe", "product": "Acrobat and Reader", "added": "2026-05-20",
+  "campaign": "",
+  "campaign_note": "A 2009 Reader/Acrobat heap overflow added to KEV on 2026-05-20; CISA's reference points to the note in Adobe bulletin APSB09-15 (October 2009) about reports of exploitation, so the exploitation evidence predates 2026, and no source was found for what prompted the 2026 addition or for any impact figure.",
+  "first_exploitation_claim": {"date": null, "source": "Adobe security bulletin APSB09-15 (October 2009), per the CISA KEV reference; the archived page could not be fetched, so the exact date and wording are unverified", "url": "https://web.archive.org/web/20120324170253/http://www.adobe.com/support/security/bulletins/apsb09-15.html"},
+  "evidence": [],
+  "searches_run": 1, "verdict": "nothing_found"},
+
+ {"cve": "CVE-2025-48595", "vendor": "Android", "product": "Framework", "added": "2026-06-02",
+  "campaign": "",
+  "campaign_note": "Google's June 2026 Android bulletin flags limited, targeted exploitation; Google has not said who was targeted or how many devices, and no third-party figures were found.",
+  "first_exploitation_claim": {"date": "2026-06-01", "source": "Android Security Bulletin, June 2026", "url": "https://source.android.com/docs/security/bulletin/2026/2026-06-01"},
+  "evidence": [
+   {"kind": "other", "value": "limited, targeted exploitation", "counts_what": "vendor's qualitative characterization of exploitation scope", "measured_by": "Google (Android Security Bulletin)", "measured_on": "2026-06-01", "url": "https://source.android.com/docs/security/bulletin/2026/2026-06-01", "quote": "There are indications that CVE-2025-48595 may be under limited, targeted exploitation.", "primary_opened": true}
+  ],
+  "searches_run": 1, "verdict": "qualitative_only"},
+
+ {"cve": "CVE-2016-3081", "vendor": "Apache", "product": "Struts", "added": "2026-10-08",
+  "campaign": "Integrity Technology Group / Flax Typhoon (joint advisory AA26-281A)",
+  "campaign_note": "Added to KEV with four other old flaws on 2026-10-08 because joint advisory AA26-281A lists it among CVEs successfully exploited by China-linked actors tied to Integrity Technology Group; the advisory names victim sectors in Southeast Asia but gives no victim or device count, and no 2016-era impact figures for this CVE were researched or found.",
+  "first_exploitation_claim": {"date": "2026-10-08", "source": "CISA/FBI/NSA and partners joint advisory AA26-281A (earliest claim found in this pass; exploitation reporting from 2016 was not searched)", "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a"},
+  "evidence": [
+   {"kind": "other", "value": "listed as successfully exploited", "counts_what": "CVE-2016-3081 (Apache Struts, remote code execution) appears in the advisory's Appendix B Table 16 of successfully exploited CVEs", "measured_by": "CISA, FBI, NSA and international partners", "measured_on": "2026-10-08", "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a", "quote": "displays successfully exploited common vulnerabilities and exposures (CVEs)", "primary_opened": true},
+   {"kind": "organizations", "value": "victim sectors named, no count", "counts_what": "types of victim organizations of the campaign's email data theft (campaign-level, not tied to the Struts flaw specifically)", "measured_by": "CISA, FBI, NSA and international partners", "measured_on": "2026-10-08", "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a", "quote": "Observed victims of email data theft included government organizations, law enforcement agencies, healthcare systems, and religious institutions located in Southeast Asia.", "primary_opened": true}
+  ],
+  "searches_run": 2, "verdict": "qualitative_only"}
+]

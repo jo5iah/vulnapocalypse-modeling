@@ -1,0 +1,527 @@
+[
+ {
+  "cve": "CVE-2026-20700",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "added": "2026-02-12",
+  "campaign": "DarkSword iOS exploit chain",
+  "campaign_note": "Google GTIG (2026-03-18) describes DarkSword as a six-vulnerability iOS full chain used since at least November 2025 by multiple commercial surveillance vendors and suspected state actors against targets in Saudi Arabia, Turkey, Malaysia and Ukraine; no victim or device counts are published.",
+  "first_exploitation_claim": {
+   "date": "2026-02-11",
+   "source": "Apple security advisory (iOS 26.3 release notes, dyld entry, credited to Google Threat Analysis Group)",
+   "url": "https://support.apple.com/en-us/126346"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "targeted individuals; no count",
+    "counts_what": "Vendor statement of exploitation scope (qualitative, no number)",
+    "measured_by": "Apple",
+    "measured_on": "2026-02-11",
+    "url": "https://support.apple.com/en-us/126346",
+    "quote": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26.",
+    "primary_opened": true
+   },
+   {
+    "kind": "other",
+    "value": "4 countries",
+    "counts_what": "Countries in which DarkSword targets were observed (not a victim count)",
+    "measured_by": "Google Threat Intelligence Group",
+    "measured_on": "2026-03-18",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain",
+    "quote": "These threat actors have deployed the exploit chain against targets in Saudi Arabia, Turkey, Malaysia, and Ukraine.",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2021-30952",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "added": "2026-03-05",
+  "campaign": "Coruna iOS exploit kit",
+  "campaign_note": "Google GTIG (2026-03-03) describes Coruna as a kit of five full iOS chains and 23 exploits (iOS 13.0 to 17.2.1) seen in 2025 with a surveillance-vendor customer, then in UNC6353 watering holes on Ukrainian websites, then in broad-scale UNC6691 campaigns on fake Chinese finance sites; no victim or device counts are published.",
+  "first_exploitation_claim": {
+   "date": "2026-03-03",
+   "source": "Google Threat Intelligence Group (Coruna report; activity observed from February 2025)",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "many compromised Ukrainian websites; no count",
+    "counts_what": "Websites compromised to host the watering-hole iframe delivering the kit (qualitative, no number)",
+    "measured_by": "Google Threat Intelligence Group",
+    "measured_on": "2026-03-03",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit",
+    "quote": "a website loaded as a hidden iFrame on many compromised Ukrainian websites, ranging from industrial equipment and retail tools to local services and ecommerce websites",
+    "primary_opened": true
+   },
+   {
+    "kind": "other",
+    "value": "a very large set of fake Chinese websites; no count",
+    "counts_what": "Attacker-run scam websites serving the exploit kit (qualitative, no number)",
+    "measured_by": "Google Threat Intelligence Group",
+    "measured_on": "2026-03-03",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit",
+    "quote": "we identified the JavaScript framework on a very large set of fake Chinese websites mostly related to finance, dropping the exact same iOS exploit kit",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2023-41974",
+  "vendor": "Apple",
+  "product": "iOS and iPadOS",
+  "added": "2026-03-05",
+  "campaign": "Coruna iOS exploit kit",
+  "campaign_note": "Google GTIG (2026-03-03) describes Coruna as a kit of five full iOS chains and 23 exploits (iOS 13.0 to 17.2.1) seen in 2025 with a surveillance-vendor customer, then in UNC6353 watering holes on Ukrainian websites, then in broad-scale UNC6691 campaigns on fake Chinese finance sites; no victim or device counts are published.",
+  "first_exploitation_claim": {
+   "date": "2026-03-03",
+   "source": "Google Threat Intelligence Group (Coruna report; activity observed from February 2025)",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "many compromised Ukrainian websites; no count",
+    "counts_what": "Websites compromised to host the watering-hole iframe delivering the kit (qualitative, no number)",
+    "measured_by": "Google Threat Intelligence Group",
+    "measured_on": "2026-03-03",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit",
+    "quote": "a website loaded as a hidden iFrame on many compromised Ukrainian websites, ranging from industrial equipment and retail tools to local services and ecommerce websites",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2023-43000",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "added": "2026-03-05",
+  "campaign": "Coruna iOS exploit kit",
+  "campaign_note": "Google GTIG (2026-03-03) describes Coruna as a kit of five full iOS chains and 23 exploits (iOS 13.0 to 17.2.1) seen in 2025 with a surveillance-vendor customer, then in UNC6353 watering holes on Ukrainian websites, then in broad-scale UNC6691 campaigns on fake Chinese finance sites; no victim or device counts are published.",
+  "first_exploitation_claim": {
+   "date": "2026-03-03",
+   "source": "Google Threat Intelligence Group (Coruna report; this WebKit RCE was collected from the UNC6353 Ukrainian watering-hole server in 2025)",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "many compromised Ukrainian websites; no count",
+    "counts_what": "Websites compromised to host the watering-hole iframe delivering the kit (qualitative, no number)",
+    "measured_by": "Google Threat Intelligence Group",
+    "measured_on": "2026-03-03",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit",
+    "quote": "a website loaded as a hidden iFrame on many compromised Ukrainian websites, ranging from industrial equipment and retail tools to local services and ecommerce websites",
+    "primary_opened": true
+   },
+   {
+    "kind": "other",
+    "value": "collected in the wild",
+    "counts_what": "Confirmation this CVE's exploit was served by the watering-hole server (no number)",
+    "measured_by": "Google Threat Intelligence Group",
+    "measured_on": "2026-03-03",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit",
+    "quote": "We collected WebKit RCEs, which included CVE-2024-23222, CVE-2022-48503, and CVE-2023-43000, before the server was shut down.",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2025-31277",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "added": "2026-03-20",
+  "campaign": "DarkSword iOS exploit chain",
+  "campaign_note": "Google GTIG (2026-03-18) describes DarkSword as a six-vulnerability iOS full chain used since at least November 2025 by multiple commercial surveillance vendors and suspected state actors against targets in Saudi Arabia, Turkey, Malaysia and Ukraine; no victim or device counts are published.",
+  "first_exploitation_claim": {
+   "date": "2026-03-18",
+   "source": "Google Threat Intelligence Group (DarkSword report; activity observed from November 2025)",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "4 countries",
+    "counts_what": "Countries in which DarkSword targets were observed (not a victim count)",
+    "measured_by": "Google Threat Intelligence Group",
+    "measured_on": "2026-03-18",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain",
+    "quote": "These threat actors have deployed the exploit chain against targets in Saudi Arabia, Turkey, Malaysia, and Ukraine.",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2025-43510",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "added": "2026-03-20",
+  "campaign": "DarkSword iOS exploit chain",
+  "campaign_note": "Google GTIG (2026-03-18) describes DarkSword as a six-vulnerability iOS full chain used since at least November 2025 by multiple commercial surveillance vendors and suspected state actors against targets in Saudi Arabia, Turkey, Malaysia and Ukraine; no victim or device counts are published.",
+  "first_exploitation_claim": {
+   "date": "2026-03-18",
+   "source": "Google Threat Intelligence Group (DarkSword report; activity observed from November 2025)",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "4 countries",
+    "counts_what": "Countries in which DarkSword targets were observed (not a victim count)",
+    "measured_by": "Google Threat Intelligence Group",
+    "measured_on": "2026-03-18",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain",
+    "quote": "These threat actors have deployed the exploit chain against targets in Saudi Arabia, Turkey, Malaysia, and Ukraine.",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2025-43520",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "added": "2026-03-20",
+  "campaign": "DarkSword iOS exploit chain",
+  "campaign_note": "Google GTIG (2026-03-18) describes DarkSword as a six-vulnerability iOS full chain used since at least November 2025 by multiple commercial surveillance vendors and suspected state actors against targets in Saudi Arabia, Turkey, Malaysia and Ukraine; no victim or device counts are published.",
+  "first_exploitation_claim": {
+   "date": "2026-03-18",
+   "source": "Google Threat Intelligence Group (DarkSword report; activity observed from November 2025)",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "4 countries",
+    "counts_what": "Countries in which DarkSword targets were observed (not a victim count)",
+    "measured_by": "Google Threat Intelligence Group",
+    "measured_on": "2026-03-18",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain",
+    "quote": "These threat actors have deployed the exploit chain against targets in Saudi Arabia, Turkey, Malaysia, and Ukraine.",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-65400",
+  "vendor": "Apple",
+  "product": "macOS",
+  "added": "2026-08-18",
+  "campaign": "macOS Screen Sharing cryptominer exploitation",
+  "campaign_note": "After Apple's 2026-08-06 patch, NCSC-NL reported abuse on multiple internet-exposed Macs (TCP/5900) resulting in root access and a Monero miner, and Microsoft reported exploitation on a limited number of devices; no compromise count is published.",
+  "first_exploitation_claim": {
+   "date": "2026-08-14",
+   "source": "NCSC-NL advisory update, as reported by BleepingComputer (the NCSC-NL update's own date was not shown; Apple's advisory carries no exploitation statement)",
+   "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-macos-screen-sharing-flaw-to-deploy-monero-miner/"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": "around 40k",
+    "counts_what": "Internet-reachable hosts with Screen Sharing open (exposed product, not confirmed vulnerable); single researcher scan",
+    "measured_by": "Independent researcher @osxreverser, quoted by The Hacker News",
+    "measured_on": "",
+    "url": "https://thehackernews.com/2026/08/apple-macos-screen-sharing-flaw.html",
+    "quote": "My last scan shown around 40k open screen sharing hosts on the internet, almost half in the U.S.",
+    "primary_opened": false
+   },
+   {
+    "kind": "compromised",
+    "value": "multiple systems; no count",
+    "counts_what": "Macs with port 5900 internet-exposed on which abuse was observed, with root access and a Monero miner installed (qualitative)",
+    "measured_by": "NCSC-NL (from a notification it received), quoted by BleepingComputer",
+    "measured_on": "2026-08-14",
+    "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-macos-screen-sharing-flaw-to-deploy-monero-miner/",
+    "quote": "has received a notification indicating that active abuse of this vulnerability has been observed on multiple systems",
+    "primary_opened": false
+   },
+   {
+    "kind": "compromised",
+    "value": "limited number of macOS devices; no count",
+    "counts_what": "Devices on which Microsoft observed active exploitation (qualitative)",
+    "measured_by": "Microsoft (X post), quoted by The Hacker News",
+    "measured_on": "2026-08-18",
+    "url": "https://thehackernews.com/2026/08/apple-macos-screen-sharing-flaw.html",
+    "quote": "limited number of macOS devices",
+    "primary_opened": false
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-86950",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "added": "2026-09-29",
+  "campaign": "",
+  "campaign_note": "Apple patched this CoreGraphics zero-day on 2026-09-28, crediting Meta Product Security and stating it may have been exploited against specific targeted individuals; no delivery vector, actor or victim count is public.",
+  "first_exploitation_claim": {
+   "date": "2026-09-28",
+   "source": "Apple security advisory (CoreGraphics entry, credited to Meta Product Security)",
+   "url": "https://support.apple.com/en-us/149226"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "targeted individuals; no count",
+    "counts_what": "Vendor statement of exploitation scope (qualitative, no number)",
+    "measured_by": "Apple",
+    "measured_on": "2026-09-28",
+    "url": "https://support.apple.com/en-us/149226",
+    "quote": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 27.",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-33634",
+  "vendor": "Aquasecurity",
+  "product": "Trivy",
+  "added": "2026-03-26",
+  "campaign": "TeamPCP Trivy supply-chain compromise",
+  "campaign_note": "On 2026-03-19 an actor tracked as TeamPCP used compromised credentials to publish a malicious Trivy v0.69.4 and force-push credential-stealing code to trivy-action and setup-trivy tags, with follow-on compromises of Checkmarx KICS and LiteLLM; Mandiant's victim count is for the threat actor's campaign as a whole, not Trivy alone.",
+  "first_exploitation_claim": {
+   "date": "2026-03-19",
+   "source": "Aqua Security / public reporting of the compromise on the day it occurred, per Microsoft Security blog (2026-03-24); Aqua's advisory GHSA-69fq-xp46-6x23 was published 2026-03-21",
+   "url": "https://www.microsoft.com/en-us/security/blog/2026/03/24/detecting-investigating-defending-against-trivy-supply-chain-compromise/"
+  },
+  "evidence": [
+   {
+    "kind": "organizations",
+    "value": 1000,
+    "counts_what": "Impacted SaaS environments dealing with this threat actor (lower bound, 'over 1,000'; campaign-wide TeamPCP figure following the Trivy compromise, not Trivy-only); spoken statement at a Google event at RSA Conference",
+    "measured_by": "Mandiant Consulting (Charles Carmakal, CTO), reported by The Register",
+    "measured_on": "2026-03-24",
+    "url": "https://www.theregister.com/2026/03/24/1k_cloud_environments_infected_following/",
+    "quote": "We know of over 1,000 impacted SaaS environments right now that are actively dealing with this particular threat actor",
+    "primary_opened": false
+   },
+   {
+    "kind": "exposed",
+    "value": 10000,
+    "counts_what": "GitHub workflow files referencing aquasecurity/trivy-action (lower bound, 'over 10,000'; exposed users of the product, not confirmed to have run the malicious tags)",
+    "measured_by": "Socket (Philipp Burckhardt), quoted by The Register",
+    "measured_on": "2026-03-20",
+    "url": "https://www.theregister.com/2026/03/24/1k_cloud_environments_infected_following/",
+    "quote": "With over 10,000 workflow files on GitHub referencing this action, the potential blast radius is significant",
+    "primary_opened": false
+   },
+   {
+    "kind": "other",
+    "value": "76 of 77",
+    "counts_what": "Version tags in aquasecurity/trivy-action force-pushed to credential-stealing commits (plus all 7 setup-trivy tags)",
+    "measured_by": "Aqua Security (GitHub advisory GHSA-69fq-xp46-6x23)",
+    "measured_on": "2026-03-21",
+    "url": "https://github.com/advisories/GHSA-69fq-xp46-6x23",
+    "quote": "The attacker force-pushed 76 of 77 version tags to malicious commits that injected an infostealer into `entrypoint.sh`.",
+    "primary_opened": true
+   },
+   {
+    "kind": "other",
+    "value": "~12 hours",
+    "counts_what": "Exposure window during which malicious trivy-action tags were live (2026-03-19 ~17:43 UTC to 2026-03-20 ~05:40 UTC); other components ~3, ~4 and ~10 hours. A malicious-distribution window, not service downtime",
+    "measured_by": "Aqua Security (GitHub advisory GHSA-69fq-xp46-6x23)",
+    "measured_on": "2026-03-21",
+    "url": "https://github.com/advisories/GHSA-69fq-xp46-6x23",
+    "quote": "trivy-action | 2026-03-19 ~17:43 ... | 2026-03-20 ~05:40 | ~12 hours",
+    "primary_opened": true
+   },
+   {
+    "kind": "other",
+    "value": 44,
+    "counts_what": "Aqua Security internal GitHub repositories renamed/defaced and exposed by the attackers",
+    "measured_by": "Paul McCarty (researcher), reported by The Register",
+    "measured_on": "2026-03-22",
+    "url": "https://www.theregister.com/2026/03/24/1k_cloud_environments_infected_following/",
+    "quote": "renaming all 44 repositories and exposing internal source code, CI/CD configs, and knowledge bases",
+    "primary_opened": false
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "quantified_compromise"
+ },
+ {
+  "cve": "CVE-2026-7473",
+  "vendor": "Arista",
+  "product": "Extensible Operating System",
+  "added": "2026-06-09",
+  "campaign": "",
+  "campaign_note": "Arista advisory 0137 (dated 2026-05-05, reported by Comcast researchers) states the EOS tunnel-decapsulation issue has been reported as exploited in the wild, with no detail on who observed it or how many networks were affected.",
+  "first_exploitation_claim": {
+   "date": null,
+   "source": "Arista Security Advisory 0137 (initial release 2026-05-05, last revised 2026-08-10; the revision in which the exploitation statement first appeared was not determinable from the page)",
+   "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24005-security-advisory-0137"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "exploited in the wild; no count",
+    "counts_what": "Vendor statement of exploitation (qualitative, no number)",
+    "measured_by": "Arista",
+    "measured_on": "",
+    "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24005-security-advisory-0137",
+    "quote": "This issue has been reported as being exploited in the wild.",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 0,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-16812",
+  "vendor": "Arista",
+  "product": "VeloCloud Orchestrator",
+  "added": "2026-07-27",
+  "campaign": "",
+  "campaign_note": "Arista advisory 0144 (2026-07-27) says the VeloCloud Orchestrator command injection was discovered externally and is actively exploited, listing three attacking IPs; Arista has not said when attacks began or how many orchestrators were hit, and no source links it to the September CVE-2026-93952 activity.",
+  "first_exploitation_claim": {
+   "date": "2026-07-27",
+   "source": "Arista Security Advisory 0144",
+   "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24364-security-advisory-0144"
+  },
+  "evidence": [
+   {
+    "kind": "attack_volume",
+    "value": 3,
+    "counts_what": "IP addresses observed conducting the attacks (8.19.75.217, 206.72.242.124, 206.72.242.162); not a compromise count",
+    "measured_by": "Arista",
+    "measured_on": "2026-07-27",
+    "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24364-security-advisory-0144",
+    "quote": "The following IP addresses have been observed conducting the attacks.",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "attack_volume_only"
+ },
+ {
+  "cve": "CVE-2026-93952",
+  "vendor": "Arista",
+  "product": "VeloCloud Orchestrator",
+  "added": "2026-09-22",
+  "campaign": "",
+  "campaign_note": "Arista advisory 0183 (2026-09-22) says the flaw was discovered externally and is actively exploited, and publishes implant file paths, one MD5 hash and two source IPs as indicators; no count of compromised orchestrators is published and no source links it to the July CVE-2026-16812 activity.",
+  "first_exploitation_claim": {
+   "date": "2026-09-22",
+   "source": "Arista Security Advisory 0183",
+   "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24765-security-advisory-0183"
+  },
+  "evidence": [
+   {
+    "kind": "attack_volume",
+    "value": 2,
+    "counts_what": "IP addresses listed as indicators of compromise ('Connections from the following IP addresses': 142.93.149.77, 104.248.126.159); not a compromise count",
+    "measured_by": "Arista",
+    "measured_on": "2026-09-22",
+    "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24765-security-advisory-0183",
+    "quote": "Connections from the following IP addresses",
+    "primary_opened": true
+   },
+   {
+    "kind": "other",
+    "value": "actively exploited; no count",
+    "counts_what": "Vendor statement of exploitation (qualitative, no number)",
+    "measured_by": "Arista",
+    "measured_on": "2026-09-22",
+    "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24765-security-advisory-0183",
+    "quote": "This issue was discovered externally and is known to be actively exploited.",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "attack_volume_only"
+ },
+ {
+  "cve": "CVE-2026-21589",
+  "vendor": "Atlassian",
+  "product": "Multiple Products",
+  "added": "2026-10-15",
+  "campaign": "",
+  "campaign_note": "Atlassian published the advisory on 2026-10-05, watchTowr published technical details and a PoC on 2026-10-06, and Previdian honeypots saw exploitation attempts within two hours; watchTowr reported fingerprinting and config-file sweeps with no post-compromise activity observed.",
+  "first_exploitation_claim": {
+   "date": "2026-10-06",
+   "source": "Previdian honeypot telemetry (Help Net Security says attempts began 'late Tuesday', i.e. 2026-10-06; BleepingComputer's 2026-10-07 article says 'earlier today')",
+   "url": "https://www.helpnetsecurity.com/2026/10/07/exploitation-critical-atlassian-flaw-cve-2026-21589/"
+  },
+  "evidence": [
+   {
+    "kind": "attack_volume",
+    "value": 15,
+    "counts_what": "Exploitation attempts against Previdian's honeypot network, from three unique IP addresses; measurement window not stated; not a compromise count",
+    "measured_by": "Previdian, reported by The Hacker News",
+    "measured_on": "2026-10-07",
+    "url": "https://thehackernews.com/2026/10/atlassian-data-center-flaw-draws.html",
+    "quote": "a total of 15 exploitation attempts have been detected from three unique IP addresses located in Japan and the U.S.",
+    "primary_opened": false
+   },
+   {
+    "kind": "attack_volume",
+    "value": 3,
+    "counts_what": "Attacking IP addresses seen by Previdian honeypots (38.60.157.86, 146.70.187.234, 159.26.119.225)",
+    "measured_by": "Previdian, reported by BleepingComputer",
+    "measured_on": "2026-10-07",
+    "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-atlassian-flaw-after-public-poc-release/",
+    "quote": "observed attempts from these three IP addresses: 38.60.157[.]86, 146.70.187[.]234, and 159.26.119[.]225",
+    "primary_opened": false
+   },
+   {
+    "kind": "other",
+    "value": "no post-compromise activity observed",
+    "counts_what": "Character of observed exploitation (qualitative)",
+    "measured_by": "watchTowr (statement to The Hacker News)",
+    "measured_on": "",
+    "url": "https://thehackernews.com/2026/10/atlassian-data-center-flaw-draws.html",
+    "quote": "Most attempts at exploitation so far have focused on fingerprinting the existence of an affected product",
+    "primary_opened": false
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "attack_volume_only"
+ },
+ {
+  "cve": "CVE-2026-56291",
+  "vendor": "Balbooa",
+  "product": "Forms",
+  "added": "2026-07-10",
+  "campaign": "",
+  "campaign_note": "mySites.guru found the Balbooa Forms (Joomla) upload flaw being exploited as a zero-day on 2026-07-08 via a customer's hosting abuse report; Balbooa shipped 2.4.1 on 2026-07-09 and no count of compromised sites has been published.",
+  "first_exploitation_claim": {
+   "date": "2026-07-08",
+   "source": "mySites.guru blog post",
+   "url": "https://mysites.guru/blog/balbooa-forms-unauthenticated-file-upload-flaw/"
+  },
+  "evidence": [
+   {
+    "kind": "compromised",
+    "value": "1 customer site (single self-report); no wider count",
+    "counts_what": "Live attack on one mySites.guru customer that led to discovery (qualitative)",
+    "measured_by": "mySites.guru, reported by The Hacker News",
+    "measured_on": "2026-07-08",
+    "url": "https://thehackernews.com/2026/07/icagenda-and-balbooa-forms-joomla-flaws.html",
+    "quote": "The vulnerability was discovered by mySites.guru on July 8, 2026, following a live attack on one of its customers.",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ }
+]

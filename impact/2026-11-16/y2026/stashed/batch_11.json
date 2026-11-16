@@ -1,0 +1,184 @@
+[
+ {
+  "cve": "CVE-2025-60710",
+  "added": "2026-04-13",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Link Following Vulnerability",
+  "ransomware": "Known",
+  "desc": "Microsoft Windows contains a link following vulnerability that allows for privilege escalation",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-60710"
+  ]
+ },
+ {
+  "cve": "CVE-2009-0238",
+  "added": "2026-04-14",
+  "vendor": "Microsoft",
+  "product": "Office",
+  "name": "Microsoft Office Remote Code Execution",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Office Excel contains a remote code execution vulnerability that could allow an attacker to take complete control of an affected system if a user opens a specially crafted Excel file that includes a malformed object.",
+  "refs": [
+   "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2009/ms09-009"
+  ]
+ },
+ {
+  "cve": "CVE-2026-32201",
+  "added": "2026-04-14",
+  "vendor": "Microsoft",
+  "product": "SharePoint Server",
+  "name": "Microsoft SharePoint Server Improper Input Validation Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft SharePoint Server contains an improper input validation vulnerability that allows an unauthorized attacker to perform spoofing over a network.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-32201"
+  ]
+ },
+ {
+  "cve": "CVE-2026-33825",
+  "added": "2026-04-22",
+  "vendor": "Microsoft",
+  "product": "Defender",
+  "name": "Microsoft Defender Insufficient Granularity of Access Control Vulnerability",
+  "ransomware": "Known",
+  "desc": "Microsoft Defender contains an insufficient granularity of access control vulnerability that could allow an authorized attacker to escalate privileges locally.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33825"
+  ]
+ },
+ {
+  "cve": "CVE-2026-32202",
+  "added": "2026-04-28",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Protection Mechanism Failure Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Windows Shell contains a protection mechanism failure vulnerability that allows an unauthorized attacker to perform spoofing over a network.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-32202"
+  ]
+ },
+ {
+  "cve": "CVE-2026-42897",
+  "added": "2026-05-15",
+  "vendor": "Microsoft",
+  "product": "Microsoft",
+  "name": "Microsoft Exchange Server Cross-Site Scripting Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Exchange Server contains a cross-site scripting vulnerability during web page generation in Outlook Web Access and when certain interaction conditions are met, arbitrary JavaScript can be executed in the browser context.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-42897",
+   "https://learn.microsoft.com/en-us/exchange/plan-and-deploy/post-installation-tasks/security-best-practices/exchange-emergency-mitigation-service"
+  ]
+ },
+ {
+  "cve": "CVE-2008-4250",
+  "added": "2026-05-20",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Buffer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Windows contains a buffer overflow vulnerability in the Windows Server Service that allows remote attackers to execute arbitrary code via a crafted RPC request that triggers an overflow during path canonicalization.",
+  "refs": [
+   "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2008/ms08-067"
+  ]
+ },
+ {
+  "cve": "CVE-2009-1537",
+  "added": "2026-05-20",
+  "vendor": "Microsoft",
+  "product": "DirectX",
+  "name": "Microsoft DirectX NULL Byte Overwrite Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft DirectX contains a NULL byte overwrite vulnerability in the QuickTime Movie Parser Filter in quartz.dll in DirectShow which could allow remote attackers to execute arbitrary code via a crafted QuickTime media file.",
+  "refs": [
+   "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2009/ms09-028"
+  ]
+ },
+ {
+  "cve": "CVE-2010-0249",
+  "added": "2026-05-20",
+  "vendor": "Microsoft",
+  "product": "Internet Explorer",
+  "name": "Microsoft Internet Explorer Use-After-Free Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Internet Explorer contains an use-after-free vulnerability that could allow remote attackers to execute arbitrary code by accessing a pointer associated with a deleted object. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+  "refs": [
+   "https://learn.microsoft.com/en-us/security-updates/SecurityAdvisories/2010/979352"
+  ]
+ },
+ {
+  "cve": "CVE-2010-0806",
+  "added": "2026-05-20",
+  "vendor": "Microsoft",
+  "product": "Internet Explorer",
+  "name": "Microsoft Internet Explorer Use-After-Free Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Internet Explorer contains an use-after-free vulnerability that could allow remote attackers to execute arbitrary code via vectors involving access to an invalid pointer after the deletion of an object. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+  "refs": [
+   "https://learn.microsoft.com/en-us/security-updates/securityadvisories/2010/981374"
+  ]
+ },
+ {
+  "cve": "CVE-2026-41091",
+  "added": "2026-05-20",
+  "vendor": "Microsoft",
+  "product": "Defender",
+  "name": "Microsoft Defender Link Following Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Defender contains a link following vulnerability that allows an authorized attacker to elevate privileges locally.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-41091"
+  ]
+ },
+ {
+  "cve": "CVE-2026-45498",
+  "added": "2026-05-20",
+  "vendor": "Microsoft",
+  "product": "Defender",
+  "name": "Microsoft Defender Denial of Service Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Defender contains an unspecified vulnerability that allows for denial of service.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-45498"
+  ]
+ },
+ {
+  "cve": "CVE-2026-45659",
+  "added": "2026-07-01",
+  "vendor": "Microsoft",
+  "product": "SharePoint Server",
+  "name": "Microsoft SharePoint Server Deserialization of Untrusted Data Vulnerability",
+  "ransomware": "Known",
+  "desc": "Microsoft SharePoint Server contains a deserialization of untrusted data vulnerability which allows an authorized attacker to execute code over a network.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45659"
+  ]
+ },
+ {
+  "cve": "CVE-2026-56155",
+  "added": "2026-07-14",
+  "vendor": "Microsoft",
+  "product": "Active Directory Federation Services",
+  "name": "Microsoft Active Directory Federation Services Insufficient Granularity of Access Control Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Active Directory Federation Services contains an insufficient granularity of access control vulnerability that allows an authorized attacker to elevate privileges locally.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-56155",
+   "https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/decommission/adfs-decommission-guide"
+  ]
+ },
+ {
+  "cve": "CVE-2026-56164",
+  "added": "2026-07-14",
+  "vendor": "Microsoft",
+  "product": "SharePoint Server",
+  "name": "Microsoft SharePoint Server Missing Authentication for Critical Function Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft SharePoint contains a missing authentication for critical function vulnerability that allows an unauthorized attacker to elevate privileges over a network.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-56164"
+  ]
+ }
+]

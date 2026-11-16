@@ -1,0 +1,356 @@
+[
+ {
+  "cve": "CVE-2026-111357",
+  "vendor": "Ivanti",
+  "product": "Connect Secure",
+  "campaign_note": "Privilege-escalation link in a three-CVE Ivanti Connect Secure zero-day chain (with CVE-2026-104935 and CVE-2026-118527) used by a threat actor Volexity tracks as UTA0576; Ivanti describes exploitation as limited and no victim or compromised-appliance count has been published.",
+  "first_exploitation_claim": {
+   "date": "2026-10-13",
+   "source": "Volexity blog (chain exploited from 2026-10-03; Defused separately reported signs of CVE-2026-104935 exploitation from 2026-10-01, per BleepingComputer)",
+   "url": "https://www.volexity.com/blog/2026/10/13/a-series-of-unauthenticated-events-chained-exploitation-of-ivanti-connect-secure-zero-days/"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": "over 5,000",
+    "counts_what": "Internet-exposed Ivanti Connect Secure instances (all versions; not a count of vulnerable or compromised devices; article says it is unknown how many are already secured)",
+    "measured_by": "Shadowserver, as reported by BleepingComputer",
+    "measured_on": "2026-11-02 (article date)",
+    "url": "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/",
+    "quote": "Shadowserver now tracks over 5,000 Internet-exposed ICS instances"
+   },
+   {
+    "kind": "exposed",
+    "value": "over 5,500",
+    "counts_what": "Ivanti Connect Secure instances exposed online at initial disclosure of the chain (not a count of vulnerable or compromised devices; may include honeypots)",
+    "measured_by": "Shadowserver, as reported by BleepingComputer",
+    "measured_on": "2026-10-13 (article date)",
+    "url": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-connect-secure-zero-day-exploited-in-attacks/",
+    "quote": "Internet threat watchdog Shadowserver now tracks over 5,500 ICS instances exposed online"
+   },
+   {
+    "kind": "other",
+    "value": "single incident-response case (no count given)",
+    "counts_what": "Volexity's report describes one compromised, fully patched ICS appliance at one of its monitoring customers; it is a case description, not a population count",
+    "measured_by": "Volexity",
+    "measured_on": "2026-10-05 investigation start; activity from 2026-10-03",
+    "url": "https://www.volexity.com/blog/2026/10/13/a-series-of-unauthenticated-events-chained-exploitation-of-ivanti-connect-secure-zero-days/",
+    "quote": "starting on October 3, 2026, UTA0576 repeatedly exploited these vulnerabilities to compromise the ICS VPN appliance"
+   },
+   {
+    "kind": "other",
+    "value": "limited exploitation (unquantified)",
+    "counts_what": "Vendor characterization of exploitation scale at disclosure of the chain",
+    "measured_by": "Ivanti, quoted by BleepingComputer",
+    "measured_on": "2026-10-13",
+    "url": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-connect-secure-zero-day-exploited-in-attacks/",
+    "quote": "At the time of disclosure, Ivanti is aware of limited exploitation in the wild."
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-118527",
+  "vendor": "Ivanti",
+  "product": "Connect Secure",
+  "campaign_note": "File-upload/predictable-identifier link in the same UTA0576 Ivanti Connect Secure chain as CVE-2026-104935 and CVE-2026-111357; the Volexity post as fetched names only the other two CVE IDs, so attribution of this CVE to the chain rests on CISA's KEV text and trade press.",
+  "first_exploitation_claim": {
+   "date": "2026-10-13",
+   "source": "Volexity blog, which says CVE-2026-104935 was chained 'with two other flaws' from 2026-10-03 (as relayed by BleepingComputer); this CVE ID itself first appears as exploited in the 2026-10-30 KEV addition and BleepingComputer 2026-11-02",
+   "url": "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": "over 5,000",
+    "counts_what": "Internet-exposed Ivanti Connect Secure instances (all versions; not a count of vulnerable or compromised devices; article says it is unknown how many are already secured)",
+    "measured_by": "Shadowserver, as reported by BleepingComputer",
+    "measured_on": "2026-11-02 (article date)",
+    "url": "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/",
+    "quote": "Shadowserver now tracks over 5,000 Internet-exposed ICS instances"
+   },
+   {
+    "kind": "other",
+    "value": "since at least October 1 (no count given)",
+    "counts_what": "Duration of zero-day exploitation of the chain; no victim count",
+    "measured_by": "BleepingComputer (citing Defused and Volexity)",
+    "measured_on": "2026-11-02",
+    "url": "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/",
+    "quote": "have been chained in zero-day attacks since at least October 1"
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-46300",
+  "vendor": "Linux",
+  "product": "Kernel",
+  "campaign_note": "'Fragnesia' local privilege escalation (public PoC since 2026-05-13) reported by Dream Security as chained after the PHP2Shell flaws (CVE-2026-109618/-109619) to root 25 servers in four countries, three of them at a US government-affiliated organization; CISA did not confirm those details.",
+  "first_exploitation_claim": {
+   "date": "2026-10-26",
+   "source": "Dream Security report ('Monday report' per BleepingComputer, 2026-10-29); a Qualys ThreatPROTECT post dated 2026-05-15 carries 'Exploited in Attacks' in its headline but was not verified here",
+   "url": "https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers"
+  },
+  "evidence": [
+   {
+    "kind": "compromised",
+    "value": 25,
+    "counts_what": "Servers rooted via the PHP2Shell + Fragnesia chain, across the United States, Japan, Taiwan and South Korea (campaign artifacts observed by Dream Security)",
+    "measured_by": "Dream Security, as reported by BleepingComputer",
+    "measured_on": "2026-10-26 (report date; BleepingComputer article 2026-10-29)",
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/",
+    "quote": "This included artifacts of a campaign that had rooted 25 servers across the United States, Japan, Taiwan, and South Korea."
+   },
+   {
+    "kind": "organizations",
+    "value": "3 servers at 1 US government-affiliated organization (unnamed)",
+    "counts_what": "Servers the attacker focused on inside one US government-affiliated environment; subset of the 25",
+    "measured_by": "Dream Security, as reported by BleepingComputer",
+    "measured_on": "2026-10-26 (report date)",
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/",
+    "quote": "Once rooted, the attacker zeroed in on three specific servers in a US government-affiliated environment."
+   },
+   {
+    "kind": "compromised",
+    "value": 25,
+    "counts_what": "Same campaign as reported by CSO Online; a Securonix commenter characterizes the victims as mostly firewall appliances",
+    "measured_by": "Dream Security, as reported by CSO Online",
+    "measured_on": "2026-10-29 (article date)",
+    "url": "https://www.csoonline.com/article/4242454/php2shell-plus-fragnesia-a-dangerous-new-route-from-web-server-to-root.html",
+    "quote": "to breach 25 servers, including three affiliated with the US government."
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "quantified_compromise"
+ },
+ {
+  "cve": "CVE-2026-124194",
+  "vendor": "Microsoft",
+  "product": "Office",
+  "campaign_note": "Outlook spoofing flaw (NTLMv2 hash disclosure when a user opens a crafted message file) released 2026-11-10 and flagged 'Exploitation Detected' by Microsoft; no third-party reporting or scale figures were found.",
+  "first_exploitation_claim": {
+   "date": "2026-11-10",
+   "source": "Microsoft MSRC Security Update Guide (exploited: Yes; publicly disclosed: No)",
+   "url": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-124194"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "Exploitation Detected (unquantified)",
+    "counts_what": "Vendor exploitability assessment; no victim, target or volume count",
+    "measured_by": "Microsoft MSRC (read via the Security Update Guide API, https://api.msrc.microsoft.com/sug/v2.0/en-US/vulnerability/CVE-2026-124194)",
+    "measured_on": "2026-11-10",
+    "url": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-124194",
+    "quote": "Exploitation Detected"
+   }
+  ],
+  "searches_run": 3,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-123158",
+  "vendor": "OpenBSD",
+  "product": "OpenSSH",
+  "campaign_note": "'SSHole' password-authentication bypass affecting sshd on musl-libc systems without PAM (notably Alpine Linux), fixed in OpenSSH 10.6p2 on 2026-11-05; Previdian honeypots recorded exploitation attempts within nine hours of CVE publication and one successful root login on a honeypot, with no real-world victim or exposure counts published.",
+  "first_exploitation_claim": {
+   "date": "2026-11-06",
+   "source": "Previdian (CEO Ryan Dewhurst), reported by Help Net Security and The Hacker News",
+   "url": "https://www.helpnetsecurity.com/2026/11/06/openssh-sshole-cve-2026-123158-exploitation/"
+  },
+  "evidence": [
+   {
+    "kind": "attack_volume",
+    "value": "8 attempts from 1 IP",
+    "counts_what": "Exploitation attempts against Previdian honeypot sensors, all from one Japan-geolocated IP and one sensor",
+    "measured_by": "Previdian, as reported by Help Net Security",
+    "measured_on": "2026-11-06 (article date)",
+    "url": "https://www.helpnetsecurity.com/2026/11/06/openssh-sshole-cve-2026-123158-exploitation/",
+    "quote": "So far, the company has counted eight attempts, all from that single Japan-based address and all caught by one sensor."
+   },
+   {
+    "kind": "attack_volume",
+    "value": "20 attempts from 13 unique IPs",
+    "counts_what": "Updated count of exploitation attempts and source IPs (nine countries); the article update does not restate who measured it, earlier figures were Previdian telemetry",
+    "measured_by": "The Hacker News update (presumably Previdian telemetry; measurer not named in the update)",
+    "measured_on": "2026-11-08 (article update date)",
+    "url": "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html",
+    "quote": "the number of exploitation attempts has increased to 20 and originated from 13 unique IP addresses"
+   },
+   {
+    "kind": "other",
+    "value": "less than nine hours",
+    "counts_what": "Time from CVE publication to first observed exploitation attempt",
+    "measured_by": "Previdian, as reported by The Hacker News",
+    "measured_on": "2026-11-06 (article date)",
+    "url": "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html",
+    "quote": "observed the first exploitation attempt less than nine hours after the CVE publication"
+   },
+   {
+    "kind": "other",
+    "value": "1 honeypot (not a real victim)",
+    "counts_what": "Successful root access by an attacker on a Previdian honeypot running real Alpine Linux and OpenSSH",
+    "measured_by": "Previdian, as reported by The Hacker News",
+    "measured_on": "2026-11-06 (article date)",
+    "url": "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html",
+    "quote": "confirmed successful root access on a honeypot running Alpine Linux and OpenSSH"
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-111793",
+  "vendor": "Openwave Messaging Limited",
+  "product": "Webtop Media Transcoder",
+  "campaign_note": "CVSS 4.3 file-type-restriction bypass in a carrier webmail component; JVN relays the developer's statement that attacks have been observed, while the vendor's own GitHub advisory says nothing about exploitation and no press or telemetry coverage was found.",
+  "first_exploitation_claim": {
+   "date": "2026-11-09",
+   "source": "JVN (JPCERT/CC and IPA) advisory JVNVU#93403064, relaying the developer",
+   "url": "https://jvn.jp/en/vu/JVNVU93403064/"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "attacks observed (unquantified)",
+    "counts_what": "Developer statement relayed by JVN that exploitation has been observed; no count of systems, organizations or attempts",
+    "measured_by": "Openwave Messaging (developer), via JVN",
+    "measured_on": "2026-11-09",
+    "url": "https://jvn.jp/en/vu/JVNVU93403064/",
+    "quote": "The developer states that attacks exploiting the vulnerability have been observed."
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-109618",
+  "vendor": "PHP Group",
+  "product": "PHP",
+  "campaign_note": "One of the two 'PHP2Shell' unauthenticated RCE flaws patched 2026-10-21; exploit attempts began before the patch and reached millions per Cloudflare, the first working in-the-wild RCE was recorded on a honeypot around 2026-10-24, and Dream Security later reported 25 servers rooted by chaining PHP2Shell with the Fragnesia kernel flaw.",
+  "first_exploitation_claim": {
+   "date": "2026-10-22",
+   "source": "Amazon Threat Intelligence via BleepingComputer: attempts (non-functional exploits, against a honeypot) from 2026-10-17, four days before patches; first confirmed successful in-the-wild RCE was Adel Karimi's honeypot report dated 2026-10-24 (BleepingComputer 2026-10-26)",
+   "url": "https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": "over 34.4 million",
+    "counts_what": "PHP services still running vulnerable versions (both PHP2Shell CVEs)",
+    "measured_by": "Censys, as reported by Security Affairs (cites https://censys.com/advisory/cve-2026-109618-cve-2026-109619/)",
+    "measured_on": "2026-10-23",
+    "url": "https://securityaffairs.com/201538/hacking/php2shell-millions-of-attacks-no-confirmed-successful-exploits-yet.html",
+    "quote": "As of October 23, Censys counts over 34.4 million PHP services still running vulnerable versions."
+   },
+   {
+    "kind": "exposed",
+    "value": "more than 5.1 million hosts; roughly 3.8 million with an attackable open port",
+    "counts_what": "PHP hosts exposed online (VirusTotal estimate; Recorded Future cautions it is not a count of vulnerable systems)",
+    "measured_by": "VirusTotal, as reported by BleepingComputer",
+    "measured_on": "2026-10 (blog date not stated in article; article 2026-10-26)",
+    "url": "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/",
+    "quote": "with more than 5.1 million PHP hosts exposed online and roughly 3.8 million with at least one port open to attacks"
+   },
+   {
+    "kind": "attack_volume",
+    "value": "tens of thousands in 45 minutes; hundreds of thousands within 2 hours; millions by 2026-10-22",
+    "counts_what": "Exploit attempts seen on Cloudflare's network after public disclosure (attempts, not compromises)",
+    "measured_by": "Cloudflare (CEO Matthew Prince post), as reported by Security Affairs",
+    "measured_on": "2026-10-22",
+    "url": "https://securityaffairs.com/201538/hacking/php2shell-millions-of-attacks-no-confirmed-successful-exploits-yet.html",
+    "quote": "That jumped to tens of thousands in the 45 minutes post announcement, hundreds of thousands within 2 hours, and millions now."
+   },
+   {
+    "kind": "compromised",
+    "value": 25,
+    "counts_what": "Servers rooted via PHP2Shell chained with Fragnesia (CVE-2026-46300), across the United States, Japan, Taiwan and South Korea",
+    "measured_by": "Dream Security, as reported by BleepingComputer",
+    "measured_on": "2026-10-26 (report date; article 2026-10-29)",
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/",
+    "quote": "This included artifacts of a campaign that had rooted 25 servers across the United States, Japan, Taiwan, and South Korea."
+   },
+   {
+    "kind": "downtime",
+    "value": "preemptive service shutdowns (unquantified)",
+    "counts_what": "Governments, hospitals and schools in Asia, Europe and North America taking services offline as a precaution; no count or duration given",
+    "measured_by": "Security Affairs",
+    "measured_on": "2026-10-23 (article date)",
+    "url": "https://securityaffairs.com/201538/hacking/php2shell-millions-of-attacks-no-confirmed-successful-exploits-yet.html",
+    "quote": "have preemptively taken services offline rather than wait."
+   },
+   {
+    "kind": "other",
+    "value": "1 honeypot RCE; 800 KiB cookie dump",
+    "counts_what": "First confirmed working in-the-wild RCE, against a honeypot (Apache mod_php, PHP 8.4.26); not a real victim",
+    "measured_by": "Adel Karimi (Perplexity) honeypot data, as reported by BleepingComputer",
+    "measured_on": "2026-10-24 (honeypot report date)",
+    "url": "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/",
+    "quote": "The response delivered an 800 KiB decoded cookie dump"
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "quantified_compromise"
+ },
+ {
+  "cve": "CVE-2026-109619",
+  "vendor": "PHP Group",
+  "product": "PHP",
+  "campaign_note": "Second of the two 'PHP2Shell' flaws; all public reporting treats CVE-2026-109618 and CVE-2026-109619 as a pair and no source separates figures per CVE, so the evidence is identical to CVE-2026-109618.",
+  "first_exploitation_claim": {
+   "date": "2026-10-22",
+   "source": "Amazon Threat Intelligence via BleepingComputer: attempts (non-functional exploits, against a honeypot) from 2026-10-17, four days before patches; first confirmed successful in-the-wild RCE was Adel Karimi's honeypot report dated 2026-10-24 (BleepingComputer 2026-10-26)",
+   "url": "https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": "over 34.4 million",
+    "counts_what": "PHP services still running vulnerable versions (both PHP2Shell CVEs)",
+    "measured_by": "Censys, as reported by Security Affairs (cites https://censys.com/advisory/cve-2026-109618-cve-2026-109619/)",
+    "measured_on": "2026-10-23",
+    "url": "https://securityaffairs.com/201538/hacking/php2shell-millions-of-attacks-no-confirmed-successful-exploits-yet.html",
+    "quote": "As of October 23, Censys counts over 34.4 million PHP services still running vulnerable versions."
+   },
+   {
+    "kind": "exposed",
+    "value": "more than 5.1 million hosts; roughly 3.8 million with an attackable open port",
+    "counts_what": "PHP hosts exposed online (VirusTotal estimate; Recorded Future cautions it is not a count of vulnerable systems)",
+    "measured_by": "VirusTotal, as reported by BleepingComputer",
+    "measured_on": "2026-10 (blog date not stated in article; article 2026-10-26)",
+    "url": "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/",
+    "quote": "with more than 5.1 million PHP hosts exposed online and roughly 3.8 million with at least one port open to attacks"
+   },
+   {
+    "kind": "attack_volume",
+    "value": "tens of thousands in 45 minutes; hundreds of thousands within 2 hours; millions by 2026-10-22",
+    "counts_what": "Exploit attempts seen on Cloudflare's network after public disclosure (attempts, not compromises)",
+    "measured_by": "Cloudflare (CEO Matthew Prince post), as reported by Security Affairs",
+    "measured_on": "2026-10-22",
+    "url": "https://securityaffairs.com/201538/hacking/php2shell-millions-of-attacks-no-confirmed-successful-exploits-yet.html",
+    "quote": "That jumped to tens of thousands in the 45 minutes post announcement, hundreds of thousands within 2 hours, and millions now."
+   },
+   {
+    "kind": "compromised",
+    "value": 25,
+    "counts_what": "Servers rooted via PHP2Shell chained with Fragnesia (CVE-2026-46300), across the United States, Japan, Taiwan and South Korea",
+    "measured_by": "Dream Security, as reported by BleepingComputer",
+    "measured_on": "2026-10-26 (report date; article 2026-10-29)",
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/",
+    "quote": "This included artifacts of a campaign that had rooted 25 servers across the United States, Japan, Taiwan, and South Korea."
+   },
+   {
+    "kind": "downtime",
+    "value": "preemptive service shutdowns (unquantified)",
+    "counts_what": "Governments, hospitals and schools in Asia, Europe and North America taking services offline as a precaution; no count or duration given",
+    "measured_by": "Security Affairs",
+    "measured_on": "2026-10-23 (article date)",
+    "url": "https://securityaffairs.com/201538/hacking/php2shell-millions-of-attacks-no-confirmed-successful-exploits-yet.html",
+    "quote": "have preemptively taken services offline rather than wait."
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "quantified_compromise"
+ }
+]

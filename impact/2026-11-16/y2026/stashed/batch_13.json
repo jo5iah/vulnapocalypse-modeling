@@ -1,0 +1,200 @@
+[
+ {
+  "cve": "CVE-2026-18577",
+  "added": "2026-08-03",
+  "vendor": "N-able",
+  "product": "N-central",
+  "name": "N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "N-able N-central contains an authentication bypass using an alternate path or channel allows for authentication bypass and account takeover in N-central. This vulnerability is the result of an incomplete patch for CVE-2026-18556.",
+  "refs": [
+   "https://documentation.n-able.com/N-central/Release_Notes/GA/Content/N-central_2026.3_HF1_Release_Notes.htm",
+   "https://status.n-able.com/2026/08/02/n-central-2026-3-hotfix-1-mitigation-for-cve-2026-18577/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-18556",
+  "added": "2026-08-04",
+  "vendor": "N-able",
+  "product": "N-central",
+  "name": "N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "N-able N-central contains an authentication bypass using an alternate path or channel that allows for authentication bypass.",
+  "refs": [
+   "https://uptime.n-able.com/",
+   "https://status.n-able.com/2026/08/02/n-central-2026-3-hotfix-1-mitigation-for-cve-2026-18577/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-86218",
+  "added": "2026-09-08",
+  "vendor": "N-able",
+  "product": "N-central",
+  "name": "N-able N-central Static Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "N-able N-central contains a static code injection vulnerability that could allow for pre-authentication remote code execution.",
+  "refs": [
+   "https://status.n-able.com/2026/09/06/n-central-2026-3-hotfix-4-cve-2026-86218/",
+   "https://me.n-able.com/s/security-advisory/aArVy0000002Ld3KAE/cve202686218-preauthentication-remote-code-execution"
+  ]
+ },
+ {
+  "cve": "CVE-2025-68613",
+  "added": "2026-03-11",
+  "vendor": "n8n",
+  "product": "n8n",
+  "name": "n8n Improper Control of Dynamically-Managed Code Resources Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "n8n contains an improper control of dynamically managed code resources vulnerability in its workflow expression evaluation system that allows for remote code execution.",
+  "refs": [
+   "https://github.com/n8n-io/n8n/security/advisories/GHSA-v98v-ff95-f3cp"
+  ]
+ },
+ {
+  "cve": "CVE-2025-15556",
+  "added": "2026-02-12",
+  "vendor": "Notepad++",
+  "product": "Notepad++",
+  "name": "Notepad++ Download of Code Without Integrity Check Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Notepad++ when using the WinGUp updater, contains a download of code without integrity check vulnerability that could allow an attacker to intercept or redirect update traffic to download and execute an attacker-controlled installer. This could lead to arbitrary code execution with the privileges of the user.",
+  "refs": [
+   "https://notepad-plus-plus.org/news/clarification-security-incident/",
+   "https://community.notepad-plus-plus.org/topic/27298/notepad-v8-8-9-vulnerability-fix"
+  ]
+ },
+ {
+  "cve": "CVE-2026-48027",
+  "added": "2026-05-27",
+  "vendor": "Nx",
+  "product": "Nx Console",
+  "name": "Nx Console Embedded Malicious Code Vulnerability",
+  "ransomware": "Known",
+  "desc": "Nx Console contains an embedded malicious code vulnerability that allowed a malicious version of Nx Console to be published. The compromised extension fetched an obfuscated payload that could harvested credentials from multiple sources on disk and in memory.",
+  "refs": [
+   "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/nrwl/nx-console/security/advisories/GHSA-c9j4-9m59-847w"
+  ]
+ },
+ {
+  "cve": "CVE-2021-22054",
+  "added": "2026-03-09",
+  "vendor": "Omnissa",
+  "product": "Workspace One UEM",
+  "name": "Omnissa Workspace ONE Server-Side Request Forgery",
+  "ransomware": "Unknown",
+  "desc": "Omnissa Workspace One UEM formerly known as VMware Workspace One UEM contains a server-side request forgery (SSRF) vulnerability that could allow a malicious actor with network access to UEM to send their requests without authentication and to gain access to sensitive information.",
+  "refs": [
+   "https://web.archive.org/web/20211222154335/https://www.vmware.com/security/advisories/VMSA-2021-0029.html"
+  ]
+ },
+ {
+  "cve": "CVE-2021-3199",
+  "added": "2026-10-08",
+  "vendor": "ONLYOFFICE",
+  "product": "Docs",
+  "name": "ONLYOFFICE Docs Server Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "ONLYOFFICE Docs contains a path traversal vulnerability that can occur when JWT is used, via a /.. sequence in an image upload parameter and could allow for remote code execution.",
+  "refs": [
+   "https://github.com/ONLYOFFICE/DocumentServer/blob/903fe5ab7a275bd69c3c3346af2d21cf87ebeabf/CHANGELOG.md#563"
+  ]
+ },
+ {
+  "cve": "CVE-2024-21182",
+  "added": "2026-06-01",
+  "vendor": "Oracle",
+  "product": "WebLogic Server",
+  "name": "Oracle WebLogic Server Unspecified Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Oracle WebLogic contains an unspecified vulnerability that could allow an unauthenticated attacker with network access via T3, IIOP to compromise Oracle WebLogic Server. Successful attacks of this vulnerability can result in unauthorized access to critical data or complete access to all Oracle WebLogic Server accessible data.",
+  "refs": [
+   "https://www.oracle.com/security-alerts/cpujul2024.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-35273",
+  "added": "2026-06-12",
+  "vendor": "Oracle",
+  "product": "PeopleSoft Enterprise PeopleTools",
+  "name": "Oracle PeopleSoft Enterprise PeopleTools Missing Authentication for Critical Function Vulnerability",
+  "ransomware": "Known",
+  "desc": "Oracle PeopleSoft Enterprise PeopleTools contains a missing authentication for critical function vulnerability which could allow an unauthenticated attacker to obtain takeover of PeopleSoft Enterprise PeopleTools.",
+  "refs": [
+   "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html",
+   "https://support.oracle.com/signin/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-46817",
+  "added": "2026-07-15",
+  "vendor": "Oracle",
+  "product": "E-Business Suite",
+  "name": "Oracle E-Business Suite Improper Privilege Management Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Oracle E-Business Suite contains an improper privilege management vulnerability that allows an unauthenticated attacker with network access via HTTP to compromise Oracle Payments. Successful attacks of this vulnerability can result in takeover of Oracle Payments.",
+  "refs": [
+   "https://www.oracle.com/security-alerts/cspumay2026.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-21962",
+  "added": "2026-08-24",
+  "vendor": "Oracle",
+  "product": "HTTP Server and Oracle Weblogic Server Proxy Plug-in",
+  "name": "Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in Improper Access Control Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in contain an improper access control vulnerability that can result in unauthorized creation, deletion or modification access to critical data as well as unauthorized access to critical data or complete access to all Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in accessible data.",
+  "refs": [
+   "https://www.oracle.com/security-alerts/cpujan2026.html"
+  ]
+ },
+ {
+  "cve": "CVE-2023-49105",
+  "added": "2026-08-27",
+  "vendor": "ownCloud",
+  "product": "ownCloud",
+  "name": "ownCloud Improper Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "ownCloud contains an improper authentication vulnerability that allows an attacker to access, modify, or delete any file without authentication if the username of a victim is known, and the victim has no signing-key configured.",
+  "refs": [
+   "https://owncloud.org/security",
+   "https://owncloud.com/security-advisories/webdav-api-authentication-bypass-using-pre-signed-urls/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-0300",
+  "added": "2026-05-06",
+  "vendor": "Palo Alto Networks",
+  "product": "PAN-OS",
+  "name": "Palo Alto Networks PAN-OS Out-of-bounds Write Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Palo Alto Networks PAN-OS contains an out-of-bounds write vulnerability in the User-ID Authentication Portal (aka Captive Portal) service that can allow an unauthenticated attacker to execute arbitrary code with root privileges on the PA-Series and VM-Series firewalls by sending specially crafted packets.",
+  "refs": [
+   "https://security.paloaltonetworks.com/CVE-2026-0300"
+  ]
+ },
+ {
+  "cve": "CVE-2026-0257",
+  "added": "2026-05-29",
+  "vendor": "Palo Alto Networks",
+  "product": "PAN-OS",
+  "name": "Palo Alto Networks PAN-OS Authentication Bypass Vulnerability",
+  "ransomware": "Known",
+  "desc": "Palo Alto Networks PAN-OS contains an authentication bypass vulnerability that allows attackers to bypass security restrictions and establish an unauthorized VPN connection.",
+  "refs": [
+   "https://security.paloaltonetworks.com/CVE-2026-0257"
+  ]
+ },
+ {
+  "cve": "CVE-2026-0322",
+  "added": "2026-10-14",
+  "vendor": "Palo Alto Networks",
+  "product": "PAN-OS",
+  "name": "Palo Alto Networks PAN-OS Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Palo Alto Networks PAN-OS contains a code injection vulnerability that could allow an authenticated attacker with network access to execute arbitrary code with root privileges on the firewall.",
+  "refs": [
+   "https://security.paloaltonetworks.com/CVE-2026-0322"
+  ]
+ }
+]

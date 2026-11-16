@@ -1,0 +1,182 @@
+[
+ {
+  "cve": "CVE-2009-0556",
+  "added": "2026-01-07",
+  "vendor": "Microsoft",
+  "product": "Office",
+  "name": "Microsoft Office PowerPoint Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Office PowerPoint contains a code injection vulnerability that allows remote attackers to execute arbitrary code via a PowerPoint file with an OutlineTextRefAtom containing an invalid index value that triggers memory corruption.",
+  "refs": [
+   "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2009/ms09-017"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20805",
+  "added": "2026-01-13",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Information Disclosure Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Windows Desktop Windows Manager contains an information disclosure vulnerability that allows an authorized attacker to disclose information locally.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-20805"
+  ]
+ },
+ {
+  "cve": "CVE-2026-21509",
+  "added": "2026-01-26",
+  "vendor": "Microsoft",
+  "product": "Office",
+  "name": "Microsoft Office Security Feature Bypass Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Office contains a security feature bypass vulnerability in which reliance on untrusted inputs in a security decision in Microsoft Office could allow an unauthorized attacker to bypass a security feature locally. Some of the impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version.",
+  "refs": [
+   "Please adhere to Microsoft\u2019s recommended guidelines to address this vulnerability. Implement all final mitigations provided by the vendor for Office 2021, and apply the interim corresponding mitigations for Office 2016 and Office 2019 until the final patch becomes available. For more information please see: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-21509"
+  ]
+ },
+ {
+  "cve": "CVE-2026-21510",
+  "added": "2026-02-10",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Shell Protection Mechanism Failure Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Windows Shell contains a protection mechanism failure vulnerability that could allow an unauthorized attacker to bypass a security feature over a network.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-21510"
+  ]
+ },
+ {
+  "cve": "CVE-2026-21513",
+  "added": "2026-02-10",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft MSHTML Framework Protection Mechanism Failure Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft MSHTML Framework contains a protection mechanism failure vulnerability that could allow an unauthorized attacker to bypass a security feature over a network.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/advisory/CVE-2026-21513"
+  ]
+ },
+ {
+  "cve": "CVE-2026-21514",
+  "added": "2026-02-10",
+  "vendor": "Microsoft",
+  "product": "Office",
+  "name": "Microsoft Office Word Reliance on Untrusted Inputs in a Security Decision Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Office Word contains a reliance on untrusted inputs in a security decision vulnerability that could allow an authorized attacker to elevate privileges locally.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-21514"
+  ]
+ },
+ {
+  "cve": "CVE-2026-21519",
+  "added": "2026-02-10",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Type Confusion Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Desktop Windows Manager contains a type confusion vulnerability that could allow an authorized attacker to elevate privileges locally.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-21519"
+  ]
+ },
+ {
+  "cve": "CVE-2026-21525",
+  "added": "2026-02-10",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows NULL Pointer Dereference Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Windows Remote Access Connection Manager contains a NULL pointer dereference that could allow an unauthorized attacker to deny service locally.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-21525"
+  ]
+ },
+ {
+  "cve": "CVE-2026-21533",
+  "added": "2026-02-10",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Improper Privilege Management Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Windows Remote Desktop Services contains an improper privilege management vulnerability that could allow an authorized attacker to elevate privileges locally.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-21533"
+  ]
+ },
+ {
+  "cve": "CVE-2024-43468",
+  "added": "2026-02-12",
+  "vendor": "Microsoft",
+  "product": "Configuration Manager",
+  "name": "Microsoft Configuration Manager SQL Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Configuration Manager contains an SQL injection vulnerability. An unauthenticated attacker could exploit this vulnerability by sending specially crafted requests to the target environment which are processed in an unsafe manner enabling the attacker to execute commands on the server and/or underlying database.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-43468"
+  ]
+ },
+ {
+  "cve": "CVE-2008-0015",
+  "added": "2026-02-17",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Video ActiveX Control Remote Code Execution Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Windows Video ActiveX Control contains a remote code execution vulnerability. An attacker could exploit the vulnerability by constructing a specially crafted Web page. When a user views the Web page, the vulnerability could allow remote code execution. An attacker who successfully exploited this vulnerability could gain the same user rights as the logged-on user.",
+  "refs": [
+   "https://web.archive.org/web/20110305211119/https://www.microsoft.com/technet/security/bulletin/ms09-032.mspx"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20963",
+  "added": "2026-03-18",
+  "vendor": "Microsoft",
+  "product": "SharePoint",
+  "name": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability that allows an unauthorized attacker to execute code over a network.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-20963"
+  ]
+ },
+ {
+  "cve": "CVE-2012-1854",
+  "added": "2026-04-13",
+  "vendor": "Microsoft",
+  "product": "Visual Basic for Applications (VBA)",
+  "name": "Microsoft Visual Basic for Applications Insecure Library Loading Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Visual Basic for Applications (VBA) contains an insecure library loading vulnerability that could allow for remote code execution.",
+  "refs": [
+   "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2012/ms12-046"
+  ]
+ },
+ {
+  "cve": "CVE-2023-21529",
+  "added": "2026-04-13",
+  "vendor": "Microsoft",
+  "product": "Exchange Server",
+  "name": "Microsoft Exchange Server Deserialization of Untrusted Data Vulnerability",
+  "ransomware": "Known",
+  "desc": "Microsoft Exchange Server contains a deserialization of untrusted data that allows an authenticated attacker to achieve remote code execution.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-21529"
+  ]
+ },
+ {
+  "cve": "CVE-2023-36424",
+  "added": "2026-04-13",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Out-of-Bounds Read Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Windows Common Log File System Driver contains an out-of-bounds read vulnerability that could allow a threat actor for privileges escalation",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2023-36424"
+  ]
+ }
+]

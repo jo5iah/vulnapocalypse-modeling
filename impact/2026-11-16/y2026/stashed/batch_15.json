@@ -1,0 +1,187 @@
+[
+ {
+  "cve": "CVE-2024-7399",
+  "added": "2026-04-24",
+  "vendor": "Samsung",
+  "product": "MagicINFO 9 Server",
+  "name": "Samsung MagicINFO 9 Server Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Samsung MagicINFO 9 Server contains a path traversal vulnerability that could allow an attacker to write arbitrary files as system authority.",
+  "refs": [
+   "https://security.samsungtv.com/securityUpdates"
+  ]
+ },
+ {
+  "cve": "CVE-2019-19006",
+  "added": "2026-02-03",
+  "vendor": "Sangoma",
+  "product": "FreePBX",
+  "name": "Sangoma FreePBX Improper Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Sangoma FreePBX contains an improper authentication vulnerability that potentially allows unauthorized users to bypass password authentication and access services provided by the FreePBX admin.",
+  "refs": [
+   "https://wiki.freepbx.org/display/FOP/2019-11-20%2BRemote%2BAdmin%2BAuthentication%2BBypass"
+  ]
+ },
+ {
+  "cve": "CVE-2025-64328",
+  "added": "2026-02-03",
+  "vendor": "Sangoma",
+  "product": "FreePBX",
+  "name": "Sangoma FreePBX OS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Sangoma FreePBX Endpoint Manager contains an OS command injection vulnerability that could allow for a post-authentication command injection by an authenticated known user via the testconnection -> check_ssh_connect() function. An attacker can leverage this vulnerability to potentially obtain remote access to the system as an asterisk user.",
+  "refs": [
+   "https://github.com/FreePBX/security-reporting/security/advisories/GHSA-vm9p-46mv-5xvw"
+  ]
+ },
+ {
+  "cve": "CVE-2026-9586",
+  "added": "2026-09-02",
+  "vendor": "Sangoma",
+  "product": "Switchvox",
+  "name": "Sangoma Switchvox SQL Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Sangoma Switchvox contains a SQL injection vulnerability which allows an unauthenticated remote attacker to execute arbitrary SQL statements against the backend PostgreSQL database using a single crafted request, including database operations and remote code execution.",
+  "refs": [
+   "https://sangomakb.atlassian.net/wiki/spaces/Switchvox/pages/1802371073/Switchvox+-+Release+Notes+Version+8.4.0.2+July+14+2026"
+  ]
+ },
+ {
+  "cve": "CVE-2024-57726",
+  "added": "2026-04-24",
+  "vendor": "SimpleHelp",
+  "product": "SimpleHelp",
+  "name": "SimpleHelp Missing Authorization Vulnerability",
+  "ransomware": "Known",
+  "desc": "SimpleHelp contains a missing authorization vulnerability that could allow low-privileged technicians to create API keys with excessive permissions. These API keys can be used to escalate privileges to the server admin role.",
+  "refs": [
+   "https://simple-help.com/kb---security-vulnerabilities-01-2025#security-vulnerabilities-in-simplehelp-5-5-7-and-earlier"
+  ]
+ },
+ {
+  "cve": "CVE-2024-57728",
+  "added": "2026-04-24",
+  "vendor": "SimpleHelp",
+  "product": "SimpleHelp",
+  "name": "SimpleHelp Path Traversal Vulnerability",
+  "ransomware": "Known",
+  "desc": "SimpleHelp contains a path traversal vulnerability that allows admin users to upload arbitrary files anywhere on the file system by uploading a crafted zip file (i.e. zip slip). This can be exploited to execute arbitrary code on the host in the context of the SimpleHelp server user.",
+  "refs": [
+   "https://simple-help.com/kb---security-vulnerabilities-01-2025#security-vulnerabilities-in-simplehelp-5-5-7-and-earlier"
+  ]
+ },
+ {
+  "cve": "CVE-2026-48558",
+  "added": "2026-06-29",
+  "vendor": "SimpleHelp",
+  "product": "SimpleHelp",
+  "name": "SimpleHelp Authentication Bypass Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "SimpleHelp contains an authentication bypass vulnerability in the OIDC authentication flow. When OIDC authentication is configured, identity tokens submitted during login are accepted without verifying their cryptographic signature. In a vulnerable configuration, a remote, unauthenticated attacker can submit a forged token containing arbitrary identity claims to obtain a fully authenticated technician session. In some configurations, this may also allow bypass of multi-factor authentication.",
+  "refs": [
+   "https://simple-help.com/security/simplehelp-security-update-2026-05"
+  ]
+ },
+ {
+  "cve": "CVE-2025-52691",
+  "added": "2026-01-26",
+  "vendor": "SmarterTools",
+  "product": "SmarterMail",
+  "name": "SmarterTools SmarterMail Unrestricted Upload of File with Dangerous Type Vulnerability",
+  "ransomware": "Known",
+  "desc": "SmarterTools SmarterMail contains an unrestricted upload of file with dangerous type vulnerability that could allow an unauthenticated attacker to upload arbitrary files to any location on the mail server, potentially enabling remote code execution.",
+  "refs": [
+   "https://www.smartertools.com/smartermail/release-notes/current",
+   "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2025-124/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-23760",
+  "added": "2026-01-26",
+  "vendor": "SmarterTools",
+  "product": "SmarterMail",
+  "name": "SmarterTools SmarterMail Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+  "ransomware": "Known",
+  "desc": "SmarterTools SmarterMail contains an authentication bypass using an alternate path or channel vulnerability in the password reset API. The force-reset-password endpoint permits anonymous requests and fails to verify the existing password or a reset token when resetting system administrator accounts. This could allow an unauthenticated attacker to supply a target administrator username and a new password to reset the account, resulting in full administrative compromise of the SmarterMail instance.",
+  "refs": [
+   "https://www.smartertools.com/smartermail/release-notes/current"
+  ]
+ },
+ {
+  "cve": "CVE-2026-24423",
+  "added": "2026-02-05",
+  "vendor": "SmarterTools",
+  "product": "SmarterMail",
+  "name": "SmarterTools SmarterMail Missing Authentication for Critical Function Vulnerability",
+  "ransomware": "Known",
+  "desc": "SmarterTools SmarterMail contains a missing authentication for critical function vulnerability in the ConnectToHub API method. This could allow the attacker to point the SmarterMail instance to a malicious HTTP server which serves the malicious OS command and could lead to command execution.",
+  "refs": [
+   "https://www.smartertools.com/smartermail/release-notes/current",
+   "https://www.cve.org/CVERecord?id=CVE-2026-24423"
+  ]
+ },
+ {
+  "cve": "CVE-2025-40551",
+  "added": "2026-02-03",
+  "vendor": "SolarWinds",
+  "product": "Web Help Desk",
+  "name": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "SolarWinds Web Help Desk contains a deserialization of untrusted data vulnerability that could lead to remote code execution, which would allow an attacker to run commands on the host machine. This could be exploited without authentication.",
+  "refs": [
+   "https://www.solarwinds.com/trust-center/security-advisories/cve-2025-40551"
+  ]
+ },
+ {
+  "cve": "CVE-2025-40536",
+  "added": "2026-02-12",
+  "vendor": "SolarWinds",
+  "product": "Web Help Desk",
+  "name": "SolarWinds Web Help Desk Security Control Bypass Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "SolarWinds Web Help Desk contains a security control bypass vulnerability that could allow an unauthenticated attacker to gain access to certain restricted functionality.",
+  "refs": [
+   "https://documentation.solarwinds.com/en/success_center/whd/content/release_notes/whd_2026-1_release_notes.htm",
+   "https://www.solarwinds.com/trust-center/security-advisories/CVE-2025-40536"
+  ]
+ },
+ {
+  "cve": "CVE-2025-26399",
+  "added": "2026-03-09",
+  "vendor": "SolarWinds",
+  "product": "Web Help Desk",
+  "name": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
+  "ransomware": "Known",
+  "desc": "SolarWinds Web Help Desk contain a deserialization of untrusted data vulnerability in AjaxProxy that could allow an attacker to run commands on the host machine.",
+  "refs": [
+   "https://www.solarwinds.com/trust-center/security-advisories/cve-2025-26399",
+   "https://documentation.solarwinds.com/en/success_center/whd/content/release_notes/whd_12-8-7-hotfix-1_release_notes.htm"
+  ]
+ },
+ {
+  "cve": "CVE-2026-28318",
+  "added": "2026-06-05",
+  "vendor": "SolarWinds",
+  "product": "Serv-U",
+  "name": "SolarWinds Serv-U Uncontrolled Resource Consumption Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "SolarWinds Serv-U contains an uncontrolled resource consumption vulnerability that allows specially crafted POST requests using the Content-Encoding: deflate header to crash the Serv-U service without authentication.",
+  "refs": [
+   "https://www.solarwinds.com/trust-center/security-advisories/cve-2026-28318",
+   "https://documentation.solarwinds.com/en/success_center/servu/content/release_notes/servu_15-5-4-hotfix-1_release_notes.htm#link7"
+  ]
+ },
+ {
+  "cve": "CVE-2026-25108",
+  "added": "2026-02-24",
+  "vendor": "Soliton Systems K.K",
+  "product": "FileZen",
+  "name": "Soliton Systems K.K FileZen OS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Soliton Systems K.K FileZen contains an OS command injection vulnerability when an user logs-in to the affected product and sends a specially crafted HTTP request.",
+  "refs": [
+   "https://jvn.jp/en/jp/JVN84622767/"
+  ]
+ }
+]

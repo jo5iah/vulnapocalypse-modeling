@@ -1,0 +1,211 @@
+[
+ {
+  "cve": "CVE-2026-15409",
+  "added": "2026-07-14",
+  "vendor": "SonicWall",
+  "product": "SMA1000 Appliances",
+  "name": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
+  "ransomware": "Known",
+  "desc": "SonicWall SMA1000 Appliances contain a server-side request forgery vulnerability that could allow a remote unauthenticated attacker to potentially cause the appliance to make requests to unintended location.",
+  "refs": [
+   "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008"
+  ]
+ },
+ {
+  "cve": "CVE-2026-15410",
+  "added": "2026-07-14",
+  "vendor": "SonicWall",
+  "product": "SMA1000 Appliances",
+  "name": "SonicWall SMA1000 Appliances Code Injection Vulnerability",
+  "ransomware": "Known",
+  "desc": "SonicWall SMA1000 Appliances contain a code injection vulnerability which in specific conditions could potentially enable a remote authenticated attacker as administrator to execute arbitrary OS commands.",
+  "refs": [
+   "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008"
+  ]
+ },
+ {
+  "cve": "CVE-2026-83548",
+  "added": "2026-09-02",
+  "vendor": "SonicWall",
+  "product": "SMA1000 Appliances",
+  "name": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "SonicWall SMA1000 Appliances contains a server-side request forgery vulnerability that could allow a remote unauthenticated attacker to gain unauthorized access to sensitive functionality and perform unauthorized operations.",
+  "refs": [
+   "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0016"
+  ]
+ },
+ {
+  "cve": "CVE-2026-83549",
+  "added": "2026-09-02",
+  "vendor": "SonicWall",
+  "product": "SMA1000 Appliances",
+  "name": "SonicWall SMA1000 Appliances OS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "SonicWall SMA1000 Appliances contains an OS command injection vulnerability that could enable a remote authenticated attacker as administrator to execute arbitrary OS commands, resulting in remote code execution.",
+  "refs": [
+   "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0016"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20253",
+  "added": "2026-06-18",
+  "vendor": "Splunk",
+  "product": "Enterprise",
+  "name": "Splunk Enterprise Missing Authentication for Critical Function Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Splunk Enterprise contains a missing authentication for critical function vulnerability which could allow an unauthenticated user to create or truncate arbitrary files through a PostgreSQL sidecar service endpoint.",
+  "refs": [
+   "https://advisory.splunk.com/advisories/SVD-2026-0603"
+  ]
+ },
+ {
+  "cve": "CVE-2023-22894",
+  "added": "2026-10-08",
+  "vendor": "Strapi",
+  "product": "Strapi",
+  "name": "Strapi Cleartext Storage of Sensitive Information Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Strapi contains a cleartext storage of sensitive information vulnerability that could allow attackers with access to the admin panel to discover sensitive user details via the query filter. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. This vulnerability can be chained with CVE-2023-22621 to achieve remote code execution.",
+  "refs": [
+   "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://strapi.io/blog/security-disclosure-of-vulnerabilities-cve",
+   "https://github.com/strapi/strapi/releases"
+  ]
+ },
+ {
+  "cve": "CVE-2025-68645",
+  "added": "2026-01-22",
+  "vendor": "Synacor",
+  "product": "Zimbra Collaboration Suite (ZCS)",
+  "name": "Synacor Zimbra Collaboration Suite (ZCS) PHP Remote File Inclusion Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Synacor Zimbra Collaboration Suite (ZCS) contains a PHP remote file inclusion vulnerability that could allow for remote attackers to craft requests to the /h/rest endpoint to influence internal request dispatching, allowing inclusion of arbitrary files from the WebRoot directory.",
+  "refs": [
+   "https://wiki.zimbra.com/wiki/Security_Center"
+  ]
+ },
+ {
+  "cve": "CVE-2020-7796",
+  "added": "2026-02-17",
+  "vendor": "Synacor",
+  "product": "Zimbra Collaboration Suite",
+  "name": "Synacor Zimbra Collaboration Suite (ZCS) Server-Side Request Forgery Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Synacor Zimbra Collaboration Suite (ZCS) contains a server-side request forgery vulnerability if WebEx zimlet installed and zimlet JSP is enabled.",
+  "refs": [
+   "https://wiki.zimbra.com/wiki/Zimbra_Releases/8.8.15/P7"
+  ]
+ },
+ {
+  "cve": "CVE-2025-66376",
+  "added": "2026-03-18",
+  "vendor": "Synacor",
+  "product": "Zimbra Collaboration Suite (ZCS)",
+  "name": "Synacor Zimbra Collaboration Suite (ZCS) Cross-Site Scripting Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Synacor Zimbra Collaboration Suite (ZCS) contains a cross-site scripting vulnerability in the Classic UI where attackers could abuse Cascading Style Sheets (CSS) @import directives in email HTML.",
+  "refs": [
+   "https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories"
+  ]
+ },
+ {
+  "cve": "CVE-2025-48700",
+  "added": "2026-04-20",
+  "vendor": "Synacor",
+  "product": "Zimbra Collaboration Suite (ZCS)",
+  "name": "Synacor Zimbra Collaboration Suite (ZCS) Cross-site Scripting Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Synacor Zimbra Collaboration Suite (ZCS) contains a cross-site scripting vulnerability that could allow attackers to execute arbitrary JavaScript within the user's session, potentially leading to unauthorized access to sensitive information.",
+  "refs": [
+   "https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories"
+  ]
+ },
+ {
+  "cve": "CVE-2026-73570",
+  "added": "2026-08-21",
+  "vendor": "Synacor",
+  "product": "Zimbra Collaboration Suite (ZCS)",
+  "name": "Zimbra Collaboration Suite (ZCS) OS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Zimbra Collaboration Suite (ZCS) contains an OS command injection vulnerability which could allow an unauthenticated attacker to send specially crafted SMTP requests that may result in execution of arbitrary operating system commands as the Zimbra user.",
+  "refs": [
+   "https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories",
+   "https://blog.zimbra.com/2026/07/patch-release-update-zimbra-10-1-20/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-45321",
+  "added": "2026-05-27",
+  "vendor": "TanStack",
+  "product": "TanStack",
+  "name": "TanStack Unspecified Vulnerability",
+  "ransomware": "Known",
+  "desc": "TanStack contains an unspecified vulnerability that allowed malicious versions of the product to be published to the npm registry to publish credential-stealing malware under a trusted identity.",
+  "refs": [
+   "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/TanStack/router/security/advisories/GHSA-g7cv-rxg3-hmpx"
+  ]
+ },
+ {
+  "cve": "CVE-2024-7694",
+  "added": "2026-02-17",
+  "vendor": "TeamT5",
+  "product": "ThreatSonar Anti-Ransomware",
+  "name": "TeamT5 ThreatSonar Anti-Ransomware Unrestricted Upload of File with Dangerous Type Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "TeamT5 ThreatSonar Anti-Ransomware contains an unrestricted upload of file with dangerous type vulnerability. ThreatSonar Anti-Ransomware does not properly validate the content of uploaded files. Remote attackers with administrator privileges on the product platform can upload malicious files, which can be used to execute arbitrary system commands on the server.",
+  "refs": [
+   "https://teamt5.org/en/posts/vulnerability-notice-threat-sonar-anti-ransomware-20240715/",
+   "https://www.twcert.org.tw/en/cp-139-8000-e5a5c-2.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-34926",
+  "added": "2026-05-21",
+  "vendor": "Trend Micro",
+  "product": "Apex One",
+  "name": "Trend Micro Apex One (On-Premise) Directory Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Trend Micro Apex One (on-premise) contains a directory traversal vulnerability that could allow a pre-authenticated local attacker to modify a key table on the server to inject malicious code to deploy to agents on affected installations.",
+  "refs": [
+   "https://success.trendmicro.com/en-US/solution/KA-0023430"
+  ]
+ },
+ {
+  "cve": "CVE-2026-102489",
+  "added": "2026-10-02",
+  "vendor": "Zammad GmbH",
+  "product": "Zammad",
+  "name": "Zammad GmbH Zammad Session Fixation Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Zammad GmbH Zammad contains a session fixation vulnerability that can lead to remote code execution as the zammad user. This vulnerability can be chained with CVE-2026-102490.",
+  "refs": [
+   "https://zammad.com/en/product/releases/",
+   "https://community.zammad.org/t/take-care-local-privilege-escalation-cve-2026-102490-is-reported-as-being-actively-exploited/21297/2"
+  ]
+ },
+ {
+  "cve": "CVE-2026-102490",
+  "added": "2026-10-02",
+  "vendor": "Zammad GmbH",
+  "product": "Zammad",
+  "name": "Zammad GmbH Zammad Improper Privilege Management Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Zammad GmbH Zammad contains an improper privilege management vulnerability that can allow the local zammad user to escalate privileges to root. This vulnerability can be chained with CVE-2026-102489.",
+  "refs": [
+   "https://zammad.com/en/product/releases/",
+   "https://community.zammad.org/t/take-care-local-privilege-escalation-cve-2026-102490-is-reported-as-being-actively-exploited/21297/2"
+  ]
+ },
+ {
+  "cve": "CVE-2026-7273",
+  "added": "2026-09-21",
+  "vendor": "Zyxel",
+  "product": "GS1900 Series Switches",
+  "name": "Zyxel GS1900 Series Switches Stack-Based Buffer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Zyxel GS1900 series switches contain a stack-based buffer overflow vulnerability in the CGI program which could allow a LAN-based, unauthenticated attacker to exploit the flaw and potentially execute OS commands via a crafted HTTP request.",
+  "refs": [
+   "https://www.zyxel.com/global/en/support/security-advisories/zyxel-security-advisory-for-stack-based-buffer-overflow-vulnerability-in-gs1900-series-switches-06-16-2026"
+  ]
+ }
+]

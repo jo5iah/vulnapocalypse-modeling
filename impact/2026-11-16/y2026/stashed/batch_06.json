@@ -1,0 +1,187 @@
+[
+ {
+  "cve": "CVE-2026-24061",
+  "added": "2026-01-26",
+  "vendor": "GNU",
+  "product": "InetUtils",
+  "name": "GNU InetUtils Argument Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "GNU InetUtils contains an argument injection vulnerability in telnetd that could allow for remote authentication bypass via a \"-f root\" value for the USER environment variable.",
+  "refs": [
+   "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://cgit.git.savannah.gnu.org/cgit/inetutils.git",
+   "https://codeberg.org/inetutils/inetutils/commit/ccba9f748aa8d50a38d7748e2e60362edd6a32cc",
+   "https://codeberg.org/inetutils/inetutils/commit/fd702c02497b2f398e739e3119bed0b23dd7aa7b"
+  ]
+ },
+ {
+  "cve": "CVE-2025-8110",
+  "added": "2026-01-12",
+  "vendor": "Gogs",
+  "product": "Gogs",
+  "name": "Gogs Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Gogs contains a path traversal vulnerability affecting improper Symbolic link handling in the PutContents API that could allow for code execution.",
+  "refs": [
+   "https://github.com/gogs/gogs/commit/553707f3fd5f68f47f531cfcff56aa3ec294c6f6"
+  ]
+ },
+ {
+  "cve": "CVE-2026-2441",
+  "added": "2026-02-17",
+  "vendor": "Google",
+  "product": "Chromium",
+  "name": "Google Chromium CSS Use-After-Free Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Google Chromium CSS contains a use-after-free vulnerability that could allow a remote attacker to potentially exploit heap corruption via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+  "refs": [
+   "https://chromereleases.googleblog.com/2026/02/stable-channel-update-for-desktop_13.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-3909",
+  "added": "2026-03-13",
+  "vendor": "Google",
+  "product": "Skia",
+  "name": "Google Skia Out-of-Bounds Write Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Google Skia contains an out-of-bounds write vulnerability that could allow a remote attacker to perform out of bounds memory access via a crafted HTML page. This vulnerability affects Google Chrome and ChromeOS, Android, Flutter, and possibly other products.",
+  "refs": [
+   "This vulnerability affects a common open-source component, third-party library, or a protocol used by different products. Please check with specific vendors for information on patching status. For more information, please see: https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_13.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-3910",
+  "added": "2026-03-13",
+  "vendor": "Google",
+  "product": "Chromium V8",
+  "name": "Google Chromium V8 Improper Restriction of Operations Within the Bounds of a Memory Buffer Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Google Chromium V8 contains an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+  "refs": [
+   "https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_12.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-5281",
+  "added": "2026-04-01",
+  "vendor": "Google",
+  "product": "Dawn",
+  "name": "Google Dawn Use-After-Free Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Google Dawn contains an use-after-free vulnerability that could allow a remote attacker who had compromised the renderer process to execute arbitrary code via a crafted HTML page. This vulnerability could affect multiple Chromium-based products including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+  "refs": [
+   "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_31.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-11645",
+  "added": "2026-06-09",
+  "vendor": "Google",
+  "product": "Chromium V8",
+  "name": "Google Chromium V8 Out-of-Bounds Read and Write Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Google Chromium V8 out-of-bounds read and write vulnerability that could allow a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+  "refs": [
+   "https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_0153744567.html",
+   "https://issues.chromium.org/issues/506689381"
+  ]
+ },
+ {
+  "cve": "CVE-2026-85046",
+  "added": "2026-09-04",
+  "vendor": "Google",
+  "product": "Chromium V8",
+  "name": "Google Chromium V8 Type Confusion Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Google Chromium V8 contains a type confusion vulnerability that allows a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+  "refs": [
+   "https://chromereleases.googleblog.com/2026/09/stable-channel-update-for-desktop_01882797386.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-87491",
+  "added": "2026-09-09",
+  "vendor": "Google",
+  "product": "Chromium V8",
+  "name": "Google Chromium V8 Out of Bounds Write Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Google Chromium V8 contains an out of bounds write vulnerability that allows a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+  "refs": [
+   "https://chromereleases.googleblog.com/2026/09/stable-channel-update-for-desktop_0808145027.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-58704",
+  "added": "2026-09-16",
+  "vendor": "Google",
+  "product": "Pixel",
+  "name": "Google Pixel Improper Authorization Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Google Pixel devices contain an improper authorization vulnerability in the cellular modem. A logic error may allow an attacker to bypass permission checks and escalate privileges.",
+  "refs": [
+   "https://source.android.com/docs/security/bulletin/pixel/2026/2026-09-01"
+  ]
+ },
+ {
+  "cve": "CVE-2025-37164",
+  "added": "2026-01-07",
+  "vendor": "Hewlett Packard Enterprise (HPE)",
+  "product": "OneView",
+  "name": "Hewlett Packard Enterprise (HPE) OneView Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Hewlett Packard Enterprise (HPE) OneView contains a code injection vulnerability that allows a remote unauthenticated user to perform remote code execution.",
+  "refs": [
+   "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbgn04985en_us&docLocale=en_US"
+  ]
+ },
+ {
+  "cve": "CVE-2017-7921",
+  "added": "2026-03-05",
+  "vendor": "Hikvision",
+  "product": "Multiple Products",
+  "name": "Hikvision Multiple Products Improper Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Multiple Hikvision products contain an improper authentication vulnerability that could allow a malicious user to escalate privileges on the system and gain access to sensitive information.",
+  "refs": [
+   "https://www.hikvision.com/us-en/support/document-center/special-notices/privilege-escalating-vulnerability-in-certain-hikvision-ip-cameras/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-9198",
+  "added": "2026-08-04",
+  "vendor": "IBM",
+  "product": "Langflow",
+  "name": "IBM Langflow Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Langflow contains a code injection vulnerability that allows unauthenticated attackers to achieve full remote code execution on default Langflow deployments.",
+  "refs": [
+   "https://www.ibm.com/support/pages/node/7278927"
+  ]
+ },
+ {
+  "cve": "CVE-2026-48939",
+  "added": "2026-07-10",
+  "vendor": "iCagenda",
+  "product": "iCagenda",
+  "name": "iCagenda Unrestricted Upload of File with Dangerous Type Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "iCagenda contains an unrestricted upload of file with dangerous type vulnerability that allows the upload of arbitrary files in the file attachment feature, ultimately resulting in PHP code upload and execution.",
+  "refs": [
+   "https://www.icagenda.com/#download"
+  ]
+ },
+ {
+  "cve": "CVE-2015-5477",
+  "added": "2026-10-08",
+  "vendor": "ISC",
+  "product": "BIND",
+  "name": "ISC BIND Data Processing Errors Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "ISC BIND contains a data processing errors vulnerability that could allow remote attackers to cause a denial of service via TKEY queries.",
+  "refs": [
+   "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://web.archive.org/web/20150729014733/https://kb.isc.org/article/AA-01272",
+   "https://access.redhat.com/errata/RHSA-2015:1513.html",
+   "https://supportportal.juniper.net/s/article/2016-01-Security-Bulletin-Junos-Vulnerability-in-ISC-BIND-named-CVE-2015-5477"
+  ]
+ }
+]

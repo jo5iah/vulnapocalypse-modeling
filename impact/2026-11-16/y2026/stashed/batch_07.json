@@ -1,0 +1,204 @@
+[
+ {
+  "cve": "CVE-2026-1281",
+  "added": "2026-01-29",
+  "vendor": "Ivanti",
+  "product": "Endpoint Manager Mobile (EPMM)",
+  "name": "Ivanti Endpoint Manager Mobile (EPMM) Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ivanti Endpoint Manager Mobile (EPMM) contains a code injection vulnerability that could allow attackers to achieve unauthenticated remote code execution.",
+  "refs": [
+   "Please adhere to Ivanti's guidelines to assess exposure and mitigate risks. Check for signs of potential compromise on all internet accessible Ivanti products affected by this vulnerability. Apply any final mitigations provided by the vendor as soon as possible. For more information please: see: https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-1281-CVE-2026-1340",
+   "https://support.mobileiron.com/mi/vsp/AB1771634/ivanti-security-update-1761642-1.0.0S-5.noarch.rpm",
+   "https://support.mobileiron.com/mi/vsp/AB1771634/ivanti-security-update-1761642-1.0.0L-5.noarch.rpm"
+  ]
+ },
+ {
+  "cve": "CVE-2026-1603",
+  "added": "2026-03-09",
+  "vendor": "Ivanti",
+  "product": "Endpoint Manager (EPM)",
+  "name": "Ivanti Endpoint Manager (EPM) Authentication Bypass Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ivanti Endpoint Manager (EPM) contains an authentication bypass using an alternate path or channel vulnerability that could allow a remote unauthenticated attacker to leak specific stored credential data.",
+  "refs": [
+   "https://hub.ivanti.com/s/article/Security-Advisory-EPM-February-2026-for-EPM-2024?language=en_US"
+  ]
+ },
+ {
+  "cve": "CVE-2026-1340",
+  "added": "2026-04-08",
+  "vendor": "Ivanti",
+  "product": "Endpoint Manager Mobile (EPMM)",
+  "name": "Ivanti Endpoint Manager Mobile (EPMM) Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ivanti Endpoint Manager Mobile (EPMM) contains a code injection vulnerability that could allow attackers to achieve unauthenticated remote code execution.",
+  "refs": [
+   "Please adhere to Ivanti's guidelines to assess exposure and mitigate risks. Check for signs of potential compromise on all internet accessible Ivanti products affected by this vulnerability. Apply any final mitigations provided by the vendor as soon as possible. For more information please see: https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-1281-CVE-2026-1340?language=en_US",
+   "https://support.mobileiron.com/mi/vsp/AB1786671/ivanti-security-update-1761642-1.1.0S-5.noarch.rpm",
+   "https://support.mobileiron.com/mi/vsp/AB1786671/ivanti-security-update-1761642-1.1.0L-5.noarch.rpm"
+  ]
+ },
+ {
+  "cve": "CVE-2026-6973",
+  "added": "2026-05-07",
+  "vendor": "Ivanti",
+  "product": "Endpoint Manager Mobile (EPMM)",
+  "name": "Ivanti Endpoint Manager Mobile (EPMM) Improper Input Validation Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ivanti Endpoint Manager Mobile (EPMM) contains an improper input validation vulnerability that allows a remotely authenticated user with administrative access to achieve remote code execution.",
+  "refs": [
+   "https://hub.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-Multiple-CVEs?language=en_US"
+  ]
+ },
+ {
+  "cve": "CVE-2026-10520",
+  "added": "2026-06-11",
+  "vendor": "Ivanti",
+  "product": "Sentry",
+  "name": "Ivanti Sentry OS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ivanti Sentry (formerly known as MobileIron Sentry) contains an OS command injection vulnerability which could allow a remote unauthenticated user to achieve root-level remote code execution. This vulnerability can be successfully exploited in cases where the Sentry appliance is in an unmanaged state with its endpoints externally reachable. The use of mTLS with EPMM or restricted HTTPS access through Neurons for MDM makes interfaces inaccessible to external actors.",
+  "refs": [
+   "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
+  ]
+ },
+ {
+  "cve": "CVE-2026-104935",
+  "added": "2026-10-13",
+  "vendor": "Ivanti",
+  "product": "Connect Secure",
+  "name": "Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ivanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands.",
+  "refs": [
+   "https:/forums.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935"
+  ]
+ },
+ {
+  "cve": "CVE-2024-27199",
+  "added": "2026-04-20",
+  "vendor": "JetBrains",
+  "product": "TeamCity",
+  "name": "JetBrains TeamCity Relative Path Traversal Vulnerability",
+  "ransomware": "Known",
+  "desc": "JetBrains TeamCity contains a relative path traversal vulnerability that could allow limited admin actions to be performed.",
+  "refs": [
+   "https://www.jetbrains.com/privacy-security/issues-fixed/",
+   "https://blog.jetbrains.com/teamcity/2024/03/additional-critical-security-issues-affecting-teamcity-on-premises-cve-2024-27198-and-cve-2024-27199-update-to-2023-11-4-now/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-63077",
+  "added": "2026-08-05",
+  "vendor": "JetBrains",
+  "product": "TeamCity",
+  "name": "JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
+  "ransomware": "Known",
+  "desc": "JetBrains TeamCity contains a deserialization of untrusted data vulnerability that could allow unauthenticated remote code execution via the agent polling protocol.",
+  "refs": [
+   "https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/",
+   "https://www.jetbrains.com/privacy-security/issues-fixed/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-66384",
+  "added": "2026-08-27",
+  "vendor": "JFrog",
+  "product": "Artifactory",
+  "name": "JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "JFrog Artifactory contains an improper limitation of a pathname to a restricted directory vulnerability. This can allow an authenticated user to write data outside the intended Docker cache path under specific remote-repository conditions.",
+  "refs": [
+   "https://docs.jfrog.com/releases/docs/jfrog-security-advisories",
+   "https://docs.jfrog.com/releases/docs/artifactory-self-managed-releases"
+  ]
+ },
+ {
+  "cve": "CVE-2026-82329",
+  "added": "2026-09-02",
+  "vendor": "JFrog",
+  "product": "Artifactory",
+  "name": "JFrog Artifactory Improper Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "JFrog Artifactory contains an improper authentication vulnerability that under default configuration can allow an unauthenticated attacker with network access to obtain administrative privileges.",
+  "refs": [
+   "https://docs.jfrog.com/releases/docs/jfrog-security-advisories",
+   "https://docs.jfrog.com/releases/docs/artifactory-self-managed-releases"
+  ]
+ },
+ {
+  "cve": "CVE-2026-42016",
+  "added": "2026-09-11",
+  "vendor": "JFrog",
+  "product": "Artifactory",
+  "name": "JFrog Artifactory Incorrect Authorization Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "JFrog Artifactory contains an incorrect authorization vulnerability that leads to a privilege escalation attack due to a validation check of the token signature/issuer and not the token\u2019s scope.",
+  "refs": [
+   "https://docs.jfrog.com/releases/docs/jfrog-security-advisories",
+   "https://docs.jfrog.com/releases/docs/artifactory-self-managed-releases"
+  ]
+ },
+ {
+  "cve": "CVE-2026-42018",
+  "added": "2026-09-11",
+  "vendor": "JFrog",
+  "product": "Artifactory",
+  "name": "JFrog Artifactory Improper Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "JFrog Artifactory contains an improper authentication vulnerability that could return an internal anonymous-user token to an unauthenticated caller when anonymous access is disabled, potentially exposing sensitive resources.",
+  "refs": [
+   "https://docs.jfrog.com/releases/docs/jfrog-security-advisories",
+   "https://docs.jfrog.com/releases/docs/artifactory-self-managed-releases"
+  ]
+ },
+ {
+  "cve": "CVE-2026-56290",
+  "added": "2026-07-07",
+  "vendor": "Joomlack",
+  "product": "Page Builder",
+  "name": "Joomlack Page Builder Improper Access Control Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Joomlack Page Builder contains an improper access control vulnerability that could allow for remote code execution via unauthenticated arbitrary file upload.",
+  "refs": [
+   "https://www.joomlack.fr/en/joomla-extensions/page-builder-ck"
+  ]
+ },
+ {
+  "cve": "CVE-2026-48908",
+  "added": "2026-07-07",
+  "vendor": "JoomShaper",
+  "product": "SP Page Builder",
+  "name": "JoomShaper SP Page Builder Unrestricted Upload of File with Dangerous Type Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "JoomShaper SP Page Builder contains an unrestricted upload of file with dangerous type vulnerability that allows unauthenticated users to upload arbitrary files, ultimately resulting in the upload and execution of PHP code.",
+  "refs": [
+   "https://extensions.joomla.org/extension/sp-page-builder/"
+  ]
+ },
+ {
+  "cve": "CVE-2025-2749",
+  "added": "2026-04-20",
+  "vendor": "Kentico",
+  "product": "Kentico Xperience",
+  "name": "Kentico Xperience Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Kentico Xperience contains a path traversal vulnerability that could allow an authenticated user's Staging Sync Server to upload arbitrary data to path relative locations.",
+  "refs": [
+   "https://devnet.kentico.com/download/hotfixes"
+  ]
+ },
+ {
+  "cve": "CVE-2026-49869",
+  "added": "2026-09-02",
+  "vendor": "Kestra",
+  "product": "Kestra OSS",
+  "name": "Kestra OSS OS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Kestra OSS contains an OS command injection vulnerability that could allow an unauthenticated remote attacker to create and execute arbitrary workflows without credentials.",
+  "refs": [
+   "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/kestra-io/kestra/security/advisories/GHSA-5vc5-wxxq-3fjx"
+  ]
+ }
+]

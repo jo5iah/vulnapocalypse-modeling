@@ -9,6 +9,11 @@ predictor's weights. Time is in days throughout. Data
 acquisition is in `VulnData.ipynb`; the model and every figure are computed in `ODEtoVuln_daily.ipynb`; this
 document is the only written account of what they show. Snapshot: **2026-10-14**.
 
+> **Data ahead of the document.** `data/` and `VulnData.ipynb` are at the **2026-11-16** snapshot; the
+> document, its figures and the numbers on this page are still at 2026-10-14 and have not been
+> reconciled. Re-running `ODEtoVuln_daily.ipynb` now produces 11-16 figures the prose does not match.
+> `plan.md` records what moved.
+
 ## Executive summary
 
 Security programs are measured on how fast they patch. This model asks what sets the number of
@@ -69,6 +74,10 @@ adding a layer of compromised systems are the extensions most likely to change t
 | `data/` | Cached API responses and the three derived inputs: `derived_params.json` (parameters), `global_history.json` (per-year publication rates), `sharepoint_union.json` (the de-duplicated CVE set for the SharePoint CPE family). Included so the work reproduces without re-querying the sources; delete a file to refetch it. |
 | `plan.md` | The four-step roadmap and one independent track. Step 1 — the vulnerability-count layer in this repository — is built; steps 2 to 4 stratify the population, model exploit-affected systems, and close with the economics of attack versus defense. Track A measures exploitation from vendor zero-day announcements ahead of the catalog, and silent patching, and can be done before any of the steps. |
 | `product_ranks_<snapshot>.md` | Standalone rankings report: top exploited and top vulnerable product families in one taxonomy, and where each volume leader sits in the exploitation catalog. |
+| `cve_strata.py` | Per-CVE stratification table (`data/cve_strata.csv.gz`): vendor, product families, CVSS exposure fields, severity, CWE, CISA's SSVC decision points and KEV date for every CVE of the trailing year. `build` sweeps NVD, `update` refetches only records modified since the last sync, `report` rebuilds the tables offline. |
+| `cve_stratification_<snapshot>.md` | KEV additions per 1,000 CVEs published, by exposure class, vendor, vendor × exposure, weakness type, severity and SSVC value, and the share of KEV additions a single population rate misallocates. Input to plan step 2. |
+| `impact_ledger.py` | Assembles the exploitation-impact ledger from the research results under `impact/`: published counts of exposed instances, compromised hosts, victim organizations, attack volume and downtime per KEV entry. |
+| `impact_ledger_<snapshot>.md` | The ledger so far: yield by evidence type and month, lag from first public exploitation claim to KEV listing, and per-campaign figures. Partial (96 of 2026's 297 KEV additions); input to plan step 3. |
 | `vendor/` | Build inputs only, not needed to read anything: KaTeX with its web fonts and markdown-it. |
 | `environment.yml` | Conda environment for running the notebooks. `conda env create -f environment.yml`, then register the kernel. |
 | `environment.lock.yml` | Fully pinned export of the same environment, for byte-identical reproduction on linux-64. |

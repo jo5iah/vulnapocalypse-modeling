@@ -1,0 +1,3659 @@
+{
+ "snapshot": "2026-11-16",
+ "year": 2026,
+ "records": [
+  {
+   "cve": "CVE-2026-24858",
+   "added": "2026-01-27",
+   "vendor": "Fortinet",
+   "product": "Multiple Products",
+   "ransomware": "Unknown",
+   "campaign": "FortiCloud SSO abuse January 2026",
+   "campaign_note": "Attackers used two malicious FortiCloud SSO accounts to log into other customers' FortiGates, download configurations and create local admin accounts; Fortinet says only that a small number of customers reported it.",
+   "first_exploitation_claim": {
+    "date": "2026-01-21",
+    "source": "Fortinet customer reports, per BleepingComputer (Arctic Wolf bulletin same day; Fortinet PSIRT blog 2026-01-22)",
+    "url": "https://www.bleepingcomputer.com/news/security/fortinet-blocks-exploited-forticloud-sso-zero-day-until-patch-is-ready/"
+   },
+   "evidence": [
+    {
+     "kind": "organizations",
+     "value": "a small number",
+     "counts_what": "customers reporting unexpected login activity on their devices (unquantified)",
+     "measured_by": "Fortinet PSIRT",
+     "measured_on": "2026-01-22",
+     "url": "https://www.fortinet.com/blog/psirt-blogs/analysis-of-sso-abuse-on-fortios",
+     "quote": "a small number of customers reported unexpected login activity occurring on their devices",
+     "primary_opened": true
+    },
+    {
+     "kind": "other",
+     "value": 2,
+     "counts_what": "malicious FortiCloud SSO accounts used by the attackers (attacker infrastructure, not victims)",
+     "measured_by": "Fortinet, reported by BleepingComputer",
+     "measured_on": "2026-01-22",
+     "url": "https://www.bleepingcomputer.com/news/security/fortinet-blocks-exploited-forticloud-sso-zero-day-until-patch-is-ready/",
+     "quote": "two malicious FortiCloud SSO accounts, which were locked out on January 22",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_05.json"
+  },
+  {
+   "cve": "CVE-2021-39935",
+   "added": "2026-02-03",
+   "vendor": "GitLab",
+   "product": "Community and Enterprise Editions",
+   "ransomware": "Unknown",
+   "campaign": "GitLab 2021 SSRF flaws added to KEV, February 2026",
+   "campaign_note": "A 2021 CI Lint API SSRF added to KEV on 2026-02-03; coverage does not say what prompted the addition or who observed exploitation, no pre-2026 or 2026 compromise or attack-volume figures were found, and the only number is a Shodan count of exposed GitLab instances that is not specific to vulnerable versions.",
+   "first_exploitation_claim": {
+    "date": "2026-02-03",
+    "source": "CISA KEV",
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-five-year-old-gitlab-flaw-exploited-in-attacks/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": "over 49,000",
+     "counts_what": "devices with a GitLab fingerprint exposed online (exposed product, not confirmed vulnerable; nearly 27,000 on port 443)",
+     "measured_by": "Shodan (reported by BleepingComputer)",
+     "measured_on": "2026-02-04",
+     "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-five-year-old-gitlab-flaw-exploited-in-attacks/",
+     "quote": "Shodan is currently tracking over 49,000 devices with a GitLab fingerprint exposed online",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "exposure_only",
+   "source_file": "y2026/result_r3.json"
+  },
+  {
+   "cve": "CVE-2026-20700",
+   "added": "2026-02-12",
+   "vendor": "Apple",
+   "product": "Multiple Products",
+   "ransomware": "Unknown",
+   "campaign": "DarkSword iOS exploit chain",
+   "campaign_note": "Google GTIG (2026-03-18) describes DarkSword as a six-vulnerability iOS full chain used since at least November 2025 by multiple commercial surveillance vendors and suspected state actors against targets in Saudi Arabia, Turkey, Malaysia and Ukraine; no victim or device counts are published.",
+   "first_exploitation_claim": {
+    "date": "2026-02-11",
+    "source": "Apple security advisory (iOS 26.3 release notes, dyld entry, credited to Google Threat Analysis Group)",
+    "url": "https://support.apple.com/en-us/126346"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "targeted individuals; no count",
+     "counts_what": "Vendor statement of exploitation scope (qualitative, no number)",
+     "measured_by": "Apple",
+     "measured_on": "2026-02-11",
+     "url": "https://support.apple.com/en-us/126346",
+     "quote": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26.",
+     "primary_opened": true
+    },
+    {
+     "kind": "other",
+     "value": "4 countries",
+     "counts_what": "Countries in which DarkSword targets were observed (not a victim count)",
+     "measured_by": "Google Threat Intelligence Group",
+     "measured_on": "2026-03-18",
+     "url": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain",
+     "quote": "These threat actors have deployed the exploit chain against targets in Saudi Arabia, Turkey, Malaysia, and Ukraine.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2021-22175",
+   "added": "2026-02-18",
+   "vendor": "GitLab",
+   "product": "GitLab",
+   "ransomware": "Unknown",
+   "campaign": "GitLab 2021 SSRF flaws added to KEV, February 2026",
+   "campaign_note": "A 2021 webhook SSRF added to KEV on 2026-02-18, two weeks after CVE-2021-39935; no reputable source was found explaining the trigger, and no exposure, compromise or attack-volume figures (pre-2026 or 2026) were found for this CVE.",
+   "first_exploitation_claim": {
+    "date": "2026-02-18",
+    "source": "CISA KEV",
+    "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+   },
+   "evidence": [],
+   "searches_run": 1,
+   "verdict": "nothing_found",
+   "source_file": "y2026/result_r3.json"
+  },
+  {
+   "cve": "CVE-2026-22769",
+   "added": "2026-02-18",
+   "vendor": "Dell",
+   "product": "RecoverPoint for Virtual Machines (RP4VMs)",
+   "ransomware": "Unknown",
+   "campaign": "UNC6201 Dell RecoverPoint zero-day",
+   "campaign_note": "Google GTIG/Mandiant reported that suspected PRC-nexus cluster UNC6201 exploited the hard-coded credential since at least mid-2024 to deploy SLAYSTYLE, BRICKSTORM and GRIMBOLT; Mandiant put the victim count at under a dozen organizations.",
+   "first_exploitation_claim": {
+    "date": "2026-02-17",
+    "source": "Google Threat Intelligence Group / Mandiant",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/unc6201-exploiting-dell-recoverpoint-zero-day"
+   },
+   "evidence": [
+    {
+     "kind": "organizations",
+     "value": "less than a dozen",
+     "counts_what": "organizations known to Mandiant to be impacted by UNC6201 exploitation of CVE-2026-22769 (upper bound, not an exact count)",
+     "measured_by": "Mandiant Consulting (Rich Reece), quoted by The Hacker News",
+     "measured_on": "2026-02-18",
+     "url": "https://thehackernews.com/2026/02/dell-recoverpoint-for-vms-zero-day-cve.html",
+     "quote": "We are aware of less than a dozen impacted organizations",
+     "primary_opened": false
+    },
+    {
+     "kind": "other",
+     "value": "mid-2024",
+     "counts_what": "earliest identified exploitation activity (zero-day dwell of roughly 18 months before disclosure)",
+     "measured_by": "Google Threat Intelligence Group / Mandiant",
+     "measured_on": "2026-02-17",
+     "url": "https://cloud.google.com/blog/topics/threat-intelligence/unc6201-exploiting-dell-recoverpoint-zero-day",
+     "quote": "The earliest identified exploitation activity of this vulnerability occurred in mid-2024.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_05.json"
+  },
+  {
+   "cve": "CVE-2023-43000",
+   "added": "2026-03-05",
+   "vendor": "Apple",
+   "product": "Multiple Products",
+   "ransomware": "Unknown",
+   "campaign": "Coruna iOS exploit kit",
+   "campaign_note": "Google GTIG (2026-03-03) describes Coruna as a kit of five full iOS chains and 23 exploits (iOS 13.0 to 17.2.1) seen in 2025 with a surveillance-vendor customer, then in UNC6353 watering holes on Ukrainian websites, then in broad-scale UNC6691 campaigns on fake Chinese finance sites; no victim or device counts are published.",
+   "first_exploitation_claim": {
+    "date": "2026-03-03",
+    "source": "Google Threat Intelligence Group (Coruna report; this WebKit RCE was collected from the UNC6353 Ukrainian watering-hole server in 2025)",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "many compromised Ukrainian websites; no count",
+     "counts_what": "Websites compromised to host the watering-hole iframe delivering the kit (qualitative, no number)",
+     "measured_by": "Google Threat Intelligence Group",
+     "measured_on": "2026-03-03",
+     "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit",
+     "quote": "a website loaded as a hidden iFrame on many compromised Ukrainian websites, ranging from industrial equipment and retail tools to local services and ecommerce websites",
+     "primary_opened": true
+    },
+    {
+     "kind": "other",
+     "value": "collected in the wild",
+     "counts_what": "Confirmation this CVE's exploit was served by the watering-hole server (no number)",
+     "measured_by": "Google Threat Intelligence Group",
+     "measured_on": "2026-03-03",
+     "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit",
+     "quote": "We collected WebKit RCEs, which included CVE-2024-23222, CVE-2022-48503, and CVE-2023-43000, before the server was shut down.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2021-30952",
+   "added": "2026-03-05",
+   "vendor": "Apple",
+   "product": "Multiple Products",
+   "ransomware": "Unknown",
+   "campaign": "Coruna iOS exploit kit",
+   "campaign_note": "Google GTIG (2026-03-03) describes Coruna as a kit of five full iOS chains and 23 exploits (iOS 13.0 to 17.2.1) seen in 2025 with a surveillance-vendor customer, then in UNC6353 watering holes on Ukrainian websites, then in broad-scale UNC6691 campaigns on fake Chinese finance sites; no victim or device counts are published.",
+   "first_exploitation_claim": {
+    "date": "2026-03-03",
+    "source": "Google Threat Intelligence Group (Coruna report; activity observed from February 2025)",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "many compromised Ukrainian websites; no count",
+     "counts_what": "Websites compromised to host the watering-hole iframe delivering the kit (qualitative, no number)",
+     "measured_by": "Google Threat Intelligence Group",
+     "measured_on": "2026-03-03",
+     "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit",
+     "quote": "a website loaded as a hidden iFrame on many compromised Ukrainian websites, ranging from industrial equipment and retail tools to local services and ecommerce websites",
+     "primary_opened": true
+    },
+    {
+     "kind": "other",
+     "value": "a very large set of fake Chinese websites; no count",
+     "counts_what": "Attacker-run scam websites serving the exploit kit (qualitative, no number)",
+     "measured_by": "Google Threat Intelligence Group",
+     "measured_on": "2026-03-03",
+     "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit",
+     "quote": "we identified the JavaScript framework on a very large set of fake Chinese websites mostly related to finance, dropping the exact same iOS exploit kit",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2023-41974",
+   "added": "2026-03-05",
+   "vendor": "Apple",
+   "product": "iOS and iPadOS",
+   "ransomware": "Unknown",
+   "campaign": "Coruna iOS exploit kit",
+   "campaign_note": "Google GTIG (2026-03-03) describes Coruna as a kit of five full iOS chains and 23 exploits (iOS 13.0 to 17.2.1) seen in 2025 with a surveillance-vendor customer, then in UNC6353 watering holes on Ukrainian websites, then in broad-scale UNC6691 campaigns on fake Chinese finance sites; no victim or device counts are published.",
+   "first_exploitation_claim": {
+    "date": "2026-03-03",
+    "source": "Google Threat Intelligence Group (Coruna report; activity observed from February 2025)",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "many compromised Ukrainian websites; no count",
+     "counts_what": "Websites compromised to host the watering-hole iframe delivering the kit (qualitative, no number)",
+     "measured_by": "Google Threat Intelligence Group",
+     "measured_on": "2026-03-03",
+     "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit",
+     "quote": "a website loaded as a hidden iFrame on many compromised Ukrainian websites, ranging from industrial equipment and retail tools to local services and ecommerce websites",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2025-32432",
+   "added": "2026-03-20",
+   "vendor": "Craft CMS",
+   "product": "Craft CMS",
+   "ransomware": "Unknown",
+   "campaign": "Craft CMS CVE-2025-32432 / CVE-2024-58136 exploitation (Feb-Apr 2025)",
+   "campaign_note": "All impact figures predate 2026: Orange Cyberdefense's SensePost team found the flaw during a forensic investigation of a February 2025 compromise and published scan counts in April 2025; what prompted the March 2026 KEV addition was not found (Craft's knowledge-base page has no 2026 update).",
+   "first_exploitation_claim": {
+    "date": "2025-04-17",
+    "source": "Craft CMS knowledge base (evidence of in-the-wild exploitation found 2025-04-17; Orange Cyberdefense later dated the first compromise to February 2025)",
+    "url": "https://craftcms.com/knowledge-base/craft-cms-cve-2025-32432"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 13000,
+     "counts_what": "vulnerable Craft CMS instances found with a nuclei template (approximate), out of almost 35K FQDNs hosting Craft CMS; scan date not stated",
+     "measured_by": "Orange Cyberdefense (SensePost)",
+     "measured_on": "",
+     "url": "https://sensepost.com/blog/2025/investigating-an-in-the-wild-campaign-using-rce-in-craftcms/",
+     "quote": "We found ~13000 vulnerable instances using our nuclei template.",
+     "primary_opened": true
+    },
+    {
+     "kind": "exposed",
+     "value": 6300,
+     "counts_what": "IP addresses hosting the ~13000 vulnerable instances (approximate); scan date not stated",
+     "measured_by": "Orange Cyberdefense (SensePost)",
+     "measured_on": "",
+     "url": "https://sensepost.com/blog/2025/investigating-an-in-the-wild-campaign-using-rce-in-craftcms/",
+     "quote": "These instances are linked to ~6300 IP addresses.",
+     "primary_opened": true
+    },
+    {
+     "kind": "compromised",
+     "value": 300,
+     "counts_what": "allegedly compromised Craft CMS instances identified by scanning (almost 300; the measurer's own wording is 'allegedly'); scan date not stated, post published April 2025",
+     "measured_by": "Orange Cyberdefense (SensePost)",
+     "measured_on": "",
+     "url": "https://sensepost.com/blog/2025/investigating-an-in-the-wild-campaign-using-rce-in-craftcms/",
+     "quote": "we were able to find almost ~300 allegedly compromised instances.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "quantified_compromise",
+   "source_file": "y2026/result_r1.json"
+  },
+  {
+   "cve": "CVE-2025-43510",
+   "added": "2026-03-20",
+   "vendor": "Apple",
+   "product": "Multiple Products",
+   "ransomware": "Unknown",
+   "campaign": "DarkSword iOS exploit chain",
+   "campaign_note": "Google GTIG (2026-03-18) describes DarkSword as a six-vulnerability iOS full chain used since at least November 2025 by multiple commercial surveillance vendors and suspected state actors against targets in Saudi Arabia, Turkey, Malaysia and Ukraine; no victim or device counts are published.",
+   "first_exploitation_claim": {
+    "date": "2026-03-18",
+    "source": "Google Threat Intelligence Group (DarkSword report; activity observed from November 2025)",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "4 countries",
+     "counts_what": "Countries in which DarkSword targets were observed (not a victim count)",
+     "measured_by": "Google Threat Intelligence Group",
+     "measured_on": "2026-03-18",
+     "url": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain",
+     "quote": "These threat actors have deployed the exploit chain against targets in Saudi Arabia, Turkey, Malaysia, and Ukraine.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2025-43520",
+   "added": "2026-03-20",
+   "vendor": "Apple",
+   "product": "Multiple Products",
+   "ransomware": "Unknown",
+   "campaign": "DarkSword iOS exploit chain",
+   "campaign_note": "Google GTIG (2026-03-18) describes DarkSword as a six-vulnerability iOS full chain used since at least November 2025 by multiple commercial surveillance vendors and suspected state actors against targets in Saudi Arabia, Turkey, Malaysia and Ukraine; no victim or device counts are published.",
+   "first_exploitation_claim": {
+    "date": "2026-03-18",
+    "source": "Google Threat Intelligence Group (DarkSword report; activity observed from November 2025)",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "4 countries",
+     "counts_what": "Countries in which DarkSword targets were observed (not a victim count)",
+     "measured_by": "Google Threat Intelligence Group",
+     "measured_on": "2026-03-18",
+     "url": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain",
+     "quote": "These threat actors have deployed the exploit chain against targets in Saudi Arabia, Turkey, Malaysia, and Ukraine.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2025-31277",
+   "added": "2026-03-20",
+   "vendor": "Apple",
+   "product": "Multiple Products",
+   "ransomware": "Unknown",
+   "campaign": "DarkSword iOS exploit chain",
+   "campaign_note": "Google GTIG (2026-03-18) describes DarkSword as a six-vulnerability iOS full chain used since at least November 2025 by multiple commercial surveillance vendors and suspected state actors against targets in Saudi Arabia, Turkey, Malaysia and Ukraine; no victim or device counts are published.",
+   "first_exploitation_claim": {
+    "date": "2026-03-18",
+    "source": "Google Threat Intelligence Group (DarkSword report; activity observed from November 2025)",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "4 countries",
+     "counts_what": "Countries in which DarkSword targets were observed (not a victim count)",
+     "measured_by": "Google Threat Intelligence Group",
+     "measured_on": "2026-03-18",
+     "url": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain",
+     "quote": "These threat actors have deployed the exploit chain against targets in Saudi Arabia, Turkey, Malaysia, and Ukraine.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2026-33634",
+   "added": "2026-03-26",
+   "vendor": "Aquasecurity",
+   "product": "Trivy",
+   "ransomware": "Unknown",
+   "campaign": "TeamPCP Trivy supply-chain compromise",
+   "campaign_note": "On 2026-03-19 an actor tracked as TeamPCP used compromised credentials to publish a malicious Trivy v0.69.4 and force-push credential-stealing code to trivy-action and setup-trivy tags, with follow-on compromises of Checkmarx KICS and LiteLLM; Mandiant's victim count is for the threat actor's campaign as a whole, not Trivy alone.",
+   "first_exploitation_claim": {
+    "date": "2026-03-19",
+    "source": "Aqua Security / public reporting of the compromise on the day it occurred, per Microsoft Security blog (2026-03-24); Aqua's advisory GHSA-69fq-xp46-6x23 was published 2026-03-21",
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/03/24/detecting-investigating-defending-against-trivy-supply-chain-compromise/"
+   },
+   "evidence": [
+    {
+     "kind": "organizations",
+     "value": 1000,
+     "counts_what": "Impacted SaaS environments dealing with this threat actor (lower bound, 'over 1,000'; campaign-wide TeamPCP figure following the Trivy compromise, not Trivy-only); spoken statement at a Google event at RSA Conference",
+     "measured_by": "Mandiant Consulting (Charles Carmakal, CTO), reported by The Register",
+     "measured_on": "2026-03-24",
+     "url": "https://www.theregister.com/2026/03/24/1k_cloud_environments_infected_following/",
+     "quote": "We know of over 1,000 impacted SaaS environments right now that are actively dealing with this particular threat actor",
+     "primary_opened": false
+    },
+    {
+     "kind": "exposed",
+     "value": 10000,
+     "counts_what": "GitHub workflow files referencing aquasecurity/trivy-action (lower bound, 'over 10,000'; exposed users of the product, not confirmed to have run the malicious tags)",
+     "measured_by": "Socket (Philipp Burckhardt), quoted by The Register",
+     "measured_on": "2026-03-20",
+     "url": "https://www.theregister.com/2026/03/24/1k_cloud_environments_infected_following/",
+     "quote": "With over 10,000 workflow files on GitHub referencing this action, the potential blast radius is significant",
+     "primary_opened": false
+    },
+    {
+     "kind": "other",
+     "value": "76 of 77",
+     "counts_what": "Version tags in aquasecurity/trivy-action force-pushed to credential-stealing commits (plus all 7 setup-trivy tags)",
+     "measured_by": "Aqua Security (GitHub advisory GHSA-69fq-xp46-6x23)",
+     "measured_on": "2026-03-21",
+     "url": "https://github.com/advisories/GHSA-69fq-xp46-6x23",
+     "quote": "The attacker force-pushed 76 of 77 version tags to malicious commits that injected an infostealer into `entrypoint.sh`.",
+     "primary_opened": true
+    },
+    {
+     "kind": "other",
+     "value": "~12 hours",
+     "counts_what": "Exposure window during which malicious trivy-action tags were live (2026-03-19 ~17:43 UTC to 2026-03-20 ~05:40 UTC); other components ~3, ~4 and ~10 hours. A malicious-distribution window, not service downtime",
+     "measured_by": "Aqua Security (GitHub advisory GHSA-69fq-xp46-6x23)",
+     "measured_on": "2026-03-21",
+     "url": "https://github.com/advisories/GHSA-69fq-xp46-6x23",
+     "quote": "trivy-action | 2026-03-19 ~17:43 ... | 2026-03-20 ~05:40 | ~12 hours",
+     "primary_opened": true
+    },
+    {
+     "kind": "other",
+     "value": 44,
+     "counts_what": "Aqua Security internal GitHub repositories renamed/defaced and exposed by the attackers",
+     "measured_by": "Paul McCarty (researcher), reported by The Register",
+     "measured_on": "2026-03-22",
+     "url": "https://www.theregister.com/2026/03/24/1k_cloud_environments_infected_following/",
+     "quote": "renaming all 44 repositories and exposing internal source code, CI/CD configs, and knowledge bases",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "quantified_compromise",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2025-53521",
+   "added": "2026-03-27",
+   "vendor": "F5",
+   "product": "BIG-IP",
+   "ransomware": "Unknown",
+   "campaign": "F5 BIG-IP APM RCE exploitation 2026",
+   "campaign_note": "Disclosed October 2025 as a DoS, re-categorized by F5 to unauthenticated RCE in March 2026 with confirmed exploitation; no victim or compromise counts published, only Shadowserver fingerprint counts of exposed BIG-IP APM.",
+   "first_exploitation_claim": {
+    "date": "2026-03-27",
+    "source": "CISA KEV",
+    "url": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-f5-big-ip-flaw-in-attacks-patch-now/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 17100,
+     "counts_what": "IPs with BIG-IP APM fingerprints (exposed product, not confirmed vulnerable configuration); 'over 17,100'; article dated 2026-04-02 says 'on Wednesday'",
+     "measured_by": "Shadowserver, reported by BleepingComputer",
+     "measured_on": "",
+     "url": "https://www.bleepingcomputer.com/news/security/over-14-000-f5-big-ip-apm-instances-still-exposed-to-rce-attacks/",
+     "quote": "Shadowserver said on Wednesday that it now tracks over 17,100 IPs with BIG-IP APM fingerprints.",
+     "primary_opened": false
+    },
+    {
+     "kind": "exposed",
+     "value": 14100,
+     "counts_what": "IPs with F5 BIG-IP APM fingerprints exposed online (exposed product, not confirmed vulnerable); 'over 14,100'; US 5138, Europe 4750, Asia 2689; article dated 2026-04-06",
+     "measured_by": "Shadowserver, reported by Security Affairs",
+     "measured_on": "",
+     "url": "https://securityaffairs.com/190384/security/attackers-exploit-rce-flaw-as-14000-f5-big-ip-apm-instances-remain-exposed.html",
+     "quote": "tracking over 14,100 IPs with F5 BIG-IP APM fingerprints exposed online",
+     "primary_opened": false
+    },
+    {
+     "kind": "exposed",
+     "value": 240000,
+     "counts_what": "BIG-IP instances of any module exposed online (exposed product, broader than APM, not confirmed vulnerable); 'over 240,000'; article dated 2026-03-30",
+     "measured_by": "Shadowserver, reported by BleepingComputer",
+     "measured_on": "",
+     "url": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-f5-big-ip-flaw-in-attacks-patch-now/",
+     "quote": "over 240,000 BIG-IP instances exposed online",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "exposure_only",
+   "source_file": "y2026/result_05.json"
+  },
+  {
+   "cve": "CVE-2026-3055",
+   "added": "2026-03-30",
+   "vendor": "Citrix",
+   "product": "NetScaler",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Citrix disclosed the SAML IdP memory overread on 2026-03-23; watchTowr and Defused reported reconnaissance and then exploitation attempts from known threat-actor IPs from at least 2026-03-27; no quotable exposure or victim count was retrieved.",
+   "first_exploitation_claim": {
+    "date": "2026-03-27",
+    "source": "watchTowr (as reported by The Hacker News)",
+    "url": "https://thehackernews.com/2026/03/citrix-netscaler-under-active-recon-for.html"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "since at least 2026-03-27",
+     "counts_what": "exploitation attempts from known threat actor source IPs (no count given)",
+     "measured_by": "watchTowr (reported by The Hacker News)",
+     "measured_on": "2026-03-27",
+     "url": "https://thehackernews.com/2026/03/citrix-netscaler-under-active-recon-for.html",
+     "quote": "According to watchTowr, exploitation attempts have originated from known threat actor source IPs as of March 27, 2026.",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_04.json"
+  },
+  {
+   "cve": "CVE-2026-35616",
+   "added": "2026-04-06",
+   "vendor": "Fortinet",
+   "product": "FortiClient EMS",
+   "ransomware": "Unknown",
+   "campaign": "FortiClient EMS exploitation March-April 2026",
+   "campaign_note": "Zero-day exploitation of the EMS access-control flaw was seen by Defused Cyber and on watchTowr honeypots from 2026-03-31, days after CVE-2026-21643 came under attack; it is not known whether the same actor is behind both.",
+   "first_exploitation_claim": {
+    "date": "2026-03-31",
+    "source": "watchTowr honeypots, as reported by The Hacker News",
+    "url": "https://thehackernews.com/2026/04/fortinet-patches-actively-exploited-cve.html"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 2000,
+     "counts_what": "publicly accessible FortiClient EMS instances globally (exposed product, not confirmed vulnerable); 'over 2,000' in one sentence and 'approximately 2,000' in another; article dated 2026-04-06; secondary outlet outside the brief's named press list",
+     "measured_by": "Shadowserver, reported by Cyber Security News",
+     "measured_on": "",
+     "url": "https://cybersecuritynews.com/forticlient-ems-instances-exposed-online/",
+     "quote": "identifying over 2,000 publicly accessible instances globally",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "exposure_only",
+   "source_file": "y2026/result_05.json"
+  },
+  {
+   "cve": "CVE-2020-9715",
+   "added": "2026-04-13",
+   "vendor": "Adobe",
+   "product": "Acrobat",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "A 2020 Acrobat use-after-free (APSB20-48) added to KEV on 2026-04-13; two searches found only catalog mirrors and no report naming a campaign, the trigger for the 2026 addition, or any impact figure from 2020 or 2026 (Adobe's bulletin returned HTTP 403).",
+   "first_exploitation_claim": {
+    "date": "2026-04-13",
+    "source": "CISA KEV",
+    "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+   },
+   "evidence": [],
+   "searches_run": 2,
+   "verdict": "nothing_found",
+   "source_file": "y2026/result_r3.json"
+  },
+  {
+   "cve": "CVE-2026-21643",
+   "added": "2026-04-13",
+   "vendor": "Fortinet",
+   "product": "FortiClient EMS",
+   "ransomware": "Unknown",
+   "campaign": "FortiClient EMS exploitation March-April 2026",
+   "campaign_note": "The EMS SQL injection came under active exploitation days before CVE-2026-35616 was disclosed; no first-exploitation date or victim count was found.",
+   "first_exploitation_claim": {
+    "date": null,
+    "source": "The Hacker News (2026-04-05 article says the flaw had come under active exploitation days earlier; no date or original reporter given)",
+    "url": "https://thehackernews.com/2026/04/fortinet-patches-actively-exploited-cve.html"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 2000,
+     "counts_what": "publicly accessible FortiClient EMS instances globally (exposed product, not confirmed vulnerable; same figure as recorded for CVE-2026-35616); article dated 2026-04-06; secondary outlet outside the brief's named press list",
+     "measured_by": "Shadowserver, reported by Cyber Security News",
+     "measured_on": "",
+     "url": "https://cybersecuritynews.com/forticlient-ems-instances-exposed-online/",
+     "quote": "identifying over 2,000 publicly accessible instances globally",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "exposure_only",
+   "source_file": "y2026/result_05.json"
+  },
+  {
+   "cve": "CVE-2026-34621",
+   "added": "2026-04-13",
+   "vendor": "Adobe",
+   "product": "Acrobat and Reader",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Zero-day found by Haifei Li (EXPMON) from a PDF submitted to EXPMON on 2026-03-26; two malicious PDFs with Russian-language decoys were analyzed, and no victim count was published in the sources read.",
+   "first_exploitation_claim": {
+    "date": "2026-04-09",
+    "source": "Haifei Li / EXPMON blog post, as reported by Help Net Security on 2026-04-09 (the blog post's own date was not verified; its URL is https://justhaifei1.blogspot.com/2026/04/expmon-detected-sophisticated-zero-day-adobe-reader.html)",
+    "url": "https://www.helpnetsecurity.com/2026/04/09/acrobat-reader-zero-day-exploited/"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": 2,
+     "counts_what": "malicious PDF samples analyzed (the 2026-03-26 EXPMON submission and one related variant); a sample count, not a victim count",
+     "measured_by": "Haifei Li / EXPMON, as reported by Help Net Security",
+     "measured_on": "",
+     "url": "https://www.helpnetsecurity.com/?p=365849",
+     "quote": "The analysis of that and another related malicious PDF file revealed that",
+     "primary_opened": false
+    },
+    {
+     "kind": "other",
+     "value": "2025-11-28",
+     "counts_what": "date the variant sample was first submitted to VirusTotal, the basis for 'exploited since November 2025'",
+     "measured_by": "Haifei Li / EXPMON, as reported by Help Net Security",
+     "measured_on": "2025-11-28",
+     "url": "https://www.helpnetsecurity.com/2026/04/09/acrobat-reader-zero-day-exploited/",
+     "quote": "first submitted on November 28, 2025",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_00.json"
+  },
+  {
+   "cve": "CVE-2026-34197",
+   "added": "2026-04-16",
+   "vendor": "Apache",
+   "product": "ActiveMQ",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Jolokia-API code-injection flaw found by Horizon3 and disclosed in early April 2026; CISA flagged exploitation on 2026-04-16 and Shadowserver then counted vulnerable exposed servers, but no compromise count was found (a search snippet attributing first exploitation indicators to FortiGuard on 2026-04-13 was not verified).",
+   "first_exploitation_claim": {
+    "date": "2026-04-16",
+    "source": "CISA KEV",
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-apache-activemq-flaw-as-actively-exploited-in-attacks/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 6400,
+     "counts_what": "internet-exposed Apache ActiveMQ servers/IPs vulnerable to CVE-2026-34197 (more than 6,400; version-based)",
+     "measured_by": "Shadowserver Foundation",
+     "measured_on": "2026-04-20",
+     "url": "https://www.bleepingcomputer.com/news/security/actively-exploited-apache-activemq-flaw-impacts-6-400-servers/",
+     "quote": "Shadowserver found that over 6,400 Apache ActiveMQ servers exposed online are vulnerable to ongoing attacks",
+     "primary_opened": false
+    },
+    {
+     "kind": "exposed",
+     "value": 7500,
+     "counts_what": "Apache ActiveMQ servers exposed online (exposed product, not stated as vulnerable; more than 7,500)",
+     "measured_by": "Shadowserver Foundation",
+     "measured_on": "2026-04-17",
+     "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-apache-activemq-flaw-as-actively-exploited-in-attacks/",
+     "quote": "currently tracking more than 7,500 Apache ActiveMQ servers exposed online",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "exposure_only",
+   "source_file": "y2026/result_r1.json"
+  },
+  {
+   "cve": "CVE-2025-29635",
+   "added": "2026-04-24",
+   "vendor": "D-Link",
+   "product": "DIR-823X",
+   "ransomware": "Unknown",
+   "campaign": "Mirai campaign on EoL D-Link DIR-823X (Akamai SIRT, 2026)",
+   "campaign_note": "Akamai SIRT saw exploitation attempts in its honeypots from early March 2026 delivering a Mirai variant, the first reported in-the-wild use of the flaw; no counts of attempts, attacking IPs, infected or exposed devices were published in the sources read (the Akamai page itself could not be fetched).",
+   "first_exploitation_claim": {
+    "date": "2026-04-21",
+    "source": "Akamai SIRT (publication date from search result; content confirmed via BleepingComputer, 2026-04-22)",
+    "url": "https://www.akamai.com/blog/security-research/cve-2025-29635-mirai-campaign-targets-d-link-devices"
+   },
+   "evidence": [
+    {
+     "kind": "attack_volume",
+     "value": "honeypot exploitation attempts (no count)",
+     "counts_what": "exploitation attempts seen in Akamai's honeypot network; no number published",
+     "measured_by": "Akamai SIRT",
+     "measured_on": "",
+     "url": "https://www.bleepingcomputer.com/news/security/new-mirai-campaign-exploits-rce-flaw-in-eol-d-link-routers/",
+     "quote": "The Akamai SIRT discovered active exploitation attempts of the D-Link command injection vulnerability CVE-2025-29635",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r1.json"
+  },
+  {
+   "cve": "CVE-2024-1708",
+   "added": "2026-04-28",
+   "vendor": "ConnectWise",
+   "product": "ScreenConnect",
+   "ransomware": "Known",
+   "campaign": "ScreenConnect SlashAndGrab (CVE-2024-1709 + CVE-2024-1708), Feb 2024",
+   "campaign_note": "All figures found date from February 2024 and count ScreenConnect 23.9.7-and-earlier servers for the CVE-2024-1709/1708 pair without splitting by CVE; what prompted the April 2026 KEV addition of the path-traversal half was not found (the ConnectWise bulletin shows no 2025-2026 updates in the portion read).",
+   "first_exploitation_claim": {
+    "date": "2024-02-20",
+    "source": "ConnectWise security bulletin (update of 2024-02-20)",
+    "url": "https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 8800,
+     "counts_what": "vulnerable ScreenConnect servers exposed online (more than 8,800; versions affected by both CVE-2024-1709 and CVE-2024-1708, not split by CVE)",
+     "measured_by": "Censys (relayed by Huntress)",
+     "measured_on": "2024-02-19",
+     "url": "https://www.bleepingcomputer.com/news/security/screenconnect-critical-bug-now-under-attack-as-exploit-code-emerges/",
+     "quote": "the Censys platform was showing more than 8,800 vulnerable ScreenConnect servers exposed",
+     "primary_opened": false
+    },
+    {
+     "kind": "exposed",
+     "value": 3800,
+     "counts_what": "vulnerable ScreenConnect servers (around 3,800; not split by CVE)",
+     "measured_by": "Shadowserver Foundation",
+     "measured_on": "2024-02-20",
+     "url": "https://www.bleepingcomputer.com/news/security/screenconnect-critical-bug-now-under-attack-as-exploit-code-emerges/",
+     "quote": "yesterday the number was around 3,800",
+     "primary_opened": false
+    },
+    {
+     "kind": "compromised",
+     "value": "multiple victim organizations (no count)",
+     "counts_what": "victim organizations with post-exploitation activity seen by Huntress; no number published",
+     "measured_by": "Huntress",
+     "measured_on": "2024-02-23",
+     "url": "https://www.huntress.com/blog/slashandgrab-screen-connect-post-exploitation-in-the-wild-cve-2024-1709-cve-2024-1708",
+     "quote": "across multiple unique victim organizations",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "exposure_only",
+   "source_file": "y2026/result_r1.json"
+  },
+  {
+   "cve": "CVE-2009-3459",
+   "added": "2026-05-20",
+   "vendor": "Adobe",
+   "product": "Acrobat and Reader",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "A 2009 Reader/Acrobat heap overflow added to KEV on 2026-05-20; CISA's reference points to the note in Adobe bulletin APSB09-15 (October 2009) about reports of exploitation, so the exploitation evidence predates 2026, and no source was found for what prompted the 2026 addition or for any impact figure.",
+   "first_exploitation_claim": {
+    "date": null,
+    "source": "Adobe security bulletin APSB09-15 (October 2009), per the CISA KEV reference; the archived page could not be fetched, so the exact date and wording are unverified",
+    "url": "https://web.archive.org/web/20120324170253/http://www.adobe.com/support/security/bulletins/apsb09-15.html"
+   },
+   "evidence": [],
+   "searches_run": 1,
+   "verdict": "nothing_found",
+   "source_file": "y2026/result_r3.json"
+  },
+  {
+   "cve": "CVE-2026-9082",
+   "added": "2026-05-22",
+   "vendor": "Drupal",
+   "product": "Core",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Exploit attempts against PostgreSQL-backed Drupal sites began within about two days of the 2026-05-20 fix; Imperva characterized most activity as probing and no compromise counts were found.",
+   "first_exploitation_claim": {
+    "date": "2026-05-22",
+    "source": "Drupal Security Team advisory update (SA-CORE-2026-004), as reported by The Hacker News",
+    "url": "https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html"
+   },
+   "evidence": [
+    {
+     "kind": "attack_volume",
+     "value": 15000,
+     "counts_what": "attack attempts (lower bound, 'over 15,000') targeting almost 6,000 individual sites across 65 countries; mostly probing; not a compromise count",
+     "measured_by": "Imperva (Thales), reported by The Hacker News",
+     "measured_on": "",
+     "url": "https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html",
+     "quote": "observed over 15,000 attack attempts targeting almost 6,000 individual sites across 65 countries",
+     "primary_opened": false
+    },
+    {
+     "kind": "attack_volume",
+     "value": 6000,
+     "counts_what": "individual sites targeted by attack attempts ('almost 6,000'); targeted, not compromised",
+     "measured_by": "Imperva (Thales), reported by The Hacker News",
+     "measured_on": "",
+     "url": "https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html",
+     "quote": "observed over 15,000 attack attempts targeting almost 6,000 individual sites across 65 countries",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "attack_volume_only",
+   "source_file": "y2026/result_05.json"
+  },
+  {
+   "cve": "CVE-2026-8398",
+   "added": "2026-05-27",
+   "vendor": "Daemon",
+   "product": "Daemon Tools Lite",
+   "ransomware": "Unknown",
+   "campaign": "DAEMON Tools Lite supply-chain compromise",
+   "campaign_note": "Signed DAEMON Tools Lite installers (12.5.0.2421-12.5.0.2434) served from the official site were trojanized from 2026-04-08 until about 2026-05-05; Kaspersky GReAT found it and the vendor confirmed a build-environment compromise on 2026-05-06.",
+   "first_exploitation_claim": {
+    "date": "2026-05-05",
+    "source": "Kaspersky Securelist",
+    "url": "https://securelist.com/tr/daemon-tools-backdoor/119654/"
+   },
+   "evidence": [
+    {
+     "kind": "compromised",
+     "value": "several thousand",
+     "counts_what": "infection attempts involving DAEMON Tools seen in Kaspersky telemetry since early April 2026 (attempts on Kaspersky-protected machines, not confirmed infections)",
+     "measured_by": "Kaspersky",
+     "measured_on": "2026-05-05",
+     "url": "https://securelist.com/tr/daemon-tools-backdoor/119654/",
+     "quote": "Starting in early April, we have observed several thousand infection attempts involving DAEMON Tools in our telemetry,",
+     "primary_opened": true
+    },
+    {
+     "kind": "compromised",
+     "value": "a dozen",
+     "counts_what": "infected machines that received further-stage payloads",
+     "measured_by": "Kaspersky",
+     "measured_on": "2026-05-05",
+     "url": "https://securelist.com/tr/daemon-tools-backdoor/119654/",
+     "quote": "out of all the machines infected, we observed further-stage payloads being deployed to only a dozen of them.",
+     "primary_opened": true
+    },
+    {
+     "kind": "other",
+     "value": "more than 100",
+     "counts_what": "countries with affected individuals and organizations",
+     "measured_by": "Kaspersky",
+     "measured_on": "2026-05-05",
+     "url": "https://securelist.com/tr/daemon-tools-backdoor/119654/",
+     "quote": "with individuals and organizations in more than 100 countries affected.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_04.json"
+  },
+  {
+   "cve": "CVE-2025-48595",
+   "added": "2026-06-02",
+   "vendor": "Android",
+   "product": "Framework",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Google's June 2026 Android bulletin flags limited, targeted exploitation; Google has not said who was targeted or how many devices, and no third-party figures were found.",
+   "first_exploitation_claim": {
+    "date": "2026-06-01",
+    "source": "Android Security Bulletin, June 2026",
+    "url": "https://source.android.com/docs/security/bulletin/2026/2026-06-01"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "limited, targeted exploitation",
+     "counts_what": "vendor's qualitative characterization of exploitation scope",
+     "measured_by": "Google (Android Security Bulletin)",
+     "measured_on": "2026-06-01",
+     "url": "https://source.android.com/docs/security/bulletin/2026/2026-06-01",
+     "quote": "There are indications that CVE-2025-48595 may be under limited, targeted exploitation.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r3.json"
+  },
+  {
+   "cve": "CVE-2026-7473",
+   "added": "2026-06-09",
+   "vendor": "Arista",
+   "product": "Extensible Operating System",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Arista advisory 0137 (dated 2026-05-05, reported by Comcast researchers) states the EOS tunnel-decapsulation issue has been reported as exploited in the wild, with no detail on who observed it or how many networks were affected.",
+   "first_exploitation_claim": {
+    "date": null,
+    "source": "Arista Security Advisory 0137 (initial release 2026-05-05, last revised 2026-08-10; the revision in which the exploitation statement first appeared was not determinable from the page)",
+    "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24005-security-advisory-0137"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "exploited in the wild; no count",
+     "counts_what": "Vendor statement of exploitation (qualitative, no number)",
+     "measured_by": "Arista",
+     "measured_on": "",
+     "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24005-security-advisory-0137",
+     "quote": "This issue has been reported as being exploited in the wild.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 0,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2026-48282",
+   "added": "2026-07-07",
+   "vendor": "Adobe",
+   "product": "ColdFusion",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Exploitation attempts against the ColdFusion RDS path traversal were seen on honeypots within days of Adobe's 2026-06-30 patch and watchTowr's analysis; no compromised-server or victim count was published in the sources read.",
+   "first_exploitation_claim": {
+    "date": "2026-07-02",
+    "source": "KEVIntel honeypot sensors (LinkedIn post), as reported by Help Net Security; CrowdSec separately dates its own first in-the-wild sighting to 2026-07-20",
+    "url": "https://www.helpnetsecurity.com/?p=376992"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 750,
+     "counts_what": "internet-facing ColdFusion servers (exposed product, approximate; not a vulnerable count - the article says it is unknown how many run a vulnerable version or have RDS enabled)",
+     "measured_by": "The Shadowserver Foundation, as reported by Help Net Security",
+     "measured_on": "",
+     "url": "https://www.helpnetsecurity.com/?p=376992",
+     "quote": "tracking around 750 internet-facing ColdFusion servers",
+     "primary_opened": false
+    },
+    {
+     "kind": "attack_volume",
+     "value": 107,
+     "counts_what": "unique IP addresses seen attacking the flaw across the CrowdSec network (cumulative to report date)",
+     "measured_by": "CrowdSec",
+     "measured_on": "2026-08-01",
+     "url": "https://www.crowdsec.net/vulntracking-report/cve-2026-48282-adobe-coldfusion-rds-path-traversal-rce",
+     "quote": "So far, 107 unique IP addresses have been seen attacking this flaw across our network.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "exposure_only",
+   "source_file": "y2026/result_00.json"
+  },
+  {
+   "cve": "CVE-2026-56291",
+   "added": "2026-07-10",
+   "vendor": "Balbooa",
+   "product": "Forms",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "mySites.guru found the Balbooa Forms (Joomla) upload flaw being exploited as a zero-day on 2026-07-08 via a customer's hosting abuse report; Balbooa shipped 2.4.1 on 2026-07-09 and no count of compromised sites has been published.",
+   "first_exploitation_claim": {
+    "date": "2026-07-08",
+    "source": "mySites.guru blog post",
+    "url": "https://mysites.guru/blog/balbooa-forms-unauthenticated-file-upload-flaw/"
+   },
+   "evidence": [
+    {
+     "kind": "compromised",
+     "value": "1 customer site (single self-report); no wider count",
+     "counts_what": "Live attack on one mySites.guru customer that led to discovery (qualitative)",
+     "measured_by": "mySites.guru, reported by The Hacker News",
+     "measured_on": "2026-07-08",
+     "url": "https://thehackernews.com/2026/07/icagenda-and-balbooa-forms-joomla-flaws.html",
+     "quote": "The vulnerability was discovered by mySites.guru on July 8, 2026, following a live attack on one of its customers.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2026-25089",
+   "added": "2026-07-16",
+   "vendor": "Fortinet",
+   "product": "FortiSandbox",
+   "ransomware": "Unknown",
+   "campaign": "FortiSandbox June 2026 exploitation",
+   "campaign_note": "Defused reported attackers attempting to exploit this flaw alongside CVE-2026-39808/CVE-2026-39813 in June 2026 (search results attribute to Defused the view that the only public exploit was faulty); no event, exposure or victim count specific to this CVE was found, and Fortinet's advisory FG-IR-26-141 showed 'Known Exploited: No' on 2026-11-16.",
+   "first_exploitation_claim": {
+    "date": "2026-06-17",
+    "source": "Defused (reported by CyberScoop; Help Net Security on 2026-06-16 reported a Defused warning of three FortiSandbox flaws being exploited without naming numbers)",
+    "url": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "attempted exploitation, no count",
+     "counts_what": "qualitative report of exploitation attempts against CVE-2026-25089",
+     "measured_by": "Defused",
+     "measured_on": "",
+     "url": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/",
+     "quote": "Attackers are also attempting to exploit a third FortiSandox vulnerability, CVE-2026-25089",
+     "primary_opened": false
+    },
+    {
+     "kind": "other",
+     "value": "Known Exploited: No",
+     "counts_what": "vendor advisory exploitation status field, contradicting the KEV listing",
+     "measured_by": "Fortinet PSIRT (FG-IR-26-141)",
+     "measured_on": "2026-11-16",
+     "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-141",
+     "quote": "Known Exploited: No",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r3.json"
+  },
+  {
+   "cve": "CVE-2026-39808",
+   "added": "2026-07-16",
+   "vendor": "Fortinet",
+   "product": "FortiSandbox",
+   "ransomware": "Unknown",
+   "campaign": "FortiSandbox June 2026 exploitation",
+   "campaign_note": "VulnCheck (June 9) and Defused (June 11) reported exploitation of FortiSandbox flaws; CyberScoop says researchers have not determined how many customers are impacted, and Fortinet's advisory FG-IR-26-100 still showed 'Known Exploited: No' when fetched on 2026-11-16.",
+   "first_exploitation_claim": {
+    "date": "2026-06-09",
+    "source": "VulnCheck (reported by CyberScoop, 2026-06-17)",
+    "url": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/"
+   },
+   "evidence": [
+    {
+     "kind": "attack_volume",
+     "value": 49,
+     "counts_what": "exploitation events over a six-day period against a pair of FortiSandbox defects (in the article's context CVE-2026-39808 and CVE-2026-39813; CVE-2026-25089 is described separately as a third flaw)",
+     "measured_by": "Defused",
+     "measured_on": "",
+     "url": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/",
+     "quote": "the firm observed 49 exploitation events from 11 distinct IPs against the pair of defects",
+     "primary_opened": false
+    },
+    {
+     "kind": "attack_volume",
+     "value": 11,
+     "counts_what": "distinct source IPs behind those 49 exploitation events (the same article also says Defused traced the activity to 13 sources in nine countries)",
+     "measured_by": "Defused",
+     "measured_on": "",
+     "url": "https://cyberscoop.com/fortinet-fortisandbox-vulnerabilities-exploits/",
+     "quote": "the firm observed 49 exploitation events from 11 distinct IPs against the pair of defects",
+     "primary_opened": false
+    },
+    {
+     "kind": "other",
+     "value": "Known Exploited: No",
+     "counts_what": "vendor advisory exploitation status field, contradicting the KEV listing",
+     "measured_by": "Fortinet PSIRT (FG-IR-26-100)",
+     "measured_on": "2026-11-16",
+     "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-100",
+     "quote": "Known Exploited: No",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "attack_volume_only",
+   "source_file": "y2026/result_r3.json"
+  },
+  {
+   "cve": "CVE-2021-27137",
+   "added": "2026-07-21",
+   "vendor": "DD-WRT",
+   "product": "DD-WRT",
+   "ransomware": "Unknown",
+   "campaign": "C0XMO Gafgyt-variant botnet (FortiGuard Labs, 2026)",
+   "campaign_note": "FortiGuard Labs found the C0XMO Gafgyt variant in March 2026 using this DD-WRT UPnP overflow for initial access and published on 2026-06-03, describing an attack on a Japanese technology firm; no counts of infected devices, attacking IPs or exposed routers were published.",
+   "first_exploitation_claim": {
+    "date": "2026-06-03",
+    "source": "Fortinet FortiGuard Labs",
+    "url": "https://www.fortinet.com/blog/threat-research/inside-cross-platform-propagation-of-new-gafgyt-variant-c0xmo"
+   },
+   "evidence": [],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r1.json"
+  },
+  {
+   "cve": "CVE-2025-68686",
+   "added": "2026-07-27",
+   "vendor": "Fortinet",
+   "product": "FortiOS",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Patch bypass for the FortiOS symlink post-exploitation persistence mechanism; the advisory (published 2026-02-10) says it can only be abused after a device was compromised through another vulnerability and showed 'Known Exploited: No' on 2026-11-16; no dedicated search was run (Fortinet group search budget spent on FortiSandbox and FortiMail) and no impact figures were found.",
+   "first_exploitation_claim": {
+    "date": "2026-07-27",
+    "source": "CISA KEV",
+    "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "Known Exploited: No",
+     "counts_what": "vendor advisory exploitation status field, contradicting the KEV listing",
+     "measured_by": "Fortinet PSIRT (FG-IR-25-934)",
+     "measured_on": "2026-11-16",
+     "url": "https://fortiguard.fortinet.com/psirt/FG-IR-25-934",
+     "quote": "Known Exploited: No",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 0,
+   "verdict": "nothing_found",
+   "source_file": "y2026/result_r3.json"
+  },
+  {
+   "cve": "CVE-2026-16812",
+   "added": "2026-07-27",
+   "vendor": "Arista",
+   "product": "VeloCloud Orchestrator",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Arista advisory 0144 (2026-07-27) says the VeloCloud Orchestrator command injection was discovered externally and is actively exploited, listing three attacking IPs; Arista has not said when attacks began or how many orchestrators were hit, and no source links it to the September CVE-2026-93952 activity.",
+   "first_exploitation_claim": {
+    "date": "2026-07-27",
+    "source": "Arista Security Advisory 0144",
+    "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24364-security-advisory-0144"
+   },
+   "evidence": [
+    {
+     "kind": "attack_volume",
+     "value": 3,
+     "counts_what": "IP addresses observed conducting the attacks (8.19.75.217, 206.72.242.124, 206.72.242.162); not a compromise count",
+     "measured_by": "Arista",
+     "measured_on": "2026-07-27",
+     "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24364-security-advisory-0144",
+     "quote": "The following IP addresses have been observed conducting the attacks.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "attack_volume_only",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2026-34486",
+   "added": "2026-08-04",
+   "vendor": "Apache",
+   "product": "Tomcat",
+   "ransomware": "Unknown",
+   "campaign": "Tomcat EncryptInterceptor bypass / SNOWLIGHT (Taiwan-focused)",
+   "campaign_note": "Safe Security relays a SOCRadar report of a Taiwan-focused campaign delivering the SNOWLIGHT loader via cluster port 4000 and a CommonsCollections6 deserialization chain, linked to China-nexus UNC5174/UNC6586; SOCRadar's own page returned HTTP 403, and no victim or exposure counts were found.",
+   "first_exploitation_claim": {
+    "date": null,
+    "source": "SOCRadar (as relayed by Safe Security, 2026-10-02; SOCRadar page not fetchable, original date not verified)",
+    "url": "https://safe.security/resources/blog/cve-2026-34486-apache-tomcat-encryptinterceptor-bypass-to-remote-code-execution/"
+   },
+   "evidence": [],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r1.json"
+  },
+  {
+   "cve": "CVE-2026-65400",
+   "added": "2026-08-18",
+   "vendor": "Apple",
+   "product": "macOS",
+   "ransomware": "Unknown",
+   "campaign": "macOS Screen Sharing cryptominer exploitation",
+   "campaign_note": "After Apple's 2026-08-06 patch, NCSC-NL reported abuse on multiple internet-exposed Macs (TCP/5900) resulting in root access and a Monero miner, and Microsoft reported exploitation on a limited number of devices; no compromise count is published.",
+   "first_exploitation_claim": {
+    "date": "2026-08-14",
+    "source": "NCSC-NL advisory update, as reported by BleepingComputer (the NCSC-NL update's own date was not shown; Apple's advisory carries no exploitation statement)",
+    "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-macos-screen-sharing-flaw-to-deploy-monero-miner/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": "around 40k",
+     "counts_what": "Internet-reachable hosts with Screen Sharing open (exposed product, not confirmed vulnerable); single researcher scan",
+     "measured_by": "Independent researcher @osxreverser, quoted by The Hacker News",
+     "measured_on": "",
+     "url": "https://thehackernews.com/2026/08/apple-macos-screen-sharing-flaw.html",
+     "quote": "My last scan shown around 40k open screen sharing hosts on the internet, almost half in the U.S.",
+     "primary_opened": false
+    },
+    {
+     "kind": "compromised",
+     "value": "multiple systems; no count",
+     "counts_what": "Macs with port 5900 internet-exposed on which abuse was observed, with root access and a Monero miner installed (qualitative)",
+     "measured_by": "NCSC-NL (from a notification it received), quoted by BleepingComputer",
+     "measured_on": "2026-08-14",
+     "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-macos-screen-sharing-flaw-to-deploy-monero-miner/",
+     "quote": "has received a notification indicating that active abuse of this vulnerability has been observed on multiple systems",
+     "primary_opened": false
+    },
+    {
+     "kind": "compromised",
+     "value": "limited number of macOS devices; no count",
+     "counts_what": "Devices on which Microsoft observed active exploitation (qualitative)",
+     "measured_by": "Microsoft (X post), quoted by The Hacker News",
+     "measured_on": "2026-08-18",
+     "url": "https://thehackernews.com/2026/08/apple-macos-screen-sharing-flaw.html",
+     "quote": "limited number of macOS devices",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "exposure_only",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2026-60004",
+   "added": "2026-08-25",
+   "vendor": "Gitea",
+   "product": "Gitea",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Fixed in Gitea 1.27.1 (2026-07-27); the only publicly described intrusion is one self-hosted instance used for cryptomining (developer's Habr post), while Shadowserver counted 8,393 still-vulnerable IPs two days after the KEV addition.",
+   "first_exploitation_claim": {
+    "date": null,
+    "source": "Developer incident report on Habr (undated in coverage; described by Help Net Security 2026-08-26); earliest dated claim is the CISA KEV addition of 2026-08-25",
+    "url": "https://www.helpnetsecurity.com/2026/08/26/gitea-cve-2026-60004-exploited-in-the-wild/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 8393,
+     "counts_what": "IPs running Gitea found vulnerable to CVE-2026-60004 (vulnerable, not merely exposed product)",
+     "measured_by": "Shadowserver",
+     "measured_on": "2026-08-27",
+     "url": "https://bleepingcomputer.com/news/security/over-8-300-gitea-servers-vulnerable-to-code-execution-attacks",
+     "quote": "8393 IPs found vulnerable on 2026-08-27",
+     "primary_opened": false
+    },
+    {
+     "kind": "exposed",
+     "value": "roughly 5,000",
+     "counts_what": "internet-exposed Gitea instances of undetermined patch status (exposed product; earlier Shadowserver figure, superseded by the vulnerable-IP scan)",
+     "measured_by": "Shadowserver (via BleepingComputer, as cited in a Cloud Security Alliance research note)",
+     "measured_on": "",
+     "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-gitea-cve-2026-60004-active-exploitation-2/",
+     "quote": "Endpoint-scanning vendor Shadowserver tracks roughly 5,000 internet-exposed Gitea instances of undetermined patch status",
+     "primary_opened": false
+    },
+    {
+     "kind": "compromised",
+     "value": "1 self-reported instance",
+     "counts_what": "a single self-hosted Gitea server reported by its operator as hijacked for cryptomining; not a measured count",
+     "measured_by": "Anonymous developer on Habr (https://habr.com/ru/articles/1072030/), via Help Net Security",
+     "measured_on": "",
+     "url": "https://www.helpnetsecurity.com/2026/08/26/gitea-cve-2026-60004-exploited-in-the-wild/",
+     "quote": "According to the developer, the active part of the attack took about 11 seconds.",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "exposure_only",
+   "source_file": "y2026/result_r3.json"
+  },
+  {
+   "cve": "CVE-2021-23758",
+   "added": "2026-08-26",
+   "vendor": "Ajax.NET Professional",
+   "product": "Ajax.NET Professional",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "One search returned only CVE-database mirrors of the KEV listing; no report of specific attacks, victims or exposure counts was found, and a second search was not possible.",
+   "first_exploitation_claim": {
+    "date": "2026-08-26",
+    "source": "CISA KEV",
+    "url": "https://github.com/michaelschwarz/Ajax.NET-Professional/commit/b0e63be5f0bb20dfce507cb8a1a9568f6e73de57"
+   },
+   "evidence": [],
+   "searches_run": 1,
+   "verdict": "nothing_found",
+   "source_file": "y2026/result_r1.json"
+  },
+  {
+   "cve": "CVE-2026-8452",
+   "added": "2026-08-26",
+   "vendor": "Citrix",
+   "product": "NetScaler ADC and NetScaler Gateway",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Patched 2026-06-30 as a DoS bug; after watchTowr showed root RCE and published a PoC on 2026-08-14, Defused and Previdian sensors saw exploitation and web shells (x.php, z.php) were reported dropped on appliances, with no count of compromised devices.",
+   "first_exploitation_claim": {
+    "date": null,
+    "source": "Defused Cyber / Previdian sensor reports, about one week before the 2026-08-26 CISA alert (as reported by BleepingComputer and Help Net Security; exact date not stated)",
+    "url": "https://www.helpnetsecurity.com/2026/08/27/netscaler-adc-gateway-cve-2026-8452/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": "over 22,000 ADC and nearly 1,800 Gateway",
+     "counts_what": "internet-exposed NetScaler ADC appliances and Gateway instances (exposed product; patch status and configuration unknown)",
+     "measured_by": "Shadowserver (reported by BleepingComputer)",
+     "measured_on": "2026-08-27",
+     "url": "https://www.bleepingcomputer.com/news/security/cisa-hackers-now-exploiting-citrix-netscaler-rce-flaw-in-attacks/",
+     "quote": "tracks over 22,000 NetScaler ADC appliances and nearly 1,800 Gateway instances exposed online",
+     "primary_opened": false
+    },
+    {
+     "kind": "attack_volume",
+     "value": 3,
+     "counts_what": "unique attacking IPs seen by Previdian sensors (attack attempts, not compromises)",
+     "measured_by": "Previdian (reported by Help Net Security)",
+     "measured_on": "",
+     "url": "https://www.helpnetsecurity.com/2026/08/27/netscaler-adc-gateway-cve-2026-8452/",
+     "quote": "So far we have seen three unique IPs, from three different countries",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "exposure_only",
+   "source_file": "y2026/result_04.json"
+  },
+  {
+   "cve": "CVE-2026-75650",
+   "added": "2026-09-08",
+   "vendor": "Adobe",
+   "product": "Commerce and Magento",
+   "ransomware": "Unknown",
+   "campaign": "StyleSmuggler",
+   "campaign_note": "Sansec found zero-day exploitation of Magento/Adobe Commerce starting 2026-09-04, three days before Adobe's hotfix, with at least two operators deploying a Rust Linux backdoor and a PHP web shell; no total count of compromised stores was published in the sources read.",
+   "first_exploitation_claim": {
+    "date": "2026-09-05",
+    "source": "Sansec research post (published 2026-09-05; states first confirmed exploitation at 2026-09-04 22:20 UTC)",
+    "url": "https://sansec.io/research/stylesmuggler-0day"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "2026-09-04",
+     "counts_what": "date attacks started, three days before the vendor hotfix; Sansec gives no count of compromised stores",
+     "measured_by": "Sansec",
+     "measured_on": "2026-09-04",
+     "url": "https://sansec.io/research/stylesmuggler-0day",
+     "quote": "Adobe shipped its hotfix on September 7, three days after the first confirmed exploitation.",
+     "primary_opened": true
+    },
+    {
+     "kind": "compromised",
+     "value": "at least two",
+     "counts_what": "compromised stores handled first-hand by one incident-response firm (a handful, not a population count)",
+     "measured_by": "Disrex, as reported by Tenable",
+     "measured_on": "",
+     "url": "https://de.tenable.com/blog/stylesmuggler-cve-2026-75650-frequently-asked-questions-about-adobe-commerce-and-magento-zero",
+     "quote": "had first-hand experience with at least two compromised stores",
+     "primary_opened": false
+    },
+    {
+     "kind": "attack_volume",
+     "value": 12,
+     "counts_what": "exploitation attempts against Previdian honeypots since 2026-09-07 (unsuccessful; from two unique IP addresses per the article)",
+     "measured_by": "Previdian, as reported by The Hacker News",
+     "measured_on": "",
+     "url": "https://thehackernews.com/2026/09/adobe-patches-magento-zero-day.html",
+     "quote": "12 exploitation attempts have been recorded against its honeypots since September 7, 2026.",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "attack_volume_only",
+   "source_file": "y2026/result_00.json"
+  },
+  {
+   "cve": "CVE-2026-19490",
+   "added": "2026-09-09",
+   "vendor": "Citrix",
+   "product": "NetScaler",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Patched 2026-08-19; Previdian sensors recorded exploitation attempts from 2026-09-03, one day after a public exploit appeared on GitHub; Previdian said this does not confirm successful compromise of real systems.",
+   "first_exploitation_claim": {
+    "date": "2026-09-03",
+    "source": "Previdian (as reported by The Hacker News and SecurityWeek)",
+    "url": "https://www.securityweek.com/critical-netscaler-vulnerability-exploited-in-attacks/"
+   },
+   "evidence": [
+    {
+     "kind": "attack_volume",
+     "value": "10 attempts from 6 IPs",
+     "counts_what": "exploitation attempts and unique source IPs against Previdian NetScaler sensors as of 2026-09-03 (not compromises)",
+     "measured_by": "Previdian (reported by The Hacker News)",
+     "measured_on": "2026-09-03",
+     "url": "https://thehackernews.com/2026/08/critical-netscaler-flaw-can-bypass.html",
+     "quote": "shows 10 exploitation attempts coming from six unique IP addresses in Australia, Germany, Japan, and the U.S.",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "attack_volume_only",
+   "source_file": "y2026/result_04.json"
+  },
+  {
+   "cve": "CVE-2025-25249",
+   "added": "2026-09-09",
+   "vendor": "Fortinet",
+   "product": "Multiple Products",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Heap overflow in FortiOS/FortiSwitchManager/FortiSASE published 2026-01-13; advisory showed 'Known Exploited: No' on 2026-11-16; no dedicated search was run (Fortinet group search budget spent on FortiSandbox and FortiMail) and no impact figures were found.",
+   "first_exploitation_claim": {
+    "date": "2026-09-09",
+    "source": "CISA KEV",
+    "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "Known Exploited: No",
+     "counts_what": "vendor advisory exploitation status field, contradicting the KEV listing",
+     "measured_by": "Fortinet PSIRT (FG-IR-25-084)",
+     "measured_on": "2026-11-16",
+     "url": "https://fortiguard.fortinet.com/psirt/FG-IR-25-084",
+     "quote": "Known Exploited: No",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 0,
+   "verdict": "nothing_found",
+   "source_file": "y2026/result_r3.json"
+  },
+  {
+   "cve": "CVE-2026-84869",
+   "added": "2026-09-11",
+   "vendor": "ConnectWise",
+   "product": "ScreenConnect",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Huntress reported worm-like abuse of modified ScreenConnect clients delivering VBScript payloads to newly connected endpoints from 2026-08-20; ConnectWise issued mitigations on 2026-09-07 and fixed it in 26.6.5.",
+   "first_exploitation_claim": {
+    "date": "2026-09-07",
+    "source": "Huntress (blog; reported by SecurityWeek on 2026-09-07, incidents dated from 2026-08-20)",
+    "url": "https://www.huntress.com/blog/rogue-screenconnect-installations"
+   },
+   "evidence": [
+    {
+     "kind": "compromised",
+     "value": 3,
+     "counts_what": "critical incident reports Huntress sent in late August 2026 for rogue ScreenConnect client activity (later 'several more incidents', uncounted)",
+     "measured_by": "Huntress",
+     "measured_on": "",
+     "url": "https://www.huntress.com/blog/rogue-screenconnect-installations",
+     "quote": "sent out three critical incident reports",
+     "primary_opened": true
+    },
+    {
+     "kind": "exposed",
+     "value": "over 1,000",
+     "counts_what": "unpatched ScreenConnect instances exposed online (vulnerable; 758 in North America, 180 in Europe)",
+     "measured_by": "Shadowserver (reported by BleepingComputer)",
+     "measured_on": "2026-09-16",
+     "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-critical-screenconnect-flaw/",
+     "quote": "over 1,000 ScreenConnect instances",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_04.json"
+  },
+  {
+   "cve": "CVE-2026-85706",
+   "added": "2026-09-11",
+   "vendor": "GitLab",
+   "product": "Community Edition and Enterprise Edition",
+   "ransomware": "Unknown",
+   "campaign": "GitLab commits API path traversal (September 2026)",
+   "campaign_note": "watchTowr reported in-the-wild probing/exploitation attempts starting about 06:00 UTC on 2026-09-11, one day after GitLab's patch, and CISA listed it the same day; no count of vulnerable instances, attacking IPs or victims was found.",
+   "first_exploitation_claim": {
+    "date": "2026-09-11",
+    "source": "watchTowr (reported by SecurityWeek and The Hacker News)",
+    "url": "https://www.securityweek.com/gitlab-vulnerability-exploited-one-day-after-disclosure/"
+   },
+   "evidence": [
+    {
+     "kind": "attack_volume",
+     "value": "probing since 06:00 UTC 2026-09-11, no count",
+     "counts_what": "start time of observed in-the-wild probes for unpatched GitLab servers; no volume figure given",
+     "measured_by": "watchTowr (via The Hacker News)",
+     "measured_on": "2026-09-11",
+     "url": "https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html",
+     "quote": "since 06:00 UTC on September 11, 2026",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r3.json"
+  },
+  {
+   "cve": "CVE-2026-76461",
+   "added": "2026-09-14",
+   "vendor": "Cisco",
+   "product": "Secure Email Gateway",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Cisco disclosed the zero-day on 2026-09-14 after finding it through a TAC case and said it directly contacted Secure Email Cloud customers on whose devices malicious activity was detected; no counts published.",
+   "first_exploitation_claim": {
+    "date": "2026-09-14",
+    "source": "Cisco PSIRT advisory cisco-sa-esa-inj-2bLVGmhX (as reported by Help Net Security)",
+    "url": "https://www.helpnetsecurity.com/2026/09/15/cve-2026-76461-cisco-email-gateway-zero-day-exploited/"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "unspecified number of cloud customers notified",
+     "counts_what": "Cisco Secure Email Cloud customers with malicious activity detected on their devices (no count given)",
+     "measured_by": "Cisco",
+     "measured_on": "2026-09-14",
+     "url": "https://www.helpnetsecurity.com/2026/09/15/cve-2026-76461-cisco-email-gateway-zero-day-exploited/",
+     "quote": "has directly contacted customers who own Cisco Secure Email Cloud devices on which malicious activity was detected",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_04.json"
+  },
+  {
+   "cve": "CVE-2026-76460",
+   "added": "2026-09-16",
+   "vendor": "Cisco",
+   "product": "Identity Services Engine",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Cisco patched the CVSS 10.0 ISE API authentication bypass on 2026-09-16 as an exploited zero-day; no victim or exposure counts found, only CrowdSec attack telemetry that began after a public Nuclei check appeared in late October.",
+   "first_exploitation_claim": {
+    "date": "2026-09-16",
+    "source": "Cisco advisory (as cited by CrowdSec)",
+    "url": "https://www.crowdsec.net/vulntracking-report/cve-2026-76460-cisco-ise-authentication-bypass-exploitation"
+   },
+   "evidence": [
+    {
+     "kind": "attack_volume",
+     "value": 540,
+     "counts_what": "CrowdSec Network signals matching the CVE-2026-76460 pattern, 2026-10-28 to 2026-11-01 (attack attempts, not compromises)",
+     "measured_by": "CrowdSec",
+     "measured_on": "2026-11-01",
+     "url": "https://www.crowdsec.net/vulntracking-report/cve-2026-76460-cisco-ise-authentication-bypass-exploitation",
+     "quote": "Between October 28 and November 1, 2026, the CrowdSec Network recorded 540 signals",
+     "primary_opened": true
+    },
+    {
+     "kind": "attack_volume",
+     "value": 311,
+     "counts_what": "unique attacking IP addresses listed by CrowdSec Live Exploit Tracker through 2026-11-02",
+     "measured_by": "CrowdSec",
+     "measured_on": "2026-11-02",
+     "url": "https://www.crowdsec.net/vulntracking-report/cve-2026-76460-cisco-ise-authentication-bypass-exploitation",
+     "quote": "The Live Exploit Tracker lists 311 unique IP addresses through November 2.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "attack_volume_only",
+   "source_file": "y2026/result_04.json"
+  },
+  {
+   "cve": "CVE-2026-87886",
+   "added": "2026-09-16",
+   "vendor": "Acronis",
+   "product": "Backup",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Acronis reported limited, targeted in-the-wild exploitation against the cPanel & WHM plugin only; no attacker, victim or count details were published in the sources read.",
+   "first_exploitation_claim": {
+    "date": "2026-09-15",
+    "source": "Acronis security advisory SEC-10986, as reported by Help Net Security (article dated 2026-09-16 says the advisory was published 'on Tuesday'; the advisory page itself returned no content when fetched, and The Hacker News says it is not clear when the activity was detected)",
+    "url": "https://helpnetsecurity.com/2026/09/16/acronis-backup-plugin-vulnerability-exploited-cve-2026-87886"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "limited, targeted attacks",
+     "counts_what": "vendor's qualitative description of in-the-wild exploitation; no count given",
+     "measured_by": "Acronis",
+     "measured_on": "",
+     "url": "https://thehackernews.com/2026/09/acronis-cpanel-backup-plugin.html",
+     "quote": "Exploitation of this vulnerability has been detected in the wild in limited, targeted attacks.",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_00.json"
+  },
+  {
+   "cve": "CVE-2026-93952",
+   "added": "2026-09-22",
+   "vendor": "Arista",
+   "product": "VeloCloud Orchestrator",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Arista advisory 0183 (2026-09-22) says the flaw was discovered externally and is actively exploited, and publishes implant file paths, one MD5 hash and two source IPs as indicators; no count of compromised orchestrators is published and no source links it to the July CVE-2026-16812 activity.",
+   "first_exploitation_claim": {
+    "date": "2026-09-22",
+    "source": "Arista Security Advisory 0183",
+    "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24765-security-advisory-0183"
+   },
+   "evidence": [
+    {
+     "kind": "attack_volume",
+     "value": 2,
+     "counts_what": "IP addresses listed as indicators of compromise ('Connections from the following IP addresses': 142.93.149.77, 104.248.126.159); not a compromise count",
+     "measured_by": "Arista",
+     "measured_on": "2026-09-22",
+     "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24765-security-advisory-0183",
+     "quote": "Connections from the following IP addresses",
+     "primary_opened": true
+    },
+    {
+     "kind": "other",
+     "value": "actively exploited; no count",
+     "counts_what": "Vendor statement of exploitation (qualitative, no number)",
+     "measured_by": "Arista",
+     "measured_on": "2026-09-22",
+     "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24765-security-advisory-0183",
+     "quote": "This issue was discovered externally and is known to be actively exploited.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "attack_volume_only",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2026-94127",
+   "added": "2026-09-22",
+   "vendor": "F5",
+   "product": "BIG-IP APM",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "F5 disclosed the APM OAuth heap overflow on 2026-09-22 as already exploited; no attribution, victim or compromise counts found, only a Shadowserver fingerprint count of exposed BIG-IP APM.",
+   "first_exploitation_claim": {
+    "date": "2026-09-22",
+    "source": "F5 security advisory K000162605, as reported by BleepingComputer",
+    "url": "https://bleepingcomputer.com/news/security/f5-warns-of-big-ip-apm-remote-code-execution-zero-day-exploited-in-attacks"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 14700,
+     "counts_what": "IP addresses with BIG-IP APM fingerprints (exposed product; not confirmed to have the vulnerable access policy plus OAuth profile configuration); 'over 14,700'; 'currently' as of article dated 2026-09-23",
+     "measured_by": "Shadowserver, reported by BleepingComputer",
+     "measured_on": "",
+     "url": "https://bleepingcomputer.com/news/security/f5-warns-of-big-ip-apm-remote-code-execution-zero-day-exploited-in-attacks",
+     "quote": "Shadowserver currently tracks over 14,700 IP addresses with BIG-IP APM fingerprints.",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "exposure_only",
+   "source_file": "y2026/result_05.json"
+  },
+  {
+   "cve": "CVE-2026-71362",
+   "added": "2026-09-24",
+   "vendor": "Adobe",
+   "product": "Commerce and Magento",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Sansec reported its Shield WAF blocking exploitation attempts within a day of Adobe's 2026-08-11 patch (APSB26-92), while Adobe said it knew of no in-the-wild exploits; no count of attempts or of compromised stores was published in the sources read.",
+   "first_exploitation_claim": {
+    "date": "2026-08-12",
+    "source": "Sansec (reported by BleepingComputer)",
+    "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-adobe-commerce-flaw-to-hijack-customer-accounts/"
+   },
+   "evidence": [
+    {
+     "kind": "attack_volume",
+     "value": "exploitation attempts blocked (no count)",
+     "counts_what": "exploitation attempts blocked by Sansec Shield WAF; no number published",
+     "measured_by": "Sansec",
+     "measured_on": "2026-08-12",
+     "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-adobe-commerce-flaw-to-hijack-customer-accounts/",
+     "quote": "its Shield web application firewall (WAF) is already blocking CVE-2026-71362 exploitation attempts",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r1.json"
+  },
+  {
+   "cve": "CVE-2026-88772",
+   "added": "2026-09-27",
+   "vendor": "Citrix",
+   "product": "NetScaler",
+   "ransomware": "Unknown",
+   "campaign": "NetScaler Sept-2026 zero-days (CVE-2026-88771/88772)",
+   "campaign_note": "Citrix disclosed two exploited pre-auth RCE zero-days on 2026-09-27; GTIG/Mandiant describe a suspected state-sponsored campaign active since at least 2026-09-03 (Palo Alto Networks traced activity to 2026-08-21) deploying custom webshells, escalating to mass exploitation after a watchTowr PoC for CVE-2026-88771.",
+   "first_exploitation_claim": {
+    "date": "2026-09-27",
+    "source": "Citrix security bulletin CTX697096",
+    "url": "https://support.citrix.com/external/article/CTX697096"
+   },
+   "evidence": [
+    {
+     "kind": "organizations",
+     "value": "over 100",
+     "counts_what": "victim organizations tracked by Kevin Beaumont, each with a unique webshell (campaign-level; not split by CVE)",
+     "measured_by": "Kevin Beaumont (reported by Help Net Security)",
+     "measured_on": "2026-09-29",
+     "url": "https://helpnetsecurity.com/2026/09/29/netscaler-zero-day-exploitation-escalates-into-mass-attacks-cve-2026-88771",
+     "quote": "he is tracking over 100 victim organizations",
+     "primary_opened": false
+    },
+    {
+     "kind": "organizations",
+     "value": "at least 78",
+     "counts_what": "organizations targeted in the attacks across the U.S., Canada and Europe (campaign-level)",
+     "measured_by": "Arctic Wolf (reported by Cybersecurity Dive)",
+     "measured_on": "2026-09-30",
+     "url": "https://www.cybersecuritydive.com/news/exploitation-citrix-netscaler-what-we-know/831780/",
+     "quote": "at least 78 organizations",
+     "primary_opened": false
+    },
+    {
+     "kind": "organizations",
+     "value": "dozens",
+     "counts_what": "organizations across North America and Europe identified as affected",
+     "measured_by": "Google Threat Intelligence Group / Mandiant (reported by Cybersecurity Dive)",
+     "measured_on": "2026-09-30",
+     "url": "https://www.cybersecuritydive.com/news/exploitation-citrix-netscaler-what-we-know/831780/",
+     "quote": "dozens of organizations across North America and Europe",
+     "primary_opened": false
+    },
+    {
+     "kind": "exposed",
+     "value": "more than 20,000",
+     "counts_what": "NetScaler instances exposed and potentially vulnerable",
+     "measured_by": "Shadowserver (reported by Cybersecurity Dive)",
+     "measured_on": "2026-09-30",
+     "url": "https://www.cybersecuritydive.com/news/exploitation-citrix-netscaler-what-we-know/831780/",
+     "quote": "More than 20,000 Citrix NetScaler instances are exposed and potentially vulnerable",
+     "primary_opened": false
+    },
+    {
+     "kind": "exposed",
+     "value": "around 42,000",
+     "counts_what": "internet-facing hosts running NetScaler ADC or Gateway (exposed product; vulnerability status unknown)",
+     "measured_by": "Censys (reported by Help Net Security)",
+     "measured_on": "2026-09-29",
+     "url": "https://helpnetsecurity.com/2026/09/29/netscaler-zero-day-exploitation-escalates-into-mass-attacks-cve-2026-88771",
+     "quote": "currently detects around 42,000 internet-facing hosts running NetScaler ADC or NetScaler Gateway",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "quantified_compromise",
+   "source_file": "y2026/result_04.json"
+  },
+  {
+   "cve": "CVE-2026-88771",
+   "added": "2026-09-27",
+   "vendor": "Citrix",
+   "product": "NetScaler",
+   "ransomware": "Unknown",
+   "campaign": "NetScaler Sept-2026 zero-days (CVE-2026-88771/88772)",
+   "campaign_note": "Citrix disclosed two exploited pre-auth RCE zero-days on 2026-09-27; GTIG/Mandiant describe a suspected state-sponsored campaign active since at least 2026-09-03 (Palo Alto Networks traced activity to 2026-08-21) deploying custom webshells, escalating to mass exploitation after a watchTowr PoC for CVE-2026-88771.",
+   "first_exploitation_claim": {
+    "date": "2026-09-27",
+    "source": "Citrix security bulletin CTX697096",
+    "url": "https://support.citrix.com/external/article/CTX697096"
+   },
+   "evidence": [
+    {
+     "kind": "organizations",
+     "value": "over 100",
+     "counts_what": "victim organizations tracked by Kevin Beaumont, each with a unique webshell",
+     "measured_by": "Kevin Beaumont (reported by Help Net Security)",
+     "measured_on": "2026-09-29",
+     "url": "https://helpnetsecurity.com/2026/09/29/netscaler-zero-day-exploitation-escalates-into-mass-attacks-cve-2026-88771",
+     "quote": "he is tracking over 100 victim organizations",
+     "primary_opened": false
+    },
+    {
+     "kind": "organizations",
+     "value": "at least 78",
+     "counts_what": "organizations targeted in the attacks across the U.S., Canada and Europe",
+     "measured_by": "Arctic Wolf (reported by Cybersecurity Dive)",
+     "measured_on": "2026-09-30",
+     "url": "https://www.cybersecuritydive.com/news/exploitation-citrix-netscaler-what-we-know/831780/",
+     "quote": "at least 78 organizations",
+     "primary_opened": false
+    },
+    {
+     "kind": "organizations",
+     "value": "dozens",
+     "counts_what": "organizations across North America and Europe identified as affected",
+     "measured_by": "Google Threat Intelligence Group / Mandiant (reported by Cybersecurity Dive)",
+     "measured_on": "2026-09-30",
+     "url": "https://www.cybersecuritydive.com/news/exploitation-citrix-netscaler-what-we-know/831780/",
+     "quote": "dozens of organizations across North America and Europe",
+     "primary_opened": false
+    },
+    {
+     "kind": "exposed",
+     "value": "more than 20,000",
+     "counts_what": "NetScaler instances exposed and potentially vulnerable",
+     "measured_by": "Shadowserver (reported by Cybersecurity Dive)",
+     "measured_on": "2026-09-30",
+     "url": "https://www.cybersecuritydive.com/news/exploitation-citrix-netscaler-what-we-know/831780/",
+     "quote": "More than 20,000 Citrix NetScaler instances are exposed and potentially vulnerable",
+     "primary_opened": false
+    },
+    {
+     "kind": "exposed",
+     "value": "around 42,000",
+     "counts_what": "internet-facing hosts running NetScaler ADC or Gateway (exposed product; vulnerability status unknown)",
+     "measured_by": "Censys (reported by Help Net Security)",
+     "measured_on": "2026-09-29",
+     "url": "https://helpnetsecurity.com/2026/09/29/netscaler-zero-day-exploitation-escalates-into-mass-attacks-cve-2026-88771",
+     "quote": "currently detects around 42,000 internet-facing hosts running NetScaler ADC or NetScaler Gateway",
+     "primary_opened": false
+    },
+    {
+     "kind": "other",
+     "value": "fewer than 10%",
+     "counts_what": "share of exposed NetScaler hosts patched, from a firmware-version scan",
+     "measured_by": "Kevin Beaumont (reported by Help Net Security)",
+     "measured_on": "2026-09-29",
+     "url": "https://helpnetsecurity.com/2026/09/29/netscaler-zero-day-exploitation-escalates-into-mass-attacks-cve-2026-88771",
+     "quote": "fewer than 10% of exposed hosts are currently patched.",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "quantified_compromise",
+   "source_file": "y2026/result_04.json"
+  },
+  {
+   "cve": "CVE-2026-86950",
+   "added": "2026-09-29",
+   "vendor": "Apple",
+   "product": "Multiple Products",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Apple patched this CoreGraphics zero-day on 2026-09-28, crediting Meta Product Security and stating it may have been exploited against specific targeted individuals; no delivery vector, actor or victim count is public.",
+   "first_exploitation_claim": {
+    "date": "2026-09-28",
+    "source": "Apple security advisory (CoreGraphics entry, credited to Meta Product Security)",
+    "url": "https://support.apple.com/en-us/149226"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "targeted individuals; no count",
+     "counts_what": "Vendor statement of exploitation scope (qualitative, no number)",
+     "measured_by": "Apple",
+     "measured_on": "2026-09-28",
+     "url": "https://support.apple.com/en-us/149226",
+     "quote": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 27.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2026-76504",
+   "added": "2026-09-30",
+   "vendor": "Cisco",
+   "product": "Catalyst SD-WAN Manager",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Cisco disclosed the authentication bypass on 2026-09-30 saying it became aware of exploitation in September 2026 via a TAC case; it published IOCs but no attack details, counts or attribution.",
+   "first_exploitation_claim": {
+    "date": "2026-09-30",
+    "source": "Cisco advisory cisco-sa-sdwan-webauth-xr8beuuU (as reported by Help Net Security)",
+    "url": "https://www.helpnetsecurity.com/2026/10/01/new-cisco-sd-wan-zero-day-exploited-in-the-wild-cve-2026-76504/"
+   },
+   "evidence": [],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_04.json"
+  },
+  {
+   "cve": "CVE-2026-104286",
+   "added": "2026-10-01",
+   "vendor": "Fortinet",
+   "product": "FortiMail",
+   "ransomware": "Unknown",
+   "campaign": "FortiMail zero-day (FG-IR-26-175)",
+   "campaign_note": "Fortinet disclosed the flaw on 2026-10-01 as already exploited in the wild and published two attacker IPs and log indicators; BleepingComputer and Help Net Security both state Fortinet has not disclosed how many systems were compromised, and no Shadowserver or other exposure count was found.",
+   "first_exploitation_claim": {
+    "date": "2026-10-01",
+    "source": "Fortinet PSIRT FG-IR-26-175",
+    "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-175"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "exploited in the wild, no count",
+     "counts_what": "vendor confirmation of in-the-wild exploitation (advisory lists two attacker IPs, 79.141.169.187 and 45.129.0.192, as indicators of compromise)",
+     "measured_by": "Fortinet PSIRT",
+     "measured_on": "2026-10-01",
+     "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-175",
+     "quote": "This has been reported to be exploited in the wild, customers are urged to apply the workaround below.",
+     "primary_opened": true
+    },
+    {
+     "kind": "other",
+     "value": "compromise count undisclosed",
+     "counts_what": "trade-press statement that no compromise count exists publicly",
+     "measured_by": "BleepingComputer",
+     "measured_on": "2026-10-01",
+     "url": "https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-fortiMail-flaw-exploited-in-zero-day-attacks/",
+     "quote": "Fortinet has not disclosed when the flaw was first exploited, how many systems were compromised",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r3.json"
+  },
+  {
+   "cve": "CVE-2026-88779",
+   "added": "2026-10-04",
+   "vendor": "Citrix",
+   "product": "NetScaler",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Admins reported freshly patched SAML-configured NetScalers crashing and rebooting from Friday 2026-10-02; Citrix shipped fixes on 2026-10-04 and said it observed targeted attacks on unmitigated deployments; no count of affected appliances or outage duration was published.",
+   "first_exploitation_claim": {
+    "date": "2026-10-04",
+    "source": "Citrix (as reported by BleepingComputer; admin reports of forced reboots began 2026-10-02)",
+    "url": "https://www.bleepingcomputer.com/news/security/citrix-patches-netscaler-saml-zero-day-exploited-in-attacks/"
+   },
+   "evidence": [
+    {
+     "kind": "downtime",
+     "value": "repeated forced reboots, multiple customers (no count or duration)",
+     "counts_what": "customers running NetScaler 14.1-73.37 experiencing repeated forced reboots, per one NetScaler admin",
+     "measured_by": "unnamed NetScaler administrator (reported by BleepingComputer)",
+     "measured_on": "2026-10-04",
+     "url": "https://www.bleepingcomputer.com/news/security/citrix-patches-netscaler-saml-zero-day-exploited-in-attacks/",
+     "quote": "one NetScaler admin said multiple customers running NetScaler 14.1-73.37 were experiencing repeated forced reboots",
+     "primary_opened": false
+    },
+    {
+     "kind": "exposed",
+     "value": "more than 20,000",
+     "counts_what": "NetScaler instances exposed and potentially vulnerable (not specific to SAML-configured appliances)",
+     "measured_by": "Shadowserver (reported by Cybersecurity Dive)",
+     "measured_on": "2026-10-05",
+     "url": "https://www.cybersecuritydive.com/news/citrix-patch-third-exploited-flaw-netscaler/832128/",
+     "quote": "more than 20,000 instances",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "exposure_only",
+   "source_file": "y2026/result_04.json"
+  },
+  {
+   "cve": "CVE-2016-3081",
+   "added": "2026-10-08",
+   "vendor": "Apache",
+   "product": "Struts",
+   "ransomware": "Unknown",
+   "campaign": "Integrity Technology Group / Flax Typhoon (joint advisory AA26-281A)",
+   "campaign_note": "Added to KEV with four other old flaws on 2026-10-08 because joint advisory AA26-281A lists it among CVEs successfully exploited by China-linked actors tied to Integrity Technology Group; the advisory names victim sectors in Southeast Asia but gives no victim or device count, and no 2016-era impact figures for this CVE were researched or found.",
+   "first_exploitation_claim": {
+    "date": "2026-10-08",
+    "source": "CISA/FBI/NSA and partners joint advisory AA26-281A (earliest claim found in this pass; exploitation reporting from 2016 was not searched)",
+    "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "listed as successfully exploited",
+     "counts_what": "CVE-2016-3081 (Apache Struts, remote code execution) appears in the advisory's Appendix B Table 16 of successfully exploited CVEs",
+     "measured_by": "CISA, FBI, NSA and international partners",
+     "measured_on": "2026-10-08",
+     "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
+     "quote": "displays successfully exploited common vulnerabilities and exposures (CVEs)",
+     "primary_opened": true
+    },
+    {
+     "kind": "organizations",
+     "value": "victim sectors named, no count",
+     "counts_what": "types of victim organizations of the campaign's email data theft (campaign-level, not tied to the Struts flaw specifically)",
+     "measured_by": "CISA, FBI, NSA and international partners",
+     "measured_on": "2026-10-08",
+     "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
+     "quote": "Observed victims of email data theft included government organizations, law enforcement agencies, healthcare systems, and religious institutions located in Southeast Asia.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "y2026/result_r3.json"
+  },
+  {
+   "cve": "CVE-2026-105134",
+   "added": "2026-10-14",
+   "vendor": "Ahsay",
+   "product": "AhsayCBS",
+   "ransomware": "Unknown",
+   "campaign": "AhsayCBS auth-bypass + command-injection chain (Oct 2026)",
+   "campaign_note": "Huntress observed the two flaws chained for remote code execution from 2026-10-07, with JSP webshells and an XMRig miner dropped; Ahsay's first patches were incomplete and hotfixes 10.3.4.45 / 9.15.2.70 followed on 2026-10-12.",
+   "first_exploitation_claim": {
+    "date": "2026-10-08",
+    "source": "Huntress",
+    "url": "https://www.huntress.com/blog/ahsaycbs-flaws-exploit"
+   },
+   "evidence": [
+    {
+     "kind": "organizations",
+     "value": 5,
+     "counts_what": "organizations targeted via the chained flaws in Huntress's customer base (wording is 'targeted'; the same post describes RCE, webshells and miners on impacted hosts without a host count)",
+     "measured_by": "Huntress",
+     "measured_on": "2026-10-08",
+     "url": "https://www.huntress.com/blog/ahsaycbs-flaws-exploit",
+     "quote": "As of October 8, Huntress has seen five organizations targeted via these flaws.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "quantified_compromise",
+   "source_file": "y2026/result_r1.json"
+  },
+  {
+   "cve": "CVE-2026-76519",
+   "added": "2026-10-14",
+   "vendor": "Cisco",
+   "product": "Secure Email Gateway",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Cisco disclosed the AMP path-traversal zero-day on 2026-10-14, said PSIRT became aware of exploitation in October 2026 and contacted Secure Email Cloud owners with evidence of potential compromise; no compromise count published.",
+   "first_exploitation_claim": {
+    "date": "2026-10-14",
+    "source": "Cisco advisory cisco-sa-esa-afw-zqYJkjxp (as reported by BleepingComputer)",
+    "url": "https://www.bleepingcomputer.com/news/security/cisco-patches-actively-exploited-secure-email-gateway-zero-day/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": "nearly 300",
+     "counts_what": "internet-exposed Cisco Secure Email Gateway instances (exposed product, not confirmed vulnerable)",
+     "measured_by": "Shadowserver (reported by BleepingComputer)",
+     "measured_on": "2026-10-14",
+     "url": "https://www.bleepingcomputer.com/news/security/cisco-patches-actively-exploited-secure-email-gateway-zero-day/",
+     "quote": "Shadowserver tracks nearly 300 Cisco Secure Email Gateway instances exposed online",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "exposure_only",
+   "source_file": "y2026/result_04.json"
+  },
+  {
+   "cve": "CVE-2026-105133",
+   "added": "2026-10-14",
+   "vendor": "Ahsay",
+   "product": "AhsayCBS",
+   "ransomware": "Unknown",
+   "campaign": "AhsayCBS auth-bypass + command-injection chain (Oct 2026)",
+   "campaign_note": "Huntress observed the two flaws chained for remote code execution from 2026-10-07, with JSP webshells and an XMRig miner dropped; Ahsay's first patches were incomplete and hotfixes 10.3.4.45 / 9.15.2.70 followed on 2026-10-12.",
+   "first_exploitation_claim": {
+    "date": "2026-10-08",
+    "source": "Huntress",
+    "url": "https://www.huntress.com/blog/ahsaycbs-flaws-exploit"
+   },
+   "evidence": [
+    {
+     "kind": "organizations",
+     "value": 5,
+     "counts_what": "organizations targeted via the chained flaws in Huntress's customer base (wording is 'targeted'; the same post describes RCE, webshells and miners on impacted hosts without a host count)",
+     "measured_by": "Huntress",
+     "measured_on": "2026-10-08",
+     "url": "https://www.huntress.com/blog/ahsaycbs-flaws-exploit",
+     "quote": "As of October 8, Huntress has seen five organizations targeted via these flaws.",
+     "primary_opened": true
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "quantified_compromise",
+   "source_file": "y2026/result_r1.json"
+  },
+  {
+   "cve": "CVE-2026-21589",
+   "added": "2026-10-15",
+   "vendor": "Atlassian",
+   "product": "Multiple Products",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Atlassian published the advisory on 2026-10-05, watchTowr published technical details and a PoC on 2026-10-06, and Previdian honeypots saw exploitation attempts within two hours; watchTowr reported fingerprinting and config-file sweeps with no post-compromise activity observed.",
+   "first_exploitation_claim": {
+    "date": "2026-10-06",
+    "source": "Previdian honeypot telemetry (Help Net Security says attempts began 'late Tuesday', i.e. 2026-10-06; BleepingComputer's 2026-10-07 article says 'earlier today')",
+    "url": "https://www.helpnetsecurity.com/2026/10/07/exploitation-critical-atlassian-flaw-cve-2026-21589/"
+   },
+   "evidence": [
+    {
+     "kind": "attack_volume",
+     "value": 15,
+     "counts_what": "Exploitation attempts against Previdian's honeypot network, from three unique IP addresses; measurement window not stated; not a compromise count",
+     "measured_by": "Previdian, reported by The Hacker News",
+     "measured_on": "2026-10-07",
+     "url": "https://thehackernews.com/2026/10/atlassian-data-center-flaw-draws.html",
+     "quote": "a total of 15 exploitation attempts have been detected from three unique IP addresses located in Japan and the U.S.",
+     "primary_opened": false
+    },
+    {
+     "kind": "attack_volume",
+     "value": 3,
+     "counts_what": "Attacking IP addresses seen by Previdian honeypots (38.60.157.86, 146.70.187.234, 159.26.119.225)",
+     "measured_by": "Previdian, reported by BleepingComputer",
+     "measured_on": "2026-10-07",
+     "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-atlassian-flaw-after-public-poc-release/",
+     "quote": "observed attempts from these three IP addresses: 38.60.157[.]86, 146.70.187[.]234, and 159.26.119[.]225",
+     "primary_opened": false
+    },
+    {
+     "kind": "other",
+     "value": "no post-compromise activity observed",
+     "counts_what": "Character of observed exploitation (qualitative)",
+     "measured_by": "watchTowr (statement to The Hacker News)",
+     "measured_on": "",
+     "url": "https://thehackernews.com/2026/10/atlassian-data-center-flaw-draws.html",
+     "quote": "Most attempts at exploitation so far have focused on fingerprinting the existence of an affected product",
+     "primary_opened": false
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "attack_volume_only",
+   "source_file": "y2026/result_r2.json"
+  },
+  {
+   "cve": "CVE-2026-102764",
+   "added": "2026-10-16",
+   "vendor": "BeyondTrust",
+   "product": "Remote Support",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Zero-day exploited since late August 2026 by a suspected China-nexus espionage actor (Mandiant 'Armory Castle' / CrowdStrike 'Warp Panda') deploying the Sawfly web shell and Bareclaw tunneler; BeyondTrust reports two known compromises (one hosted instance, one self-hosted appliance) and patched SaaS on 2026-10-08 before disclosing on 2026-10-15.",
+   "first_exploitation_claim": {
+    "date": "2026-10-15",
+    "source": "BeyondTrust advisory BT26-05 (vendor page returned HTTP 403; date and claim taken from BleepingComputer and Rapid7 coverage)",
+    "url": "https://www.bleepingcomputer.com/news/security/beyondtrust-patches-zero-day-exploited-in-attacks-since-august/"
+   },
+   "evidence": [
+    {
+     "kind": "compromised",
+     "value": 2,
+     "counts_what": "Known Remote Support compromises: one BeyondTrust-hosted instance and one self-hosted appliance, both dated to 2026-08-29",
+     "measured_by": "BeyondTrust (16 Oct 2026 report), as relayed by Rapid7",
+     "measured_on": "2026-10-16",
+     "url": "https://www.rapid7.com/blog/post/etr-cve-2026-102764-critical-beyondtrust-remote-support-authentication-bypass-exploited-in-the-wild",
+     "quote": "dates the two known Remote Support compromises to August 29, 2026"
+    },
+    {
+     "kind": "exposed",
+     "value": "over 1,400",
+     "counts_what": "BeyondTrust Remote Support instances exposed online (patch status unknown; may include honeypots)",
+     "measured_by": "Shadowserver, as reported by BleepingComputer",
+     "measured_on": "2026-10-16 (article date; measurement date not stated)",
+     "url": "https://www.bleepingcomputer.com/news/security/beyondtrust-patches-zero-day-exploited-in-attacks-since-august/",
+     "quote": "tracks over 1,400 BeyondTrust remote support instances exposed online"
+    },
+    {
+     "kind": "downtime",
+     "value": "credential exposure, no outage reported",
+     "counts_what": "Operational impact described by Mandiant: root on the appliance and access to stored/brokered credentials; no downtime or data-theft volume reported",
+     "measured_by": "Mandiant, as reported by BleepingComputer",
+     "measured_on": "2026-10-16",
+     "url": "https://www.bleepingcomputer.com/news/security/beyondtrust-patches-zero-day-exploited-in-attacks-since-august/",
+     "quote": "access to every credential the appliance stored or brokered"
+    }
+   ],
+   "searches_run": 1,
+   "verdict": "quantified_compromise",
+   "source_file": "result_0.json"
+  },
+  {
+   "cve": "CVE-2025-61624",
+   "added": "2026-10-16",
+   "vendor": "Fortinet",
+   "product": "Multiple Products",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Fortinet advisory FG-IR-26-122 (published 2026-04-14) carries a 'Known Exploited: Yes' flag with no description of the exploitation; no press or telemetry reporting on in-the-wild use was found.",
+   "first_exploitation_claim": {
+    "date": "unknown (advisory published 2026-04-14; the date the 'Known Exploited: Yes' flag was set is not shown; CISA KEV addition 2026-10-16)",
+    "source": "Fortinet PSIRT advisory FG-IR-26-122, 'Known Exploited' field",
+    "url": "https://www.fortiguard.com/psirt/FG-IR-26-122"
+   },
+   "evidence": [],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "result_1.json"
+  },
+  {
+   "cve": "CVE-2026-106931",
+   "added": "2026-10-20",
+   "vendor": "EG Secure Solutions",
+   "product": "SiteGuard Server Edition",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "The vendor's 2026-10-14 alert and JPCERT/CC alert JPCERT-AT-2026-0032 state exploitation is confirmed, but no source gives attacker, victim, install-base, or scale information.",
+   "first_exploitation_claim": {
+    "date": "2026-10-14",
+    "source": "EG Secure Solutions alert (vendor); page states support-contract customers were notified separately on 2026-09-29",
+    "url": "https://www.eg-secure.co.jp/siteguard/news/alert-202610-1"
+   },
+   "evidence": [],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "result_1.json"
+  },
+  {
+   "cve": "CVE-2026-96656",
+   "added": "2026-10-20",
+   "vendor": "Plex",
+   "product": "Media Server",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Part of the four-CVE 'Plex2Shell' chain (PoC public 2026-10-16, patched in 1.43.3.10861 on 2026-08-03/04); exploited from 2026-10-17 to deploy cryptominers and proxy malware, with QNAP later reporting NAS compromises; all evidence is chain-level, not per-CVE.",
+   "first_exploitation_claim": {
+    "date": "2026-10-17",
+    "source": "Independent honeypot researcher (boredhackerblog), reported by SecurityWeek 2026-10-19",
+    "url": "https://www.securityweek.com/plex2shell-exploit-chain-weaponized-against-plex-servers-hours-after-disclosure/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 36000,
+     "counts_what": "internet-accessible, unpatched Plex Media Server instances (lower bound, 'more than'); applies to the Plex2Shell chain as a whole, not to this CVE alone",
+     "measured_by": "Shadowserver Foundation, as cited by Field Effect (Shadowserver primary not located)",
+     "measured_on": "early September 2026",
+     "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+     "quote": "The Shadowserver Foundation reported more than 36,000 internet-accessible, unpatched PMS instances in early September 2026"
+    },
+    {
+     "kind": "compromised",
+     "value": "unquantified",
+     "counts_what": "Plex systems compromised to deploy cryptominers and proxy malware; no count published",
+     "measured_by": "Field Effect",
+     "measured_on": "2026-10-22 (publication)",
+     "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+     "quote": "Observed activity has included compromise of vulnerable Plex systems to deploy cryptocurrency miners and proxy malware."
+    },
+    {
+     "kind": "compromised",
+     "value": "unquantified",
+     "counts_what": "QNAP NAS users reporting compromise via Plex2Shell; no count published",
+     "measured_by": "QNAP advisory, as reported by BleepingComputer",
+     "measured_on": "2026-11-06 (publication)",
+     "url": "https://bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks",
+     "quote": "has received reports from some users"
+    }
+   ],
+   "searches_run": 3,
+   "verdict": "exposure_only",
+   "source_file": "result_3.json"
+  },
+  {
+   "cve": "CVE-2026-96655",
+   "added": "2026-10-20",
+   "vendor": "Plex",
+   "product": "Media Server",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Part of the four-CVE 'Plex2Shell' chain (PoC public 2026-10-16, patched in 1.43.3.10861 on 2026-08-03/04); exploited from 2026-10-17 to deploy cryptominers and proxy malware, with QNAP later reporting NAS compromises; all evidence is chain-level, not per-CVE.",
+   "first_exploitation_claim": {
+    "date": "2026-10-17",
+    "source": "Independent honeypot researcher (boredhackerblog), reported by SecurityWeek 2026-10-19",
+    "url": "https://www.securityweek.com/plex2shell-exploit-chain-weaponized-against-plex-servers-hours-after-disclosure/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 36000,
+     "counts_what": "internet-accessible, unpatched Plex Media Server instances (lower bound, 'more than'); applies to the Plex2Shell chain as a whole, not to this CVE alone",
+     "measured_by": "Shadowserver Foundation, as cited by Field Effect (Shadowserver primary not located)",
+     "measured_on": "early September 2026",
+     "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+     "quote": "The Shadowserver Foundation reported more than 36,000 internet-accessible, unpatched PMS instances in early September 2026"
+    },
+    {
+     "kind": "compromised",
+     "value": "unquantified",
+     "counts_what": "Plex systems compromised to deploy cryptominers and proxy malware; no count published",
+     "measured_by": "Field Effect",
+     "measured_on": "2026-10-22 (publication)",
+     "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+     "quote": "Observed activity has included compromise of vulnerable Plex systems to deploy cryptocurrency miners and proxy malware."
+    },
+    {
+     "kind": "compromised",
+     "value": "unquantified",
+     "counts_what": "QNAP NAS users reporting compromise via Plex2Shell; no count published",
+     "measured_by": "QNAP advisory, as reported by BleepingComputer",
+     "measured_on": "2026-11-06 (publication)",
+     "url": "https://bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks",
+     "quote": "has received reports from some users"
+    }
+   ],
+   "searches_run": 3,
+   "verdict": "exposure_only",
+   "source_file": "result_3.json"
+  },
+  {
+   "cve": "CVE-2026-96654",
+   "added": "2026-10-20",
+   "vendor": "Plex",
+   "product": "Media Server",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Part of the four-CVE 'Plex2Shell' chain (PoC public 2026-10-16, patched in 1.43.3.10861 on 2026-08-03/04); exploited from 2026-10-17 to deploy cryptominers and proxy malware, with QNAP later reporting NAS compromises; all evidence is chain-level, not per-CVE.",
+   "first_exploitation_claim": {
+    "date": "2026-10-17",
+    "source": "Independent honeypot researcher (boredhackerblog), reported by SecurityWeek 2026-10-19",
+    "url": "https://www.securityweek.com/plex2shell-exploit-chain-weaponized-against-plex-servers-hours-after-disclosure/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 36000,
+     "counts_what": "internet-accessible, unpatched Plex Media Server instances (lower bound, 'more than'); applies to the Plex2Shell chain as a whole, not to this CVE alone",
+     "measured_by": "Shadowserver Foundation, as cited by Field Effect (Shadowserver primary not located)",
+     "measured_on": "early September 2026",
+     "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+     "quote": "The Shadowserver Foundation reported more than 36,000 internet-accessible, unpatched PMS instances in early September 2026"
+    },
+    {
+     "kind": "compromised",
+     "value": "unquantified",
+     "counts_what": "Plex systems compromised to deploy cryptominers and proxy malware; no count published",
+     "measured_by": "Field Effect",
+     "measured_on": "2026-10-22 (publication)",
+     "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+     "quote": "Observed activity has included compromise of vulnerable Plex systems to deploy cryptocurrency miners and proxy malware."
+    },
+    {
+     "kind": "compromised",
+     "value": "unquantified",
+     "counts_what": "QNAP NAS users reporting compromise via Plex2Shell; no count published",
+     "measured_by": "QNAP advisory, as reported by BleepingComputer",
+     "measured_on": "2026-11-06 (publication)",
+     "url": "https://bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks",
+     "quote": "has received reports from some users"
+    }
+   ],
+   "searches_run": 3,
+   "verdict": "exposure_only",
+   "source_file": "result_3.json"
+  },
+  {
+   "cve": "CVE-2026-96652",
+   "added": "2026-10-20",
+   "vendor": "Plex",
+   "product": "Media Server",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Part of the four-CVE 'Plex2Shell' chain (PoC public 2026-10-16, patched in 1.43.3.10861 on 2026-08-03/04); exploited from 2026-10-17 to deploy cryptominers and proxy malware, with QNAP later reporting NAS compromises; all evidence is chain-level, not per-CVE.",
+   "first_exploitation_claim": {
+    "date": "2026-10-17",
+    "source": "Independent honeypot researcher (boredhackerblog), reported by SecurityWeek 2026-10-19",
+    "url": "https://www.securityweek.com/plex2shell-exploit-chain-weaponized-against-plex-servers-hours-after-disclosure/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 36000,
+     "counts_what": "internet-accessible, unpatched Plex Media Server instances (lower bound, 'more than'); applies to the Plex2Shell chain as a whole, not to this CVE alone",
+     "measured_by": "Shadowserver Foundation, as cited by Field Effect (Shadowserver primary not located)",
+     "measured_on": "early September 2026",
+     "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+     "quote": "The Shadowserver Foundation reported more than 36,000 internet-accessible, unpatched PMS instances in early September 2026"
+    },
+    {
+     "kind": "compromised",
+     "value": "unquantified",
+     "counts_what": "Plex systems compromised to deploy cryptominers and proxy malware; no count published",
+     "measured_by": "Field Effect",
+     "measured_on": "2026-10-22 (publication)",
+     "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+     "quote": "Observed activity has included compromise of vulnerable Plex systems to deploy cryptocurrency miners and proxy malware."
+    },
+    {
+     "kind": "compromised",
+     "value": "unquantified",
+     "counts_what": "QNAP NAS users reporting compromise via Plex2Shell; no count published",
+     "measured_by": "QNAP advisory, as reported by BleepingComputer",
+     "measured_on": "2026-11-06 (publication)",
+     "url": "https://bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks",
+     "quote": "has received reports from some users"
+    }
+   ],
+   "searches_run": 3,
+   "verdict": "exposure_only",
+   "source_file": "result_3.json"
+  },
+  {
+   "cve": "CVE-2026-110936",
+   "added": "2026-10-20",
+   "vendor": "Siemens",
+   "product": "Software Center",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "DLL side-loading flaw abused by ClickFix operators (Romulus platform) who bundle a legitimate signed Siemens Software Center binary with a malicious DLL; Siemens says its own systems and update channels were not compromised, and no victim counts have been published.",
+   "first_exploitation_claim": {
+    "date": "2026-10-19",
+    "source": "Siemens blog post warning of active exploitation, as reported by Help Net Security",
+    "url": "https://www.helpnetsecurity.com/2026/10/20/exploitation-siemens-software-center-vulnerability-cve-2026-110936/"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": 6,
+     "counts_what": "IP addresses running the attacker platform (Romulus ClickFix panel) infrastructure; not victims",
+     "measured_by": "researchers cited by Help Net Security (Forescout per other coverage)",
+     "measured_on": "2026-10-20 (publication)",
+     "url": "https://www.helpnetsecurity.com/2026/10/20/exploitation-siemens-software-center-vulnerability-cve-2026-110936/",
+     "quote": "The researchers identified six IP addresses running it."
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "result_3.json"
+  },
+  {
+   "cve": "CVE-2026-114625",
+   "added": "2026-10-23",
+   "vendor": "Arista",
+   "product": "VeloCloud Orchestrator",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Arista detected active exploitation itself and disclosed it with the patch on 2026-10-22; it is the third exploited VCO flaw since July 2026 (after CVE-2026-16812 and CVE-2026-93952), and Arista says hosted/dedicated VCO instances were impacted, with no victim or exposure count published.",
+   "first_exploitation_claim": {
+    "date": "2026-10-22",
+    "source": "Arista Security Advisory 0199 (\"This issue was detected by Arista and is known to be actively exploited.\")",
+    "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24838-security-advisory-0199"
+   },
+   "evidence": [
+    {
+     "kind": "attack_volume",
+     "value": 2,
+     "counts_what": "Attacker IP addresses listed by the vendor as observed conducting the attacks (74.82.197.86, 38.54.50.151)",
+     "measured_by": "Arista",
+     "measured_on": "2026-10-22",
+     "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24838-security-advisory-0199",
+     "quote": "The following IP addresses have been observed conducting the attacks."
+    },
+    {
+     "kind": "other",
+     "value": "hosted and dedicated VCO impacted (no count)",
+     "counts_what": "Vendor statement that its hosted/dedicated orchestrators were impacted; unquantified",
+     "measured_by": "Arista",
+     "measured_on": "2026-10-22",
+     "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24838-security-advisory-0199",
+     "quote": "Hosted, including Dedicated, versions of VCO were impacted and have already been patched."
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "result_0.json"
+  },
+  {
+   "cve": "CVE-2026-110447",
+   "added": "2026-10-23",
+   "vendor": "Collabora",
+   "product": "Collabora Online \u2013 Built-in CODE Server",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Nextcloud administrators reported PHP webshells planted via richdocumentscode proxy.php from 2026-09-10, about a month before the advisory and CVE; the only counts are a handful of administrator self-reports and the total number of servers hit is explicitly unknown.",
+   "first_exploitation_claim": {
+    "date": "2026-10-14",
+    "source": "The Hacker News, citing administrator reports on GitHub and Collabora's 14 October advisory; first logged attack dated 2026-09-10",
+    "url": "https://thehackernews.com/2026/10/hackers-backdoor-nextcloud-servers.html"
+   },
+   "evidence": [
+    {
+     "kind": "organizations",
+     "value": 3,
+     "counts_what": "Nextcloud administrators who reported attacks on their instances on GitHub (self-reports; a floor, not a campaign total)",
+     "measured_by": "Administrator reports on GitHub, as summarized by The Hacker News",
+     "measured_on": "2026-10-14 (article date); first logged attack 2026-09-10",
+     "url": "https://thehackernews.com/2026/10/hackers-backdoor-nextcloud-servers.html",
+     "quote": "Three administrators reported the issue on GitHub, with the first logged attack on September 10."
+    },
+    {
+     "kind": "organizations",
+     "value": 2,
+     "counts_what": "Additional administrators reporting the same activity on their own instances (self-reports)",
+     "measured_by": "Administrator reports, as summarized by The Hacker News",
+     "measured_on": "2026-10-14 (article date)",
+     "url": "https://thehackernews.com/2026/10/hackers-backdoor-nextcloud-servers.html",
+     "quote": "Two other administrators reported the same on their own instances."
+    },
+    {
+     "kind": "other",
+     "value": "scale unknown",
+     "counts_what": "Explicit statement that no total count of affected servers exists",
+     "measured_by": "The Hacker News",
+     "measured_on": "2026-10-14",
+     "url": "https://thehackernews.com/2026/10/hackers-backdoor-nextcloud-servers.html",
+     "quote": "How many servers were hit is not known."
+    },
+    {
+     "kind": "downtime",
+     "value": "credential/wallet search; unconfirmed ransomware reports",
+     "counts_what": "Post-exploitation activity on affected servers; ransomware use is user-reported and not confirmed by the outlet",
+     "measured_by": "BleepingComputer, citing system administrator reports",
+     "measured_on": "2026-10-15 (article date)",
+     "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-collabora-rce-flaw-to-backdoor-nextcloud-servers/",
+     "quote": "Some users also reported that ransomware operators are exploiting the flaw."
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "quantified_compromise",
+   "source_file": "result_1.json"
+  },
+  {
+   "cve": "CVE-2026-109618",
+   "added": "2026-10-26",
+   "vendor": "PHP Group",
+   "product": "PHP",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "One of the two 'PHP2Shell' unauthenticated RCE flaws patched 2026-10-21; exploit attempts began before the patch and reached millions per Cloudflare, the first working in-the-wild RCE was recorded on a honeypot around 2026-10-24, and Dream Security later reported 25 servers rooted by chaining PHP2Shell with the Fragnesia kernel flaw.",
+   "first_exploitation_claim": {
+    "date": "2026-10-22",
+    "source": "Amazon Threat Intelligence via BleepingComputer: attempts (non-functional exploits, against a honeypot) from 2026-10-17, four days before patches; first confirmed successful in-the-wild RCE was Adel Karimi's honeypot report dated 2026-10-24 (BleepingComputer 2026-10-26)",
+    "url": "https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": "over 34.4 million",
+     "counts_what": "PHP services still running vulnerable versions (both PHP2Shell CVEs)",
+     "measured_by": "Censys, as reported by Security Affairs (cites https://censys.com/advisory/cve-2026-109618-cve-2026-109619/)",
+     "measured_on": "2026-10-23",
+     "url": "https://securityaffairs.com/201538/hacking/php2shell-millions-of-attacks-no-confirmed-successful-exploits-yet.html",
+     "quote": "As of October 23, Censys counts over 34.4 million PHP services still running vulnerable versions."
+    },
+    {
+     "kind": "exposed",
+     "value": "more than 5.1 million hosts; roughly 3.8 million with an attackable open port",
+     "counts_what": "PHP hosts exposed online (VirusTotal estimate; Recorded Future cautions it is not a count of vulnerable systems)",
+     "measured_by": "VirusTotal, as reported by BleepingComputer",
+     "measured_on": "2026-10 (blog date not stated in article; article 2026-10-26)",
+     "url": "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/",
+     "quote": "with more than 5.1 million PHP hosts exposed online and roughly 3.8 million with at least one port open to attacks"
+    },
+    {
+     "kind": "attack_volume",
+     "value": "tens of thousands in 45 minutes; hundreds of thousands within 2 hours; millions by 2026-10-22",
+     "counts_what": "Exploit attempts seen on Cloudflare's network after public disclosure (attempts, not compromises)",
+     "measured_by": "Cloudflare (CEO Matthew Prince post), as reported by Security Affairs",
+     "measured_on": "2026-10-22",
+     "url": "https://securityaffairs.com/201538/hacking/php2shell-millions-of-attacks-no-confirmed-successful-exploits-yet.html",
+     "quote": "That jumped to tens of thousands in the 45 minutes post announcement, hundreds of thousands within 2 hours, and millions now."
+    },
+    {
+     "kind": "compromised",
+     "value": 25,
+     "counts_what": "Servers rooted via PHP2Shell chained with Fragnesia (CVE-2026-46300), across the United States, Japan, Taiwan and South Korea",
+     "measured_by": "Dream Security, as reported by BleepingComputer",
+     "measured_on": "2026-10-26 (report date; article 2026-10-29)",
+     "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/",
+     "quote": "This included artifacts of a campaign that had rooted 25 servers across the United States, Japan, Taiwan, and South Korea."
+    },
+    {
+     "kind": "downtime",
+     "value": "preemptive service shutdowns (unquantified)",
+     "counts_what": "Governments, hospitals and schools in Asia, Europe and North America taking services offline as a precaution; no count or duration given",
+     "measured_by": "Security Affairs",
+     "measured_on": "2026-10-23 (article date)",
+     "url": "https://securityaffairs.com/201538/hacking/php2shell-millions-of-attacks-no-confirmed-successful-exploits-yet.html",
+     "quote": "have preemptively taken services offline rather than wait."
+    },
+    {
+     "kind": "other",
+     "value": "1 honeypot RCE; 800 KiB cookie dump",
+     "counts_what": "First confirmed working in-the-wild RCE, against a honeypot (Apache mod_php, PHP 8.4.26); not a real victim",
+     "measured_by": "Adel Karimi (Perplexity) honeypot data, as reported by BleepingComputer",
+     "measured_on": "2026-10-24 (honeypot report date)",
+     "url": "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/",
+     "quote": "The response delivered an 800 KiB decoded cookie dump"
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "quantified_compromise",
+   "source_file": "result_2.json"
+  },
+  {
+   "cve": "CVE-2026-109619",
+   "added": "2026-10-26",
+   "vendor": "PHP Group",
+   "product": "PHP",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Second of the two 'PHP2Shell' flaws; all public reporting treats CVE-2026-109618 and CVE-2026-109619 as a pair and no source separates figures per CVE, so the evidence is identical to CVE-2026-109618.",
+   "first_exploitation_claim": {
+    "date": "2026-10-22",
+    "source": "Amazon Threat Intelligence via BleepingComputer: attempts (non-functional exploits, against a honeypot) from 2026-10-17, four days before patches; first confirmed successful in-the-wild RCE was Adel Karimi's honeypot report dated 2026-10-24 (BleepingComputer 2026-10-26)",
+    "url": "https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": "over 34.4 million",
+     "counts_what": "PHP services still running vulnerable versions (both PHP2Shell CVEs)",
+     "measured_by": "Censys, as reported by Security Affairs (cites https://censys.com/advisory/cve-2026-109618-cve-2026-109619/)",
+     "measured_on": "2026-10-23",
+     "url": "https://securityaffairs.com/201538/hacking/php2shell-millions-of-attacks-no-confirmed-successful-exploits-yet.html",
+     "quote": "As of October 23, Censys counts over 34.4 million PHP services still running vulnerable versions."
+    },
+    {
+     "kind": "exposed",
+     "value": "more than 5.1 million hosts; roughly 3.8 million with an attackable open port",
+     "counts_what": "PHP hosts exposed online (VirusTotal estimate; Recorded Future cautions it is not a count of vulnerable systems)",
+     "measured_by": "VirusTotal, as reported by BleepingComputer",
+     "measured_on": "2026-10 (blog date not stated in article; article 2026-10-26)",
+     "url": "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/",
+     "quote": "with more than 5.1 million PHP hosts exposed online and roughly 3.8 million with at least one port open to attacks"
+    },
+    {
+     "kind": "attack_volume",
+     "value": "tens of thousands in 45 minutes; hundreds of thousands within 2 hours; millions by 2026-10-22",
+     "counts_what": "Exploit attempts seen on Cloudflare's network after public disclosure (attempts, not compromises)",
+     "measured_by": "Cloudflare (CEO Matthew Prince post), as reported by Security Affairs",
+     "measured_on": "2026-10-22",
+     "url": "https://securityaffairs.com/201538/hacking/php2shell-millions-of-attacks-no-confirmed-successful-exploits-yet.html",
+     "quote": "That jumped to tens of thousands in the 45 minutes post announcement, hundreds of thousands within 2 hours, and millions now."
+    },
+    {
+     "kind": "compromised",
+     "value": 25,
+     "counts_what": "Servers rooted via PHP2Shell chained with Fragnesia (CVE-2026-46300), across the United States, Japan, Taiwan and South Korea",
+     "measured_by": "Dream Security, as reported by BleepingComputer",
+     "measured_on": "2026-10-26 (report date; article 2026-10-29)",
+     "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/",
+     "quote": "This included artifacts of a campaign that had rooted 25 servers across the United States, Japan, Taiwan, and South Korea."
+    },
+    {
+     "kind": "downtime",
+     "value": "preemptive service shutdowns (unquantified)",
+     "counts_what": "Governments, hospitals and schools in Asia, Europe and North America taking services offline as a precaution; no count or duration given",
+     "measured_by": "Security Affairs",
+     "measured_on": "2026-10-23 (article date)",
+     "url": "https://securityaffairs.com/201538/hacking/php2shell-millions-of-attacks-no-confirmed-successful-exploits-yet.html",
+     "quote": "have preemptively taken services offline rather than wait."
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "quantified_compromise",
+   "source_file": "result_2.json"
+  },
+  {
+   "cve": "CVE-2026-48356",
+   "added": "2026-10-27",
+   "vendor": "Adobe",
+   "product": "Commerce and Magento",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Sansec names this flaw PolyShell (unauthenticated file upload via the Magento REST API); probing began 2026-03-16, mass exploitation 2026-03-19, with Magecart-style loader injection on hundreds of stores; Adobe backported the fix in APSB26-73 on 2026-07-14.",
+   "first_exploitation_claim": {
+    "date": "2026-03-19",
+    "source": "Sansec (PolyShell research page timeline: \"First PolyShell attacks observed in the wild\"; probing noted from 2026-03-16)",
+    "url": "https://sansec.io/research/magento-polyshell"
+   },
+   "evidence": [
+    {
+     "kind": "compromised",
+     "value": 471,
+     "counts_what": "Magento stores detected compromised (loader injected) in a single hour via PolyShell",
+     "measured_by": "Sansec",
+     "measured_on": "2026-03-30",
+     "url": "https://sansec.io/research/polyshell-mass-attack-wave",
+     "quote": "Sansec detected 471 stores compromised in a single hour as attackers exploit the PolyShell vulnerability at scale."
+    },
+    {
+     "kind": "compromised",
+     "value": 471,
+     "counts_what": "Same 471-store figure restated in trade press with the explicit PolyShell = CVE-2026-48356 mapping (article is about a 953-store loader campaign active since July 2025, of which only the 471 are attributed to this CVE)",
+     "measured_by": "Sansec, as reported by The Hacker News",
+     "measured_on": "2026-10-26",
+     "url": "https://thehackernews.com/2026/10/hackers-infect-953-online-stores-with.html",
+     "quote": "471 Magento stores are estimated to have been injected with the loader through the PolyShell"
+    },
+    {
+     "kind": "attack_volume",
+     "value": "82%",
+     "counts_what": "Share of Sansec-monitored stores hit with malicious upload attempts (attack attempts against protected stores, not confirmed compromises)",
+     "measured_by": "Sansec",
+     "measured_on": "2026-04-14",
+     "url": "https://sansec.io/research/magento-polyshell",
+     "quote": "82% of all stores hit with malicious uploads"
+    },
+    {
+     "kind": "attack_volume",
+     "value": "79.5%",
+     "counts_what": "Share of Sansec Shield-protected Magento stores against which PolyShell exploitation attempts were blocked since 2026-03-16",
+     "measured_by": "Sansec",
+     "measured_on": "2026-03-30",
+     "url": "https://sansec.io/research/magento-polyshell",
+     "quote": "has blocked PolyShell exploitation attempts against 79.5% of all protected Magento stores since March 16th."
+    },
+    {
+     "kind": "attack_volume",
+     "value": "more than 50",
+     "counts_what": "Source IPs probing for PolyShell",
+     "measured_by": "Sansec",
+     "measured_on": "since 2026-03-23",
+     "url": "https://sansec.io/research/magento-polyshell",
+     "quote": "Since March 23, Sansec has recorded more than 50 IPs probing for PolyShell attacks."
+    }
+   ],
+   "searches_run": 3,
+   "verdict": "quantified_compromise",
+   "source_file": "result_0.json"
+  },
+  {
+   "cve": "CVE-2026-111497",
+   "added": "2026-10-27",
+   "vendor": "Google",
+   "product": "Brotli",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Brotli decoder memory-corruption bug (nicknamed Node2Shell/Broccoli2Shell) embedded in Node.js and many other stacks; ELLIO sensors recorded in-the-wild exploit traffic from a single IP using the public exploit, and CISA added it to KEV on 2026-10-27, with no exposure, compromise, or victim counts published.",
+   "first_exploitation_claim": {
+    "date": "2026-10-26",
+    "source": "ELLIO (threat intelligence sensors), as reported by Help Net Security on 2026-10-27",
+    "url": "https://helpnetsecurity.com/2026/10/27/node2shell-broccoli2shell-vulnerability-cve-2026-111497"
+   },
+   "evidence": [
+    {
+     "kind": "attack_volume",
+     "value": "1 source IP (94.154.43.7) named; no attempt count given",
+     "counts_what": "IP address from which exploitation attempts were observed by ELLIO sensors (attack traffic, not compromises)",
+     "measured_by": "ELLIO, as reported by Help Net Security",
+     "measured_on": "2026-10-26 (reported 'on Monday')",
+     "url": "https://helpnetsecurity.com/2026/10/27/node2shell-broccoli2shell-vulnerability-cve-2026-111497",
+     "quote": "94.154.43.7 \u2013 the IP address from which exploitation attempts are coming \u2013"
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "result_1.json"
+  },
+  {
+   "cve": "CVE-2026-41709",
+   "added": "2026-10-28",
+   "vendor": "Broadcom",
+   "product": "VMware ESX",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "CrowdStrike's 2026 Legal Threat Landscape Report (2026-10-28) says China-nexus Warp Panda used this low-severity (CVSS 2.7) logging flaw as a zero-day in several intrusions at US organizations including law firms, continuing into early 2026; no victim count for this CVE was found.",
+   "first_exploitation_claim": {
+    "date": "2026-10-28",
+    "source": "CrowdStrike 2026 Legal Threat Landscape Report, as reported by SecurityWeek (SecurityWeek page returned HTTP 403; claim read from search summary and a secondary write-up, primary report not retrieved)",
+    "url": "https://securityweek.com/chinese-hackers-quietly-used-low-severity-esxi-logging-flaw-as-zero-day"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "several intrusions",
+     "counts_what": "Intrusions in which Warp Panda used the flaw (unquantified); quote is from a lower-tier trade outlet relaying CrowdStrike because SecurityWeek blocked fetching",
+     "measured_by": "CrowdStrike, as relayed by Cyber Security News",
+     "measured_on": "2026-10-28",
+     "url": "https://cybersecuritynews.com/vmware-esx-logging-vulnerability-exploited/amp/",
+     "quote": "CrowdStrike identified the group as WARP PANDA and said it used the flaw"
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "result_0.json"
+  },
+  {
+   "cve": "CVE-2026-46300",
+   "added": "2026-10-28",
+   "vendor": "Linux",
+   "product": "Kernel",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "'Fragnesia' local privilege escalation (public PoC since 2026-05-13) reported by Dream Security as chained after the PHP2Shell flaws (CVE-2026-109618/-109619) to root 25 servers in four countries, three of them at a US government-affiliated organization; CISA did not confirm those details.",
+   "first_exploitation_claim": {
+    "date": "2026-10-26",
+    "source": "Dream Security report ('Monday report' per BleepingComputer, 2026-10-29); a Qualys ThreatPROTECT post dated 2026-05-15 carries 'Exploited in Attacks' in its headline but was not verified here",
+    "url": "https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers"
+   },
+   "evidence": [
+    {
+     "kind": "compromised",
+     "value": 25,
+     "counts_what": "Servers rooted via the PHP2Shell + Fragnesia chain, across the United States, Japan, Taiwan and South Korea (campaign artifacts observed by Dream Security)",
+     "measured_by": "Dream Security, as reported by BleepingComputer",
+     "measured_on": "2026-10-26 (report date; BleepingComputer article 2026-10-29)",
+     "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/",
+     "quote": "This included artifacts of a campaign that had rooted 25 servers across the United States, Japan, Taiwan, and South Korea."
+    },
+    {
+     "kind": "organizations",
+     "value": "3 servers at 1 US government-affiliated organization (unnamed)",
+     "counts_what": "Servers the attacker focused on inside one US government-affiliated environment; subset of the 25",
+     "measured_by": "Dream Security, as reported by BleepingComputer",
+     "measured_on": "2026-10-26 (report date)",
+     "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/",
+     "quote": "Once rooted, the attacker zeroed in on three specific servers in a US government-affiliated environment."
+    },
+    {
+     "kind": "compromised",
+     "value": 25,
+     "counts_what": "Same campaign as reported by CSO Online; a Securonix commenter characterizes the victims as mostly firewall appliances",
+     "measured_by": "Dream Security, as reported by CSO Online",
+     "measured_on": "2026-10-29 (article date)",
+     "url": "https://www.csoonline.com/article/4242454/php2shell-plus-fragnesia-a-dangerous-new-route-from-web-server-to-root.html",
+     "quote": "to breach 25 servers, including three affiliated with the US government."
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "quantified_compromise",
+   "source_file": "result_2.json"
+  },
+  {
+   "cve": "CVE-2026-97229",
+   "added": "2026-10-29",
+   "vendor": "GitLab",
+   "product": "Community Edition and Enterprise Edition",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Patched 2026-10-12 with a Rapid7 PoC on 2026-10-13; Alpine Linux disclosed exploitation attempts against its GitLab instance on 20-21 October (success not confirmed, instance rebuilt), and CISA added the CVE to KEV on 2026-10-29.",
+   "first_exploitation_claim": {
+    "date": "2026-10-28",
+    "source": "Alpine Linux incident post (attempts on 2026-10-20 and 2026-10-21); CISA KEV listing followed on 2026-10-29",
+    "url": "https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 25766,
+     "counts_what": "Internet-facing hosts running a GitLab version affected by this CVE (also 79,224 web properties); version-based, out of 82,454 GitLab hosts detected",
+     "measured_by": "Censys",
+     "measured_on": "2026-10-13 (advisory date; no separate measurement date stated)",
+     "url": "https://censys.com/advisory/cve-2026-97229",
+     "quote": "Censys currently detects 25,766 hosts and 79,224 web properties with a version of GitLab affected by this vulnerability."
+    },
+    {
+     "kind": "exposed",
+     "value": 82454,
+     "counts_what": "All internet-facing hosts running GitLab (denominator for the vulnerable count; also 205,541 web properties)",
+     "measured_by": "Censys",
+     "measured_on": "2026-10-13 (advisory date)",
+     "url": "https://censys.com/advisory/cve-2026-97229",
+     "quote": "We currently detect 82,454 hosts and 205,541 web properties running GitLab, based on the following query"
+    },
+    {
+     "kind": "exposed",
+     "value": "over 1000",
+     "counts_what": "GitLab instances still vulnerable to CVE-2026-97229 about three weeks after the patch",
+     "measured_by": "Shadowserver, quoted by BleepingComputer",
+     "measured_on": "2026-11-01 (the Sunday before the 2026-11-02 article)",
+     "url": "https://www.bleepingcomputer.com/news/security/over-1-000-gitlab-servers-vulnerable-to-code-execution-attacks/amp/",
+     "quote": "We are currently tracking over 1000 GitLab instances vulnerable to CVE-2026-97229 (on @CISACyber KEV)"
+    },
+    {
+     "kind": "exposed",
+     "value": "nearly 2,800",
+     "counts_what": "Internet-exposed GitLab Community Edition instances (patch status not stated; inconsistent in scope with the ~39K daily instances Shadowserver cites elsewhere)",
+     "measured_by": "Shadowserver, as reported by BleepingComputer",
+     "measured_on": "2026-10-30 (article date; no measurement date given)",
+     "url": "https://www.bleepingcomputer.com/news/security/hackers-now-exploiting-max-severity-gitlab-flaw-in-attacks/amp/",
+     "quote": "Internet threat watchdog Shadowserver tracks nearly 2,800 Internet-exposed GitLab Community Edition instances"
+    },
+    {
+     "kind": "organizations",
+     "value": "1 named: Alpine Linux (attempted; success not confirmed)",
+     "counts_what": "Named organization targeted with the exploit; the victim found no evidence of success but could not rule it out",
+     "measured_by": "Alpine Linux (self-disclosure)",
+     "measured_on": "2026-10-20 to 2026-10-21 (attempts); post dated 2026-10-28",
+     "url": "https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html",
+     "quote": "We have found no evidence that it succeeded, but we cannot rule it out."
+    },
+    {
+     "kind": "downtime",
+     "value": 8,
+     "counts_what": "GitLab worker process crashes caused by the exploit attempts on Alpine Linux's instance",
+     "measured_by": "Alpine Linux (self-disclosure)",
+     "measured_on": "2026-10-20 to 2026-10-21",
+     "url": "https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html",
+     "quote": "This crashed GitLab worker processes 8 times."
+    },
+    {
+     "kind": "downtime",
+     "value": "instance closed to non-developers from 2026-10-27, rebuild complete 2026-10-28, reopened 2026-10-29 (no duration stated by the source)",
+     "counts_what": "Operational impact at Alpine Linux: restricted access, full rebuild, all passwords reset and secret keys replaced",
+     "measured_by": "Alpine Linux (self-disclosure, incident timeline)",
+     "measured_on": "2026-10-27 to 2026-10-29",
+     "url": "https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html",
+     "quote": "GitLab closed to everyone except developers and build servers; rebuild started"
+    }
+   ],
+   "searches_run": 4,
+   "verdict": "exposure_only",
+   "source_file": "result_1.json"
+  },
+  {
+   "cve": "CVE-2026-76418",
+   "added": "2026-10-29",
+   "vendor": "Cisco",
+   "product": "Secure Firewall ASA Software and Cisco Secure FTD Software",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Cisco PSIRT reported active exploitation of an unauthenticated SSL remote-access VPN reload (DoS) bug in October 2026; Cisco disclosed no attacker, victim, or scale details and no outage reports were found.",
+   "first_exploitation_claim": {
+    "date": "2026-10-28",
+    "source": "Cisco PSIRT advisory cisco-sa-asaftd-tunnel-dos-s6mgkb75 (\"In October 2026, the Cisco PSIRT became aware of active exploitation of this vulnerability.\")",
+    "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-tunnel-dos-s6mgkb75"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": 51000,
+     "counts_what": "Cisco ASA SSL VPN devices exposed online (exposure of the product/service, not confirmed-vulnerable configurations and not crashed devices)",
+     "measured_by": "Shadowserver, as reported by BleepingComputer",
+     "measured_on": "2026-10-29 (article date; article says 'currently', no explicit measurement date)",
+     "url": "https://bleepingcomputer.com/news/security/cisco-warns-of-firewall-zero-day-exploited-to-crash-ssl-vpn-devices",
+     "quote": "Internet monitoring platform Shadowserver tracks more than 51,000 Cisco ASA SSL VPN devices exposed online."
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "exposure_only",
+   "source_file": "result_1.json"
+  },
+  {
+   "cve": "CVE-2026-118527",
+   "added": "2026-10-30",
+   "vendor": "Ivanti",
+   "product": "Connect Secure",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "File-upload/predictable-identifier link in the same UTA0576 Ivanti Connect Secure chain as CVE-2026-104935 and CVE-2026-111357; the Volexity post as fetched names only the other two CVE IDs, so attribution of this CVE to the chain rests on CISA's KEV text and trade press.",
+   "first_exploitation_claim": {
+    "date": "2026-10-13",
+    "source": "Volexity blog, which says CVE-2026-104935 was chained 'with two other flaws' from 2026-10-03 (as relayed by BleepingComputer); this CVE ID itself first appears as exploited in the 2026-10-30 KEV addition and BleepingComputer 2026-11-02",
+    "url": "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": "over 5,000",
+     "counts_what": "Internet-exposed Ivanti Connect Secure instances (all versions; not a count of vulnerable or compromised devices; article says it is unknown how many are already secured)",
+     "measured_by": "Shadowserver, as reported by BleepingComputer",
+     "measured_on": "2026-11-02 (article date)",
+     "url": "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/",
+     "quote": "Shadowserver now tracks over 5,000 Internet-exposed ICS instances"
+    },
+    {
+     "kind": "other",
+     "value": "since at least October 1 (no count given)",
+     "counts_what": "Duration of zero-day exploitation of the chain; no victim count",
+     "measured_by": "BleepingComputer (citing Defused and Volexity)",
+     "measured_on": "2026-11-02",
+     "url": "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/",
+     "quote": "have been chained in zero-day attacks since at least October 1"
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "exposure_only",
+   "source_file": "result_2.json"
+  },
+  {
+   "cve": "CVE-2026-111357",
+   "added": "2026-10-30",
+   "vendor": "Ivanti",
+   "product": "Connect Secure",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Privilege-escalation link in a three-CVE Ivanti Connect Secure zero-day chain (with CVE-2026-104935 and CVE-2026-118527) used by a threat actor Volexity tracks as UTA0576; Ivanti describes exploitation as limited and no victim or compromised-appliance count has been published.",
+   "first_exploitation_claim": {
+    "date": "2026-10-13",
+    "source": "Volexity blog (chain exploited from 2026-10-03; Defused separately reported signs of CVE-2026-104935 exploitation from 2026-10-01, per BleepingComputer)",
+    "url": "https://www.volexity.com/blog/2026/10/13/a-series-of-unauthenticated-events-chained-exploitation-of-ivanti-connect-secure-zero-days/"
+   },
+   "evidence": [
+    {
+     "kind": "exposed",
+     "value": "over 5,000",
+     "counts_what": "Internet-exposed Ivanti Connect Secure instances (all versions; not a count of vulnerable or compromised devices; article says it is unknown how many are already secured)",
+     "measured_by": "Shadowserver, as reported by BleepingComputer",
+     "measured_on": "2026-11-02 (article date)",
+     "url": "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/",
+     "quote": "Shadowserver now tracks over 5,000 Internet-exposed ICS instances"
+    },
+    {
+     "kind": "exposed",
+     "value": "over 5,500",
+     "counts_what": "Ivanti Connect Secure instances exposed online at initial disclosure of the chain (not a count of vulnerable or compromised devices; may include honeypots)",
+     "measured_by": "Shadowserver, as reported by BleepingComputer",
+     "measured_on": "2026-10-13 (article date)",
+     "url": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-connect-secure-zero-day-exploited-in-attacks/",
+     "quote": "Internet threat watchdog Shadowserver now tracks over 5,500 ICS instances exposed online"
+    },
+    {
+     "kind": "other",
+     "value": "single incident-response case (no count given)",
+     "counts_what": "Volexity's report describes one compromised, fully patched ICS appliance at one of its monitoring customers; it is a case description, not a population count",
+     "measured_by": "Volexity",
+     "measured_on": "2026-10-05 investigation start; activity from 2026-10-03",
+     "url": "https://www.volexity.com/blog/2026/10/13/a-series-of-unauthenticated-events-chained-exploitation-of-ivanti-connect-secure-zero-days/",
+     "quote": "starting on October 3, 2026, UTA0576 repeatedly exploited these vulnerabilities to compromise the ICS VPN appliance"
+    },
+    {
+     "kind": "other",
+     "value": "limited exploitation (unquantified)",
+     "counts_what": "Vendor characterization of exploitation scale at disclosure of the chain",
+     "measured_by": "Ivanti, quoted by BleepingComputer",
+     "measured_on": "2026-10-13",
+     "url": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-connect-secure-zero-day-exploited-in-attacks/",
+     "quote": "At the time of disclosure, Ivanti is aware of limited exploitation in the wild."
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "exposure_only",
+   "source_file": "result_2.json"
+  },
+  {
+   "cve": "CVE-2026-119977",
+   "added": "2026-11-03",
+   "vendor": "WordPress",
+   "product": "WordPress Core",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Upgrade-window race condition fixed in WordPress 7.1.4 (2026-10-28); Wordfence reports blocked attack attempts and CISA confirmed exploitation, but no source reports a confirmed successful compromise or a count of affected sites.",
+   "first_exploitation_claim": {
+    "date": "2026-11-03",
+    "source": "CISA KEV addition, reported by BleepingComputer 2026-11-04 (Wordfence's blocked-attack figure was published the preceding weekend, exact day not stated)",
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/"
+   },
+   "evidence": [
+    {
+     "kind": "attack_volume",
+     "value": 13095,
+     "counts_what": "attacks targeting this vulnerability blocked by the Wordfence firewall in a 24-hour period (attempts, not compromises)",
+     "measured_by": "Wordfence, quoted by BleepingComputer (Wordfence page returned empty on fetch)",
+     "measured_on": "weekend preceding 2026-11-04 (exact day not stated)",
+     "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/",
+     "quote": "blocked 13,095 attacks targeting this vulnerability in the past 24 hours"
+    }
+   ],
+   "searches_run": 3,
+   "verdict": "qualitative_only",
+   "source_file": "result_3.json"
+  },
+  {
+   "cve": "CVE-2024-27834",
+   "added": "2026-11-04",
+   "vendor": "Apple",
+   "product": "Multiple Products",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Sekoia's 'Poisoned Source' report (2026-11-04) describes APT29-attributed watering holes, including a compromise of the Plerdy analytics tracker, serving an iOS 16.7 n-day chain that uses CVE-2024-27834 as a PAC bypass for cookie theft; no device or victim count was published.",
+   "first_exploitation_claim": {
+    "date": "2026-11-04",
+    "source": "Sekoia ('Poisoned Source' report; activity discovered mid-October 2026, Plerdy compromise window 2026-08-27 to 2026-09-03)",
+    "url": "https://www.sekoia.com/blog/poisoned-source-apt29-watering-holes-targets-mobile-devices-with-n-day-exploits"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "hundreds",
+     "counts_what": "Legitimate websites (and their visitors) exposed to the exploit kit through the compromised Plerdy tracker for one week; this is delivery reach, not devices compromised, and covers the whole kit rather than this CVE alone",
+     "measured_by": "Sekoia",
+     "measured_on": "2026-08-27 to 2026-09-03 (published 2026-11-04)",
+     "url": "https://www.sekoia.com/blog/poisoned-source-apt29-watering-holes-targets-mobile-devices-with-n-day-exploits",
+     "quote": "exposing hundreds of legitimate websites and their visitors to its exploit kit for one week."
+    },
+    {
+     "kind": "other",
+     "value": 2,
+     "counts_what": "Lookalike reverse-proxy websites set up by the actor to deliver the exploit kit",
+     "measured_by": "Sekoia",
+     "measured_on": "2026-11-04",
+     "url": "https://www.sekoia.com/blog/poisoned-source-apt29-watering-holes-targets-mobile-devices-with-n-day-exploits",
+     "quote": "We identified two high-profile websites set up by the intrusion set to act as reverse proxies."
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "result_0.json"
+  },
+  {
+   "cve": "CVE-2026-19868",
+   "added": "2026-11-06",
+   "vendor": "SonicWall",
+   "product": "SonicOS SSLVPN",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "SAML/MFA bypass affecting SSL VPN only where SAML login is enabled; SonicWall PSIRT cites a single report of potential exploitation and neither SonicWall nor CISA has shared attack details.",
+   "first_exploitation_claim": {
+    "date": "2026-11-06",
+    "source": "SonicWall PSIRT advisory, as reported by BleepingComputer",
+    "url": "https://bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "unquantified",
+     "counts_what": "vendor statement of a report of potential exploitation; no count",
+     "measured_by": "SonicWall PSIRT, quoted by BleepingComputer",
+     "measured_on": "2026-11-06",
+     "url": "https://bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks",
+     "quote": "SonicWall PSIRT has investigated a report indicating potential exploitation of this vulnerability."
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "result_3.json"
+  },
+  {
+   "cve": "CVE-2026-102895",
+   "added": "2026-11-09",
+   "vendor": "GPUStack",
+   "product": "GPUStack",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "The project's GitHub advisory reports in-the-wild exploitation against a single v2.1.1 deployment (custom backends running reverse shells), reported by Javier Sixto (ulex.fr); no exposure or wider compromise counts were found from reputable sources.",
+   "first_exploitation_claim": {
+    "date": "2026-07-31",
+    "source": "GPUStack GitHub security advisory GHSA-gj9m-f8ph-pmhr",
+    "url": "https://github.com/gpustack/gpustack/security/advisories/GHSA-gj9m-f8ph-pmhr"
+   },
+   "evidence": [
+    {
+     "kind": "compromised",
+     "value": "one deployment (described, not counted)",
+     "counts_what": "A single GPUStack v2.1.1 deployment observed exploited; the advisory gives no numeric count",
+     "measured_by": "GPUStack maintainers, on a report from Javier Sixto (ulex.fr)",
+     "measured_on": "2026-07-31 (advisory publication date)",
+     "url": "https://github.com/gpustack/gpustack/security/advisories/GHSA-gj9m-f8ph-pmhr",
+     "quote": "has been observed exploited in the wild against a v2.1.1 deployment."
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "result_1.json"
+  },
+  {
+   "cve": "CVE-2026-123158",
+   "added": "2026-11-09",
+   "vendor": "OpenBSD",
+   "product": "OpenSSH",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "'SSHole' password-authentication bypass affecting sshd on musl-libc systems without PAM (notably Alpine Linux), fixed in OpenSSH 10.6p2 on 2026-11-05; Previdian honeypots recorded exploitation attempts within nine hours of CVE publication and one successful root login on a honeypot, with no real-world victim or exposure counts published.",
+   "first_exploitation_claim": {
+    "date": "2026-11-06",
+    "source": "Previdian (CEO Ryan Dewhurst), reported by Help Net Security and The Hacker News",
+    "url": "https://www.helpnetsecurity.com/2026/11/06/openssh-sshole-cve-2026-123158-exploitation/"
+   },
+   "evidence": [
+    {
+     "kind": "attack_volume",
+     "value": "8 attempts from 1 IP",
+     "counts_what": "Exploitation attempts against Previdian honeypot sensors, all from one Japan-geolocated IP and one sensor",
+     "measured_by": "Previdian, as reported by Help Net Security",
+     "measured_on": "2026-11-06 (article date)",
+     "url": "https://www.helpnetsecurity.com/2026/11/06/openssh-sshole-cve-2026-123158-exploitation/",
+     "quote": "So far, the company has counted eight attempts, all from that single Japan-based address and all caught by one sensor."
+    },
+    {
+     "kind": "attack_volume",
+     "value": "20 attempts from 13 unique IPs",
+     "counts_what": "Updated count of exploitation attempts and source IPs (nine countries); the article update does not restate who measured it, earlier figures were Previdian telemetry",
+     "measured_by": "The Hacker News update (presumably Previdian telemetry; measurer not named in the update)",
+     "measured_on": "2026-11-08 (article update date)",
+     "url": "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html",
+     "quote": "the number of exploitation attempts has increased to 20 and originated from 13 unique IP addresses"
+    },
+    {
+     "kind": "other",
+     "value": "less than nine hours",
+     "counts_what": "Time from CVE publication to first observed exploitation attempt",
+     "measured_by": "Previdian, as reported by The Hacker News",
+     "measured_on": "2026-11-06 (article date)",
+     "url": "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html",
+     "quote": "observed the first exploitation attempt less than nine hours after the CVE publication"
+    },
+    {
+     "kind": "other",
+     "value": "1 honeypot (not a real victim)",
+     "counts_what": "Successful root access by an attacker on a Previdian honeypot running real Alpine Linux and OpenSSH",
+     "measured_by": "Previdian, as reported by The Hacker News",
+     "measured_on": "2026-11-06 (article date)",
+     "url": "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html",
+     "quote": "confirmed successful root access on a honeypot running Alpine Linux and OpenSSH"
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "result_2.json"
+  },
+  {
+   "cve": "CVE-2026-116779",
+   "added": "2026-11-09",
+   "vendor": "SignalWire",
+   "product": "FreeSwitch",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "SIP MESSAGE handling flaw (fixed by default in 1.11.3, 2026-08-28) that the maintainer advisory says has been exploited in the wild; no exposure, compromise or victim figures found.",
+   "first_exploitation_claim": {
+    "date": "2026-10-28",
+    "source": "SignalWire GitHub security advisory GHSA-mg63-h38w-8p9p",
+    "url": "https://github.com/signalwire/freeswitch/security/advisories/GHSA-mg63-h38w-8p9p"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "unquantified",
+     "counts_what": "vendor statement of in-the-wild exploitation; no count",
+     "measured_by": "SignalWire (FreeSWITCH maintainers)",
+     "measured_on": "2026-10-28",
+     "url": "https://github.com/signalwire/freeswitch/security/advisories/GHSA-mg63-h38w-8p9p",
+     "quote": "Exploitation of this path has been observed in the wild."
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "result_3.json"
+  },
+  {
+   "cve": "CVE-2026-123218",
+   "added": "2026-11-09",
+   "vendor": "IBM",
+   "product": "Aspera Faspex",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "IBM's bulletin (node 7295921, initial publication 2026-11-07) describes the flaw and fix in Faspex 5.0.19 PL1 but makes no statement about exploitation; no reporting on in-the-wild use was found beyond the KEV listing itself.",
+   "first_exploitation_claim": null,
+   "evidence": [],
+   "searches_run": 2,
+   "verdict": "nothing_found",
+   "source_file": "result_1.json"
+  },
+  {
+   "cve": "CVE-2026-124194",
+   "added": "2026-11-10",
+   "vendor": "Microsoft",
+   "product": "Office",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Outlook spoofing flaw (NTLMv2 hash disclosure when a user opens a crafted message file) released 2026-11-10 and flagged 'Exploitation Detected' by Microsoft; no third-party reporting or scale figures were found.",
+   "first_exploitation_claim": {
+    "date": "2026-11-10",
+    "source": "Microsoft MSRC Security Update Guide (exploited: Yes; publicly disclosed: No)",
+    "url": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-124194"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "Exploitation Detected (unquantified)",
+     "counts_what": "Vendor exploitability assessment; no victim, target or volume count",
+     "measured_by": "Microsoft MSRC (read via the Security Update Guide API, https://api.msrc.microsoft.com/sug/v2.0/en-US/vulnerability/CVE-2026-124194)",
+     "measured_on": "2026-11-10",
+     "url": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-124194",
+     "quote": "Exploitation Detected"
+    }
+   ],
+   "searches_run": 3,
+   "verdict": "qualitative_only",
+   "source_file": "result_2.json"
+  },
+  {
+   "cve": "CVE-2026-111793",
+   "added": "2026-11-10",
+   "vendor": "Openwave Messaging Limited",
+   "product": "Webtop Media Transcoder",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "CVSS 4.3 file-type-restriction bypass in a carrier webmail component; JVN relays the developer's statement that attacks have been observed, while the vendor's own GitHub advisory says nothing about exploitation and no press or telemetry coverage was found.",
+   "first_exploitation_claim": {
+    "date": "2026-11-09",
+    "source": "JVN (JPCERT/CC and IPA) advisory JVNVU#93403064, relaying the developer",
+    "url": "https://jvn.jp/en/vu/JVNVU93403064/"
+   },
+   "evidence": [
+    {
+     "kind": "other",
+     "value": "attacks observed (unquantified)",
+     "counts_what": "Developer statement relayed by JVN that exploitation has been observed; no count of systems, organizations or attempts",
+     "measured_by": "Openwave Messaging (developer), via JVN",
+     "measured_on": "2026-11-09",
+     "url": "https://jvn.jp/en/vu/JVNVU93403064/",
+     "quote": "The developer states that attacks exploiting the vulnerability have been observed."
+    }
+   ],
+   "searches_run": 2,
+   "verdict": "qualitative_only",
+   "source_file": "result_2.json"
+  },
+  {
+   "cve": "CVE-2026-20320",
+   "added": "2026-11-10",
+   "vendor": "Cisco",
+   "product": "BroadWorks",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Unauthenticated XXE in the BroadWorks OCI XML parser, patched 2026-08-19; coverage found reflects only the advisory-date status, when Cisco reported no known exploitation, and no report describing the exploitation behind the KEV listing was found.",
+   "first_exploitation_claim": null,
+   "evidence": [],
+   "searches_run": 2,
+   "verdict": "nothing_found",
+   "source_file": "result_0.json"
+  },
+  {
+   "cve": "CVE-2026-111560",
+   "added": "2026-11-10",
+   "vendor": "Barracuda Networks",
+   "product": "Multiple Products",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "Patched 2026-11-02 together with CVE-2026-116606 (chainable on ESG for pre-auth root); Barracuda updated its advisory on 2026-11-09 to report exploitation affecting 'a small number of organizations', with no count and no trade-press quantification found.",
+   "first_exploitation_claim": {
+    "date": "2026-11-09",
+    "source": "Barracuda advisory update (9:00pm EST): exploitation information added",
+    "url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
+   },
+   "evidence": [
+    {
+     "kind": "organizations",
+     "value": "a small number",
+     "counts_what": "Organizations affected by observed exploitation activity (unquantified; advisory covers both chained CVEs)",
+     "measured_by": "Barracuda Networks",
+     "measured_on": "2026-11-09",
+     "url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection",
+     "quote": "We have identified exploitation activity affecting a small number of organizations."
+    }
+   ],
+   "searches_run": 3,
+   "verdict": "qualitative_only",
+   "source_file": "result_0.json"
+  },
+  {
+   "cve": "CVE-2026-116606",
+   "added": "2026-11-10",
+   "vendor": "Barracuda Networks",
+   "product": "Barracuda Email Security Gateway (ESG)",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "ESG authentication bypass chained with CVE-2026-111560 for root; patched 2026-11-02, exploitation affecting 'a small number of organizations' acknowledged by Barracuda on 2026-11-09, no count published.",
+   "first_exploitation_claim": {
+    "date": "2026-11-09",
+    "source": "Barracuda advisory update (9:00pm EST): exploitation information added",
+    "url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
+   },
+   "evidence": [
+    {
+     "kind": "organizations",
+     "value": "a small number",
+     "counts_what": "Organizations affected by observed exploitation activity (unquantified; advisory covers both chained CVEs)",
+     "measured_by": "Barracuda Networks",
+     "measured_on": "2026-11-09",
+     "url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection",
+     "quote": "We added information about exploitation activity that has been observed affecting a small number of organizations."
+    }
+   ],
+   "searches_run": 3,
+   "verdict": "qualitative_only",
+   "source_file": "result_0.json"
+  },
+  {
+   "cve": "CVE-2026-125350",
+   "added": "2026-11-10",
+   "vendor": "Google",
+   "product": "Chromium",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "",
+   "first_exploitation_claim": null,
+   "evidence": [],
+   "searches_run": 3,
+   "verdict": "nothing_found",
+   "source_file": "result_1.json"
+  },
+  {
+   "cve": "CVE-2026-114713",
+   "added": "2026-11-13",
+   "vendor": "UnrealIRCd",
+   "product": "UnrealIRCd",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "",
+   "first_exploitation_claim": null,
+   "evidence": [],
+   "searches_run": 3,
+   "verdict": "nothing_found",
+   "source_file": "result_3.json"
+  },
+  {
+   "cve": "CVE-2026-123039",
+   "added": "2026-11-13",
+   "vendor": "Check Point",
+   "product": "Multiple Products",
+   "ransomware": "Unknown",
+   "campaign": "",
+   "campaign_note": "",
+   "first_exploitation_claim": null,
+   "evidence": [],
+   "searches_run": 2,
+   "verdict": "nothing_found",
+   "source_file": "result_0.json"
+  }
+ ],
+ "not_researched": [
+  "CVE-2009-0556",
+  "CVE-2025-37164",
+  "CVE-2025-8110",
+  "CVE-2026-20805",
+  "CVE-2026-20045",
+  "CVE-2025-68645",
+  "CVE-2025-34026",
+  "CVE-2025-31125",
+  "CVE-2025-54313",
+  "CVE-2024-37079",
+  "CVE-2018-14634",
+  "CVE-2025-52691",
+  "CVE-2026-23760",
+  "CVE-2026-24061",
+  "CVE-2026-21509",
+  "CVE-2026-1281",
+  "CVE-2025-64328",
+  "CVE-2019-19006",
+  "CVE-2025-40551",
+  "CVE-2025-11953",
+  "CVE-2026-24423",
+  "CVE-2026-21513",
+  "CVE-2026-21525",
+  "CVE-2026-21510",
+  "CVE-2026-21533",
+  "CVE-2026-21519",
+  "CVE-2026-21514",
+  "CVE-2024-43468",
+  "CVE-2025-15556",
+  "CVE-2025-40536",
+  "CVE-2026-1731",
+  "CVE-2020-7796",
+  "CVE-2024-7694",
+  "CVE-2008-0015",
+  "CVE-2026-2441",
+  "CVE-2025-49113",
+  "CVE-2025-68461",
+  "CVE-2026-25108",
+  "CVE-2022-20775",
+  "CVE-2026-20127",
+  "CVE-2026-22719",
+  "CVE-2026-21385",
+  "CVE-2017-7921",
+  "CVE-2021-22681",
+  "CVE-2021-22054",
+  "CVE-2025-26399",
+  "CVE-2026-1603",
+  "CVE-2025-68613",
+  "CVE-2026-3910",
+  "CVE-2026-3909",
+  "CVE-2025-47813",
+  "CVE-2025-66376",
+  "CVE-2026-20963",
+  "CVE-2026-20131",
+  "CVE-2025-54068",
+  "CVE-2026-33017",
+  "CVE-2026-5281",
+  "CVE-2026-3502",
+  "CVE-2026-1340",
+  "CVE-2012-1854",
+  "CVE-2025-60710",
+  "CVE-2023-21529",
+  "CVE-2023-36424",
+  "CVE-2009-0238",
+  "CVE-2026-32201",
+  "CVE-2026-20122",
+  "CVE-2026-20133",
+  "CVE-2025-2749",
+  "CVE-2023-27351",
+  "CVE-2025-48700",
+  "CVE-2026-20128",
+  "CVE-2025-32975",
+  "CVE-2024-27199",
+  "CVE-2026-33825",
+  "CVE-2026-39987",
+  "CVE-2024-7399",
+  "CVE-2024-57728",
+  "CVE-2024-57726",
+  "CVE-2026-32202",
+  "CVE-2026-41940",
+  "CVE-2026-31431",
+  "CVE-2026-0300",
+  "CVE-2026-6973",
+  "CVE-2026-42208",
+  "CVE-2026-20182",
+  "CVE-2026-42897",
+  "CVE-2008-4250",
+  "CVE-2009-1537",
+  "CVE-2010-0249",
+  "CVE-2010-0806",
+  "CVE-2026-41091",
+  "CVE-2026-45498",
+  "CVE-2025-34291",
+  "CVE-2026-34926",
+  "CVE-2026-48172",
+  "CVE-2026-48027",
+  "CVE-2026-45321",
+  "CVE-2026-0257",
+  "CVE-2024-21182",
+  "CVE-2022-0492",
+  "CVE-2026-45247",
+  "CVE-2026-28318",
+  "CVE-2026-42271",
+  "CVE-2026-50751",
+  "CVE-2026-11645",
+  "CVE-2026-20245",
+  "CVE-2026-10520",
+  "CVE-2026-35273",
+  "CVE-2026-54420",
+  "CVE-2026-20262",
+  "CVE-2026-48907",
+  "CVE-2026-20253",
+  "CVE-2025-67038",
+  "CVE-2026-34910",
+  "CVE-2026-34909",
+  "CVE-2026-34908",
+  "CVE-2026-12569",
+  "CVE-2026-20230",
+  "CVE-2026-48558",
+  "CVE-2026-45659",
+  "CVE-2026-48908",
+  "CVE-2026-55255",
+  "CVE-2026-56290",
+  "CVE-2026-48939",
+  "CVE-2008-4128",
+  "CVE-2026-56155",
+  "CVE-2026-56164",
+  "CVE-2026-15409",
+  "CVE-2026-15410",
+  "CVE-2026-46817",
+  "CVE-2023-4346",
+  "CVE-2026-58644",
+  "CVE-2026-60137",
+  "CVE-2026-63030",
+  "CVE-2026-0770",
+  "CVE-2026-16232",
+  "CVE-2026-50522",
+  "CVE-2026-20316",
+  "CVE-2026-18577",
+  "CVE-2026-18556",
+  "CVE-2026-9198",
+  "CVE-2026-63077",
+  "CVE-2026-8037",
+  "CVE-2026-20349",
+  "CVE-2026-68820",
+  "CVE-2026-72898",
+  "CVE-2025-62593",
+  "CVE-2026-33824",
+  "CVE-2026-59310",
+  "CVE-2026-55040",
+  "CVE-2026-64849",
+  "CVE-2026-72530",
+  "CVE-2026-72529",
+  "CVE-2026-73570",
+  "CVE-2026-21962",
+  "CVE-2015-3246",
+  "CVE-2015-5287",
+  "CVE-2022-0995",
+  "CVE-2019-1068",
+  "CVE-2023-49105",
+  "CVE-2026-53362",
+  "CVE-2026-66384",
+  "CVE-2026-82078",
+  "CVE-2026-81578",
+  "CVE-2026-59822",
+  "CVE-2026-48710",
+  "CVE-2026-49869",
+  "CVE-2026-82329",
+  "CVE-2026-9586",
+  "CVE-2026-83548",
+  "CVE-2026-83549",
+  "CVE-2026-85046",
+  "CVE-2026-81963",
+  "CVE-2026-86218",
+  "CVE-2026-85880",
+  "CVE-2026-87491",
+  "CVE-2026-20079",
+  "CVE-2026-86060",
+  "CVE-2026-67277",
+  "CVE-2026-42016",
+  "CVE-2026-42018",
+  "CVE-2026-58704",
+  "CVE-2025-39964",
+  "CVE-2026-53266",
+  "CVE-2025-39682",
+  "CVE-2026-7273",
+  "CVE-2026-93616",
+  "CVE-2026-85102",
+  "CVE-2026-5430",
+  "CVE-2026-67279",
+  "CVE-2026-65660",
+  "CVE-2026-87902",
+  "CVE-2026-102490",
+  "CVE-2026-102489",
+  "CVE-2015-5477",
+  "CVE-2023-22894",
+  "CVE-2021-3199",
+  "CVE-2015-3306",
+  "CVE-2026-104935",
+  "CVE-2026-96951",
+  "CVE-2026-0322"
+ ],
+ "validation": []
+}

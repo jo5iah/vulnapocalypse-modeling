@@ -1,0 +1,183 @@
+[
+ {
+  "cve": "CVE-2026-58644",
+  "added": "2026-07-16",
+  "vendor": "Microsoft",
+  "product": "SharePoint",
+  "name": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability that allows an unauthorized attacker to execute code over a network.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-58644"
+  ]
+ },
+ {
+  "cve": "CVE-2026-50522",
+  "added": "2026-07-22",
+  "vendor": "Microsoft",
+  "product": "SharePoint",
+  "name": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50522"
+  ]
+ },
+ {
+  "cve": "CVE-2026-68820",
+  "added": "2026-08-11",
+  "vendor": "Microsoft",
+  "product": "Windows Ancillary Function Driver for WinSock",
+  "name": "Microsoft Windows Ancillary Function Driver for WinSock Use-After-Free Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Windows Ancillary Function Driver for WinSock contains a use-after-free vulnerability that allows an authorized attacker to elevate privileges locally.",
+  "refs": [
+   "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2026-68820"
+  ]
+ },
+ {
+  "cve": "CVE-2026-33824",
+  "added": "2026-08-18",
+  "vendor": "Microsoft",
+  "product": "Internet Key Exchange (IKE) Service Extensions",
+  "name": "Microsoft Internet Key Exchange (IKE) Service Extensions Double Free Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Internet Key Exchange (IKE) Service Extensions contains a double free vulnerability that could enable remote code execution.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-33824"
+  ]
+ },
+ {
+  "cve": "CVE-2026-55040",
+  "added": "2026-08-18",
+  "vendor": "Microsoft",
+  "product": "SharePoint",
+  "name": "Microsoft SharePoint Weak Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft SharePoint contains a weak authentication vulnerability which allows an unauthorized attacker to bypass a security feature over a network.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-55040"
+  ]
+ },
+ {
+  "cve": "CVE-2019-1068",
+  "added": "2026-08-26",
+  "vendor": "Microsoft",
+  "product": "SQL Server",
+  "name": "Microsoft SQL Server Remote Code Execution Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft SQL Server contains a remote code execution vulnerability that could allow an attacker to execute code in the context of the SQL Server Database Engine service account.",
+  "refs": [
+   "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-1068"
+  ]
+ },
+ {
+  "cve": "CVE-2026-81963",
+  "added": "2026-09-08",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Link Following Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Windows Update Stack contains a link following vulnerability that allows a local attacker to escalate privileges locally up to SYSTEM.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-81963"
+  ]
+ },
+ {
+  "cve": "CVE-2026-85880",
+  "added": "2026-09-08",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Heap-Based Buffer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Windows Advanced Local Procedure Call contains a heap-based buffer overflow vulnerability that allows an attacker to elevate privileges locally.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-85880"
+  ]
+ },
+ {
+  "cve": "CVE-2026-65660",
+  "added": "2026-09-25",
+  "vendor": "Microsoft",
+  "product": "SharePoint",
+  "name": "Microsoft SharePoint Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft SharePoint contains a code injection vulnerability which could allow an authorized attacker to execute code over a network.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-65660"
+  ]
+ },
+ {
+  "cve": "CVE-2026-96951",
+  "added": "2026-10-13",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Windows Shell contains a command injection vulnerability that allows an unauthorized attacker to bypass a security feature over a network.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-96951"
+  ]
+ },
+ {
+  "cve": "CVE-2026-67277",
+  "added": "2026-09-10",
+  "vendor": "MikroTik",
+  "product": "RouterOS",
+  "name": "MikroTik RouterOS Missing Authentication for Critical Function Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "MikroTik RouterOS contains a missing authentication for critical function vulnerability which allows kernel memory disclosure and denial of service in the btest service.",
+  "refs": [
+   "https://mikrotik.com/supportsec/september-2026-vulnerability/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-86060",
+  "added": "2026-09-10",
+  "vendor": "MikroTik",
+  "product": "RouterOS",
+  "name": "MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "MikroTik RouterOS contains an improper neutralization of argument delimiters in a command vulnerability which allows an attacker to change the trusted RouterOS policy mask, leading to privilege escalation.",
+  "refs": [
+   "https://mikrotik.com/supportsec/september-2026-vulnerability"
+  ]
+ },
+ {
+  "cve": "CVE-2026-67279",
+  "added": "2026-09-25",
+  "vendor": "MikroTik",
+  "product": "RouterOS",
+  "name": "Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Mikrotik RouterOS contains an improper enforcement of behavioral workflow vulnerability that could allow an unauthenticated client to open a session channel and send an exec request. This vulnerability can be chained to achieve unauthenticated exploitation of CVE-2026-86060.",
+  "refs": [
+   "https://mikrotik.com/supportsec/september-2026-vulnerability"
+  ]
+ },
+ {
+  "cve": "CVE-2026-45247",
+  "added": "2026-06-03",
+  "vendor": "Mirasvit",
+  "product": "Mirasvit Full Page Cache Warmer",
+  "name": "Mirasvit Full Page Cache Warmer Deserialization of Untrusted Data Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Mirasvit Full Page Cache Warmer contains a deserialization of untrusted data vulnerability that could allow unauthenticated attackers to achieve remote code execution by supplying a crafted serialized PHP object in the CacheWarmer cookie.",
+  "refs": [
+   "https://mirasvit.com/package/changelog/?package=mirasvit/module-cache-warmer"
+  ]
+ },
+ {
+  "cve": "CVE-2026-64849",
+  "added": "2026-08-19",
+  "vendor": "MLflow",
+  "product": "MLflow",
+  "name": "MLflow Server-Side Request Forgery Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "MLflow contains a server-side request forgery vulnerability that can allow attackers to reach internal or cloud metadata services and receive response_status and response_body.",
+  "refs": [
+   "https://github.com/mlflow/mlflow/pull/24258",
+   "https://github.com/mlflow/mlflow/issues/24179"
+  ]
+ }
+]

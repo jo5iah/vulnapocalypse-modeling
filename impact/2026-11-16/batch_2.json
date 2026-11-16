@@ -1,0 +1,108 @@
+[
+ {
+  "cve": "CVE-2026-111357",
+  "added": "2026-10-30",
+  "vendor": "Ivanti",
+  "product": "Connect Secure",
+  "name": "Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ivanti Connect Secure contains a missing authentication for critical function vulnerability that could allow a local authenticated attacker to escalate their privileges. This vulnerability can be chained with CVE-2026-104935 and CVE-2026-118527.",
+  "refs": [
+   "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935?language=en_US"
+  ]
+ },
+ {
+  "cve": "CVE-2026-118527",
+  "added": "2026-10-30",
+  "vendor": "Ivanti",
+  "product": "Connect Secure",
+  "name": "Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ivanti Connect Secure contains a generation of predictable numbers or identifiers vulnerability that allows a remote authenticated attacker to upload files with attacker-controlled content to a known location on disk. This vulnerability can be chained with CVE-2026-104935 and CVE-2026-111357.",
+  "refs": [
+   "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935?language=en_US"
+  ]
+ },
+ {
+  "cve": "CVE-2026-46300",
+  "added": "2026-10-28",
+  "vendor": "Linux",
+  "product": "Kernel",
+  "name": "Linux Kernel Missing Initialization of a Variable Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Linux Kernel contains a missing initialization of a variable vulnerability that could allow for unintended modification of page-cache-backed data via failure to preserve the shared-fragment marker during socket buffer coalescing, causing ESP input processing to decrypt shared fragments in place. This vulnerability can be chained with CVE-2026-109618 and CVE-2026-109619 to implant PHP webshells and run commands as root.",
+  "refs": [
+   "https://git.kernel.org/stable/c/3599e6b3cc1ada96883d496a50a210d3afbb6987",
+   "https://git.kernel.org/stable/c/2f2b16022a2e10ca7bccfb98db5ed2ec0f72641c",
+   "https://git.kernel.org/stable/c/9d3e5fd19fe1063bf607219e8562fbd567b8e8d5",
+   "https://git.kernel.org/stable/c/78bf6b6bb19541d19fbda6242e7cfe2c682763c0",
+   "https://git.kernel.org/stable/c/760e1addc27ba1a7beb4a0a7e8b3e9ec49e7a34e",
+   "https://git.kernel.org/stable/c/3bd9e113d50034db99d7ef69fd8e5242d15e414a",
+   "https://git.kernel.org/stable/c/3884358a9286b17f389a72b1426fc4547c23c111",
+   "https://git.kernel.org/stable/c/f84eca5817390257cef78013d0112481c503b4a3"
+  ]
+ },
+ {
+  "cve": "CVE-2026-124194",
+  "added": "2026-11-10",
+  "vendor": "Microsoft",
+  "product": "Office",
+  "name": "Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Microsoft Office Outlook contains a missing user interaction for potentially unsafe action vulnerability that allows an unauthorized attacker to perform spoofing over a network.",
+  "refs": [
+   "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-124194"
+  ]
+ },
+ {
+  "cve": "CVE-2026-123158",
+  "added": "2026-11-09",
+  "vendor": "OpenBSD",
+  "product": "OpenSSH",
+  "name": "OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "OpenBSD OpenSSH on Linux contains an unexpected status code or return value vulnerability that could allow for authentication bypass.",
+  "refs": [
+   "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://www.openssh.org/releasenotes.html",
+   "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/",
+   "https://github.com/openssh/openssh-portable/commit/4353fdc43ef646c43a8dda7025cc1a898caf1482"
+  ]
+ },
+ {
+  "cve": "CVE-2026-111793",
+  "added": "2026-11-10",
+  "vendor": "Openwave Messaging Limited",
+  "product": "Webtop Media Transcoder",
+  "name": "Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Openwave Messaging Limited Webtop Media Transcoder contains an incorrect resource transfer between spheres vulnerability that may allow an authenticated user to process and convert unintended document types if bypassing the Webmail experience.",
+  "refs": [
+   "https://github.com/GISOpenwave/security-advisories-public/blob/main/CAN-2026-2032674.md",
+   "https://jvn.jp/en/vu/JVNVU93403064/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-109618",
+  "added": "2026-10-26",
+  "vendor": "PHP Group",
+  "product": "PHP",
+  "name": "PHP Memory Corruption Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution.",
+  "refs": [
+   "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://www.php.net/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-109619",
+  "added": "2026-10-26",
+  "vendor": "PHP Group",
+  "product": "PHP",
+  "name": "PHP Stale Internal Request-State Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution.",
+  "refs": [
+   "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://www.php.net/"
+  ]
+ }
+]

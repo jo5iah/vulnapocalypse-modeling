@@ -1,0 +1,158 @@
+[
+ {
+  "cve": "CVE-2026-25089",
+  "added": "2026-07-16",
+  "vendor": "Fortinet",
+  "product": "FortiSandbox",
+  "name": "Fortinet FortiSandbox OS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Fortinet FortiSandbox, FortiSandbox Cloud, and FortiSandbox PaaS contain an OS command injection vulnerability that allows an unauthenticated attacker to execute unauthorized commands via specifically crafted HTTP requests.",
+  "refs": [
+   "https://fortiguard.fortinet.com/psirt/FG-IR-26-141"
+  ]
+ },
+ {
+  "cve": "CVE-2026-39808",
+  "added": "2026-07-16",
+  "vendor": "Fortinet",
+  "product": "FortiSandbox",
+  "name": "Fortinet FortiSandbox OS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Fortinet FortiSandbox contains an OS command injection vulnerability that could allow an unauthenticated attacker to execute unauthorized code or commands via crafted HTTP requests.",
+  "refs": [
+   "https://fortiguard.fortinet.com/psirt/FG-IR-26-100"
+  ]
+ },
+ {
+  "cve": "CVE-2025-68686",
+  "added": "2026-07-27",
+  "vendor": "Fortinet",
+  "product": "FortiOS",
+  "name": "Fortinet FortiOS Exposure of Sensitive Information to an Unauthorized Actor Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Fortinet FortiOS contains an exposure of sensitive information to an unauthorized actor vulnerability. This may allow a remote unauthenticated attacker to bypass the patch developed for the symbolic link persistency mechanism observed in some post-exploit cases, via crafted HTTP requests. An attacker would need first to have compromised the product via another vulnerability, at filesystem level.",
+  "refs": [
+   "https://fortiguard.fortinet.com/psirt/FG-IR-25-934"
+  ]
+ },
+ {
+  "cve": "CVE-2025-25249",
+  "added": "2026-09-09",
+  "vendor": "Fortinet",
+  "product": "Multiple Products",
+  "name": "Fortinet Multiple Products Heap-based Buffer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Fortinet FortiOS, FortiSwitchManager, and FortiSASE contain a heap-based buffer overflow vulnerability that allows an attacker to execute unauthorized code or commands via specially crafted packets.",
+  "refs": [
+   "https://fortiguard.fortinet.com/psirt/FG-IR-25-084"
+  ]
+ },
+ {
+  "cve": "CVE-2026-104286",
+  "added": "2026-10-01",
+  "vendor": "Fortinet",
+  "product": "FortiMail",
+  "name": "Fortinet FortiMail Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Fortinet FortiMail contains a path traversal and an improper neutralization of NULL byte or NULL character vulnerability that may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests.",
+  "refs": [
+   "https://fortiguard.fortinet.com/psirt/FG-IR-26-175"
+  ]
+ },
+ {
+  "cve": "CVE-2026-60004",
+  "added": "2026-08-25",
+  "vendor": "Gitea",
+  "product": "Gitea",
+  "name": "Gitea Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Gitea contains a code injection vulnerability that allows an attacker with repository write access to send a malicious patch to the diffpatch API endpoint to plant an executable Git hook and run shell commands as the Gitea service account.",
+  "refs": [
+   "https://github.com/go-gitea/gitea/security/advisories/GHSA-rcr6-4jqh-j84m"
+  ]
+ },
+ {
+  "cve": "CVE-2021-39935",
+  "added": "2026-02-03",
+  "vendor": "GitLab",
+  "product": "Community and Enterprise Editions",
+  "name": "GitLab Community and Enterprise Editions Server-Side Request Forgery (SSRF) Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "GitLab Community and Enterprise Editions contain a server-side request forgery vulnerability which could allow unauthorized external users to perform Server Side Requests via the CI Lint API.",
+  "refs": [
+   "https://about.gitlab.com/releases/2021/12/06/security-release-gitlab-14-5-2-released/"
+  ]
+ },
+ {
+  "cve": "CVE-2021-22175",
+  "added": "2026-02-18",
+  "vendor": "GitLab",
+  "product": "GitLab",
+  "name": "GitLab Server-Side Request Forgery (SSRF) Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "GitLab contains a server-side request forgery (SSRF) vulnerability when requests to the internal network for webhooks are enabled.",
+  "refs": [
+   "https://gitlab.com/gitlab-org/cves/-/blob/master/2021/CVE-2021-22175.json"
+  ]
+ },
+ {
+  "cve": "CVE-2026-85706",
+  "added": "2026-09-11",
+  "vendor": "GitLab",
+  "product": "Community Edition and Enterprise Edition",
+  "name": "GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "GitLab Community Edition and Enterprise Edition contains a path traversal vulnerability that allows an unauthenticated user to read arbitrary files due to an improper path confinement and missing authentication enforcement in the repository commits API.",
+  "refs": [
+   "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-3-2-released/"
+  ]
+ },
+ {
+  "cve": "CVE-2020-9715",
+  "added": "2026-04-13",
+  "vendor": "Adobe",
+  "product": "Acrobat",
+  "name": "Adobe Acrobat Use-After-Free Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Adobe Acrobat contains a use-after-free vulnerability that allows for code execution",
+  "refs": [
+   "https://helpx.adobe.com/security/products/acrobat/apsb20-48.html"
+  ]
+ },
+ {
+  "cve": "CVE-2009-3459",
+  "added": "2026-05-20",
+  "vendor": "Adobe",
+  "product": "Acrobat and Reader",
+  "name": "Adobe Acrobat and Reader Heap-Based Buffer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Adobe Acrobat and Reader contain a heap-based buffer overflow vulnerability which could allow remote attackers to execute arbitrary code via a crafted PDF file that triggers memory corruption.",
+  "refs": [
+   "https://web.archive.org/web/20120324170253/http://www.adobe.com/support/security/bulletins/apsb09-15.html#:~:text=CVE%2D2009%2D3459).-,NOTE%3A,-There%20are%20reports"
+  ]
+ },
+ {
+  "cve": "CVE-2025-48595",
+  "added": "2026-06-02",
+  "vendor": "Android",
+  "product": "Framework",
+  "name": "Android Framework Integer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Android Framework contains an integer overflow vulnerability that allows for code execution that could allow for local privilege escalation.",
+  "refs": [
+   "https://source.android.com/docs/security/bulletin/2026/2026-06-01"
+  ]
+ },
+ {
+  "cve": "CVE-2016-3081",
+  "added": "2026-10-08",
+  "vendor": "Apache",
+  "product": "Struts",
+  "name": "Apache Struts Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Apache Struts contains a command injection vulnerability that could allow remote attackers to execute arbitrary code via method:prefix when Dynamic Method Invocation is enabled.",
+  "refs": [
+   "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://cwiki.apache.org/confluence/display/WW/S2-032"
+  ]
+ }
+]

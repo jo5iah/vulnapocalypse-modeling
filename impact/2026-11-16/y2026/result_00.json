@@ -1,0 +1,284 @@
+[
+ {
+  "cve": "CVE-2026-87886",
+  "vendor": "Acronis",
+  "product": "Backup",
+  "added": "2026-09-16",
+  "campaign": "",
+  "campaign_note": "Acronis reported limited, targeted in-the-wild exploitation against the cPanel & WHM plugin only; no attacker, victim or count details were published in the sources read.",
+  "first_exploitation_claim": {
+   "date": "2026-09-15",
+   "source": "Acronis security advisory SEC-10986, as reported by Help Net Security (article dated 2026-09-16 says the advisory was published 'on Tuesday'; the advisory page itself returned no content when fetched, and The Hacker News says it is not clear when the activity was detected)",
+   "url": "https://helpnetsecurity.com/2026/09/16/acronis-backup-plugin-vulnerability-exploited-cve-2026-87886"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "limited, targeted attacks",
+    "counts_what": "vendor's qualitative description of in-the-wild exploitation; no count given",
+    "measured_by": "Acronis",
+    "measured_on": "",
+    "url": "https://thehackernews.com/2026/09/acronis-cpanel-backup-plugin.html",
+    "quote": "Exploitation of this vulnerability has been detected in the wild in limited, targeted attacks.",
+    "primary_opened": false
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "qualitative_only",
+  "incomplete": false
+ },
+ {
+  "cve": "CVE-2020-9715",
+  "vendor": "Adobe",
+  "product": "Acrobat",
+  "added": "2026-04-13",
+  "campaign": "",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2026-34621",
+  "vendor": "Adobe",
+  "product": "Acrobat and Reader",
+  "added": "2026-04-13",
+  "campaign": "",
+  "campaign_note": "Zero-day found by Haifei Li (EXPMON) from a PDF submitted to EXPMON on 2026-03-26; two malicious PDFs with Russian-language decoys were analyzed, and no victim count was published in the sources read.",
+  "first_exploitation_claim": {
+   "date": "2026-04-09",
+   "source": "Haifei Li / EXPMON blog post, as reported by Help Net Security on 2026-04-09 (the blog post's own date was not verified; its URL is https://justhaifei1.blogspot.com/2026/04/expmon-detected-sophisticated-zero-day-adobe-reader.html)",
+   "url": "https://www.helpnetsecurity.com/2026/04/09/acrobat-reader-zero-day-exploited/"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": 2,
+    "counts_what": "malicious PDF samples analyzed (the 2026-03-26 EXPMON submission and one related variant); a sample count, not a victim count",
+    "measured_by": "Haifei Li / EXPMON, as reported by Help Net Security",
+    "measured_on": "",
+    "url": "https://www.helpnetsecurity.com/?p=365849",
+    "quote": "The analysis of that and another related malicious PDF file revealed that",
+    "primary_opened": false
+   },
+   {
+    "kind": "other",
+    "value": "2025-11-28",
+    "counts_what": "date the variant sample was first submitted to VirusTotal, the basis for 'exploited since November 2025'",
+    "measured_by": "Haifei Li / EXPMON, as reported by Help Net Security",
+    "measured_on": "2025-11-28",
+    "url": "https://www.helpnetsecurity.com/2026/04/09/acrobat-reader-zero-day-exploited/",
+    "quote": "first submitted on November 28, 2025",
+    "primary_opened": false
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "qualitative_only",
+  "incomplete": false
+ },
+ {
+  "cve": "CVE-2009-3459",
+  "vendor": "Adobe",
+  "product": "Acrobat and Reader",
+  "added": "2026-05-20",
+  "campaign": "",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2026-48282",
+  "vendor": "Adobe",
+  "product": "ColdFusion",
+  "added": "2026-07-07",
+  "campaign": "",
+  "campaign_note": "Exploitation attempts against the ColdFusion RDS path traversal were seen on honeypots within days of Adobe's 2026-06-30 patch and watchTowr's analysis; no compromised-server or victim count was published in the sources read.",
+  "first_exploitation_claim": {
+   "date": "2026-07-02",
+   "source": "KEVIntel honeypot sensors (LinkedIn post), as reported by Help Net Security; CrowdSec separately dates its own first in-the-wild sighting to 2026-07-20",
+   "url": "https://www.helpnetsecurity.com/?p=376992"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": 750,
+    "counts_what": "internet-facing ColdFusion servers (exposed product, approximate; not a vulnerable count - the article says it is unknown how many run a vulnerable version or have RDS enabled)",
+    "measured_by": "The Shadowserver Foundation, as reported by Help Net Security",
+    "measured_on": "",
+    "url": "https://www.helpnetsecurity.com/?p=376992",
+    "quote": "tracking around 750 internet-facing ColdFusion servers",
+    "primary_opened": false
+   },
+   {
+    "kind": "attack_volume",
+    "value": 107,
+    "counts_what": "unique IP addresses seen attacking the flaw across the CrowdSec network (cumulative to report date)",
+    "measured_by": "CrowdSec",
+    "measured_on": "2026-08-01",
+    "url": "https://www.crowdsec.net/vulntracking-report/cve-2026-48282-adobe-coldfusion-rds-path-traversal-rce",
+    "quote": "So far, 107 unique IP addresses have been seen attacking this flaw across our network.",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "exposure_only",
+  "incomplete": false
+ },
+ {
+  "cve": "CVE-2026-75650",
+  "vendor": "Adobe",
+  "product": "Commerce and Magento",
+  "added": "2026-09-08",
+  "campaign": "StyleSmuggler",
+  "campaign_note": "Sansec found zero-day exploitation of Magento/Adobe Commerce starting 2026-09-04, three days before Adobe's hotfix, with at least two operators deploying a Rust Linux backdoor and a PHP web shell; no total count of compromised stores was published in the sources read.",
+  "first_exploitation_claim": {
+   "date": "2026-09-05",
+   "source": "Sansec research post (published 2026-09-05; states first confirmed exploitation at 2026-09-04 22:20 UTC)",
+   "url": "https://sansec.io/research/stylesmuggler-0day"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "2026-09-04",
+    "counts_what": "date attacks started, three days before the vendor hotfix; Sansec gives no count of compromised stores",
+    "measured_by": "Sansec",
+    "measured_on": "2026-09-04",
+    "url": "https://sansec.io/research/stylesmuggler-0day",
+    "quote": "Adobe shipped its hotfix on September 7, three days after the first confirmed exploitation.",
+    "primary_opened": true
+   },
+   {
+    "kind": "compromised",
+    "value": "at least two",
+    "counts_what": "compromised stores handled first-hand by one incident-response firm (a handful, not a population count)",
+    "measured_by": "Disrex, as reported by Tenable",
+    "measured_on": "",
+    "url": "https://de.tenable.com/blog/stylesmuggler-cve-2026-75650-frequently-asked-questions-about-adobe-commerce-and-magento-zero",
+    "quote": "had first-hand experience with at least two compromised stores",
+    "primary_opened": false
+   },
+   {
+    "kind": "attack_volume",
+    "value": 12,
+    "counts_what": "exploitation attempts against Previdian honeypots since 2026-09-07 (unsuccessful; from two unique IP addresses per the article)",
+    "measured_by": "Previdian, as reported by The Hacker News",
+    "measured_on": "",
+    "url": "https://thehackernews.com/2026/09/adobe-patches-magento-zero-day.html",
+    "quote": "12 exploitation attempts have been recorded against its honeypots since September 7, 2026.",
+    "primary_opened": false
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "attack_volume_only",
+  "incomplete": false
+ },
+ {
+  "cve": "CVE-2026-71362",
+  "vendor": "Adobe",
+  "product": "Commerce and Magento",
+  "added": "2026-09-24",
+  "campaign": "",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2026-105133",
+  "vendor": "Ahsay",
+  "product": "AhsayCBS",
+  "added": "2026-10-14",
+  "campaign": "",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2026-105134",
+  "vendor": "Ahsay",
+  "product": "AhsayCBS",
+  "added": "2026-10-14",
+  "campaign": "",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2021-23758",
+  "vendor": "Ajax.NET Professional",
+  "product": "Ajax.NET Professional",
+  "added": "2026-08-26",
+  "campaign": "",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2025-48595",
+  "vendor": "Android",
+  "product": "Framework",
+  "added": "2026-06-02",
+  "campaign": "",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2026-34197",
+  "vendor": "Apache",
+  "product": "ActiveMQ",
+  "added": "2026-04-16",
+  "campaign": "",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2026-34486",
+  "vendor": "Apache",
+  "product": "Tomcat",
+  "added": "2026-08-04",
+  "campaign": "",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2016-3081",
+  "vendor": "Apache",
+  "product": "Struts",
+  "added": "2026-10-08",
+  "campaign": "",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ }
+]

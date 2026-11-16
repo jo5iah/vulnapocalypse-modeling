@@ -1,0 +1,112 @@
+[
+ {
+  "cve": "CVE-2026-76418",
+  "added": "2026-10-29",
+  "vendor": "Cisco",
+  "product": "Secure Firewall ASA Software and Cisco Secure FTD Software",
+  "name": "Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Secure Firewall ASA Software and Cisco Secure FTD Software contains an unchecked return value to NULL pointer dereference vulnerability that could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-tunnel-dos-s6mgkb75"
+  ]
+ },
+ {
+  "cve": "CVE-2026-110447",
+  "added": "2026-10-23",
+  "vendor": "Collabora",
+  "product": "Collabora Online \u2013 Built-in CODE Server",
+  "name": "Collabora Online \u2013 Built-in CODE Server OS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Collabora Collabora Online \u2013 Built-in CODE Server when used within the NextCloud platform contains an OS command injection vulnerability that allows for remote code execution when the CODE server isn't running.",
+  "refs": [
+   "https://help.nextcloud.com/t/to-collabora-built-in-user-update-asap/250516",
+   "https://github.com/CollaboraOnline/online/security/advisories/GHSA-g3vx-3m76-fghh"
+  ]
+ },
+ {
+  "cve": "CVE-2026-106931",
+  "added": "2026-10-20",
+  "vendor": "EG Secure Solutions",
+  "product": "SiteGuard Server Edition",
+  "name": "EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "EG Secure Solutions SiteGuard Server Edition contains an OS command injection vulnerability which may allow an attacker to execute arbitrary OS commands with root or SYSTEM privileges on the system running the affected product.",
+  "refs": [
+   "https://www.eg-secure.co.jp/siteguard/news/alert-202610-1"
+  ]
+ },
+ {
+  "cve": "CVE-2025-61624",
+  "added": "2026-10-16",
+  "vendor": "Fortinet",
+  "product": "Multiple Products",
+  "name": "Fortinet Multiple Products Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "FortiOS, FortiPAM, FortiProxy, and FortiSwitchManager contain a path traversal vulnerability that may allow an authenticated attacker with admin profile and at least read-write permissions to write or delete arbitrary files via specific CLI commands.",
+  "refs": [
+   "https://fortiguard.fortinet.com/psirt/FG-IR-26-122"
+  ]
+ },
+ {
+  "cve": "CVE-2026-102895",
+  "added": "2026-11-09",
+  "vendor": "GPUStack",
+  "product": "GPUStack",
+  "name": "GPUStack Improper Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "GPUStack contains an improper authentication vulnerability which could allow unauthenticated administrative access, including user and model changes, persistent administrator API-key creation, disclosure of worker and cloud-provider secrets, and code execution through POST /v2/inference-backends/from-yaml.",
+  "refs": [
+   "https://github.com/gpustack/gpustack/security/advisories/GHSA-gj9m-f8ph-pmhr"
+  ]
+ },
+ {
+  "cve": "CVE-2026-97229",
+  "added": "2026-10-29",
+  "vendor": "GitLab",
+  "product": "Community Edition and Enterprise Edition",
+  "name": "GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "GitLab Community Edition and Enterprise Edition contain a integer overflow or wraparound vulnerability that could allow an unauthenticated user to execute arbitrary code on the GitLab server via a specially crafted regular expression in a CI/CD configuration, due to insufficient regular expression validation.",
+  "refs": [
+   "Other products can potentially be affected by the same underlying Ruby/Onigmo Integer Overflow issue in CI/CD Regular Expression Compiler. For more information please see: https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves",
+   "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-111497",
+  "added": "2026-10-27",
+  "vendor": "Google",
+  "product": "Brotli",
+  "name": "Google Brotli Unchecked Return Value Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a crafted Brotli-compressed stream.",
+  "refs": [
+   "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/google/brotli/releases/tag/v1.2.1"
+  ]
+ },
+ {
+  "cve": "CVE-2026-125350",
+  "added": "2026-11-10",
+  "vendor": "Google",
+  "product": "Chromium",
+  "name": "Google Chromium Use-After-Free Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Google Chromium contains a use-after-free vulnerability in the XML component that could allow a remote attacker to execute arbitrary code inside the sandbox via a specially crafted webpage. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+  "refs": [
+   "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_018223192.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-123218",
+  "added": "2026-11-09",
+  "vendor": "IBM",
+  "product": "Aspera Faspex",
+  "name": "IBM Aspera Faspex Incorrect Authorization Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "IBM Aspera Faspex contains an incorrect authorization vulnerability that could allow an authenticated user to craft a specific message to bypass authorization, causing privilege escalations.",
+  "refs": [
+   "https://www.ibm.com/support/pages/node/7295921"
+  ]
+ }
+]

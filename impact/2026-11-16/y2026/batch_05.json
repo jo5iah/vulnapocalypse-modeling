@@ -1,0 +1,199 @@
+[
+ {
+  "cve": "CVE-2026-22769",
+  "added": "2026-02-18",
+  "vendor": "Dell",
+  "product": "RecoverPoint for Virtual Machines (RP4VMs)",
+  "name": "Dell RecoverPoint for Virtual Machines (RP4VMs) Use of Hard-coded Credentials Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Dell RecoverPoint for Virtual Machines (RP4VMs) contains an use of hard-coded credentials vulnerability that could allow an unauthenticated remote attacker to gain unauthorized access to the underlying operating system and root-level persistence.",
+  "refs": [
+   "https://www.dell.com/support/kbdoc/en-us/000426773/dsa-2026-079",
+   "https://www.dell.com/support/kbdoc/en-us/000426742/recoverpoint-for-vms-apply-the-remediation-script-for-dsa",
+   "https://cloud.google.com/blog/topics/threat-intelligence/unc6201-exploiting-dell-recoverpoint-zero-day"
+  ]
+ },
+ {
+  "cve": "CVE-2026-9082",
+  "added": "2026-05-22",
+  "vendor": "Drupal",
+  "product": "Core",
+  "name": "Drupal Core SQL Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API.",
+  "refs": [
+   "https://www.drupal.org/sa-core-2026-004"
+  ]
+ },
+ {
+  "cve": "CVE-2025-53521",
+  "added": "2026-03-27",
+  "vendor": "F5",
+  "product": "BIG-IP",
+  "name": "F5 BIG-IP Stack-Based Buffer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "F5 BIG-IP APM contains a stack-based buffer overflow vulnerability that could allow a threat actor to achieve remote code execution.",
+  "refs": [
+   "Please adhere to F5\u2019s guidelines to assess exposure and mitigate risks. Check for signs of potential compromise on all internet accessible F5 products affected by this vulnerability. For more information please see: https://my.f5.com/manage/s/article/K000156741",
+   "https://my.f5.com/manage/s/article/K000160486",
+   "https://my.f5.com/manage/s/article/K11438344"
+  ]
+ },
+ {
+  "cve": "CVE-2026-94127",
+  "added": "2026-09-22",
+  "vendor": "F5",
+  "product": "BIG-IP APM",
+  "name": "F5 BIG-IP APM Heap-based Buffer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "F5 BIG-IP APM contains a heap-based buffer overflow vulnerability when access policy and an OAuth profile are configured on a virtual server. This vulnerability could allow an unauthenticated attacker to perform remote code execution.",
+  "refs": [
+   "For temporary mitigation to allow for proactive forensic triage, apply the vendor-provided iRule. Once completed, install the final vendor patch as soon as possible. For more information please see: https://my.f5.com/manage/s/article/K000162605"
+  ]
+ },
+ {
+  "cve": "CVE-2026-24858",
+  "added": "2026-01-27",
+  "vendor": "Fortinet",
+  "product": "Multiple Products",
+  "name": "Fortinet Multiple Products Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Fortinet FortiAnalyzer, FortiManager, FortiOS, and FortiProxy contain an authentication bypass using an alternate path or channel that could allow an attacker with a FortiCloud account and a registered device to log into other devices registered to other accounts, if FortiCloud SSO authentication is enabled on those devices.",
+  "refs": [
+   "Please adhere to Fortinet's guidelines to assess exposure and mitigate risks. Check for signs of potential compromise on all internet accessible Fortinet products affected by this vulnerability. Apply any final mitigations provided by the vendor as soon as they become available. For more information please see: https://fortiguard.fortinet.com/psirt/FG-IR-26-060",
+   "https://www.fortinet.com/blog/psirt-blogs/analysis-of-sso-abuse-on-fortios"
+  ]
+ },
+ {
+  "cve": "CVE-2026-35616",
+  "added": "2026-04-06",
+  "vendor": "Fortinet",
+  "product": "FortiClient EMS",
+  "name": "Fortinet FortiClient EMS Improper Access Control Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Fortinet FortiClient EMS contains an improper access control vulnerability that may allow an unauthenticated attacker to execute unauthorized code or commands via crafted requests.",
+  "refs": [
+   "Please adhere to Fortinet's guidelines to assess exposure and mitigate risks. Check for signs of potential compromise on all internet accessible Fortinet products affected by this vulnerability. Apply any final mitigations provided by the vendor as soon as they become available. For more information please see: https://fortiguard.fortinet.com/psirt/FG-IR-26-099"
+  ]
+ },
+ {
+  "cve": "CVE-2026-21643",
+  "added": "2026-04-13",
+  "vendor": "Fortinet",
+  "product": "FortiClient EMS",
+  "name": "Fortinet FortiClient EMS SQL Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Fortinet FortiClient EMS contains a SQL injection vulnerability that may allow an unauthenticated attacker to execute unauthorized code or commands via specifically crafted HTTP requests.",
+  "refs": [
+   "https://fortiguard.fortinet.com/psirt/FG-IR-25-1142"
+  ]
+ },
+ {
+  "cve": "CVE-2026-25089",
+  "added": "2026-07-16",
+  "vendor": "Fortinet",
+  "product": "FortiSandbox",
+  "name": "Fortinet FortiSandbox OS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Fortinet FortiSandbox, FortiSandbox Cloud, and FortiSandbox PaaS contain an OS command injection vulnerability that allows an unauthenticated attacker to execute unauthorized commands via specifically crafted HTTP requests.",
+  "refs": [
+   "https://fortiguard.fortinet.com/psirt/FG-IR-26-141"
+  ]
+ },
+ {
+  "cve": "CVE-2026-39808",
+  "added": "2026-07-16",
+  "vendor": "Fortinet",
+  "product": "FortiSandbox",
+  "name": "Fortinet FortiSandbox OS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Fortinet FortiSandbox contains an OS command injection vulnerability that could allow an unauthenticated attacker to execute unauthorized code or commands via crafted HTTP requests.",
+  "refs": [
+   "https://fortiguard.fortinet.com/psirt/FG-IR-26-100"
+  ]
+ },
+ {
+  "cve": "CVE-2025-68686",
+  "added": "2026-07-27",
+  "vendor": "Fortinet",
+  "product": "FortiOS",
+  "name": "Fortinet FortiOS Exposure of Sensitive Information to an Unauthorized Actor Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Fortinet FortiOS contains an exposure of sensitive information to an unauthorized actor vulnerability. This may allow a remote unauthenticated attacker to bypass the patch developed for the symbolic link persistency mechanism observed in some post-exploit cases, via crafted HTTP requests. An attacker would need first to have compromised the product via another vulnerability, at filesystem level.",
+  "refs": [
+   "https://fortiguard.fortinet.com/psirt/FG-IR-25-934"
+  ]
+ },
+ {
+  "cve": "CVE-2025-25249",
+  "added": "2026-09-09",
+  "vendor": "Fortinet",
+  "product": "Multiple Products",
+  "name": "Fortinet Multiple Products Heap-based Buffer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Fortinet FortiOS, FortiSwitchManager, and FortiSASE contain a heap-based buffer overflow vulnerability that allows an attacker to execute unauthorized code or commands via specially crafted packets.",
+  "refs": [
+   "https://fortiguard.fortinet.com/psirt/FG-IR-25-084"
+  ]
+ },
+ {
+  "cve": "CVE-2026-104286",
+  "added": "2026-10-01",
+  "vendor": "Fortinet",
+  "product": "FortiMail",
+  "name": "Fortinet FortiMail Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Fortinet FortiMail contains a path traversal and an improper neutralization of NULL byte or NULL character vulnerability that may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests.",
+  "refs": [
+   "https://fortiguard.fortinet.com/psirt/FG-IR-26-175"
+  ]
+ },
+ {
+  "cve": "CVE-2026-60004",
+  "added": "2026-08-25",
+  "vendor": "Gitea",
+  "product": "Gitea",
+  "name": "Gitea Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Gitea contains a code injection vulnerability that allows an attacker with repository write access to send a malicious patch to the diffpatch API endpoint to plant an executable Git hook and run shell commands as the Gitea service account.",
+  "refs": [
+   "https://github.com/go-gitea/gitea/security/advisories/GHSA-rcr6-4jqh-j84m"
+  ]
+ },
+ {
+  "cve": "CVE-2021-39935",
+  "added": "2026-02-03",
+  "vendor": "GitLab",
+  "product": "Community and Enterprise Editions",
+  "name": "GitLab Community and Enterprise Editions Server-Side Request Forgery (SSRF) Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "GitLab Community and Enterprise Editions contain a server-side request forgery vulnerability which could allow unauthorized external users to perform Server Side Requests via the CI Lint API.",
+  "refs": [
+   "https://about.gitlab.com/releases/2021/12/06/security-release-gitlab-14-5-2-released/"
+  ]
+ },
+ {
+  "cve": "CVE-2021-22175",
+  "added": "2026-02-18",
+  "vendor": "GitLab",
+  "product": "GitLab",
+  "name": "GitLab Server-Side Request Forgery (SSRF) Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "GitLab contains a server-side request forgery (SSRF) vulnerability when requests to the internal network for webhooks are enabled.",
+  "refs": [
+   "https://gitlab.com/gitlab-org/cves/-/blob/master/2021/CVE-2021-22175.json"
+  ]
+ },
+ {
+  "cve": "CVE-2026-85706",
+  "added": "2026-09-11",
+  "vendor": "GitLab",
+  "product": "Community Edition and Enterprise Edition",
+  "name": "GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "GitLab Community Edition and Enterprise Edition contains a path traversal vulnerability that allows an unauthenticated user to read arbitrary files due to an improper path confinement and missing authentication enforcement in the repository commits API.",
+  "refs": [
+   "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-3-2-released/"
+  ]
+ }
+]

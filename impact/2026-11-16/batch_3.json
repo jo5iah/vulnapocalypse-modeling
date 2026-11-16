@@ -1,0 +1,111 @@
+[
+ {
+  "cve": "CVE-2026-96652",
+  "added": "2026-10-20",
+  "vendor": "Plex",
+  "product": "Media Server",
+  "name": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Plex Media Server contains a server-side request forgery (SSRF) vulnerability which could allow an attacker using any X-Plex-Token value to include a full URL in the 'protocol' parameter and force the Plex server to POST to the attacker's chosen destination. This vulnerability can be chained with CVE-2026-96654, CVE-2026-96655, and CVE-2026-96656.",
+  "refs": [
+   "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319"
+  ]
+ },
+ {
+  "cve": "CVE-2026-96654",
+  "added": "2026-10-20",
+  "vendor": "Plex",
+  "product": "Media Server",
+  "name": "Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Plex Media Server contains an improper neutralization of encoded URI schemes in a web page vulnerability that could allow an attacker to call other plugins' functions and supply their own parameters. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96655, and CVE-2026-96656.",
+  "refs": [
+   "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319"
+  ]
+ },
+ {
+  "cve": "CVE-2026-96655",
+  "added": "2026-10-20",
+  "vendor": "Plex",
+  "product": "Media Server",
+  "name": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Plex Media Server contains a server-side request forgery (SSRF) vulnerability that could allow an authenticated user to request arbitrary internal or external addresses via the '/video/:/transcode/universal' path parameter. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96656.",
+  "refs": [
+   "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319"
+  ]
+ },
+ {
+  "cve": "CVE-2026-96656",
+  "added": "2026-10-20",
+  "vendor": "Plex",
+  "product": "Media Server",
+  "name": "Plex Media Server External Control of File Name or Path Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Plex Media Server contains an external control of file name or path vulnerability which can allow an admin user to write arbitrary files that may be executed on load. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96655.",
+  "refs": [
+   "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319"
+  ]
+ },
+ {
+  "cve": "CVE-2026-110936",
+  "added": "2026-10-20",
+  "vendor": "Siemens",
+  "product": "Software Center",
+  "name": "Siemens Software Center Uncontrolled Search Path Element Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Siemens Software Center contains an uncontrolled search path element vulnerability that could allow an authenticated local attacker to place a specially crafted DLL in a directory that the application searches, leading to arbitrary code execution with the privileges of the affected application.",
+  "refs": [
+   "https://productcert.siemens.com/productcert/html/ssa-580366.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-116779",
+  "added": "2026-11-09",
+  "vendor": "SignalWire",
+  "product": "FreeSwitch",
+  "name": "SignalWire FreeSwitch Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "SignalWire FreeSwitch contains a code injection vulnerability that permits configuration and credential disclosure, arbitrary call control, and command execution.",
+  "refs": [
+   "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/signalwire/freeswitch/security/advisories/GHSA-mg63-h38w-8p9p"
+  ]
+ },
+ {
+  "cve": "CVE-2026-19868",
+  "added": "2026-11-06",
+  "vendor": "SonicWall",
+  "product": "SonicOS SSLVPN",
+  "name": "SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "SonicWall SonicOS SSLVPN contains a use of single-factor authentication vulnerability that may allow a user with valid credentials for an alternate authentication method to bypass SAML authentication controls. Successful exploitation may also bypass SAML-enforced multi-factor authentication (MFA).",
+  "refs": [
+   "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0014"
+  ]
+ },
+ {
+  "cve": "CVE-2026-114713",
+  "added": "2026-11-13",
+  "vendor": "UnrealIRCd",
+  "product": "UnrealIRCd",
+  "name": "UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "UnrealIRCd UnrealIRCd contains an improper neutralization of delimiters vulnerability that allows any user on a network with two or more linked servers to inject server-to-server commands that are executed with server authority.",
+  "refs": [
+   "https://forums.unrealircd.org/viewtopic.php?t=9487"
+  ]
+ },
+ {
+  "cve": "CVE-2026-119977",
+  "added": "2026-11-03",
+  "vendor": "WordPress",
+  "product": "WordPress Core",
+  "name": "WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "WordPress WordPress Core contains a time-of-check time-of-use (TOCTOU) race condition vulnerability that could allow unauthenticated attackers to execute code on the server during the upgrade window. This is due to predictable, web-accessible staging paths used during full-package core upgrades.",
+  "refs": [
+   "https://wordpress.org/news/2026/10/wordpress-7-1-4",
+   "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-core/wordpress-core-470-713-unauthenticated-upgrade-window-staged-installer-remote-code-execution"
+  ]
+ }
+]

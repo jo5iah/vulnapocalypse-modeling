@@ -1,0 +1,202 @@
+[
+ {
+  "cve": "CVE-2023-27351",
+  "added": "2026-04-20",
+  "vendor": "PaperCut",
+  "product": "NG/MF",
+  "name": "PaperCut NG/MF Improper Authentication Vulnerability",
+  "ransomware": "Known",
+  "desc": "PaperCut NG/MF contains an improper authentication vulnerability that could allow remote attackers to bypass authentication on affected installations via the SecurityRequestFilter class.",
+  "refs": [
+   "https://www.papercut.com/kb/Main/PO-1216-and-PO-1219"
+  ]
+ },
+ {
+  "cve": "CVE-2026-81578",
+  "added": "2026-08-31",
+  "vendor": "PaperCut",
+  "product": "NG/MF",
+  "name": "PaperCut NG/MF Missing Authentication for Critical Function Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "PaperCut NG/MF contains a missing authentication for critical function vulnerability which allows an unauthenticated remote attacker to modify certain system configurations. This vulnerability can be chained with CVE-2026-82078.",
+  "refs": [
+   "https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-82078",
+  "added": "2026-08-31",
+  "vendor": "PaperCut",
+  "product": "NG/MF",
+  "name": "PaperCut NG/MF Unsafe Reflection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "PaperCut NG/MF contains an unsafe reflection vulnerability that allows an attacker to manipulate system configuration parameters and execute arbitrary Java bytecode residing on the application classpath under the security context of the PaperCut server process. This vulnerability can be chained with CVE-2026-81578.",
+  "refs": [
+   "https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/?lid=2oneu2wt0ct4"
+  ]
+ },
+ {
+  "cve": "CVE-2025-54313",
+  "added": "2026-01-22",
+  "vendor": "Prettier",
+  "product": "eslint-config-prettier",
+  "name": "Prettier eslint-config-prettier Embedded Malicious Code Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Prettier eslint-config-prettier contains an embedded malicious code vulnerability. Installing an affected package executes an install.js file that launches the node-gyp.dll malware on Windows.",
+  "refs": [
+   "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://www.npmjs.com/package/eslint-config-prettier?activeTab=versions",
+   "https://github.com/prettier/eslint-config-prettier/issues/339#issuecomment-3090304490"
+  ]
+ },
+ {
+  "cve": "CVE-2015-3306",
+  "added": "2026-10-08",
+  "vendor": "ProFTPD",
+  "product": "ProFTPD",
+  "name": "ProFTPD Improper Access Control Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "ProFTPD contains an improper access control vulnerability that could allow remote attackers to read and write to arbitrary files via the site cpfr and site cpto commands.",
+  "refs": [
+   "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: http://www.proftpd.org/",
+   "https://lists.debian.org/debian-security-announce/2015/msg00154.html",
+   "https://lists.opensuse.org/archives/list/updates@lists.opensuse.org/message/WE6YZRG5UVXMGQ7IVDRYBPIWV4M6UUGM/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-8037",
+  "added": "2026-08-07",
+  "vendor": "Progress",
+  "product": "LoadMaster",
+  "name": "Progress LoadMaster Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Progress LoadMaster contains a command injection vulnerability that allows an un-authenticated attacker to execute arbitrary commands on the LoadMaster appliance by exploiting unsanitized input in multiple command endpoints.",
+  "refs": [
+   "https://community.progress.com/s/article/LoadMaster-Critical-Security-Bulletin-June-2026-CVE-2026-8037-CVE-2026-33691"
+  ]
+ },
+ {
+  "cve": "CVE-2026-12569",
+  "added": "2026-06-25",
+  "vendor": "PTC",
+  "product": "Windchill and FlexPLM",
+  "name": "PTC Windchill and FlexPLM Improper Input Validation Vulnerability",
+  "ransomware": "Known",
+  "desc": "PTC Windchill and FlexPLM contains an improper input validation vulnerability allowing an unauthenticated, remote attacker to execute arbitrary code by sending a malicious request to the network.",
+  "refs": [
+   "https://www.ptc.com/en/support/article/CS473270"
+  ]
+ },
+ {
+  "cve": "CVE-2026-21385",
+  "added": "2026-03-03",
+  "vendor": "Qualcomm",
+  "product": "Multiple Chipsets",
+  "name": "Qualcomm Multiple Chipsets Memory Corruption Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Multiple Qualcomm chipsets contain a memory corruption vulnerability while using alignments for memory allocation.",
+  "refs": [
+   "Please check with specific vendors (OEMs,) for information on patching status. For more information, please see: https://source.android.com/docs/security/bulletin/2026/2026-03-01"
+  ]
+ },
+ {
+  "cve": "CVE-2025-32975",
+  "added": "2026-04-20",
+  "vendor": "Quest",
+  "product": "KACE Systems Management Appliance (SMA)",
+  "name": "Quest KACE Systems Management Appliance (SMA) Improper Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Quest KACE Systems Management Appliance (SMA) contains an improper authentication vulnerability that could allow attackers to impersonate legitimate users without valid credentials.",
+  "refs": [
+   "https://support.quest.com/kb/4379499/quest-response-to-kace-sma-vulnerabilities-cve-2025-32975-cve-2025-32976-cve-2025-32977-cve-2025-32978"
+  ]
+ },
+ {
+  "cve": "CVE-2025-62593",
+  "added": "2026-08-17",
+  "vendor": "Ray-Project",
+  "product": "Ray",
+  "name": "Ray-Project Ray Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ray-Project Ray contains a code injection vulnerability that could allow remote code execution. Developers using Ray as a development tool may be exposed to this vulnerability exploitable through Firefox and Safari.",
+  "refs": [
+   "https://github.com/ray-project/ray/security/advisories/GHSA-q279-jhrf-cc6v",
+   "https://github.com/ray-project/ray/commit/70e7c72780bdec075dba6cad1afe0832772bfe09"
+  ]
+ },
+ {
+  "cve": "CVE-2025-11953",
+  "added": "2026-02-05",
+  "vendor": "React Native Community",
+  "product": "CLI",
+  "name": "React Native Community CLI OS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "React Native Community CLI contains an OS command injection vulnerability which could allow unauthenticated network attackers to send POST requests to the Metro Development Server and run arbitrary executables via a vulnerable endpoint exposed by the server. On Windows, attackers can also execute arbitrary shell commands with fully controlled arguments.",
+  "refs": [
+   "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/react-native-community/cli/commit/15089907d1f1301b22c72d7f68846a2ef20df547",
+   "https://github.com/react-native-community/cli/pull/2735"
+  ]
+ },
+ {
+  "cve": "CVE-2015-3246",
+  "added": "2026-08-26",
+  "vendor": "Red Hat",
+  "product": "Libuser",
+  "name": "Red Hat Libuser Race Condition Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Red Hat libuser contains a race condition vulnerability that allows authenticated local users to corrupt the /etc/passwd file to cause a denial of service or privilege escalation.",
+  "refs": [
+   "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://access.redhat.com/articles/1537873"
+  ]
+ },
+ {
+  "cve": "CVE-2015-5287",
+  "added": "2026-08-26",
+  "vendor": "Red Hat",
+  "product": "Automatic Bug Reporting Tool",
+  "name": "Red Hat Automatic Bug Reporting Tool Privilege Escalation Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Red Hat Automatic Bug Reporting Tool (ABRT) contains a privilege escalation vulnerability that could allow local users with certain permissions to gain privileges via a symlink attack on a file with a predictable name. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version.",
+  "refs": [
+   "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/abrt/abrt/commit/3c1b60cfa62d39e5fff5a53a5bc53dae189e740e"
+  ]
+ },
+ {
+  "cve": "CVE-2021-22681",
+  "added": "2026-03-05",
+  "vendor": "Rockwell",
+  "product": "Multiple Products",
+  "name": "Rockwell Multiple Products Insufficient Protected Credentials Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Multiple Rockwell products contain an insufficient protected credentials vulnerability. Studio 5000 Logix Designer software may allow a key to be discovered. This key is used to verify Logix controllers are communicating with Rockwell Automation design software. If successfully exploited, this vulnerability could allow an unauthorized application to connect with Logix controllers. To leverage this vulnerability, an unauthorized user would require network access to the controller.",
+  "refs": [
+   "https://support.rockwellautomation.com/app/answers/answer_view/a_id/1130301/~/cve-2021-22681%3A-authentication-bypass-vulnerability-found-in-logix-controllers-"
+  ]
+ },
+ {
+  "cve": "CVE-2025-49113",
+  "added": "2026-02-20",
+  "vendor": "Roundcube",
+  "product": "Webmail",
+  "name": "RoundCube Webmail Deserialization of Untrusted Data Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "RoundCube Webmail contains a deserialization of untrusted data vulnerability that allows remote code execution by authenticated users because the _from parameter in a URL is not validated in program/actions/settings/upload.php.",
+  "refs": [
+   "https://roundcube.net/news/2025/06/01/security-updates-1.6.11-and-1.5.10",
+   "https://github.com/roundcube/roundcubemail/releases/tag/1.5.10",
+   "https://github.com/roundcube/roundcubemail/releases/tag/1.6.11"
+  ]
+ },
+ {
+  "cve": "CVE-2025-68461",
+  "added": "2026-02-20",
+  "vendor": "Roundcube",
+  "product": "Webmail",
+  "name": "RoundCube Webmail Cross-site Scripting Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "RoundCube Webmail contains a cross-site scripting vulnerability via the animate tag in an SVG document.",
+  "refs": [
+   "https://roundcube.net/news/2025/12/13/security-updates-1.6.12-and-1.5.12",
+   "https://github.com/roundcube/roundcubemail/commit/bfa032631c36b900e7444dfa278340b33cbf7cdb"
+  ]
+ }
+]

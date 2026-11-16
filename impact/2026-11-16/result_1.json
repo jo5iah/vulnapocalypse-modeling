@@ -1,0 +1,251 @@
+[
+ {
+  "cve": "CVE-2026-76418",
+  "vendor": "Cisco",
+  "product": "Secure Firewall ASA Software and Cisco Secure FTD Software",
+  "campaign_note": "Cisco PSIRT reported active exploitation of an unauthenticated SSL remote-access VPN reload (DoS) bug in October 2026; Cisco disclosed no attacker, victim, or scale details and no outage reports were found.",
+  "first_exploitation_claim": {
+   "date": "2026-10-28",
+   "source": "Cisco PSIRT advisory cisco-sa-asaftd-tunnel-dos-s6mgkb75 (\"In October 2026, the Cisco PSIRT became aware of active exploitation of this vulnerability.\")",
+   "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-tunnel-dos-s6mgkb75"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": 51000,
+    "counts_what": "Cisco ASA SSL VPN devices exposed online (exposure of the product/service, not confirmed-vulnerable configurations and not crashed devices)",
+    "measured_by": "Shadowserver, as reported by BleepingComputer",
+    "measured_on": "2026-10-29 (article date; article says 'currently', no explicit measurement date)",
+    "url": "https://bleepingcomputer.com/news/security/cisco-warns-of-firewall-zero-day-exploited-to-crash-ssl-vpn-devices",
+    "quote": "Internet monitoring platform Shadowserver tracks more than 51,000 Cisco ASA SSL VPN devices exposed online."
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-110447",
+  "vendor": "Collabora",
+  "product": "Collabora Online – Built-in CODE Server",
+  "campaign_note": "Nextcloud administrators reported PHP webshells planted via richdocumentscode proxy.php from 2026-09-10, about a month before the advisory and CVE; the only counts are a handful of administrator self-reports and the total number of servers hit is explicitly unknown.",
+  "first_exploitation_claim": {
+   "date": "2026-10-14",
+   "source": "The Hacker News, citing administrator reports on GitHub and Collabora's 14 October advisory; first logged attack dated 2026-09-10",
+   "url": "https://thehackernews.com/2026/10/hackers-backdoor-nextcloud-servers.html"
+  },
+  "evidence": [
+   {
+    "kind": "organizations",
+    "value": 3,
+    "counts_what": "Nextcloud administrators who reported attacks on their instances on GitHub (self-reports; a floor, not a campaign total)",
+    "measured_by": "Administrator reports on GitHub, as summarized by The Hacker News",
+    "measured_on": "2026-10-14 (article date); first logged attack 2026-09-10",
+    "url": "https://thehackernews.com/2026/10/hackers-backdoor-nextcloud-servers.html",
+    "quote": "Three administrators reported the issue on GitHub, with the first logged attack on September 10."
+   },
+   {
+    "kind": "organizations",
+    "value": 2,
+    "counts_what": "Additional administrators reporting the same activity on their own instances (self-reports)",
+    "measured_by": "Administrator reports, as summarized by The Hacker News",
+    "measured_on": "2026-10-14 (article date)",
+    "url": "https://thehackernews.com/2026/10/hackers-backdoor-nextcloud-servers.html",
+    "quote": "Two other administrators reported the same on their own instances."
+   },
+   {
+    "kind": "other",
+    "value": "scale unknown",
+    "counts_what": "Explicit statement that no total count of affected servers exists",
+    "measured_by": "The Hacker News",
+    "measured_on": "2026-10-14",
+    "url": "https://thehackernews.com/2026/10/hackers-backdoor-nextcloud-servers.html",
+    "quote": "How many servers were hit is not known."
+   },
+   {
+    "kind": "downtime",
+    "value": "credential/wallet search; unconfirmed ransomware reports",
+    "counts_what": "Post-exploitation activity on affected servers; ransomware use is user-reported and not confirmed by the outlet",
+    "measured_by": "BleepingComputer, citing system administrator reports",
+    "measured_on": "2026-10-15 (article date)",
+    "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-collabora-rce-flaw-to-backdoor-nextcloud-servers/",
+    "quote": "Some users also reported that ransomware operators are exploiting the flaw."
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "quantified_compromise"
+ },
+ {
+  "cve": "CVE-2026-106931",
+  "vendor": "EG Secure Solutions",
+  "product": "SiteGuard Server Edition",
+  "campaign_note": "The vendor's 2026-10-14 alert and JPCERT/CC alert JPCERT-AT-2026-0032 state exploitation is confirmed, but no source gives attacker, victim, install-base, or scale information.",
+  "first_exploitation_claim": {
+   "date": "2026-10-14",
+   "source": "EG Secure Solutions alert (vendor); page states support-contract customers were notified separately on 2026-09-29",
+   "url": "https://www.eg-secure.co.jp/siteguard/news/alert-202610-1"
+  },
+  "evidence": [],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2025-61624",
+  "vendor": "Fortinet",
+  "product": "Multiple Products",
+  "campaign_note": "Fortinet advisory FG-IR-26-122 (published 2026-04-14) carries a 'Known Exploited: Yes' flag with no description of the exploitation; no press or telemetry reporting on in-the-wild use was found.",
+  "first_exploitation_claim": {
+   "date": "unknown (advisory published 2026-04-14; the date the 'Known Exploited: Yes' flag was set is not shown; CISA KEV addition 2026-10-16)",
+   "source": "Fortinet PSIRT advisory FG-IR-26-122, 'Known Exploited' field",
+   "url": "https://www.fortiguard.com/psirt/FG-IR-26-122"
+  },
+  "evidence": [],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-102895",
+  "vendor": "GPUStack",
+  "product": "GPUStack",
+  "campaign_note": "The project's GitHub advisory reports in-the-wild exploitation against a single v2.1.1 deployment (custom backends running reverse shells), reported by Javier Sixto (ulex.fr); no exposure or wider compromise counts were found from reputable sources.",
+  "first_exploitation_claim": {
+   "date": "2026-07-31",
+   "source": "GPUStack GitHub security advisory GHSA-gj9m-f8ph-pmhr",
+   "url": "https://github.com/gpustack/gpustack/security/advisories/GHSA-gj9m-f8ph-pmhr"
+  },
+  "evidence": [
+   {
+    "kind": "compromised",
+    "value": "one deployment (described, not counted)",
+    "counts_what": "A single GPUStack v2.1.1 deployment observed exploited; the advisory gives no numeric count",
+    "measured_by": "GPUStack maintainers, on a report from Javier Sixto (ulex.fr)",
+    "measured_on": "2026-07-31 (advisory publication date)",
+    "url": "https://github.com/gpustack/gpustack/security/advisories/GHSA-gj9m-f8ph-pmhr",
+    "quote": "has been observed exploited in the wild against a v2.1.1 deployment."
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-97229",
+  "vendor": "GitLab",
+  "product": "Community Edition and Enterprise Edition",
+  "campaign_note": "Patched 2026-10-12 with a Rapid7 PoC on 2026-10-13; Alpine Linux disclosed exploitation attempts against its GitLab instance on 20-21 October (success not confirmed, instance rebuilt), and CISA added the CVE to KEV on 2026-10-29.",
+  "first_exploitation_claim": {
+   "date": "2026-10-28",
+   "source": "Alpine Linux incident post (attempts on 2026-10-20 and 2026-10-21); CISA KEV listing followed on 2026-10-29",
+   "url": "https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": 25766,
+    "counts_what": "Internet-facing hosts running a GitLab version affected by this CVE (also 79,224 web properties); version-based, out of 82,454 GitLab hosts detected",
+    "measured_by": "Censys",
+    "measured_on": "2026-10-13 (advisory date; no separate measurement date stated)",
+    "url": "https://censys.com/advisory/cve-2026-97229",
+    "quote": "Censys currently detects 25,766 hosts and 79,224 web properties with a version of GitLab affected by this vulnerability."
+   },
+   {
+    "kind": "exposed",
+    "value": 82454,
+    "counts_what": "All internet-facing hosts running GitLab (denominator for the vulnerable count; also 205,541 web properties)",
+    "measured_by": "Censys",
+    "measured_on": "2026-10-13 (advisory date)",
+    "url": "https://censys.com/advisory/cve-2026-97229",
+    "quote": "We currently detect 82,454 hosts and 205,541 web properties running GitLab, based on the following query"
+   },
+   {
+    "kind": "exposed",
+    "value": "over 1000",
+    "counts_what": "GitLab instances still vulnerable to CVE-2026-97229 about three weeks after the patch",
+    "measured_by": "Shadowserver, quoted by BleepingComputer",
+    "measured_on": "2026-11-01 (the Sunday before the 2026-11-02 article)",
+    "url": "https://www.bleepingcomputer.com/news/security/over-1-000-gitlab-servers-vulnerable-to-code-execution-attacks/amp/",
+    "quote": "We are currently tracking over 1000 GitLab instances vulnerable to CVE-2026-97229 (on @CISACyber KEV)"
+   },
+   {
+    "kind": "exposed",
+    "value": "nearly 2,800",
+    "counts_what": "Internet-exposed GitLab Community Edition instances (patch status not stated; inconsistent in scope with the ~39K daily instances Shadowserver cites elsewhere)",
+    "measured_by": "Shadowserver, as reported by BleepingComputer",
+    "measured_on": "2026-10-30 (article date; no measurement date given)",
+    "url": "https://www.bleepingcomputer.com/news/security/hackers-now-exploiting-max-severity-gitlab-flaw-in-attacks/amp/",
+    "quote": "Internet threat watchdog Shadowserver tracks nearly 2,800 Internet-exposed GitLab Community Edition instances"
+   },
+   {
+    "kind": "organizations",
+    "value": "1 named: Alpine Linux (attempted; success not confirmed)",
+    "counts_what": "Named organization targeted with the exploit; the victim found no evidence of success but could not rule it out",
+    "measured_by": "Alpine Linux (self-disclosure)",
+    "measured_on": "2026-10-20 to 2026-10-21 (attempts); post dated 2026-10-28",
+    "url": "https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html",
+    "quote": "We have found no evidence that it succeeded, but we cannot rule it out."
+   },
+   {
+    "kind": "downtime",
+    "value": 8,
+    "counts_what": "GitLab worker process crashes caused by the exploit attempts on Alpine Linux's instance",
+    "measured_by": "Alpine Linux (self-disclosure)",
+    "measured_on": "2026-10-20 to 2026-10-21",
+    "url": "https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html",
+    "quote": "This crashed GitLab worker processes 8 times."
+   },
+   {
+    "kind": "downtime",
+    "value": "instance closed to non-developers from 2026-10-27, rebuild complete 2026-10-28, reopened 2026-10-29 (no duration stated by the source)",
+    "counts_what": "Operational impact at Alpine Linux: restricted access, full rebuild, all passwords reset and secret keys replaced",
+    "measured_by": "Alpine Linux (self-disclosure, incident timeline)",
+    "measured_on": "2026-10-27 to 2026-10-29",
+    "url": "https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html",
+    "quote": "GitLab closed to everyone except developers and build servers; rebuild started"
+   }
+  ],
+  "searches_run": 4,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-111497",
+  "vendor": "Google",
+  "product": "Brotli",
+  "campaign_note": "Brotli decoder memory-corruption bug (nicknamed Node2Shell/Broccoli2Shell) embedded in Node.js and many other stacks; ELLIO sensors recorded in-the-wild exploit traffic from a single IP using the public exploit, and CISA added it to KEV on 2026-10-27, with no exposure, compromise, or victim counts published.",
+  "first_exploitation_claim": {
+   "date": "2026-10-26",
+   "source": "ELLIO (threat intelligence sensors), as reported by Help Net Security on 2026-10-27",
+   "url": "https://helpnetsecurity.com/2026/10/27/node2shell-broccoli2shell-vulnerability-cve-2026-111497"
+  },
+  "evidence": [
+   {
+    "kind": "attack_volume",
+    "value": "1 source IP (94.154.43.7) named; no attempt count given",
+    "counts_what": "IP address from which exploitation attempts were observed by ELLIO sensors (attack traffic, not compromises)",
+    "measured_by": "ELLIO, as reported by Help Net Security",
+    "measured_on": "2026-10-26 (reported 'on Monday')",
+    "url": "https://helpnetsecurity.com/2026/10/27/node2shell-broccoli2shell-vulnerability-cve-2026-111497",
+    "quote": "94.154.43.7 – the IP address from which exploitation attempts are coming –"
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-125350",
+  "vendor": "Google",
+  "product": "Chromium",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 3,
+  "verdict": "nothing_found"
+ },
+ {
+  "cve": "CVE-2026-123218",
+  "vendor": "IBM",
+  "product": "Aspera Faspex",
+  "campaign_note": "IBM's bulletin (node 7295921, initial publication 2026-11-07) describes the flaw and fix in Faspex 5.0.19 PL1 but makes no statement about exploitation; no reporting on in-the-wild use was found beyond the KEV listing itself.",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 2,
+  "verdict": "nothing_found"
+ }
+]

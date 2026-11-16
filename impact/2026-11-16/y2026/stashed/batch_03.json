@@ -1,0 +1,182 @@
+[
+ {
+  "cve": "CVE-2026-20045",
+  "added": "2026-01-21",
+  "vendor": "Cisco",
+  "product": "Unified Communications Manager",
+  "name": "Cisco Unified Communications Products Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Unified Communications Manager (Unified CM), Cisco Unified Communications Manager Session Management Edition (Unified CM SME), Cisco Unified Communications Manager IM & Presence Service (Unified CM IM&P), Cisco Unity Connection, and Cisco Webex Calling Dedicated Instance contain a code injection vulnerability that could allow the attacker to obtain user-level access to the underlying operating system and then elevate privileges to root.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-voice-rce-mORhqY4b"
+  ]
+ },
+ {
+  "cve": "CVE-2022-20775",
+  "added": "2026-02-25",
+  "vendor": "Cisco",
+  "product": "SD-WAN",
+  "name": "Cisco SD-WAN Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco SD-WAN CLI contains a path traversal vulnerability that could allow an authenticated local attacker to gain elevated privileges via improper access controls on commands within the application CLI. A successful exploit could allow the attacker to execute arbitrary commands as the root user.",
+  "refs": [
+   "https://www.cisco.com/c/en/us/support/docs/csa/cisco-sa-sd-wan-priv-E6e8tEdF.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20127",
+  "added": "2026-02-25",
+  "vendor": "Cisco",
+  "product": "Catalyst SD-WAN Controller and Manager",
+  "name": "Cisco Catalyst SD-WAN Controller and Manager Authentication Bypass Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Catalyst SD-WAN Controller, formerly SD-WAN vSmart, and Cisco Catalyst SD-WAN Manager, formerly SD-WAN vManage, contain an authentication bypass vulnerability could allow an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system. This vulnerability exists because the peering authentication mechanism in an affected system is not working properly. An attacker could exploit this vulnerability by sending crafted requests to an affected system. A successful exploit could allow the attacker to log in to an affected Cisco Catalyst SD-WAN Controller as an internal, high-privileged, non-root user account. Using this account, the attacker could access NETCONF, which would then allow the attacker to manipulate network configuration for the SD-WAN fabric.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa-EHchtZk"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20131",
+  "added": "2026-03-19",
+  "vendor": "Cisco",
+  "product": "Secure Firewall Management Center (FMC)",
+  "name": "Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management Deserialization of Untrusted Data Vulnerability",
+  "ransomware": "Known",
+  "desc": "Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain a deserialization of untrusted data vulnerability in the web-based management interface that could allow an unauthenticated, remote attacker to execute arbitrary Java code as root on an affected device.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-fmc-rce-NKhnULJh"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20122",
+  "added": "2026-04-20",
+  "vendor": "Cisco",
+  "product": "Catalyst SD-WAN Manger",
+  "name": "Cisco Catalyst SD-WAN Manager Incorrect Use of Privileged APIs Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Catalyst SD-WAN Manager contains an incorrect use of privileged APIs vulnerability due to improper file handling on the API interface of an affected system. An attacker could exploit this vulnerability by uploading a malicious file on the local file system. A successful exploit could allow the attacker to overwrite arbitrary files on the affected system and gain vmanage user privileges.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-authbp-qwCX8D4v"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20128",
+  "added": "2026-04-20",
+  "vendor": "Cisco",
+  "product": "Catalyst SD-WAN Manager",
+  "name": "Cisco Catalyst SD-WAN Manager Storing Passwords in a Recoverable Format Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Catalyst SD-WAN Manager contains a storing passwords in a recoverable format vulnerability that allows an authenticated, local attacker to gain DCA user privileges by accessing a credential file for the DCA user on the filesystem as a low-privileged user.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-authbp-qwCX8D4v"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20133",
+  "added": "2026-04-20",
+  "vendor": "Cisco",
+  "product": "Catalyst SD-WAN Manager",
+  "name": "Cisco Catalyst SD-WAN Manager Exposure of Sensitive Information to an Unauthorized Actor Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Catalyst SD-WAN Manager contains an exposure of sensitive information to an unauthorized actor vulnerability that could allow remote attackers to view sensitive information on affected systems.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-authbp-qwCX8D4v"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20182",
+  "added": "2026-05-14",
+  "vendor": "Cisco",
+  "product": "Catalyst SD-WAN",
+  "name": "Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Catalyst SD-WAN Controller & Manager contain an authentication bypass vulnerability that allows an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa2-v69WY2SW"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20245",
+  "added": "2026-06-09",
+  "vendor": "Cisco",
+  "product": "Catalyst SD-WAN Manager",
+  "name": "Cisco Catalyst SD-WAN Manager Improper Encoding or Escaping of Output Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Catalyst SD-WAN Manager formerly SD-WAN vManage contains an improper encoding or escaping of output vulnerability. This vulnerability could allow an authenticated, local attacker to execute arbitrary commands as root by supplying a crafted file to the affected system.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20262",
+  "added": "2026-06-15",
+  "vendor": "Cisco",
+  "product": "Catalyst SD-WAN Manager",
+  "name": "Cisco Catalyst SD-WAN Manager Directory or Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Catalyst SD-WAN Manager contains a directory or path traversal vulnerability that could allow an authenticated, remote attacker to create a file or overwrite any file on the filesystem of an affected system.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-arbfw-c2rZvQ"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20230",
+  "added": "2026-06-25",
+  "vendor": "Cisco",
+  "product": "Unified Communications Manager",
+  "name": "Cisco Unified Communications Manager Server-Side Request Forgery (SSRF) Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Unified Communications Manager (Unified CM) and Cisco Unified Communications Manager Session Management Edition (Unified CM SME) contain a server-side request forgery (SSRF) Vulnerability that could allow an unauthenticated, remote attacker to write files to the underlying operating system that could be used later to elevate to root.",
+  "refs": [
+   "https://www.cisco.com/c/en/us/support/docs/csa/cisco-sa-cucm-ssrf-cXPnHcW.html"
+  ]
+ },
+ {
+  "cve": "CVE-2008-4128",
+  "added": "2026-07-13",
+  "vendor": "Cisco",
+  "product": "IOS",
+  "name": "Cisco IOS Cross-Site Request Forgery Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco IOS 12.4 contains multiple cross-site forgery vulnerabilities that allows remote attackers to execute arbitrary commands via (1) a certain \"show privilege\" command to the /level/15/exec/- URI, and (2) a certain \"alias exec\" command to the /level/15/exec/-/configure/http URI.",
+  "refs": [
+   "https://www.cisco.com/c/en/us/obsolete/ios-nx-os-software/cisco-ios-software-releases-12-4-mainline.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20316",
+  "added": "2026-07-29",
+  "vendor": "Cisco",
+  "product": "Secure Firewall Management Center (FMC)",
+  "name": "Cisco Secure Firewall Management Center Use of Hard-coded Password Vulnerability",
+  "ransomware": "Known",
+  "desc": "Cisco Secure Firewall Management Center (FMC) formerly known as Firepower Management Center contains a use of hard-coded password vulnerability that could allow an unauthenticated, remote attacker to log in to an affected device using a low-privileged account to access sensitive data within the impacted systems.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-fmc-static-cred-BET3Cjh"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20349",
+  "added": "2026-08-11",
+  "vendor": "Cisco",
+  "product": "Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD)",
+  "name": "Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) Heap Inspection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) contain a heap inspection vulnerability that could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-vpn-dos-dzv4mQFF"
+  ]
+ },
+ {
+  "cve": "CVE-2026-20079",
+  "added": "2026-09-09",
+  "vendor": "Cisco",
+  "product": "Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management",
+  "name": "Cisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain an authentication Bypass using an alternate path or channel vulnerability that could allow an unauthenticated, remote attacker to bypass authentication and execute script files on an affected device to obtain root access to the underlying operating system.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-onprem-fmc-authbypass-5JPp45V2"
+  ]
+ }
+]

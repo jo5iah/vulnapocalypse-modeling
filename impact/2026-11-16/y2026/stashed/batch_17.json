@@ -1,0 +1,188 @@
+[
+ {
+  "cve": "CVE-2026-3502",
+  "added": "2026-04-02",
+  "vendor": "TrueConf",
+  "product": "Client",
+  "name": "TrueConf Client Download of Code Without Integrity Check Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "TrueConf Client contains a download of code without integrity check vulnerability. An attacker who is able to influence the update delivery path can substitute a tampered update payload. If the payload is executed or installed by the updater, this may result in arbitrary code execution in the context of the updating process or user.",
+  "refs": [
+   "https://trueconf.com/blog/update/trueconf-8-5",
+   "https://trueconf.com/downloads/windows.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-72529",
+  "added": "2026-08-20",
+  "vendor": "TrueConf",
+  "product": "Server",
+  "name": "TrueConf Server Missing Authentication for Critical Function Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "TrueConf Server contains a missing authentication for critical function vulnerability which could allow a remote unauthorized attacker with network access via port 4307/TCP to execute an arbitrary script.",
+  "refs": [
+   "https://trueconf.com/blog/news/security-fixes-updates-and-advisories",
+   "https://ics-cert.kaspersky.com/advisories/2026/08/11/trueconf-server-missing-authentication-for-critical-function/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-72530",
+  "added": "2026-08-20",
+  "vendor": "TrueConf",
+  "product": "Server",
+  "name": "TrueConf Server Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "TrueConf Server contains a code injection vulnerability that could allow an unauthorized remote attacker with network access via port 4307/TCP to use a specially crafted script to break out of the isolated environment and execute arbitrary code on the host system.",
+  "refs": [
+   "https://trueconf.com/blog/news/security-fixes-updates-and-advisories",
+   "https://ics-cert.kaspersky.com/advisories/2026/08/11/trueconf-server-breakout-from-isolated-environment/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-34908",
+  "added": "2026-06-23",
+  "vendor": "Ubiquiti",
+  "product": "UniFi OS",
+  "name": "Ubiquiti UniFi OS Improper Access Control Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ubiquiti UniFi OS contains an improper access control vulnerability which could allow a malicious actor with access to the network to make unauthorized changes to the system.",
+  "refs": [
+   "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b"
+  ]
+ },
+ {
+  "cve": "CVE-2026-34909",
+  "added": "2026-06-23",
+  "vendor": "Ubiquiti",
+  "product": "UniFi OS",
+  "name": "Ubiquiti UniFi OS Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ubiquiti UniFi OS contains a path traversal vulnerability which could allow a malicious actor with access to the network to access files on the underlying system that could be manipulated to access an underlying account.",
+  "refs": [
+   "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b"
+  ]
+ },
+ {
+  "cve": "CVE-2026-34910",
+  "added": "2026-06-23",
+  "vendor": "Ubiquiti",
+  "product": "UniFi OS",
+  "name": "Ubiquiti UniFi OS Improper Input Validation Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ubiquiti UniFi OS contains an improper input validation vulnerability which could allow a malicious actor with access to the network to conduct command injection.",
+  "refs": [
+   "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b"
+  ]
+ },
+ {
+  "cve": "CVE-2025-34026",
+  "added": "2026-01-22",
+  "vendor": "Versa",
+  "product": "Concerto",
+  "name": "Versa Concerto Improper Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Versa Concerto SD-WAN orchestration platform contains an improper authentication vulnerability in the Traefik reverse proxy configuration, allowing at attacker to access administrative endpoints. The internal Actuator endpoint can be leveraged for access to heap dumps and trace logs.",
+  "refs": [
+   "https://security-portal.versa-networks.com/emailbulletins/6830f94328defa375486ff2e"
+  ]
+ },
+ {
+  "cve": "CVE-2025-31125",
+  "added": "2026-01-22",
+  "vendor": "Vite",
+  "product": "Vitejs",
+  "name": "Vite Vitejs Improper Access Control Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Vite Vitejs contains an improper access control vulnerability that exposes content of non-allowed files using ?inline&import or ?raw?import. Only apps explicitly exposing the Vite dev server to the network (using --host or server.host config option) are affected.",
+  "refs": [
+   "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/vitejs/vite/commit/59673137c45ac2bcfad1170d954347c1a17ab949"
+  ]
+ },
+ {
+  "cve": "CVE-2026-41940",
+  "added": "2026-04-30",
+  "vendor": "WebPros",
+  "product": "cPanel & WHM and WP2 (WordPress Squared)",
+  "name": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability",
+  "ransomware": "Known",
+  "desc": "WebPros cPanel & WHM (WebHost Manager) and WP2 (WordPress Squared) contain an authentication bypass vulnerability in the login flow that allows unauthenticated remote attackers to gain unauthorized access to the control panel.",
+  "refs": [
+   "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026",
+   "https://docs.cpanel.net/release-notes/release-notes/",
+   "https://docs.wpsquared.com/changelogs/versions/changelog/#13617"
+  ]
+ },
+ {
+  "cve": "CVE-2026-48907",
+  "added": "2026-06-16",
+  "vendor": "Widget Factory",
+  "product": "Joomla Content Editor",
+  "name": "Widget Factory Joomla Content Editor Improper Access Control Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Widget Factory Joomla Content Editor contains an improper access control vulnerability which could allow for upload and execution of PHP code via the creation of new editor profiles for unauthenticated users.",
+  "refs": [
+   "https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites",
+   "https://www.joomlacontenteditor.net/support/changelog/editor"
+  ]
+ },
+ {
+  "cve": "CVE-2025-47813",
+  "added": "2026-03-16",
+  "vendor": "Wing FTP Server",
+  "product": "Wing FTP Server",
+  "name": "Wing FTP Server Information Disclosure Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Wing FTP Server contains a generation of error message containing sensitive information vulnerability when using a long value in the UID cookie.",
+  "refs": [
+   "https://www.wftpserver.com/serverhistory.htm"
+  ]
+ },
+ {
+  "cve": "CVE-2026-60137",
+  "added": "2026-07-21",
+  "vendor": "WordPress",
+  "product": "Core",
+  "name": "WordPress Core SQL Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "WordPress Core contains a SQL injection vulnerability when a plugin or theme passes untrusted input to the parameter. This vulnerability can be chained with CVE-2026-63030 to allow an unauthenticated attacker to gain remote code execution on default WordPress installations.",
+  "refs": [
+   "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-63030",
+  "added": "2026-07-21",
+  "vendor": "WordPress",
+  "product": "Core",
+  "name": "WordPress Core Interpretation Conflict Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.",
+  "refs": [
+   "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-87902",
+  "added": "2026-09-25",
+  "vendor": "WordPress",
+  "product": "Core",
+  "name": "WordPress Core Remote File Inclusion Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "WordPress Core contains a remote file inclusion vulnerability which could allow an unauthenticated attacker to make page-template resolution include a chosen readable local `.php` file outside the active theme directories, leading to remote code execution.",
+  "refs": [
+   "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-7hp8-65ch-5whp"
+  ]
+ },
+ {
+  "cve": "CVE-2026-5430",
+  "added": "2026-09-24",
+  "vendor": "WSO2",
+  "product": "Multiple Products",
+  "name": "WSO2 Multiple Products Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "WSO2 API Control Plane, API Manager, Traffic Manager & Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution.",
+  "refs": [
+   "https://security.docs.wso2.com/en/latest/security-announcements/security-advisories/2026/WSO2-2026-5328/"
+  ]
+ }
+]

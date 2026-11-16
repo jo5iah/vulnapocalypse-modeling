@@ -1,0 +1,200 @@
+[
+ {
+  "cve": "CVE-2026-76461",
+  "added": "2026-09-14",
+  "vendor": "Cisco",
+  "product": "Secure Email Gateway",
+  "name": "Cisco Secure Email Gateway SQL Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco AsyncOS software for Cisco Secure Email Gateway (SEG) contains a SQL injection vulnerability that could allow an unauthenticated, remote attacker to execute arbitrary commands with root privileges on the underlying operating system.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-inj-2bLVGmhX"
+  ]
+ },
+ {
+  "cve": "CVE-2026-76460",
+  "added": "2026-09-16",
+  "vendor": "Cisco",
+  "product": "Identity Services Engine",
+  "name": "Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Identity Services Engine (ISE) and Cisco ISE Passive Identity Connector (ISE-PIC) contain an incorrect use of privileged APIs vulnerability that could allow an unauthenticated, remote attacker to gain unauthorized access to the affected device by bypassing the web-based management interface.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ISE-ABP-VNSW7Tn5"
+  ]
+ },
+ {
+  "cve": "CVE-2026-76504",
+  "added": "2026-09-30",
+  "vendor": "Cisco",
+  "product": "Catalyst SD-WAN Manager",
+  "name": "Cisco Catalyst SD-WAN Manager Hex Encoding Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Catalyst SD-WAN Manager contains a hex encoding vulnerability that could allow an unauthenticated, remote attacker to access an affected system with privileges of the admin user due to improper handling of URI encoding in an HTTP request.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-webauth-xr8beuuU"
+  ]
+ },
+ {
+  "cve": "CVE-2026-76519",
+  "added": "2026-10-14",
+  "vendor": "Cisco",
+  "product": "Secure Email Gateway",
+  "name": "Cisco Secure Email Gateway Relative Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Cisco Secure Email Gateway contains a relative path traversal vulnerability that could allow an unauthenticated, remote attacker to write arbitrary files on the underlying operating system.",
+  "refs": [
+   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-afw-zqYJkjxp"
+  ]
+ },
+ {
+  "cve": "CVE-2026-3055",
+  "added": "2026-03-30",
+  "vendor": "Citrix",
+  "product": "NetScaler",
+  "name": "Citrix NetScaler Out-of-Bounds Read Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Citrix NetScaler ADC (formerly Citrix ADC), NetScaler Gateway (formerly Citrix Gateway) and NetScaler ADC FIPS and NDcPP contain an out-of-bounds reads vulnerability when configured as a SAML IDP leading to memory overread.",
+  "refs": [
+   "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX696300&articleURL=NetScaler_ADC_and_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_3055_and_CVE_2026_4368"
+  ]
+ },
+ {
+  "cve": "CVE-2026-8452",
+  "added": "2026-08-26",
+  "vendor": "Citrix",
+  "product": "NetScaler ADC and NetScaler Gateway",
+  "name": "Citrix NetScaler ADC and NetScaler Gateway Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability which could lead to denial of service.",
+  "refs": [
+   "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX696604"
+  ]
+ },
+ {
+  "cve": "CVE-2026-19490",
+  "added": "2026-09-09",
+  "vendor": "Citrix",
+  "product": "NetScaler",
+  "name": "Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Citrix NetScaler ADC and NetScaler Gateway contain an authentication-bypass vulnerability involving an alternate path or channel. When the NetScaler appliance is configured as an AAA virtual server or as a Gateway (SSL VPN, ICA Proxy, CVPN, or RDP Proxy), an unauthenticated remote threat actor may be able to bypass authentication.",
+  "refs": [
+   "https://support.citrix.com/external/article/CTX696939/netscaler-adc-and-netscaler-gateway-secu.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-88771",
+  "added": "2026-09-27",
+  "vendor": "Citrix",
+  "product": "NetScaler",
+  "name": "Citrix NetScaler Improper Input Validation Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Citrix NetScaler ADC and NetScaler Gateway contain an improper input validation vulnerability that could allow an unauthenticated attacker to execute arbitrary commands.",
+  "refs": [
+   "Running the provided IOCs in the NetScaler console may help identify indicators of exploitation. Customers must conduct forensic triage as directed by BOD 26\u201104 and follow Citrix\u2019s published guidance for mitigations. For more information, please see: https://community.citrix.com/techzone-blogs/110_security-updates/netscaler-adc-and-netscaler-gateway-security-bulletin-for-cve-2026-88771-through-cve-2026-88778",
+   "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096",
+   "https://support.citrix.com/external/article/CTX694799/steps-to-take-if-netscaler-adc-is-suspec.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-88772",
+  "added": "2026-09-27",
+  "vendor": "Citrix",
+  "product": "NetScaler",
+  "name": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for remote code execution or denial of service",
+  "refs": [
+   "Running the provided IOCs in the NetScaler console may help identify indicators of exploitation. Customers must conduct forensic triage as directed by BOD 26\u201104 and follow Citrix\u2019s published guidance for mitigations. For more information, please see: https://community.citrix.com/techzone-blogs/110_security-updates/netscaler-adc-and-netscaler-gateway-security-bulletin-for-cve-2026-88771-through-cve-2026-88778",
+   "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096",
+   "https://support.citrix.com/external/article/CTX694799/steps-to-take-if-netscaler-adc-is-suspec.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-88779",
+  "added": "2026-10-04",
+  "vendor": "Citrix",
+  "product": "NetScaler",
+  "name": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Citrix NetScaler ADC (formerly Citrix ADC) and Citrix NetScaler Gateway (formerly Citrix Gateway) contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for a denial of service.",
+  "refs": [
+   "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697174",
+   "https://community.citrix.com/techzone-blogs/110_security-updates/understanding-and-addressing-cve-2026-88779-in-citrix-netscaler-adc-and-citrix-netscaler-gateway/"
+  ]
+ },
+ {
+  "cve": "CVE-2024-1708",
+  "added": "2026-04-28",
+  "vendor": "ConnectWise",
+  "product": "ScreenConnect",
+  "name": "ConnectWise ScreenConnect Path Traversal Vulnerability",
+  "ransomware": "Known",
+  "desc": "ConnectWise ScreenConnect contains a path traversal vulnerability which could allow an attacker to execute remote code or directly impact confidential data and critical systems.",
+  "refs": [
+   "https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8"
+  ]
+ },
+ {
+  "cve": "CVE-2026-84869",
+  "added": "2026-09-11",
+  "vendor": "ConnectWise",
+  "product": "ScreenConnect",
+  "name": "ConnectWise ScreenConnect Improper Privilege Management and Missing Authorization Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "ConnectWise ScreenConnect contains both an improper privilege management and missing authorization vulnerability that may allow an attacker to transfer and execute files through an active remote session without authorization or host confirmation.",
+  "refs": [
+   "https://www.connectwise.com/company/trust/security-bulletins/2026-09-08-screenconnect-bulletin"
+  ]
+ },
+ {
+  "cve": "CVE-2025-32432",
+  "added": "2026-03-20",
+  "vendor": "Craft CMS",
+  "product": "Craft CMS",
+  "name": "Craft CMS Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Craft CMS contains a code injection vulnerability that allows a remote attacker to execute arbitrary code.",
+  "refs": [
+   "https://craftcms.com/knowledge-base/craft-cms-cve-2025-32432",
+   "https://github.com/craftcms/cms/security/advisories/GHSA-f3gw-9ww9-jmc3"
+  ]
+ },
+ {
+  "cve": "CVE-2025-29635",
+  "added": "2026-04-24",
+  "vendor": "D-Link",
+  "product": "DIR-823X",
+  "name": "D-Link DIR-823X Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "D-Link DIR-823X contains a command injection vulnerability that allows an authorized attacker to execute arbitrary commands on remote devices by sending a POST request to /goform/set_prohibiting via the corresponding function. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+  "refs": [
+   "https://supportannouncement.us.dlink.com/security/publication.aspx?name=SAP10469"
+  ]
+ },
+ {
+  "cve": "CVE-2026-8398",
+  "added": "2026-05-27",
+  "vendor": "Daemon",
+  "product": "Daemon Tools Lite",
+  "name": "Daemon Tools Lite Embedded Malicious Code Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Daemon Tools contains an unspecified vulnerability that has a high impact on confidentiality, integrity, and availability.",
+  "refs": [
+   "https://blog.daemon-tools.cc/post/security-incident"
+  ]
+ },
+ {
+  "cve": "CVE-2021-27137",
+  "added": "2026-07-21",
+  "vendor": "DD-WRT",
+  "product": "DD-WRT",
+  "name": "DD-WRT Stack-Based Buffer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "DD-WRT contains a stack-based buffer overflow vulnerability that could allow an unauthenticated attacker to overflow an internal buffer used by UPnP and trigger a code execution vulnerability.",
+  "refs": [
+   "This vulnerability affects a common open-source component, third-party library, proprietary implementation, or a protocol used by different products. Please check with specific vendors for information on patching status. For more information, please see: https://svn.dd-wrt.com/changeset/45724"
+  ]
+ }
+]

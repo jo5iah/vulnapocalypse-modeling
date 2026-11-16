@@ -1,6 +1,7 @@
 # Plan
 
-Four steps and one parallel track. Step 1 is built; steps 2 to 4 are layers above it, each consuming
+Four steps and one parallel track. Step 1 is built; the input tables for steps 2 and 3 were started on
+2026-11-16 (status under each); steps 2 to 4 are layers above step 1, each consuming
 the one below rather than modifying it. The ordering is by dependency, not by appeal: step 4 needs the
 harm denominator step 3 produces, and step 3 is far more useful once step 2 has split the population it
 counts. Track A replaces the lagging catalog measurements that every step reads and depends on none of
@@ -52,6 +53,11 @@ every defender parameter are constants, so neither side can adapt — step 4.
 - **$\gamma$ is not stationary.** Publication acceleration has been positive for 68 months and the
   recent quarter runs 1.8× the trailing year, so any equilibrium computed from a trailing-year rate
   has a shelf life of months. Re-snapshot before quoting absolute levels.
+- **The 2026-11-16 snapshot is pulled but not reconciled.** The model inputs under `data/` are at
+  11-16; the document, its figures and the headline above are at 10-14. On the new inputs the trailing-year
+  rate is 297/day, $E^*$ 1,221, and today's state 575 — which is **below** the catalog-derived anchor
+  645 [616, 787] for the first time since the anchor correction. KEV's last 90 days ran at 1.23/day
+  against the 0.826/day pooled rate that calibrates throughput. Diagnose that before reconciling.
 
 ---
 
@@ -94,6 +100,10 @@ statement: fix available, workaround or mitigation only, no fix planned, or end 
   saturating and the model's $P/C = 2$ reading holds; if advisory claims rise with disclosure while KEV
   additions do not, the catalog is falling behind and every exploitation figure is low by a growing margin.
   This is the measurement the second open item says no catalog provides.
+- *A first reading of the onset lag, as a by-product of the step-3 impact ledger (2026-11-16):* for 75 KEV entries added in
+  2026 with a dated public exploitation claim from a source other than CISA, KEV followed by a median
+  of 2 days and a mean of 24; 64% within 3 days, 89% within 28. Small, and not independent across
+  chained CVEs, but close to VulnCheck's 3 and 28.
 - **Catalog coverage by class.** The share of claimed-exploited vulnerabilities that never reach KEV, by
   vendor, product family and exposure class — a less policy-filtered composition target for step 2.
 - **A nowcast of the influx $I$.** Claims for the current month, scaled by the measured claim → KEV
@@ -123,7 +133,30 @@ scraped sources carry terms-of-use constraints that structured feeds do not.
 
 ## Step 2 — stratify: vulnerability type, severity, product, exposure
 
-**Ready to start. No new data source required.**
+**Input table built 2026-11-16; the model work is ready to start.**
+
+`cve_strata.py` keeps one row per CVE (`data/cve_strata.csv.gz`: vendor, product families, CVSS exposure
+fields, severity, CWE, CISA's SSVC decision points, KEV date) and refreshes incrementally with
+`update`; `report` writes `cve_stratification_<date>.md`. What the first table says, for the 365 days
+to 2026-11-16 (321 KEV additions against 107,720 publications, 3.0 per 1,000):
+
+| Split | KEV additions per 1,000 published |
+|---|---|
+| Remote, no privileges, no user action / other remote / local | 5.6 / 1.8 / 2.4 |
+| Microsoft / Google / Linux | 7.4 / 2.4 / 0.9 |
+| Cisco / Fortinet / Ivanti / Citrix | 54 / 43 / 123 / 133 |
+| Critical / High / Medium | 13.0 / 3.2 / 0.9 |
+
+A single population rate puts 27% of KEV additions in the wrong exposure class, 39% in the wrong vendor
+class and 45% in the wrong vendor × exposure cell. **That misallocation is the baseline the test below
+has to beat.** The top 20 vendors by exploitation hold 56% of additions, so the design is top-N vendors
+plus a rest bucket, crossed with three exposure classes; product-level top-N is too long-tailed (the top
+50 products hold 54%).
+
+Remaining work, in order: (1) reconcile assigner-supplied vendor names to CPE names, since rates for
+vendors split across two spellings are overstated; (2) calibrate class-specific $\beta$ and
+$\varepsilon$ on one period and predict KEV composition on another; (3) decide whether SSVC's `poc`
+flag (19.6% of publications) should condition the hazard on fresh disclosures.
 
 Split each pool from one population average into classes, with class-specific hazards $\beta$,
 reachability $\varepsilon$, and where the data supports it class-specific completeness $f$ and
@@ -150,7 +183,9 @@ model could falsify rather than absorb.
 **Watch for.** Severity and exposure are strongly correlated through the CVSS vector, so they are not
 four independent axes and should not be modeled as if they were; start with exposure, add type, and
 treat severity as a check rather than a dimension until the correlation is measured. CPE applicability
-is missing from ~54% of records in the trailing year, censoring recent months hardest.
+is missing from 57% of records in the trailing year, censoring recent months hardest; the assigner's
+`affected` block supplies a vendor for most of those (92% of records have one or the other), at the cost
+of a second, unreconciled naming scheme.
 
 ---
 
@@ -169,6 +204,28 @@ harm becomes a weighted sum over $Q_i$ rather than a count of vulnerabilities.
 
 Inputs: exposure counts per product, scanning telemetry, incident counts. Two SharePoint cases are
 recorded in the session notes as the worked examples to read before specifying this layer.
+
+**Impact ledger, started 2026-11-16.** The inputs are being collected by walking KEV backwards by date
+added and searching reputable sources, per entry, for exposed instances, compromised hosts, victim
+organizations, attack volume and downtime (`impact_ledger.py`, `impact_ledger_<date>.md`; the research
+brief and batches are under `_review/2026-11-16/impact/`). 96 of 2026's 297 entries are researched; 201
+are stashed, blocked on a per-session web-search limit, not on method.
+
+What the first 96 say about which inputs exist:
+
+- **$S_i$ is often measurable, $Q_i$ rarely.** An exposure count exists for 22 campaigns (median
+  13,850, from 300 to 34.4 million). A compromise count exists for 8 (median 14, maximum 471) and a
+  victim-organization count for 6. Each is one observer's floor.
+- **Downtime is not reported.** No entry has an outage duration; harm will have to be weighted by
+  compromise breadth, not by time lost, unless older entries or regulatory filings supply it.
+- **The unit is the campaign.** Chained CVEs share one figure, so $Q$ belongs to a campaign that maps
+  onto several vulnerabilities in the layer below.
+- **Breadth is heavy-tailed.** One campaign holds 57% of all counted compromises and one holds 90% of
+  counted victim organizations, so aggregate harm will be set by a few campaigns.
+
+Remaining work: finish 2026 (whether yield rises with entry age cannot be read yet: January to August
+has 39 of about 200 entries); spot-check quotes against sources, since pages were read through a
+summarizing tool; then extend to 2025.
 
 **Why it changes conclusions.** Automation plausibly raises the breadth of exploitation per
 vulnerability without raising the number of vulnerabilities exploited — a large movement in harm that

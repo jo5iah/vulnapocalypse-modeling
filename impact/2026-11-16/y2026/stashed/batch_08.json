@@ -1,0 +1,223 @@
+[
+ {
+  "cve": "CVE-2026-48710",
+  "added": "2026-09-02",
+  "vendor": "Kludex",
+  "product": "Starlette",
+  "name": "Kludex Starlette HTTP Request/Response Smuggling Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Kludex Starlette contains a HTTP request/response smuggling vulnerability that could allow attackers to inject paths into the host part, prepending the actual path leading to issues such as authentication bypass when the authentication depends on the reconstructed URL\u2019s path. This vulnerability could be chaned with CVE-2026-42271.",
+  "refs": [
+   "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/Kludex/starlette/security/advisories/GHSA-86qp-5c8j-p5mr"
+  ]
+ },
+ {
+  "cve": "CVE-2023-4346",
+  "added": "2026-07-15",
+  "vendor": "KNX Association",
+  "product": "KNX Protocol Connection Authorization Option 1",
+  "name": "KNX Association KNX Protocol Connection Authorization Option 1 Overly Restrictive Account Lockout Mechanism Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "KNX Association KNX Protocol Connection Authorization Option 1 contains an overly restrictive account lockout mechanism vulnerability that could allow an attacker to purge all devices without additional security options enabled and set a BCU key to lock the device.",
+  "refs": []
+ },
+ {
+  "cve": "CVE-2026-33017",
+  "added": "2026-03-25",
+  "vendor": "Langflow",
+  "product": "Langflow",
+  "name": "Langflow Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
+  "refs": [
+   "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
+  ]
+ },
+ {
+  "cve": "CVE-2025-34291",
+  "added": "2026-05-21",
+  "vendor": "Langflow",
+  "product": "Langflow",
+  "name": "Langflow Origin Validation Error Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Langflow contains an origin validation error vulnerability in which an overly permissive CORS configuration combined with a refresh token cookie configured as SameSite=None allows a malicious webpage to perform cross-origin requests that include credentials and successfully call the refresh endpoint. This could allow the attacker to execute arbitrary code and achieve full system compromise via obtained tokens that permit access to authenticated endpoints.",
+  "refs": [
+   "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/langflow-ai/langflow",
+   "https://github.com/langflow-ai/langflow/releases/tag/v1.9.3",
+   "https://github.com/langflow-ai/langflow/issues/11465#event-25774545848"
+  ]
+ },
+ {
+  "cve": "CVE-2026-55255",
+  "added": "2026-07-07",
+  "vendor": "Langflow",
+  "product": "Langflow",
+  "name": "Langflow Authorization Bypass Through User-Controlled Key Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Langflow contains an authorization bypass through user-controlled key vulnerability which allows an authenticated attacker to execute any flow belonging to another user by specifying the victim's flow ID in the request.",
+  "refs": [
+   "https://github.com/langflow-ai/langflow/security/advisories/GHSA-qrpv-q767-xqq2"
+  ]
+ },
+ {
+  "cve": "CVE-2026-0770",
+  "added": "2026-07-21",
+  "vendor": "Langflow",
+  "product": "Langflow",
+  "name": "Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Langflow contains an inclusion of functionality from untrusted control sphere vulnerability that allows remote attackers to execute arbitrary code on affected installations.",
+  "refs": [
+   "https://github.com/langflow-ai/langflow/releases/tag/v1.9.0"
+  ]
+ },
+ {
+  "cve": "CVE-2025-67038",
+  "added": "2026-06-23",
+  "vendor": "Lantronix",
+  "product": "EDS5000",
+  "name": "Lantronix EDS5000 Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Lantronix EDS5000 contains a code injection vulnerability that could allow attackers to inject arbitrary OS commands into the username parameter. Injected commands are executed with root privileges.",
+  "refs": [
+   "https://ltrxdev.atlassian.net/wiki/spaces/LTRXTS/pages/2538438657/Latest+Firmware+for+the+EDS5000+series+EDS5008+EDS5016+EDS5032"
+  ]
+ },
+ {
+  "cve": "CVE-2025-54068",
+  "added": "2026-03-20",
+  "vendor": "Laravel",
+  "product": "Livewire",
+  "name": "Laravel Livewire Code Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Laravel Livewire contain a code injection vulnerability that could allow unauthenticated attackers to achieve remote command execution in specific scenarios.",
+  "refs": [
+   "https://github.com/livewire/livewire/security/advisories/GHSA-29cq-5w36-x7w3",
+   "https://github.com/livewire/livewire/commit/ef04be759da41b14d2d129e670533180a44987dc"
+  ]
+ },
+ {
+  "cve": "CVE-2018-14634",
+  "added": "2026-01-26",
+  "vendor": "Linux",
+  "product": "Kernel",
+  "name": "Linux Kernel Integer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Linux Kernel contains an integer overflow vulnerability in the create_elf_tables() function which could allow an unprivileged local user with access to SUID (or otherwise privileged) binary to escalate their privileges on the system.",
+  "refs": [
+   "This vulnerability affects a common open-source component, third-party library, or a protocol used by different products. Please check with specific vendors for information on patching status. For more information, please see: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/about/",
+   "https://www.kernel.org/",
+   "https://www.cve.org/CVERecord?id=CVE-2018-14634",
+   "https://access.redhat.com/errata/RHSA-2018:3540"
+  ]
+ },
+ {
+  "cve": "CVE-2026-31431",
+  "added": "2026-05-01",
+  "vendor": "Linux",
+  "product": "Kernel",
+  "name": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
+  "refs": [
+   "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/",
+   "https://xint.io/blog/copy-fail-linux-distributions#the-fix-6",
+   "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/about/"
+  ]
+ },
+ {
+  "cve": "CVE-2022-0492",
+  "added": "2026-06-02",
+  "vendor": "Linux",
+  "product": "Kernel",
+  "name": "Linux Kernel Improper Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Linux Kernel contains an improper authentication vulnerability which could allow for privilege escalation via the cgroups v1 release_agent feature.",
+  "refs": [
+   "This vulnerability affects a common open-source component, third-party library, or a protocol used by different products. Please check with specific vendors for information on patching status. For more information, please see: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=24f6008564183aa120d07c03d9289519c2fe02af",
+   "https://www.kernel.org/"
+  ]
+ },
+ {
+  "cve": "CVE-2022-0995",
+  "added": "2026-08-26",
+  "vendor": "Linux",
+  "product": "Kernel",
+  "name": "Linux Kernel Out-of-Bounds Write Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Linux Kernel contains an out-of-bounds memory write vulnerability which could allow a local user to gain privileged access or cause a denial of service on the system.",
+  "refs": [
+   "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=93ce93587d36493f2f86921fa79921b3cba63fbb"
+  ]
+ },
+ {
+  "cve": "CVE-2026-53362",
+  "added": "2026-08-27",
+  "vendor": "Linux",
+  "product": "Kernel",
+  "name": "Linux Kernel Unspecified Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Linux Kernel contains an unspecified vulnerability that can allow for privilege escalation via IPv6 networking subsystem. This vulnerability can impact multiple products, including but not limited to Suse, Red Hat, and other products using Linux.",
+  "refs": [
+   "https://git.kernel.org/stable/c/14200d435af9a9eeb444f529fc2f689a236b7962",
+   "https://git.kernel.org/stable/c/65fb14cbebb0cd0eff903a22d33537ddc8b95769",
+   "https://git.kernel.org/stable/c/46f201f8b4c39633a1fa3dc12459f506d470993d",
+   "https://git.kernel.org/stable/c/6374fb9edf72c67a118a2c214a0dddd04c921e0a",
+   "https://git.kernel.org/stable/c/e9eacf19281ea2498b36291b56c9606118c2d74e",
+   "https://git.kernel.org/stable/c/736b380e28d0480c7bc3e022f1950f31fe53a7c5"
+  ]
+ },
+ {
+  "cve": "CVE-2025-39682",
+  "added": "2026-09-18",
+  "vendor": "Linux",
+  "product": "Kernel",
+  "name": "Linux Kernel Improper Check for Unusual or Exceptional Conditions Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Linux Kernel contains an improper check for unusual or exceptional conditions vulnerability in the TLS receive path which allows a zero-length record retrieved from the rx_list to bypass the intended recvmsg() record-type handling, potentially causing subsequent TLS records to be processed using incorrect zero-copy and queuing assumptions. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version.",
+  "refs": [
+   "https://git.kernel.org/stable/c/2902c3ebcca52ca845c03182000e8d71d3a5196f",
+   "https://git.kernel.org/stable/c/c09dd3773b5950e9cfb6c9b9a5f6e36d06c62677",
+   "https://git.kernel.org/stable/c/3439c15ae91a517cf3c650ea15a8987699416ad9",
+   "https://git.kernel.org/stable/c/29c0ce3c8cdb6dc5d61139c937f34cb888a6f42e",
+   "https://git.kernel.org/stable/c/62708b9452f8eb77513115b17c4f8d1a22ebf843"
+  ]
+ },
+ {
+  "cve": "CVE-2025-39964",
+  "added": "2026-09-18",
+  "vendor": "Linux",
+  "product": "Kernel",
+  "name": "Linux Kernel Race Condition Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Linux Kernel contains a race condition vulnerability which allows concurrent writes to the same AF_ALG socket causing data to be unpredictably interleaved and creating inconsistencies in the socket's internal state.",
+  "refs": [
+   "https://git.kernel.org/stable/c/0f28c4adbc4a97437874c9b669fd7958a8c6d6ce",
+   "https://git.kernel.org/stable/c/e4c1ec11132ec466f7362a95f36a506ce4dc08c9",
+   "https://git.kernel.org/stable/c/1f323a48e9b5ebfe6dc7d130fdf5c3c0e92a07c8",
+   "https://git.kernel.org/stable/c/7c4491b5644e3a3708f3dbd7591be0a570135b84",
+   "https://git.kernel.org/stable/c/9aee87da5572b3a14075f501752e209801160d3d",
+   "https://git.kernel.org/stable/c/45bcf60fe49b37daab1acee57b27211ad1574042",
+   "https://git.kernel.org/stable/c/1b34cbbf4f011a121ef7b2d7d6e6920a036d5285"
+  ]
+ },
+ {
+  "cve": "CVE-2026-53266",
+  "added": "2026-09-18",
+  "vendor": "Linux",
+  "product": "Kernel",
+  "name": "Linux Kernel Out-of-Bounds Write Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Linux Kernel contains an out-of-bounds write vulnerability in the ebtables SNAT target which allows an ARP sender hardware address rewrite to write directly into a nonlinear socket-buffer fragment backed by a splice-imported file page. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version.",
+  "refs": [
+   "https://git.kernel.org/stable/c/bf84ad7c7a9ede46e31afaa41a1ba06a159e8c87",
+   "https://git.kernel.org/stable/c/76280b78cc9f23bdc6438e10ad6dff148ef8375b",
+   "https://git.kernel.org/stable/c/b7e91939ba9be805a62a257fa4e227dffbb88fa0",
+   "https://git.kernel.org/stable/c/afd64b59c3de9bbbdd3759e834fdc55cda716e0b",
+   "https://git.kernel.org/stable/c/153ea96c806aea395daba907a4f88480b6ad5093",
+   "https://git.kernel.org/stable/c/b18675263db1147c8e1cab625400c13a0d87bd2d",
+   "https://git.kernel.org/stable/c/c9b5ff59feffb92a147a84a5aa28acd2cb8ff4c5",
+   "https://git.kernel.org/stable/c/67ba971ae02514d85818fe0c32549ab4bfa3bf49"
+  ]
+ }
+]

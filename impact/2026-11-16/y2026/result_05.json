@@ -1,0 +1,405 @@
+[
+ {
+  "cve": "CVE-2026-22769",
+  "vendor": "Dell",
+  "product": "RecoverPoint for Virtual Machines (RP4VMs)",
+  "added": "2026-02-18",
+  "campaign": "UNC6201 Dell RecoverPoint zero-day",
+  "campaign_note": "Google GTIG/Mandiant reported that suspected PRC-nexus cluster UNC6201 exploited the hard-coded credential since at least mid-2024 to deploy SLAYSTYLE, BRICKSTORM and GRIMBOLT; Mandiant put the victim count at under a dozen organizations.",
+  "first_exploitation_claim": {
+   "date": "2026-02-17",
+   "source": "Google Threat Intelligence Group / Mandiant",
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/unc6201-exploiting-dell-recoverpoint-zero-day"
+  },
+  "evidence": [
+   {
+    "kind": "organizations",
+    "value": "less than a dozen",
+    "counts_what": "organizations known to Mandiant to be impacted by UNC6201 exploitation of CVE-2026-22769 (upper bound, not an exact count)",
+    "measured_by": "Mandiant Consulting (Rich Reece), quoted by The Hacker News",
+    "measured_on": "2026-02-18",
+    "url": "https://thehackernews.com/2026/02/dell-recoverpoint-for-vms-zero-day-cve.html",
+    "quote": "We are aware of less than a dozen impacted organizations",
+    "primary_opened": false
+   },
+   {
+    "kind": "other",
+    "value": "mid-2024",
+    "counts_what": "earliest identified exploitation activity (zero-day dwell of roughly 18 months before disclosure)",
+    "measured_by": "Google Threat Intelligence Group / Mandiant",
+    "measured_on": "2026-02-17",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/unc6201-exploiting-dell-recoverpoint-zero-day",
+    "quote": "The earliest identified exploitation activity of this vulnerability occurred in mid-2024.",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-9082",
+  "vendor": "Drupal",
+  "product": "Core",
+  "added": "2026-05-22",
+  "campaign": "",
+  "campaign_note": "Exploit attempts against PostgreSQL-backed Drupal sites began within about two days of the 2026-05-20 fix; Imperva characterized most activity as probing and no compromise counts were found.",
+  "first_exploitation_claim": {
+   "date": "2026-05-22",
+   "source": "Drupal Security Team advisory update (SA-CORE-2026-004), as reported by The Hacker News",
+   "url": "https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html"
+  },
+  "evidence": [
+   {
+    "kind": "attack_volume",
+    "value": 15000,
+    "counts_what": "attack attempts (lower bound, 'over 15,000') targeting almost 6,000 individual sites across 65 countries; mostly probing; not a compromise count",
+    "measured_by": "Imperva (Thales), reported by The Hacker News",
+    "measured_on": "",
+    "url": "https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html",
+    "quote": "observed over 15,000 attack attempts targeting almost 6,000 individual sites across 65 countries",
+    "primary_opened": false
+   },
+   {
+    "kind": "attack_volume",
+    "value": 6000,
+    "counts_what": "individual sites targeted by attack attempts ('almost 6,000'); targeted, not compromised",
+    "measured_by": "Imperva (Thales), reported by The Hacker News",
+    "measured_on": "",
+    "url": "https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html",
+    "quote": "observed over 15,000 attack attempts targeting almost 6,000 individual sites across 65 countries",
+    "primary_opened": false
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "attack_volume_only"
+ },
+ {
+  "cve": "CVE-2025-53521",
+  "vendor": "F5",
+  "product": "BIG-IP",
+  "added": "2026-03-27",
+  "campaign": "F5 BIG-IP APM RCE exploitation 2026",
+  "campaign_note": "Disclosed October 2025 as a DoS, re-categorized by F5 to unauthenticated RCE in March 2026 with confirmed exploitation; no victim or compromise counts published, only Shadowserver fingerprint counts of exposed BIG-IP APM.",
+  "first_exploitation_claim": {
+   "date": "2026-03-27",
+   "source": "CISA KEV",
+   "url": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-f5-big-ip-flaw-in-attacks-patch-now/"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": 17100,
+    "counts_what": "IPs with BIG-IP APM fingerprints (exposed product, not confirmed vulnerable configuration); 'over 17,100'; article dated 2026-04-02 says 'on Wednesday'",
+    "measured_by": "Shadowserver, reported by BleepingComputer",
+    "measured_on": "",
+    "url": "https://www.bleepingcomputer.com/news/security/over-14-000-f5-big-ip-apm-instances-still-exposed-to-rce-attacks/",
+    "quote": "Shadowserver said on Wednesday that it now tracks over 17,100 IPs with BIG-IP APM fingerprints.",
+    "primary_opened": false
+   },
+   {
+    "kind": "exposed",
+    "value": 14100,
+    "counts_what": "IPs with F5 BIG-IP APM fingerprints exposed online (exposed product, not confirmed vulnerable); 'over 14,100'; US 5138, Europe 4750, Asia 2689; article dated 2026-04-06",
+    "measured_by": "Shadowserver, reported by Security Affairs",
+    "measured_on": "",
+    "url": "https://securityaffairs.com/190384/security/attackers-exploit-rce-flaw-as-14000-f5-big-ip-apm-instances-remain-exposed.html",
+    "quote": "tracking over 14,100 IPs with F5 BIG-IP APM fingerprints exposed online",
+    "primary_opened": false
+   },
+   {
+    "kind": "exposed",
+    "value": 240000,
+    "counts_what": "BIG-IP instances of any module exposed online (exposed product, broader than APM, not confirmed vulnerable); 'over 240,000'; article dated 2026-03-30",
+    "measured_by": "Shadowserver, reported by BleepingComputer",
+    "measured_on": "",
+    "url": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-f5-big-ip-flaw-in-attacks-patch-now/",
+    "quote": "over 240,000 BIG-IP instances exposed online",
+    "primary_opened": false
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-94127",
+  "vendor": "F5",
+  "product": "BIG-IP APM",
+  "added": "2026-09-22",
+  "campaign": "",
+  "campaign_note": "F5 disclosed the APM OAuth heap overflow on 2026-09-22 as already exploited; no attribution, victim or compromise counts found, only a Shadowserver fingerprint count of exposed BIG-IP APM.",
+  "first_exploitation_claim": {
+   "date": "2026-09-22",
+   "source": "F5 security advisory K000162605, as reported by BleepingComputer",
+   "url": "https://bleepingcomputer.com/news/security/f5-warns-of-big-ip-apm-remote-code-execution-zero-day-exploited-in-attacks"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": 14700,
+    "counts_what": "IP addresses with BIG-IP APM fingerprints (exposed product; not confirmed to have the vulnerable access policy plus OAuth profile configuration); 'over 14,700'; 'currently' as of article dated 2026-09-23",
+    "measured_by": "Shadowserver, reported by BleepingComputer",
+    "measured_on": "",
+    "url": "https://bleepingcomputer.com/news/security/f5-warns-of-big-ip-apm-remote-code-execution-zero-day-exploited-in-attacks",
+    "quote": "Shadowserver currently tracks over 14,700 IP addresses with BIG-IP APM fingerprints.",
+    "primary_opened": false
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-24858",
+  "vendor": "Fortinet",
+  "product": "Multiple Products",
+  "added": "2026-01-27",
+  "campaign": "FortiCloud SSO abuse January 2026",
+  "campaign_note": "Attackers used two malicious FortiCloud SSO accounts to log into other customers' FortiGates, download configurations and create local admin accounts; Fortinet says only that a small number of customers reported it.",
+  "first_exploitation_claim": {
+   "date": "2026-01-21",
+   "source": "Fortinet customer reports, per BleepingComputer (Arctic Wolf bulletin same day; Fortinet PSIRT blog 2026-01-22)",
+   "url": "https://www.bleepingcomputer.com/news/security/fortinet-blocks-exploited-forticloud-sso-zero-day-until-patch-is-ready/"
+  },
+  "evidence": [
+   {
+    "kind": "organizations",
+    "value": "a small number",
+    "counts_what": "customers reporting unexpected login activity on their devices (unquantified)",
+    "measured_by": "Fortinet PSIRT",
+    "measured_on": "2026-01-22",
+    "url": "https://www.fortinet.com/blog/psirt-blogs/analysis-of-sso-abuse-on-fortios",
+    "quote": "a small number of customers reported unexpected login activity occurring on their devices",
+    "primary_opened": true
+   },
+   {
+    "kind": "other",
+    "value": 2,
+    "counts_what": "malicious FortiCloud SSO accounts used by the attackers (attacker infrastructure, not victims)",
+    "measured_by": "Fortinet, reported by BleepingComputer",
+    "measured_on": "2026-01-22",
+    "url": "https://www.bleepingcomputer.com/news/security/fortinet-blocks-exploited-forticloud-sso-zero-day-until-patch-is-ready/",
+    "quote": "two malicious FortiCloud SSO accounts, which were locked out on January 22",
+    "primary_opened": false
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-35616",
+  "vendor": "Fortinet",
+  "product": "FortiClient EMS",
+  "added": "2026-04-06",
+  "campaign": "FortiClient EMS exploitation March-April 2026",
+  "campaign_note": "Zero-day exploitation of the EMS access-control flaw was seen by Defused Cyber and on watchTowr honeypots from 2026-03-31, days after CVE-2026-21643 came under attack; it is not known whether the same actor is behind both.",
+  "first_exploitation_claim": {
+   "date": "2026-03-31",
+   "source": "watchTowr honeypots, as reported by The Hacker News",
+   "url": "https://thehackernews.com/2026/04/fortinet-patches-actively-exploited-cve.html"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": 2000,
+    "counts_what": "publicly accessible FortiClient EMS instances globally (exposed product, not confirmed vulnerable); 'over 2,000' in one sentence and 'approximately 2,000' in another; article dated 2026-04-06; secondary outlet outside the brief's named press list",
+    "measured_by": "Shadowserver, reported by Cyber Security News",
+    "measured_on": "",
+    "url": "https://cybersecuritynews.com/forticlient-ems-instances-exposed-online/",
+    "quote": "identifying over 2,000 publicly accessible instances globally",
+    "primary_opened": false
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-21643",
+  "vendor": "Fortinet",
+  "product": "FortiClient EMS",
+  "added": "2026-04-13",
+  "campaign": "FortiClient EMS exploitation March-April 2026",
+  "campaign_note": "The EMS SQL injection came under active exploitation days before CVE-2026-35616 was disclosed; no first-exploitation date or victim count was found.",
+  "first_exploitation_claim": {
+   "date": null,
+   "source": "The Hacker News (2026-04-05 article says the flaw had come under active exploitation days earlier; no date or original reporter given)",
+   "url": "https://thehackernews.com/2026/04/fortinet-patches-actively-exploited-cve.html"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": 2000,
+    "counts_what": "publicly accessible FortiClient EMS instances globally (exposed product, not confirmed vulnerable; same figure as recorded for CVE-2026-35616); article dated 2026-04-06; secondary outlet outside the brief's named press list",
+    "measured_by": "Shadowserver, reported by Cyber Security News",
+    "measured_on": "",
+    "url": "https://cybersecuritynews.com/forticlient-ems-instances-exposed-online/",
+    "quote": "identifying over 2,000 publicly accessible instances globally",
+    "primary_opened": false
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-25089",
+  "vendor": "Fortinet",
+  "product": "FortiSandbox",
+  "added": "2026-07-16",
+  "campaign": "FortiSandbox command injection July 2026",
+  "campaign_note": "NOT SEARCHED: the session web-search budget ran out before this CVE; only the vendor advisory was read, and it (published 2026-06-09, no later updates) still lists Known Exploited: No.",
+  "first_exploitation_claim": {
+   "date": "2026-07-16",
+   "source": "CISA KEV",
+   "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-141"
+  },
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2026-39808",
+  "vendor": "Fortinet",
+  "product": "FortiSandbox",
+  "added": "2026-07-16",
+  "campaign": "FortiSandbox command injection July 2026",
+  "campaign_note": "NOT SEARCHED: the session web-search budget ran out before this CVE; only the vendor advisory was read, and it (published 2026-04-14, no later updates) still lists Known Exploited: No.",
+  "first_exploitation_claim": {
+   "date": "2026-07-16",
+   "source": "CISA KEV",
+   "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-100"
+  },
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2025-68686",
+  "vendor": "Fortinet",
+  "product": "FortiOS",
+  "added": "2026-07-27",
+  "campaign": "",
+  "campaign_note": "NOT SEARCHED: the session web-search budget ran out before this CVE; only the vendor advisory was read (published 2026-02-10, updated 2026-03-12), which lists Known Exploited: No and says abuse requires prior compromise via another known vulnerability.",
+  "first_exploitation_claim": {
+   "date": "2026-07-27",
+   "source": "CISA KEV",
+   "url": "https://fortiguard.fortinet.com/psirt/FG-IR-25-934"
+  },
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2025-25249",
+  "vendor": "Fortinet",
+  "product": "Multiple Products",
+  "added": "2026-09-09",
+  "campaign": "",
+  "campaign_note": "NOT SEARCHED: the session web-search budget ran out before this CVE; only the vendor advisory was read (published 2026-01-13, updated 2026-02-23), which lists Known Exploited: No.",
+  "first_exploitation_claim": {
+   "date": "2026-09-09",
+   "source": "CISA KEV",
+   "url": "https://fortiguard.fortinet.com/psirt/FG-IR-25-084"
+  },
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2026-104286",
+  "vendor": "Fortinet",
+  "product": "FortiMail",
+  "added": "2026-10-01",
+  "campaign": "",
+  "campaign_note": "NOT SEARCHED: the session web-search budget ran out before this CVE; the vendor advisory (published 2026-10-01, updated through 2026-10-07) states the flaw was reported exploited in the wild and gives no counts.",
+  "first_exploitation_claim": {
+   "date": "2026-10-01",
+   "source": "Fortinet PSIRT advisory FG-IR-26-175",
+   "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-175"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "exploited in the wild (unquantified)",
+    "counts_what": "vendor confirmation of exploitation, no victim or device count",
+    "measured_by": "Fortinet PSIRT",
+    "measured_on": "2026-10-01",
+    "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-175",
+    "quote": "This has been reported to be exploited in the wild, customers are urged to apply the workaround below.",
+    "primary_opened": true
+   }
+  ],
+  "searches_run": 0,
+  "verdict": "qualitative_only",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2026-60004",
+  "vendor": "Gitea",
+  "product": "Gitea",
+  "added": "2026-08-25",
+  "campaign": "",
+  "campaign_note": "NOT SEARCHED: the session web-search budget ran out before this CVE; the GitHub advisory (published 2026-07-28) describes a PoC only and says nothing about exploitation or affected instance counts.",
+  "first_exploitation_claim": {
+   "date": "2026-08-25",
+   "source": "CISA KEV",
+   "url": "https://github.com/go-gitea/gitea/security/advisories/GHSA-rcr6-4jqh-j84m"
+  },
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2021-39935",
+  "vendor": "GitLab",
+  "product": "Community and Enterprise Editions",
+  "added": "2026-02-03",
+  "campaign": "",
+  "campaign_note": "NOT RESEARCHED: the session web-search budget ran out before this CVE and no page was fetched; the first-exploitation claim below is a placeholder, not a finding that nothing earlier exists.",
+  "first_exploitation_claim": {
+   "date": "2026-02-03",
+   "source": "CISA KEV",
+   "url": "https://about.gitlab.com/releases/2021/12/06/security-release-gitlab-14-5-2-released/"
+  },
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2021-22175",
+  "vendor": "GitLab",
+  "product": "GitLab",
+  "added": "2026-02-18",
+  "campaign": "",
+  "campaign_note": "NOT RESEARCHED: the session web-search budget ran out before this CVE and no page was fetched; the first-exploitation claim below is a placeholder, not a finding that nothing earlier exists.",
+  "first_exploitation_claim": {
+   "date": "2026-02-18",
+   "source": "CISA KEV",
+   "url": "https://gitlab.com/gitlab-org/cves/-/blob/master/2021/CVE-2021-22175.json"
+  },
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2026-85706",
+  "vendor": "GitLab",
+  "product": "Community Edition and Enterprise Edition",
+  "added": "2026-09-11",
+  "campaign": "",
+  "campaign_note": "NOT SEARCHED: the session web-search budget ran out before this CVE; GitLab's patch release page (fix released 2026-09-10) notes only that the CVE was added to CISA KEV, with no exploitation details or counts.",
+  "first_exploitation_claim": {
+   "date": "2026-09-11",
+   "source": "CISA KEV",
+   "url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-3-2-released/"
+  },
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ }
+]

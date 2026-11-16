@@ -1,0 +1,187 @@
+[
+ {
+  "cve": "CVE-2026-76461", "vendor": "Cisco", "product": "Secure Email Gateway", "added": "2026-09-14",
+  "campaign": "",
+  "campaign_note": "Cisco disclosed the zero-day on 2026-09-14 after finding it through a TAC case and said it directly contacted Secure Email Cloud customers on whose devices malicious activity was detected; no counts published.",
+  "first_exploitation_claim": {"date": "2026-09-14", "source": "Cisco PSIRT advisory cisco-sa-esa-inj-2bLVGmhX (as reported by Help Net Security)", "url": "https://www.helpnetsecurity.com/2026/09/15/cve-2026-76461-cisco-email-gateway-zero-day-exploited/"},
+  "evidence": [
+   {"kind": "other", "value": "unspecified number of cloud customers notified", "counts_what": "Cisco Secure Email Cloud customers with malicious activity detected on their devices (no count given)", "measured_by": "Cisco", "measured_on": "2026-09-14", "url": "https://www.helpnetsecurity.com/2026/09/15/cve-2026-76461-cisco-email-gateway-zero-day-exploited/", "quote": "has directly contacted customers who own Cisco Secure Email Cloud devices on which malicious activity was detected", "primary_opened": false}
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-76460", "vendor": "Cisco", "product": "Identity Services Engine", "added": "2026-09-16",
+  "campaign": "",
+  "campaign_note": "Cisco patched the CVSS 10.0 ISE API authentication bypass on 2026-09-16 as an exploited zero-day; no victim or exposure counts found, only CrowdSec attack telemetry that began after a public Nuclei check appeared in late October.",
+  "first_exploitation_claim": {"date": "2026-09-16", "source": "Cisco advisory (as cited by CrowdSec)", "url": "https://www.crowdsec.net/vulntracking-report/cve-2026-76460-cisco-ise-authentication-bypass-exploitation"},
+  "evidence": [
+   {"kind": "attack_volume", "value": 540, "counts_what": "CrowdSec Network signals matching the CVE-2026-76460 pattern, 2026-10-28 to 2026-11-01 (attack attempts, not compromises)", "measured_by": "CrowdSec", "measured_on": "2026-11-01", "url": "https://www.crowdsec.net/vulntracking-report/cve-2026-76460-cisco-ise-authentication-bypass-exploitation", "quote": "Between October 28 and November 1, 2026, the CrowdSec Network recorded 540 signals", "primary_opened": true},
+   {"kind": "attack_volume", "value": 311, "counts_what": "unique attacking IP addresses listed by CrowdSec Live Exploit Tracker through 2026-11-02", "measured_by": "CrowdSec", "measured_on": "2026-11-02", "url": "https://www.crowdsec.net/vulntracking-report/cve-2026-76460-cisco-ise-authentication-bypass-exploitation", "quote": "The Live Exploit Tracker lists 311 unique IP addresses through November 2.", "primary_opened": true}
+  ],
+  "searches_run": 2,
+  "verdict": "attack_volume_only"
+ },
+ {
+  "cve": "CVE-2026-76504", "vendor": "Cisco", "product": "Catalyst SD-WAN Manager", "added": "2026-09-30",
+  "campaign": "",
+  "campaign_note": "Cisco disclosed the authentication bypass on 2026-09-30 saying it became aware of exploitation in September 2026 via a TAC case; it published IOCs but no attack details, counts or attribution.",
+  "first_exploitation_claim": {"date": "2026-09-30", "source": "Cisco advisory cisco-sa-sdwan-webauth-xr8beuuU (as reported by Help Net Security)", "url": "https://www.helpnetsecurity.com/2026/10/01/new-cisco-sd-wan-zero-day-exploited-in-the-wild-cve-2026-76504/"},
+  "evidence": [],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-76519", "vendor": "Cisco", "product": "Secure Email Gateway", "added": "2026-10-14",
+  "campaign": "",
+  "campaign_note": "Cisco disclosed the AMP path-traversal zero-day on 2026-10-14, said PSIRT became aware of exploitation in October 2026 and contacted Secure Email Cloud owners with evidence of potential compromise; no compromise count published.",
+  "first_exploitation_claim": {"date": "2026-10-14", "source": "Cisco advisory cisco-sa-esa-afw-zqYJkjxp (as reported by BleepingComputer)", "url": "https://www.bleepingcomputer.com/news/security/cisco-patches-actively-exploited-secure-email-gateway-zero-day/"},
+  "evidence": [
+   {"kind": "exposed", "value": "nearly 300", "counts_what": "internet-exposed Cisco Secure Email Gateway instances (exposed product, not confirmed vulnerable)", "measured_by": "Shadowserver (reported by BleepingComputer)", "measured_on": "2026-10-14", "url": "https://www.bleepingcomputer.com/news/security/cisco-patches-actively-exploited-secure-email-gateway-zero-day/", "quote": "Shadowserver tracks nearly 300 Cisco Secure Email Gateway instances exposed online", "primary_opened": false}
+  ],
+  "searches_run": 2,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-3055", "vendor": "Citrix", "product": "NetScaler", "added": "2026-03-30",
+  "campaign": "",
+  "campaign_note": "Citrix disclosed the SAML IdP memory overread on 2026-03-23; watchTowr and Defused reported reconnaissance and then exploitation attempts from known threat-actor IPs from at least 2026-03-27; no quotable exposure or victim count was retrieved.",
+  "first_exploitation_claim": {"date": "2026-03-27", "source": "watchTowr (as reported by The Hacker News)", "url": "https://thehackernews.com/2026/03/citrix-netscaler-under-active-recon-for.html"},
+  "evidence": [
+   {"kind": "other", "value": "since at least 2026-03-27", "counts_what": "exploitation attempts from known threat actor source IPs (no count given)", "measured_by": "watchTowr (reported by The Hacker News)", "measured_on": "2026-03-27", "url": "https://thehackernews.com/2026/03/citrix-netscaler-under-active-recon-for.html", "quote": "According to watchTowr, exploitation attempts have originated from known threat actor source IPs as of March 27, 2026.", "primary_opened": false}
+  ],
+  "searches_run": 1,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-8452", "vendor": "Citrix", "product": "NetScaler ADC and NetScaler Gateway", "added": "2026-08-26",
+  "campaign": "",
+  "campaign_note": "Patched 2026-06-30 as a DoS bug; after watchTowr showed root RCE and published a PoC on 2026-08-14, Defused and Previdian sensors saw exploitation and web shells (x.php, z.php) were reported dropped on appliances, with no count of compromised devices.",
+  "first_exploitation_claim": {"date": null, "source": "Defused Cyber / Previdian sensor reports, about one week before the 2026-08-26 CISA alert (as reported by BleepingComputer and Help Net Security; exact date not stated)", "url": "https://www.helpnetsecurity.com/2026/08/27/netscaler-adc-gateway-cve-2026-8452/"},
+  "evidence": [
+   {"kind": "exposed", "value": "over 22,000 ADC and nearly 1,800 Gateway", "counts_what": "internet-exposed NetScaler ADC appliances and Gateway instances (exposed product; patch status and configuration unknown)", "measured_by": "Shadowserver (reported by BleepingComputer)", "measured_on": "2026-08-27", "url": "https://www.bleepingcomputer.com/news/security/cisa-hackers-now-exploiting-citrix-netscaler-rce-flaw-in-attacks/", "quote": "tracks over 22,000 NetScaler ADC appliances and nearly 1,800 Gateway instances exposed online", "primary_opened": false},
+   {"kind": "attack_volume", "value": 3, "counts_what": "unique attacking IPs seen by Previdian sensors (attack attempts, not compromises)", "measured_by": "Previdian (reported by Help Net Security)", "measured_on": "", "url": "https://www.helpnetsecurity.com/2026/08/27/netscaler-adc-gateway-cve-2026-8452/", "quote": "So far we have seen three unique IPs, from three different countries", "primary_opened": false}
+  ],
+  "searches_run": 1,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-19490", "vendor": "Citrix", "product": "NetScaler", "added": "2026-09-09",
+  "campaign": "",
+  "campaign_note": "Patched 2026-08-19; Previdian sensors recorded exploitation attempts from 2026-09-03, one day after a public exploit appeared on GitHub; Previdian said this does not confirm successful compromise of real systems.",
+  "first_exploitation_claim": {"date": "2026-09-03", "source": "Previdian (as reported by The Hacker News and SecurityWeek)", "url": "https://www.securityweek.com/critical-netscaler-vulnerability-exploited-in-attacks/"},
+  "evidence": [
+   {"kind": "attack_volume", "value": "10 attempts from 6 IPs", "counts_what": "exploitation attempts and unique source IPs against Previdian NetScaler sensors as of 2026-09-03 (not compromises)", "measured_by": "Previdian (reported by The Hacker News)", "measured_on": "2026-09-03", "url": "https://thehackernews.com/2026/08/critical-netscaler-flaw-can-bypass.html", "quote": "shows 10 exploitation attempts coming from six unique IP addresses in Australia, Germany, Japan, and the U.S.", "primary_opened": false}
+  ],
+  "searches_run": 1,
+  "verdict": "attack_volume_only"
+ },
+ {
+  "cve": "CVE-2026-88771", "vendor": "Citrix", "product": "NetScaler", "added": "2026-09-27",
+  "campaign": "NetScaler Sept-2026 zero-days (CVE-2026-88771/88772)",
+  "campaign_note": "Citrix disclosed two exploited pre-auth RCE zero-days on 2026-09-27; GTIG/Mandiant describe a suspected state-sponsored campaign active since at least 2026-09-03 (Palo Alto Networks traced activity to 2026-08-21) deploying custom webshells, escalating to mass exploitation after a watchTowr PoC for CVE-2026-88771.",
+  "first_exploitation_claim": {"date": "2026-09-27", "source": "Citrix security bulletin CTX697096", "url": "https://support.citrix.com/external/article/CTX697096"},
+  "evidence": [
+   {"kind": "organizations", "value": "over 100", "counts_what": "victim organizations tracked by Kevin Beaumont, each with a unique webshell", "measured_by": "Kevin Beaumont (reported by Help Net Security)", "measured_on": "2026-09-29", "url": "https://helpnetsecurity.com/2026/09/29/netscaler-zero-day-exploitation-escalates-into-mass-attacks-cve-2026-88771", "quote": "he is tracking over 100 victim organizations", "primary_opened": false},
+   {"kind": "organizations", "value": "at least 78", "counts_what": "organizations targeted in the attacks across the U.S., Canada and Europe", "measured_by": "Arctic Wolf (reported by Cybersecurity Dive)", "measured_on": "2026-09-30", "url": "https://www.cybersecuritydive.com/news/exploitation-citrix-netscaler-what-we-know/831780/", "quote": "at least 78 organizations", "primary_opened": false},
+   {"kind": "organizations", "value": "dozens", "counts_what": "organizations across North America and Europe identified as affected", "measured_by": "Google Threat Intelligence Group / Mandiant (reported by Cybersecurity Dive)", "measured_on": "2026-09-30", "url": "https://www.cybersecuritydive.com/news/exploitation-citrix-netscaler-what-we-know/831780/", "quote": "dozens of organizations across North America and Europe", "primary_opened": false},
+   {"kind": "exposed", "value": "more than 20,000", "counts_what": "NetScaler instances exposed and potentially vulnerable", "measured_by": "Shadowserver (reported by Cybersecurity Dive)", "measured_on": "2026-09-30", "url": "https://www.cybersecuritydive.com/news/exploitation-citrix-netscaler-what-we-know/831780/", "quote": "More than 20,000 Citrix NetScaler instances are exposed and potentially vulnerable", "primary_opened": false},
+   {"kind": "exposed", "value": "around 42,000", "counts_what": "internet-facing hosts running NetScaler ADC or Gateway (exposed product; vulnerability status unknown)", "measured_by": "Censys (reported by Help Net Security)", "measured_on": "2026-09-29", "url": "https://helpnetsecurity.com/2026/09/29/netscaler-zero-day-exploitation-escalates-into-mass-attacks-cve-2026-88771", "quote": "currently detects around 42,000 internet-facing hosts running NetScaler ADC or NetScaler Gateway", "primary_opened": false},
+   {"kind": "other", "value": "fewer than 10%", "counts_what": "share of exposed NetScaler hosts patched, from a firmware-version scan", "measured_by": "Kevin Beaumont (reported by Help Net Security)", "measured_on": "2026-09-29", "url": "https://helpnetsecurity.com/2026/09/29/netscaler-zero-day-exploitation-escalates-into-mass-attacks-cve-2026-88771", "quote": "fewer than 10% of exposed hosts are currently patched.", "primary_opened": false}
+  ],
+  "searches_run": 1,
+  "verdict": "quantified_compromise"
+ },
+ {
+  "cve": "CVE-2026-88772", "vendor": "Citrix", "product": "NetScaler", "added": "2026-09-27",
+  "campaign": "NetScaler Sept-2026 zero-days (CVE-2026-88771/88772)",
+  "campaign_note": "Citrix disclosed two exploited pre-auth RCE zero-days on 2026-09-27; GTIG/Mandiant describe a suspected state-sponsored campaign active since at least 2026-09-03 (Palo Alto Networks traced activity to 2026-08-21) deploying custom webshells, escalating to mass exploitation after a watchTowr PoC for CVE-2026-88771.",
+  "first_exploitation_claim": {"date": "2026-09-27", "source": "Citrix security bulletin CTX697096", "url": "https://support.citrix.com/external/article/CTX697096"},
+  "evidence": [
+   {"kind": "organizations", "value": "over 100", "counts_what": "victim organizations tracked by Kevin Beaumont, each with a unique webshell (campaign-level; not split by CVE)", "measured_by": "Kevin Beaumont (reported by Help Net Security)", "measured_on": "2026-09-29", "url": "https://helpnetsecurity.com/2026/09/29/netscaler-zero-day-exploitation-escalates-into-mass-attacks-cve-2026-88771", "quote": "he is tracking over 100 victim organizations", "primary_opened": false},
+   {"kind": "organizations", "value": "at least 78", "counts_what": "organizations targeted in the attacks across the U.S., Canada and Europe (campaign-level)", "measured_by": "Arctic Wolf (reported by Cybersecurity Dive)", "measured_on": "2026-09-30", "url": "https://www.cybersecuritydive.com/news/exploitation-citrix-netscaler-what-we-know/831780/", "quote": "at least 78 organizations", "primary_opened": false},
+   {"kind": "organizations", "value": "dozens", "counts_what": "organizations across North America and Europe identified as affected", "measured_by": "Google Threat Intelligence Group / Mandiant (reported by Cybersecurity Dive)", "measured_on": "2026-09-30", "url": "https://www.cybersecuritydive.com/news/exploitation-citrix-netscaler-what-we-know/831780/", "quote": "dozens of organizations across North America and Europe", "primary_opened": false},
+   {"kind": "exposed", "value": "more than 20,000", "counts_what": "NetScaler instances exposed and potentially vulnerable", "measured_by": "Shadowserver (reported by Cybersecurity Dive)", "measured_on": "2026-09-30", "url": "https://www.cybersecuritydive.com/news/exploitation-citrix-netscaler-what-we-know/831780/", "quote": "More than 20,000 Citrix NetScaler instances are exposed and potentially vulnerable", "primary_opened": false},
+   {"kind": "exposed", "value": "around 42,000", "counts_what": "internet-facing hosts running NetScaler ADC or Gateway (exposed product; vulnerability status unknown)", "measured_by": "Censys (reported by Help Net Security)", "measured_on": "2026-09-29", "url": "https://helpnetsecurity.com/2026/09/29/netscaler-zero-day-exploitation-escalates-into-mass-attacks-cve-2026-88771", "quote": "currently detects around 42,000 internet-facing hosts running NetScaler ADC or NetScaler Gateway", "primary_opened": false}
+  ],
+  "searches_run": 1,
+  "verdict": "quantified_compromise"
+ },
+ {
+  "cve": "CVE-2026-88779", "vendor": "Citrix", "product": "NetScaler", "added": "2026-10-04",
+  "campaign": "",
+  "campaign_note": "Admins reported freshly patched SAML-configured NetScalers crashing and rebooting from Friday 2026-10-02; Citrix shipped fixes on 2026-10-04 and said it observed targeted attacks on unmitigated deployments; no count of affected appliances or outage duration was published.",
+  "first_exploitation_claim": {"date": "2026-10-04", "source": "Citrix (as reported by BleepingComputer; admin reports of forced reboots began 2026-10-02)", "url": "https://www.bleepingcomputer.com/news/security/citrix-patches-netscaler-saml-zero-day-exploited-in-attacks/"},
+  "evidence": [
+   {"kind": "downtime", "value": "repeated forced reboots, multiple customers (no count or duration)", "counts_what": "customers running NetScaler 14.1-73.37 experiencing repeated forced reboots, per one NetScaler admin", "measured_by": "unnamed NetScaler administrator (reported by BleepingComputer)", "measured_on": "2026-10-04", "url": "https://www.bleepingcomputer.com/news/security/citrix-patches-netscaler-saml-zero-day-exploited-in-attacks/", "quote": "one NetScaler admin said multiple customers running NetScaler 14.1-73.37 were experiencing repeated forced reboots", "primary_opened": false},
+   {"kind": "exposed", "value": "more than 20,000", "counts_what": "NetScaler instances exposed and potentially vulnerable (not specific to SAML-configured appliances)", "measured_by": "Shadowserver (reported by Cybersecurity Dive)", "measured_on": "2026-10-05", "url": "https://www.cybersecuritydive.com/news/citrix-patch-third-exploited-flaw-netscaler/832128/", "quote": "more than 20,000 instances", "primary_opened": false}
+  ],
+  "searches_run": 1,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2024-1708", "vendor": "ConnectWise", "product": "ScreenConnect", "added": "2026-04-28",
+  "campaign": "",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2026-84869", "vendor": "ConnectWise", "product": "ScreenConnect", "added": "2026-09-11",
+  "campaign": "",
+  "campaign_note": "Huntress reported worm-like abuse of modified ScreenConnect clients delivering VBScript payloads to newly connected endpoints from 2026-08-20; ConnectWise issued mitigations on 2026-09-07 and fixed it in 26.6.5.",
+  "first_exploitation_claim": {"date": "2026-09-07", "source": "Huntress (blog; reported by SecurityWeek on 2026-09-07, incidents dated from 2026-08-20)", "url": "https://www.huntress.com/blog/rogue-screenconnect-installations"},
+  "evidence": [
+   {"kind": "compromised", "value": 3, "counts_what": "critical incident reports Huntress sent in late August 2026 for rogue ScreenConnect client activity (later 'several more incidents', uncounted)", "measured_by": "Huntress", "measured_on": "", "url": "https://www.huntress.com/blog/rogue-screenconnect-installations", "quote": "sent out three critical incident reports", "primary_opened": true},
+   {"kind": "exposed", "value": "over 1,000", "counts_what": "unpatched ScreenConnect instances exposed online (vulnerable; 758 in North America, 180 in Europe)", "measured_by": "Shadowserver (reported by BleepingComputer)", "measured_on": "2026-09-16", "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-critical-screenconnect-flaw/", "quote": "over 1,000 ScreenConnect instances", "primary_opened": false}
+  ],
+  "searches_run": 1,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2025-32432", "vendor": "Craft CMS", "product": "Craft CMS", "added": "2026-03-20",
+  "campaign": "",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2025-29635", "vendor": "D-Link", "product": "DIR-823X", "added": "2026-04-24",
+  "campaign": "",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ },
+ {
+  "cve": "CVE-2026-8398", "vendor": "Daemon", "product": "Daemon Tools Lite", "added": "2026-05-27",
+  "campaign": "DAEMON Tools Lite supply-chain compromise",
+  "campaign_note": "Signed DAEMON Tools Lite installers (12.5.0.2421-12.5.0.2434) served from the official site were trojanized from 2026-04-08 until about 2026-05-05; Kaspersky GReAT found it and the vendor confirmed a build-environment compromise on 2026-05-06.",
+  "first_exploitation_claim": {"date": "2026-05-05", "source": "Kaspersky Securelist", "url": "https://securelist.com/tr/daemon-tools-backdoor/119654/"},
+  "evidence": [
+   {"kind": "compromised", "value": "several thousand", "counts_what": "infection attempts involving DAEMON Tools seen in Kaspersky telemetry since early April 2026 (attempts on Kaspersky-protected machines, not confirmed infections)", "measured_by": "Kaspersky", "measured_on": "2026-05-05", "url": "https://securelist.com/tr/daemon-tools-backdoor/119654/", "quote": "Starting in early April, we have observed several thousand infection attempts involving DAEMON Tools in our telemetry,", "primary_opened": true},
+   {"kind": "compromised", "value": "a dozen", "counts_what": "infected machines that received further-stage payloads", "measured_by": "Kaspersky", "measured_on": "2026-05-05", "url": "https://securelist.com/tr/daemon-tools-backdoor/119654/", "quote": "out of all the machines infected, we observed further-stage payloads being deployed to only a dozen of them.", "primary_opened": true},
+   {"kind": "other", "value": "more than 100", "counts_what": "countries with affected individuals and organizations", "measured_by": "Kaspersky", "measured_on": "2026-05-05", "url": "https://securelist.com/tr/daemon-tools-backdoor/119654/", "quote": "with individuals and organizations in more than 100 countries affected.", "primary_opened": true}
+  ],
+  "searches_run": 1,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2021-27137", "vendor": "DD-WRT", "product": "DD-WRT", "added": "2026-07-21",
+  "campaign": "",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 0,
+  "verdict": "nothing_found",
+  "incomplete": true
+ }
+]

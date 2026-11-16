@@ -1,0 +1,199 @@
+[
+ {
+  "cve": "CVE-2020-9715",
+  "vendor": "Adobe",
+  "product": "Acrobat",
+  "added": "2026-04-13",
+  "campaign": "",
+  "campaign_note": "No research done beyond the vendor bulletin: the web-search budget was exhausted and Adobe's APSB20-48 page returned HTTP 403, so what prompted the 2026 KEV addition is not established.",
+  "first_exploitation_claim": {"date": "2026-04-13", "source": "CISA KEV", "url": "https://helpx.adobe.com/security/products/acrobat/apsb20-48.html"},
+  "evidence": [],
+  "searches_run": 0,
+  "search_limited": true,
+  "verdict": "nothing_found"
+ },
+ {
+  "cve": "CVE-2009-3459",
+  "vendor": "Adobe",
+  "product": "Acrobat and Reader",
+  "added": "2026-05-20",
+  "campaign": "",
+  "campaign_note": "CISA's reference points at a NOTE in Adobe bulletin APSB09-15 beginning 'There are reports' (2009-era exploitation); the archived page could not be fetched and no search was possible, so no impact figures and no reason for the 2026 addition were found.",
+  "first_exploitation_claim": {"date": null, "source": "Adobe APSB09-15 (NOTE cited in CISA's reference URL; page not fetchable, date not verified)", "url": "https://web.archive.org/web/20120324170253/http://www.adobe.com/support/security/bulletins/apsb09-15.html"},
+  "evidence": [],
+  "searches_run": 0,
+  "search_limited": true,
+  "verdict": "nothing_found"
+ },
+ {
+  "cve": "CVE-2026-71362",
+  "vendor": "Adobe",
+  "product": "Commerce and Magento",
+  "added": "2026-09-24",
+  "campaign": "",
+  "campaign_note": "Sansec reported its Shield WAF blocking exploitation attempts within a day of Adobe's 2026-08-11 patch (APSB26-92), while Adobe said it knew of no in-the-wild exploits; no count of attempts or of compromised stores was published in the sources read.",
+  "first_exploitation_claim": {"date": "2026-08-12", "source": "Sansec (reported by BleepingComputer)", "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-adobe-commerce-flaw-to-hijack-customer-accounts/"},
+  "evidence": [
+   {"kind": "attack_volume", "value": "exploitation attempts blocked (no count)", "counts_what": "exploitation attempts blocked by Sansec Shield WAF; no number published", "measured_by": "Sansec", "measured_on": "2026-08-12", "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-adobe-commerce-flaw-to-hijack-customer-accounts/", "quote": "its Shield web application firewall (WAF) is already blocking CVE-2026-71362 exploitation attempts", "primary_opened": false}
+  ],
+  "searches_run": 1,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-105133",
+  "vendor": "Ahsay",
+  "product": "AhsayCBS",
+  "added": "2026-10-14",
+  "campaign": "AhsayCBS auth-bypass + command-injection chain (Oct 2026)",
+  "campaign_note": "Huntress observed the two flaws chained for remote code execution from 2026-10-07, with JSP webshells and an XMRig miner dropped; Ahsay's first patches were incomplete and hotfixes 10.3.4.45 / 9.15.2.70 followed on 2026-10-12.",
+  "first_exploitation_claim": {"date": "2026-10-08", "source": "Huntress", "url": "https://www.huntress.com/blog/ahsaycbs-flaws-exploit"},
+  "evidence": [
+   {"kind": "organizations", "value": 5, "counts_what": "organizations targeted via the chained flaws in Huntress's customer base (wording is 'targeted'; the same post describes RCE, webshells and miners on impacted hosts without a host count)", "measured_by": "Huntress", "measured_on": "2026-10-08", "url": "https://www.huntress.com/blog/ahsaycbs-flaws-exploit", "quote": "As of October 8, Huntress has seen five organizations targeted via these flaws.", "primary_opened": true}
+  ],
+  "searches_run": 1,
+  "verdict": "quantified_compromise"
+ },
+ {
+  "cve": "CVE-2026-105134",
+  "vendor": "Ahsay",
+  "product": "AhsayCBS",
+  "added": "2026-10-14",
+  "campaign": "AhsayCBS auth-bypass + command-injection chain (Oct 2026)",
+  "campaign_note": "Huntress observed the two flaws chained for remote code execution from 2026-10-07, with JSP webshells and an XMRig miner dropped; Ahsay's first patches were incomplete and hotfixes 10.3.4.45 / 9.15.2.70 followed on 2026-10-12.",
+  "first_exploitation_claim": {"date": "2026-10-08", "source": "Huntress", "url": "https://www.huntress.com/blog/ahsaycbs-flaws-exploit"},
+  "evidence": [
+   {"kind": "organizations", "value": 5, "counts_what": "organizations targeted via the chained flaws in Huntress's customer base (wording is 'targeted'; the same post describes RCE, webshells and miners on impacted hosts without a host count)", "measured_by": "Huntress", "measured_on": "2026-10-08", "url": "https://www.huntress.com/blog/ahsaycbs-flaws-exploit", "quote": "As of October 8, Huntress has seen five organizations targeted via these flaws.", "primary_opened": true}
+  ],
+  "searches_run": 1,
+  "verdict": "quantified_compromise"
+ },
+ {
+  "cve": "CVE-2021-23758",
+  "vendor": "Ajax.NET Professional",
+  "product": "Ajax.NET Professional",
+  "added": "2026-08-26",
+  "campaign": "",
+  "campaign_note": "One search returned only CVE-database mirrors of the KEV listing; no report of specific attacks, victims or exposure counts was found, and a second search was not possible.",
+  "first_exploitation_claim": {"date": "2026-08-26", "source": "CISA KEV", "url": "https://github.com/michaelschwarz/Ajax.NET-Professional/commit/b0e63be5f0bb20dfce507cb8a1a9568f6e73de57"},
+  "evidence": [],
+  "searches_run": 1,
+  "search_limited": true,
+  "verdict": "nothing_found"
+ },
+ {
+  "cve": "CVE-2025-48595",
+  "vendor": "Android",
+  "product": "Framework",
+  "added": "2026-06-02",
+  "campaign": "",
+  "campaign_note": "Google's June 2026 Android Security Bulletin says the flaw may be under limited, targeted exploitation; no victim or device counts were published there and no search was possible.",
+  "first_exploitation_claim": {"date": "2026-06-01", "source": "Google Android Security Bulletin, June 2026", "url": "https://source.android.com/docs/security/bulletin/2026/2026-06-01"},
+  "evidence": [
+   {"kind": "other", "value": "limited, targeted exploitation", "counts_what": "vendor characterisation of exploitation scope; no number", "measured_by": "Google (Android Security Bulletin)", "measured_on": "2026-06-01", "url": "https://source.android.com/docs/security/bulletin/2026/2026-06-01", "quote": "There are indications that CVE-2025-48595 may be under limited, targeted exploitation.", "primary_opened": true}
+  ],
+  "searches_run": 0,
+  "search_limited": true,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-34197",
+  "vendor": "Apache",
+  "product": "ActiveMQ",
+  "added": "2026-04-16",
+  "campaign": "",
+  "campaign_note": "Jolokia-API code-injection flaw found by Horizon3 and disclosed in early April 2026; CISA flagged exploitation on 2026-04-16 and Shadowserver then counted vulnerable exposed servers, but no compromise count was found (a search snippet attributing first exploitation indicators to FortiGuard on 2026-04-13 was not verified).",
+  "first_exploitation_claim": {"date": "2026-04-16", "source": "CISA KEV", "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-apache-activemq-flaw-as-actively-exploited-in-attacks/"},
+  "evidence": [
+   {"kind": "exposed", "value": 6400, "counts_what": "internet-exposed Apache ActiveMQ servers/IPs vulnerable to CVE-2026-34197 (more than 6,400; version-based)", "measured_by": "Shadowserver Foundation", "measured_on": "2026-04-20", "url": "https://www.bleepingcomputer.com/news/security/actively-exploited-apache-activemq-flaw-impacts-6-400-servers/", "quote": "Shadowserver found that over 6,400 Apache ActiveMQ servers exposed online are vulnerable to ongoing attacks", "primary_opened": false},
+   {"kind": "exposed", "value": 7500, "counts_what": "Apache ActiveMQ servers exposed online (exposed product, not stated as vulnerable; more than 7,500)", "measured_by": "Shadowserver Foundation", "measured_on": "2026-04-17", "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-apache-activemq-flaw-as-actively-exploited-in-attacks/", "quote": "currently tracking more than 7,500 Apache ActiveMQ servers exposed online", "primary_opened": false}
+  ],
+  "searches_run": 1,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-34486",
+  "vendor": "Apache",
+  "product": "Tomcat",
+  "added": "2026-08-04",
+  "campaign": "Tomcat EncryptInterceptor bypass / SNOWLIGHT (Taiwan-focused)",
+  "campaign_note": "Safe Security relays a SOCRadar report of a Taiwan-focused campaign delivering the SNOWLIGHT loader via cluster port 4000 and a CommonsCollections6 deserialization chain, linked to China-nexus UNC5174/UNC6586; SOCRadar's own page returned HTTP 403, and no victim or exposure counts were found.",
+  "first_exploitation_claim": {"date": null, "source": "SOCRadar (as relayed by Safe Security, 2026-10-02; SOCRadar page not fetchable, original date not verified)", "url": "https://safe.security/resources/blog/cve-2026-34486-apache-tomcat-encryptinterceptor-bypass-to-remote-code-execution/"},
+  "evidence": [],
+  "searches_run": 1,
+  "search_limited": true,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2016-3081",
+  "vendor": "Apache",
+  "product": "Struts",
+  "added": "2026-10-08",
+  "campaign": "",
+  "campaign_note": "Old Struts S2-032 flaw added to KEV in 2026; no search was possible, so neither the trigger for the 2026 addition nor any impact figure was established.",
+  "first_exploitation_claim": {"date": "2026-10-08", "source": "CISA KEV", "url": "https://cwiki.apache.org/confluence/display/WW/S2-032"},
+  "evidence": [],
+  "searches_run": 0,
+  "search_limited": true,
+  "verdict": "nothing_found"
+ },
+ {
+  "cve": "CVE-2024-1708",
+  "vendor": "ConnectWise",
+  "product": "ScreenConnect",
+  "added": "2026-04-28",
+  "campaign": "ScreenConnect SlashAndGrab (CVE-2024-1709 + CVE-2024-1708), Feb 2024",
+  "campaign_note": "All figures found date from February 2024 and count ScreenConnect 23.9.7-and-earlier servers for the CVE-2024-1709/1708 pair without splitting by CVE; what prompted the April 2026 KEV addition of the path-traversal half was not found (the ConnectWise bulletin shows no 2025-2026 updates in the portion read).",
+  "first_exploitation_claim": {"date": "2024-02-20", "source": "ConnectWise security bulletin (update of 2024-02-20)", "url": "https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8"},
+  "evidence": [
+   {"kind": "exposed", "value": 8800, "counts_what": "vulnerable ScreenConnect servers exposed online (more than 8,800; versions affected by both CVE-2024-1709 and CVE-2024-1708, not split by CVE)", "measured_by": "Censys (relayed by Huntress)", "measured_on": "2024-02-19", "url": "https://www.bleepingcomputer.com/news/security/screenconnect-critical-bug-now-under-attack-as-exploit-code-emerges/", "quote": "the Censys platform was showing more than 8,800 vulnerable ScreenConnect servers exposed", "primary_opened": false},
+   {"kind": "exposed", "value": 3800, "counts_what": "vulnerable ScreenConnect servers (around 3,800; not split by CVE)", "measured_by": "Shadowserver Foundation", "measured_on": "2024-02-20", "url": "https://www.bleepingcomputer.com/news/security/screenconnect-critical-bug-now-under-attack-as-exploit-code-emerges/", "quote": "yesterday the number was around 3,800", "primary_opened": false},
+   {"kind": "compromised", "value": "multiple victim organizations (no count)", "counts_what": "victim organizations with post-exploitation activity seen by Huntress; no number published", "measured_by": "Huntress", "measured_on": "2024-02-23", "url": "https://www.huntress.com/blog/slashandgrab-screen-connect-post-exploitation-in-the-wild-cve-2024-1709-cve-2024-1708", "quote": "across multiple unique victim organizations", "primary_opened": true}
+  ],
+  "searches_run": 1,
+  "search_limited": true,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2025-32432",
+  "vendor": "Craft CMS",
+  "product": "Craft CMS",
+  "added": "2026-03-20",
+  "campaign": "Craft CMS CVE-2025-32432 / CVE-2024-58136 exploitation (Feb-Apr 2025)",
+  "campaign_note": "All impact figures predate 2026: Orange Cyberdefense's SensePost team found the flaw during a forensic investigation of a February 2025 compromise and published scan counts in April 2025; what prompted the March 2026 KEV addition was not found (Craft's knowledge-base page has no 2026 update).",
+  "first_exploitation_claim": {"date": "2025-04-17", "source": "Craft CMS knowledge base (evidence of in-the-wild exploitation found 2025-04-17; Orange Cyberdefense later dated the first compromise to February 2025)", "url": "https://craftcms.com/knowledge-base/craft-cms-cve-2025-32432"},
+  "evidence": [
+   {"kind": "exposed", "value": 13000, "counts_what": "vulnerable Craft CMS instances found with a nuclei template (approximate), out of almost 35K FQDNs hosting Craft CMS; scan date not stated", "measured_by": "Orange Cyberdefense (SensePost)", "measured_on": "", "url": "https://sensepost.com/blog/2025/investigating-an-in-the-wild-campaign-using-rce-in-craftcms/", "quote": "We found ~13000 vulnerable instances using our nuclei template.", "primary_opened": true},
+   {"kind": "exposed", "value": 6300, "counts_what": "IP addresses hosting the ~13000 vulnerable instances (approximate); scan date not stated", "measured_by": "Orange Cyberdefense (SensePost)", "measured_on": "", "url": "https://sensepost.com/blog/2025/investigating-an-in-the-wild-campaign-using-rce-in-craftcms/", "quote": "These instances are linked to ~6300 IP addresses.", "primary_opened": true},
+   {"kind": "compromised", "value": 300, "counts_what": "allegedly compromised Craft CMS instances identified by scanning (almost 300; the measurer's own wording is 'allegedly'); scan date not stated, post published April 2025", "measured_by": "Orange Cyberdefense (SensePost)", "measured_on": "", "url": "https://sensepost.com/blog/2025/investigating-an-in-the-wild-campaign-using-rce-in-craftcms/", "quote": "we were able to find almost ~300 allegedly compromised instances.", "primary_opened": true}
+  ],
+  "searches_run": 1,
+  "search_limited": true,
+  "verdict": "quantified_compromise"
+ },
+ {
+  "cve": "CVE-2025-29635",
+  "vendor": "D-Link",
+  "product": "DIR-823X",
+  "added": "2026-04-24",
+  "campaign": "Mirai campaign on EoL D-Link DIR-823X (Akamai SIRT, 2026)",
+  "campaign_note": "Akamai SIRT saw exploitation attempts in its honeypots from early March 2026 delivering a Mirai variant, the first reported in-the-wild use of the flaw; no counts of attempts, attacking IPs, infected or exposed devices were published in the sources read (the Akamai page itself could not be fetched).",
+  "first_exploitation_claim": {"date": "2026-04-21", "source": "Akamai SIRT (publication date from search result; content confirmed via BleepingComputer, 2026-04-22)", "url": "https://www.akamai.com/blog/security-research/cve-2025-29635-mirai-campaign-targets-d-link-devices"},
+  "evidence": [
+   {"kind": "attack_volume", "value": "honeypot exploitation attempts (no count)", "counts_what": "exploitation attempts seen in Akamai's honeypot network; no number published", "measured_by": "Akamai SIRT", "measured_on": "", "url": "https://www.bleepingcomputer.com/news/security/new-mirai-campaign-exploits-rce-flaw-in-eol-d-link-routers/", "quote": "The Akamai SIRT discovered active exploitation attempts of the D-Link command injection vulnerability CVE-2025-29635", "primary_opened": false}
+  ],
+  "searches_run": 1,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2021-27137",
+  "vendor": "DD-WRT",
+  "product": "DD-WRT",
+  "added": "2026-07-21",
+  "campaign": "C0XMO Gafgyt-variant botnet (FortiGuard Labs, 2026)",
+  "campaign_note": "FortiGuard Labs found the C0XMO Gafgyt variant in March 2026 using this DD-WRT UPnP overflow for initial access and published on 2026-06-03, describing an attack on a Japanese technology firm; no counts of infected devices, attacking IPs or exposed routers were published.",
+  "first_exploitation_claim": {"date": "2026-06-03", "source": "Fortinet FortiGuard Labs", "url": "https://www.fortinet.com/blog/threat-research/inside-cross-platform-propagation-of-new-gafgyt-variant-c0xmo"},
+  "evidence": [],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ }
+]

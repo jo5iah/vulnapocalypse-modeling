@@ -1,0 +1,186 @@
+[
+ {
+  "cve": "CVE-2026-42208",
+  "added": "2026-05-08",
+  "vendor": "BerriAI",
+  "product": "LiteLLM",
+  "name": "BerriAI LiteLLM SQL Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "BerriAI LiteLLM contains a SQL injection vulnerability that allows an attacker to read data from the proxy's database and potentially modify it, leading to unauthorized access to the proxy and the credentials it manages.",
+  "refs": [
+   "https://github.com/BerriAI/litellm/security/advisories/GHSA-r75f-5x8p-qvmc"
+  ]
+ },
+ {
+  "cve": "CVE-2026-42271",
+  "added": "2026-06-08",
+  "vendor": "BerriAI",
+  "product": "LiteLLM",
+  "name": "BerriAI LiteLLM Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "BerriAI LiteLLM contains a command injection vulnerability that could allow any authenticated user, including holders of low-privilege internal-user keys, to run arbitrary commands on the host.",
+  "refs": [
+   "This vulnerability affects a common open-source component, third-party library, or a protocol used by different products. Please check with specific vendors for information on patching status. For more information, please see: https://github.com/BerriAI/litellm/security/advisories/GHSA-v4p8-mg3p-g94g",
+   "https://github.com/BerriAI/litellm/releases/tag/v1.83.7-stable"
+  ]
+ },
+ {
+  "cve": "CVE-2026-59822",
+  "added": "2026-09-02",
+  "vendor": "BerriAI",
+  "product": "LiteLLM",
+  "name": "BerriAI LiteLLM Improper Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "BerriAI LiteLLM contains an improper authentication vulnerability in the MCP Streamable HTTP endpoint that could allow an unauthenticated attacker to establish an authenticated MCP session using an arbitrary Bearer token.",
+  "refs": [
+   "https://github.com/BerriAI/litellm/security/advisories/GHSA-7488-6r32-c95q"
+  ]
+ },
+ {
+  "cve": "CVE-2026-1731",
+  "added": "2026-02-13",
+  "vendor": "BeyondTrust",
+  "product": "Remote Support (RS) and Privileged Remote Access (PRA)",
+  "name": "BeyondTrust Remote Support (RS) and Privileged Remote Access (PRA) OS Command Injection Vulnerability",
+  "ransomware": "Known",
+  "desc": "BeyondTrust Remote Support (RS) and Privileged Remote Access (PRA)contain an OS command injection vulnerability. Successful exploitation could allow an unauthenticated remote attacker to execute operating system commands in the context of the site user. Successful exploitation requires no authentication or user interaction and may lead to system compromise, including unauthorized access, data exfiltration, and service disruption.",
+  "refs": [
+   "Please adhere to the vendor's guidelines to assess exposure and mitigate risks. Check for signs of potential compromise on all internet accessible BeyondTrust products affected by this vulnerability. For more information please: see: https://www.beyondtrust.com/trust-center/security-advisories/bt26-02"
+  ]
+ },
+ {
+  "cve": "CVE-2024-37079",
+  "added": "2026-01-23",
+  "vendor": "Broadcom",
+  "product": "VMware vCenter Server",
+  "name": "Broadcom VMware vCenter Server Out-of-bounds Write Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Broadcom VMware vCenter Server contains an out-of-bounds write vulnerability in the implementation of the DCERPC protocol. This could allow a malicious actor with network access to vCenter Server to send specially crafted network packets, potentially leading to remote code execution.",
+  "refs": [
+   "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/24453"
+  ]
+ },
+ {
+  "cve": "CVE-2026-22719",
+  "added": "2026-03-03",
+  "vendor": "Broadcom",
+  "product": "VMware Aria Operations",
+  "name": "Broadcom VMware Aria Operations Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Broadcom VMware Aria Operations formerly known as vRealize Operations (vROps) contains a command injection vulnerability that allows an unauthenticated attacker to execute arbitrary commands, potentially leading to remote code execution during support\u2011assisted product migration.",
+  "refs": [
+   "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/36947",
+   "https://knowledge.broadcom.com/external/article/430349"
+  ]
+ },
+ {
+  "cve": "CVE-2026-59310",
+  "added": "2026-08-18",
+  "vendor": "Broadcom",
+  "product": "VMware vCenter",
+  "name": "Broadcom VMware vCenter Path Traversal Vulnerability",
+  "ransomware": "Known",
+  "desc": "Broadcom VMware vCenter contains a path traversal vulnerability which could allow a threat actor with network access to vCenter to execute arbitrary code.",
+  "refs": [
+   "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017"
+  ]
+ },
+ {
+  "cve": "CVE-2026-50751",
+  "added": "2026-06-08",
+  "vendor": "Check Point",
+  "product": "Security Gateway",
+  "name": "Check Point Security Gateway Improper Authentication Vulnerability",
+  "ransomware": "Known",
+  "desc": "Check Point Security Gateway contains an improper authentication vulnerability in IKEv1 key exchange that could allow an unauthenticated remote attacker to bypass user authentication and establish a remote access VPN connection without a valid user password.",
+  "refs": [
+   "https://blog.checkpoint.com/security/check-point-releases-important-hotfix-for-vulnerabilities-in-deprecated-ikev1-vpn-protocol/",
+   "https://support.checkpoint.com/results/sk/sk185033?_gl=1*1wqeqhc*_gcl_au*MTI1MzE5MjI2LjE3ODA5MzQ1NTM."
+  ]
+ },
+ {
+  "cve": "CVE-2026-16232",
+  "added": "2026-07-22",
+  "vendor": "Check Point",
+  "product": "SmartConsole",
+  "name": "Check Point SmartConsole Improper Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Check Point SmartConsole contains an improper authentication vulnerability which could allow an unauthenticated remote attacker to obtain an application login token and use it to authenticate with full administrative privileges.",
+  "refs": [
+   "https://support.checkpoint.com/results/sk/sk185169/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-85102",
+  "added": "2026-09-22",
+  "vendor": "Check Point",
+  "product": "Multiple Products",
+  "name": "Check Point Multiple Products Improper Certificate Validation Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Check Point Security Gateway and Check Point Spark Firewall using Site to Site VPN or Remote Access VPN contain an improper certificate validation vulnerability which could allow an unauthenticated remote attacker to execute arbitrary code on the Gateway.",
+  "refs": [
+   "https://support.checkpoint.com/results/sk/sk1000117"
+  ]
+ },
+ {
+  "cve": "CVE-2026-93616",
+  "added": "2026-09-22",
+  "vendor": "Check Point",
+  "product": "Multiple Products",
+  "name": "Check Point Multiple Products Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Check Point Security Management Server, Multi-Domain Security Management Server, Log Server, Multi-Domain Log Server, and SmartEvent contain a path traversal vulnerability that allows an unauthenticated attacker to upload and execute arbitrary scripts.",
+  "refs": [
+   "https://support.checkpoint.com/results/sk/sk1000171/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-48172",
+  "added": "2026-05-26",
+  "vendor": "LiteSpeed",
+  "product": "cPanel Plugin",
+  "name": "LiteSpeed cPanel Plugin Privilege Escalation Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "LiteSpeed cPanel Plugin contains privilege escalation vulnerability that is exposed via the user-end cPanel plugin, which can be abused by any cPanel user account to execute arbitrary scripts with root privileges.",
+  "refs": [
+   "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-54420",
+  "added": "2026-06-15",
+  "vendor": "LiteSpeed",
+  "product": "cPanel Plugin",
+  "name": "LiteSpeed cPanel Plugin UNIX Symbolic Link (Symlink) Following Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "LiteSpeed cPanel plugin contains a UNIX symbolic link (Symlink) following vulnerability that could allow a user with FTP or web shell access on a shared hosting server running CloudLinux/CageFS.",
+  "refs": [
+   "https://blog.litespeedtech.com/2026/06/01/security-update-for-litespeed-cpanel-plugin-2/"
+  ]
+ },
+ {
+  "cve": "CVE-2026-39987",
+  "added": "2026-04-23",
+  "vendor": "Marimo",
+  "product": "Marimo",
+  "name": "Marimo Remote Code Execution Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Marimo contains an pre-authorization remote code execution vulnerability, allowing an unauthenticated attacked to shell access and execute arbitrary system commands.",
+  "refs": [
+   "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+  ]
+ },
+ {
+  "cve": "CVE-2026-72898",
+  "added": "2026-08-11",
+  "vendor": "Metabase",
+  "product": "Metabase",
+  "name": "Metabase SQL Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Metabase contains a SQL Injection vulnerability that allows an unauthenticated remote attacker to inject arbitrary SQL into the Metabase application database, which can give them administrator access to the instance. From there, the attacker could change the application configuration, steal stored credentials for the connected databases, read any data accessible through those connections, and export data.",
+  "refs": [
+   "https://www.metabase.com/blog/security-update",
+   "https://github.com/metabase/metabase/security/advisories/GHSA-vwf4-m7j8-wcjf"
+  ]
+ }
+]

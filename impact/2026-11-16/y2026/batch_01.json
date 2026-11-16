@@ -1,0 +1,215 @@
+[
+ {
+  "cve": "CVE-2026-20700",
+  "added": "2026-02-12",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "name": "Apple Multiple Buffer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Apple iOS, macOS, tvOS, watchOS, and visionOS contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow an attacker with memory write the capability to execute arbitrary code.",
+  "refs": [
+   "https://support.apple.com/en-us/126346",
+   "https://support.apple.com/en-us/126348",
+   "https://support.apple.com/en-us/126351",
+   "https://support.apple.com/en-us/126352",
+   "https://support.apple.com/en-us/126353"
+  ]
+ },
+ {
+  "cve": "CVE-2021-30952",
+  "added": "2026-03-05",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "name": "Apple Multiple Products Integer Overflow or Wraparound Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Apple tvOS, macOS, Safari, iPadOS and watchOS contain an integer overflow or wraparound vulnerability due to the processing of maliciously crafted web content that may lead to arbitrary code execution.",
+  "refs": [
+   "https://support.apple.com/en-us/HT212975",
+   "https://support.apple.com/en-us/HT212976",
+   "https://support.apple.com/en-us/HT212978",
+   "https://support.apple.com/en-us/HT212980",
+   "https://support.apple.com/en-us/HT212982"
+  ]
+ },
+ {
+  "cve": "CVE-2023-41974",
+  "added": "2026-03-05",
+  "vendor": "Apple",
+  "product": "iOS and iPadOS",
+  "name": "Apple iOS and iPadOS Use-After-Free Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Apple iOS and iPadOS contain a use-after-free vulnerability. An app may be able to execute arbitrary code with kernel privileges.",
+  "refs": [
+   "https://support.apple.com/en-us/HT213938",
+   "https://support.apple.com/kb/HT213938"
+  ]
+ },
+ {
+  "cve": "CVE-2023-43000",
+  "added": "2026-03-05",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "name": "Apple Multiple products Use-After-Free Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Apple macOS, iOS, iPadOS, and Safari 16.6 contain a use-after-free vulnerability due to the processing of maliciously crafted web content that may lead to memory corruption.",
+  "refs": [
+   "https://support.apple.com/en-us/120324",
+   "https://support.apple.com/en-us/120331",
+   "https://support.apple.com/en-us/120338"
+  ]
+ },
+ {
+  "cve": "CVE-2025-31277",
+  "added": "2026-03-20",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "name": "Apple Multiple Products Buffer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Apple Safari, iOS, watchOS, visionOS, iPadOS, macOS, and tvOS contain a buffer overflow vulnerability that could allow the processing of maliciously crafted web content which may lead to memory corruption.",
+  "refs": [
+   "https://support.apple.com/en-us/124147",
+   "https://support.apple.com/en-us/124149",
+   "https://support.apple.com/en-us/124152",
+   "https://support.apple.com/en-us/124153",
+   "https://support.apple.com/en-us/124155"
+  ]
+ },
+ {
+  "cve": "CVE-2025-43510",
+  "added": "2026-03-20",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "name": "Apple Multiple Products Improper Locking Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Apple watchOS, iOS, iPadOS, macOS, visionOS, and tvOS contain an improper locking vulnerability that could allow a malicious application to cause unexpected changes in memory shared between processes.",
+  "refs": [
+   "https://support.apple.com/en-us/125632",
+   "https://support.apple.com/en-us/125633",
+   "https://support.apple.com/en-us/125634",
+   "https://support.apple.com/en-us/125635",
+   "https://support.apple.com/en-us/125636",
+   "https://support.apple.com/en-us/125637",
+   "https://support.apple.com/en-us/125638",
+   "https://support.apple.com/en-us/125639"
+  ]
+ },
+ {
+  "cve": "CVE-2025-43520",
+  "added": "2026-03-20",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "name": "Apple Multiple Products Classic Buffer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Apple watchOS, iOS, iPadOS, macOS, visionOS, and tvOS contain a classic buffer overflow vulnerability which could allow a malicious application to cause unexpected system termination or write kernel memory.",
+  "refs": [
+   "https://support.apple.com/en-us/125632",
+   "https://support.apple.com/en-us/125633",
+   "https://support.apple.com/en-us/125634",
+   "https://support.apple.com/en-us/125635",
+   "https://support.apple.com/en-us/125636",
+   "https://support.apple.com/en-us/125637",
+   "https://support.apple.com/en-us/125638",
+   "https://support.apple.com/en-us/125639"
+  ]
+ },
+ {
+  "cve": "CVE-2026-65400",
+  "added": "2026-08-18",
+  "vendor": "Apple",
+  "product": "macOS",
+  "name": "Apple macOS Improper Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Apple macOS contains an improper authentication vulnerability that could allow an attacker on the network to authenticate to Screen Sharing without valid credentials.",
+  "refs": [
+   "https://support.apple.com/en-us/148170",
+   "https://support.apple.com/en-us/148171",
+   "https://support.apple.com/en-us/148172"
+  ]
+ },
+ {
+  "cve": "CVE-2026-86950",
+  "added": "2026-09-29",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "name": "Apple Multiple Products Out-of-Bounds Write Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Apple iOS, macOS, and iPadOS contain an out-of-bounds write vulnerability in CoreGraphics that may lead to arbitrary code execution.",
+  "refs": [
+   "https://support.apple.com/en-us/149226",
+   "https://support.apple.com/en-us/149228",
+   "https://support.apple.com/en-us/149229"
+  ]
+ },
+ {
+  "cve": "CVE-2026-33634",
+  "added": "2026-03-26",
+  "vendor": "Aquasecurity",
+  "product": "Trivy",
+  "name": "Aquasecurity Trivy Embedded Malicious Code Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Aquasecurity Trivy contains an embedded malicious code vulnerability that could allow an attacker to gain access to everything in the CI/CD environment, including all tokens, SSH keys, cloud credentials, database passwords, and any sensitive configuration in memory.",
+  "refs": [
+   "This vulnerability involves a supply\u2011chain compromise in a product that may be used across multiple products and environments. Additional vendor\u2011provided guidance must be followed to ensure full remediation. For more information, please see: https://github.com/advisories/GHSA-69fq-xp46-6x23"
+  ]
+ },
+ {
+  "cve": "CVE-2026-7473",
+  "added": "2026-06-09",
+  "vendor": "Arista",
+  "product": "Extensible Operating System",
+  "name": "Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Arista Extensible Operating System (EOS) contains an incomplete comparison with missing factors vulnerability when the switch incorrectly decapsulate and forwards other unexpected tunneled packet with a destination IP matching its configured decapsulation IP.",
+  "refs": [
+   "https://www.arista.com/en/support/advisories-notices/security-advisory/24005-security-advisory-0137"
+  ]
+ },
+ {
+  "cve": "CVE-2026-16812",
+  "added": "2026-07-27",
+  "vendor": "Arista",
+  "product": "VeloCloud Orchestrator",
+  "name": "Arista VeloCloud Orchestrator On-Prem OS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Arista VeloCloud Orchestrator On-Prem contains an OS command injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.",
+  "refs": [
+   "https://www.arista.com/en/support/advisories-notices/security-advisory/24364-security-advisory-0144"
+  ]
+ },
+ {
+  "cve": "CVE-2026-93952",
+  "added": "2026-09-22",
+  "vendor": "Arista",
+  "product": "VeloCloud Orchestrator",
+  "name": "Arista VeloCloud Orchestrator Improper Input Validation Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Arista VeloCloud Orchestrator (VCO) on-prem contains an improper input validation vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.",
+  "refs": [
+   "https://www.arista.com/en/support/advisories-notices/security-advisory/24765-security-advisory-0183"
+  ]
+ },
+ {
+  "cve": "CVE-2026-21589",
+  "added": "2026-10-15",
+  "vendor": "Atlassian",
+  "product": "Multiple Products",
+  "name": "Atlassian Multiple Products Files or Directories Accessible to External Parties Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Multiple Atlassian products (Bitbucket Data Center ,Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible and Fisheye) contain a files or directories accessible to external parties vulnerability which could allow an unauthenticated attacker to access specific files within the web application root directory in affected versions.",
+  "refs": [
+   "https://confluence.atlassian.com/security/cve-2026-21589-arbitrary-file-access-vulnerability-impacts-multiple-products-1870495748.html?ref=labs.watchtowr.com"
+  ]
+ },
+ {
+  "cve": "CVE-2026-56291",
+  "added": "2026-07-10",
+  "vendor": "Balbooa",
+  "product": "Forms",
+  "name": "Balbooa Forms Unrestricted Upload of File with Dangerous Type Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Balbooa Forms contains an unrestricted upload of file with dangerous type vulnerability that allows an unauthenticated arbitrary file upload which could allow uploading of executable files leading to full RCE.",
+  "refs": [
+   "https://www.balbooa.com/joomla-forms"
+  ]
+ }
+]

@@ -1,0 +1,170 @@
+[
+ {
+  "cve": "CVE-2026-87886",
+  "added": "2026-09-16",
+  "vendor": "Acronis",
+  "product": "Backup",
+  "name": "Acronis Backup Incorrect Default Permissions Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Acronis Backup plugin for cPanel & WHM and extension for Plesk contains an incorrect default permissions vulnerability that could allow for privilege escalation.",
+  "refs": [
+   "https://security-advisory.acronis.com/advisories/SEC-10986"
+  ]
+ },
+ {
+  "cve": "CVE-2020-9715",
+  "added": "2026-04-13",
+  "vendor": "Adobe",
+  "product": "Acrobat",
+  "name": "Adobe Acrobat Use-After-Free Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Adobe Acrobat contains a use-after-free vulnerability that allows for code execution",
+  "refs": [
+   "https://helpx.adobe.com/security/products/acrobat/apsb20-48.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-34621",
+  "added": "2026-04-13",
+  "vendor": "Adobe",
+  "product": "Acrobat and Reader",
+  "name": "Adobe Acrobat and Reader Prototype Pollution Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Adobe Acrobat and Reader contain a prototype pollution vulnerability that allows for arbitrary code execution.",
+  "refs": [
+   "https://helpx.adobe.com/security/products/acrobat/apsb26-43.html"
+  ]
+ },
+ {
+  "cve": "CVE-2009-3459",
+  "added": "2026-05-20",
+  "vendor": "Adobe",
+  "product": "Acrobat and Reader",
+  "name": "Adobe Acrobat and Reader Heap-Based Buffer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Adobe Acrobat and Reader contain a heap-based buffer overflow vulnerability which could allow remote attackers to execute arbitrary code via a crafted PDF file that triggers memory corruption.",
+  "refs": [
+   "https://web.archive.org/web/20120324170253/http://www.adobe.com/support/security/bulletins/apsb09-15.html#:~:text=CVE%2D2009%2D3459).-,NOTE%3A,-There%20are%20reports"
+  ]
+ },
+ {
+  "cve": "CVE-2026-48282",
+  "added": "2026-07-07",
+  "vendor": "Adobe",
+  "product": "ColdFusion",
+  "name": "Adobe ColdFusion Path Traversal Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Adobe ColdFusion contains a path traversal vulnerability that could lead to arbitrary code execution in the context of the current user.",
+  "refs": [
+   "https://helpx.adobe.com/security/products/coldfusion/apsb26-68.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-75650",
+  "added": "2026-09-08",
+  "vendor": "Adobe",
+  "product": "Commerce and Magento",
+  "name": "Adobe Commerce and Magento Improper Neutralization of Special Elements Used in a Template Engine Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Adobe Commerce and Magento Open Source contain an improper neutralization of special elements used in a template engine vulnerability that could allow an attacker to execute arbitrary code.",
+  "refs": [
+   "https://helpx.adobe.com/security/products/magento/apsb26-146.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-71362",
+  "added": "2026-09-24",
+  "vendor": "Adobe",
+  "product": "Commerce and Magento",
+  "name": "Adobe Commerce and Magento Incorrect Authorization Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction.",
+  "refs": [
+   "https://helpx.adobe.com/security/products/magento/apsb26-92.html"
+  ]
+ },
+ {
+  "cve": "CVE-2026-105133",
+  "added": "2026-10-14",
+  "vendor": "Ahsay",
+  "product": "AhsayCBS",
+  "name": "Ahsay AhsayCBS Improper Authentication Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ahsay AhsayCBS contains an improper authentication vulnerability that could allow a remote attacker to bypass authentication via manipulation of the random parameter in the API component\u2019s checkSysPwd function. This vulnerability can be chained with CVE-2026-105134.",
+  "refs": [
+   "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update"
+  ]
+ },
+ {
+  "cve": "CVE-2026-105134",
+  "added": "2026-10-14",
+  "vendor": "Ahsay",
+  "product": "AhsayCBS",
+  "name": "Ahsay AhsayCBS Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ahsay AhsayCBS contains a command injection vulnerability that could allow a remote attacker to execute operating system commands via manipulation of the random parameter in the Replication Receiver component\u2019s /rps/api/json/UpdateReceivers.do endpoint. This vulnerability can be chained with CVE-2026-105133.",
+  "refs": [
+   "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update"
+  ]
+ },
+ {
+  "cve": "CVE-2021-23758",
+  "added": "2026-08-26",
+  "vendor": "Ajax.NET Professional",
+  "product": "Ajax.NET Professional",
+  "name": "Ajax.NET Professional Deserialization of Untrusted Data Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Ajax.NET Professional (AjaxPro) contains a deserialization of untrusted data vulnerability that could allow for remote code execution via arbitrary .NET classes. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version.",
+  "refs": [
+   "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/michaelschwarz/Ajax.NET-Professional/commit/b0e63be5f0bb20dfce507cb8a1a9568f6e73de57"
+  ]
+ },
+ {
+  "cve": "CVE-2025-48595",
+  "added": "2026-06-02",
+  "vendor": "Android",
+  "product": "Framework",
+  "name": "Android Framework Integer Overflow Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Android Framework contains an integer overflow vulnerability that allows for code execution that could allow for local privilege escalation.",
+  "refs": [
+   "https://source.android.com/docs/security/bulletin/2026/2026-06-01"
+  ]
+ },
+ {
+  "cve": "CVE-2026-34197",
+  "added": "2026-04-16",
+  "vendor": "Apache",
+  "product": "ActiveMQ",
+  "name": "Apache ActiveMQ Improper Input Validation Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Apache ActiveMQ contains an improper input validation vulnerability that allows for code injection.",
+  "refs": [
+   "https://activemq.apache.org/security-advisories.data/CVE-2026-34197-announcement.txt"
+  ]
+ },
+ {
+  "cve": "CVE-2026-34486",
+  "added": "2026-08-04",
+  "vendor": "Apache",
+  "product": "Tomcat",
+  "name": "Apache Tomcat Missing Encryption of Sensitive Data Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Apache Tomcat contains a missing encryption of sensitive data vulnerability that allows the bypass of the EncryptInterceptor. This vulnerability can be chained with CVE\u20112025\u201124813.",
+  "refs": [
+   "https://lists.apache.org/thread/9510k5p5zdvt9pkkgtyp85mvwxo2qrly"
+  ]
+ },
+ {
+  "cve": "CVE-2016-3081",
+  "added": "2026-10-08",
+  "vendor": "Apache",
+  "product": "Struts",
+  "name": "Apache Struts Command Injection Vulnerability",
+  "ransomware": "Unknown",
+  "desc": "Apache Struts contains a command injection vulnerability that could allow remote attackers to execute arbitrary code via method:prefix when Dynamic Method Invocation is enabled.",
+  "refs": [
+   "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://cwiki.apache.org/confluence/display/WW/S2-032"
+  ]
+ }
+]

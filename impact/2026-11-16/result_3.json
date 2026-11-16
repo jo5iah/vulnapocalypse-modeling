@@ -1,0 +1,276 @@
+[
+ {
+  "cve": "CVE-2026-96652",
+  "vendor": "Plex",
+  "product": "Media Server",
+  "campaign_note": "Part of the four-CVE 'Plex2Shell' chain (PoC public 2026-10-16, patched in 1.43.3.10861 on 2026-08-03/04); exploited from 2026-10-17 to deploy cryptominers and proxy malware, with QNAP later reporting NAS compromises; all evidence is chain-level, not per-CVE.",
+  "first_exploitation_claim": {
+   "date": "2026-10-17",
+   "source": "Independent honeypot researcher (boredhackerblog), reported by SecurityWeek 2026-10-19",
+   "url": "https://www.securityweek.com/plex2shell-exploit-chain-weaponized-against-plex-servers-hours-after-disclosure/"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": 36000,
+    "counts_what": "internet-accessible, unpatched Plex Media Server instances (lower bound, 'more than'); applies to the Plex2Shell chain as a whole, not to this CVE alone",
+    "measured_by": "Shadowserver Foundation, as cited by Field Effect (Shadowserver primary not located)",
+    "measured_on": "early September 2026",
+    "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+    "quote": "The Shadowserver Foundation reported more than 36,000 internet-accessible, unpatched PMS instances in early September 2026"
+   },
+   {
+    "kind": "compromised",
+    "value": "unquantified",
+    "counts_what": "Plex systems compromised to deploy cryptominers and proxy malware; no count published",
+    "measured_by": "Field Effect",
+    "measured_on": "2026-10-22 (publication)",
+    "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+    "quote": "Observed activity has included compromise of vulnerable Plex systems to deploy cryptocurrency miners and proxy malware."
+   },
+   {
+    "kind": "compromised",
+    "value": "unquantified",
+    "counts_what": "QNAP NAS users reporting compromise via Plex2Shell; no count published",
+    "measured_by": "QNAP advisory, as reported by BleepingComputer",
+    "measured_on": "2026-11-06 (publication)",
+    "url": "https://bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks",
+    "quote": "has received reports from some users"
+   }
+  ],
+  "searches_run": 3,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-96654",
+  "vendor": "Plex",
+  "product": "Media Server",
+  "campaign_note": "Part of the four-CVE 'Plex2Shell' chain (PoC public 2026-10-16, patched in 1.43.3.10861 on 2026-08-03/04); exploited from 2026-10-17 to deploy cryptominers and proxy malware, with QNAP later reporting NAS compromises; all evidence is chain-level, not per-CVE.",
+  "first_exploitation_claim": {
+   "date": "2026-10-17",
+   "source": "Independent honeypot researcher (boredhackerblog), reported by SecurityWeek 2026-10-19",
+   "url": "https://www.securityweek.com/plex2shell-exploit-chain-weaponized-against-plex-servers-hours-after-disclosure/"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": 36000,
+    "counts_what": "internet-accessible, unpatched Plex Media Server instances (lower bound, 'more than'); applies to the Plex2Shell chain as a whole, not to this CVE alone",
+    "measured_by": "Shadowserver Foundation, as cited by Field Effect (Shadowserver primary not located)",
+    "measured_on": "early September 2026",
+    "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+    "quote": "The Shadowserver Foundation reported more than 36,000 internet-accessible, unpatched PMS instances in early September 2026"
+   },
+   {
+    "kind": "compromised",
+    "value": "unquantified",
+    "counts_what": "Plex systems compromised to deploy cryptominers and proxy malware; no count published",
+    "measured_by": "Field Effect",
+    "measured_on": "2026-10-22 (publication)",
+    "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+    "quote": "Observed activity has included compromise of vulnerable Plex systems to deploy cryptocurrency miners and proxy malware."
+   },
+   {
+    "kind": "compromised",
+    "value": "unquantified",
+    "counts_what": "QNAP NAS users reporting compromise via Plex2Shell; no count published",
+    "measured_by": "QNAP advisory, as reported by BleepingComputer",
+    "measured_on": "2026-11-06 (publication)",
+    "url": "https://bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks",
+    "quote": "has received reports from some users"
+   }
+  ],
+  "searches_run": 3,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-96655",
+  "vendor": "Plex",
+  "product": "Media Server",
+  "campaign_note": "Part of the four-CVE 'Plex2Shell' chain (PoC public 2026-10-16, patched in 1.43.3.10861 on 2026-08-03/04); exploited from 2026-10-17 to deploy cryptominers and proxy malware, with QNAP later reporting NAS compromises; all evidence is chain-level, not per-CVE.",
+  "first_exploitation_claim": {
+   "date": "2026-10-17",
+   "source": "Independent honeypot researcher (boredhackerblog), reported by SecurityWeek 2026-10-19",
+   "url": "https://www.securityweek.com/plex2shell-exploit-chain-weaponized-against-plex-servers-hours-after-disclosure/"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": 36000,
+    "counts_what": "internet-accessible, unpatched Plex Media Server instances (lower bound, 'more than'); applies to the Plex2Shell chain as a whole, not to this CVE alone",
+    "measured_by": "Shadowserver Foundation, as cited by Field Effect (Shadowserver primary not located)",
+    "measured_on": "early September 2026",
+    "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+    "quote": "The Shadowserver Foundation reported more than 36,000 internet-accessible, unpatched PMS instances in early September 2026"
+   },
+   {
+    "kind": "compromised",
+    "value": "unquantified",
+    "counts_what": "Plex systems compromised to deploy cryptominers and proxy malware; no count published",
+    "measured_by": "Field Effect",
+    "measured_on": "2026-10-22 (publication)",
+    "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+    "quote": "Observed activity has included compromise of vulnerable Plex systems to deploy cryptocurrency miners and proxy malware."
+   },
+   {
+    "kind": "compromised",
+    "value": "unquantified",
+    "counts_what": "QNAP NAS users reporting compromise via Plex2Shell; no count published",
+    "measured_by": "QNAP advisory, as reported by BleepingComputer",
+    "measured_on": "2026-11-06 (publication)",
+    "url": "https://bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks",
+    "quote": "has received reports from some users"
+   }
+  ],
+  "searches_run": 3,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-96656",
+  "vendor": "Plex",
+  "product": "Media Server",
+  "campaign_note": "Part of the four-CVE 'Plex2Shell' chain (PoC public 2026-10-16, patched in 1.43.3.10861 on 2026-08-03/04); exploited from 2026-10-17 to deploy cryptominers and proxy malware, with QNAP later reporting NAS compromises; all evidence is chain-level, not per-CVE.",
+  "first_exploitation_claim": {
+   "date": "2026-10-17",
+   "source": "Independent honeypot researcher (boredhackerblog), reported by SecurityWeek 2026-10-19",
+   "url": "https://www.securityweek.com/plex2shell-exploit-chain-weaponized-against-plex-servers-hours-after-disclosure/"
+  },
+  "evidence": [
+   {
+    "kind": "exposed",
+    "value": 36000,
+    "counts_what": "internet-accessible, unpatched Plex Media Server instances (lower bound, 'more than'); applies to the Plex2Shell chain as a whole, not to this CVE alone",
+    "measured_by": "Shadowserver Foundation, as cited by Field Effect (Shadowserver primary not located)",
+    "measured_on": "early September 2026",
+    "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+    "quote": "The Shadowserver Foundation reported more than 36,000 internet-accessible, unpatched PMS instances in early September 2026"
+   },
+   {
+    "kind": "compromised",
+    "value": "unquantified",
+    "counts_what": "Plex systems compromised to deploy cryptominers and proxy malware; no count published",
+    "measured_by": "Field Effect",
+    "measured_on": "2026-10-22 (publication)",
+    "url": "https://fieldeffect.com/blog/active-exploitation-plex2shell-vulnerabilities",
+    "quote": "Observed activity has included compromise of vulnerable Plex systems to deploy cryptocurrency miners and proxy malware."
+   },
+   {
+    "kind": "compromised",
+    "value": "unquantified",
+    "counts_what": "QNAP NAS users reporting compromise via Plex2Shell; no count published",
+    "measured_by": "QNAP advisory, as reported by BleepingComputer",
+    "measured_on": "2026-11-06 (publication)",
+    "url": "https://bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks",
+    "quote": "has received reports from some users"
+   }
+  ],
+  "searches_run": 3,
+  "verdict": "exposure_only"
+ },
+ {
+  "cve": "CVE-2026-110936",
+  "vendor": "Siemens",
+  "product": "Software Center",
+  "campaign_note": "DLL side-loading flaw abused by ClickFix operators (Romulus platform) who bundle a legitimate signed Siemens Software Center binary with a malicious DLL; Siemens says its own systems and update channels were not compromised, and no victim counts have been published.",
+  "first_exploitation_claim": {
+   "date": "2026-10-19",
+   "source": "Siemens blog post warning of active exploitation, as reported by Help Net Security",
+   "url": "https://www.helpnetsecurity.com/2026/10/20/exploitation-siemens-software-center-vulnerability-cve-2026-110936/"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": 6,
+    "counts_what": "IP addresses running the attacker platform (Romulus ClickFix panel) infrastructure; not victims",
+    "measured_by": "researchers cited by Help Net Security (Forescout per other coverage)",
+    "measured_on": "2026-10-20 (publication)",
+    "url": "https://www.helpnetsecurity.com/2026/10/20/exploitation-siemens-software-center-vulnerability-cve-2026-110936/",
+    "quote": "The researchers identified six IP addresses running it."
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-116779",
+  "vendor": "SignalWire",
+  "product": "FreeSwitch",
+  "campaign_note": "SIP MESSAGE handling flaw (fixed by default in 1.11.3, 2026-08-28) that the maintainer advisory says has been exploited in the wild; no exposure, compromise or victim figures found.",
+  "first_exploitation_claim": {
+   "date": "2026-10-28",
+   "source": "SignalWire GitHub security advisory GHSA-mg63-h38w-8p9p",
+   "url": "https://github.com/signalwire/freeswitch/security/advisories/GHSA-mg63-h38w-8p9p"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "unquantified",
+    "counts_what": "vendor statement of in-the-wild exploitation; no count",
+    "measured_by": "SignalWire (FreeSWITCH maintainers)",
+    "measured_on": "2026-10-28",
+    "url": "https://github.com/signalwire/freeswitch/security/advisories/GHSA-mg63-h38w-8p9p",
+    "quote": "Exploitation of this path has been observed in the wild."
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-19868",
+  "vendor": "SonicWall",
+  "product": "SonicOS SSLVPN",
+  "campaign_note": "SAML/MFA bypass affecting SSL VPN only where SAML login is enabled; SonicWall PSIRT cites a single report of potential exploitation and neither SonicWall nor CISA has shared attack details.",
+  "first_exploitation_claim": {
+   "date": "2026-11-06",
+   "source": "SonicWall PSIRT advisory, as reported by BleepingComputer",
+   "url": "https://bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "unquantified",
+    "counts_what": "vendor statement of a report of potential exploitation; no count",
+    "measured_by": "SonicWall PSIRT, quoted by BleepingComputer",
+    "measured_on": "2026-11-06",
+    "url": "https://bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks",
+    "quote": "SonicWall PSIRT has investigated a report indicating potential exploitation of this vulnerability."
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-114713",
+  "vendor": "UnrealIRCd",
+  "product": "UnrealIRCd",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 3,
+  "verdict": "nothing_found"
+ },
+ {
+  "cve": "CVE-2026-119977",
+  "vendor": "WordPress",
+  "product": "WordPress Core",
+  "campaign_note": "Upgrade-window race condition fixed in WordPress 7.1.4 (2026-10-28); Wordfence reports blocked attack attempts and CISA confirmed exploitation, but no source reports a confirmed successful compromise or a count of affected sites.",
+  "first_exploitation_claim": {
+   "date": "2026-11-03",
+   "source": "CISA KEV addition, reported by BleepingComputer 2026-11-04 (Wordfence's blocked-attack figure was published the preceding weekend, exact day not stated)",
+   "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/"
+  },
+  "evidence": [
+   {
+    "kind": "attack_volume",
+    "value": 13095,
+    "counts_what": "attacks targeting this vulnerability blocked by the Wordfence firewall in a 24-hour period (attempts, not compromises)",
+    "measured_by": "Wordfence, quoted by BleepingComputer (Wordfence page returned empty on fetch)",
+    "measured_on": "weekend preceding 2026-11-04 (exact day not stated)",
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/",
+    "quote": "blocked 13,095 attacks targeting this vulnerability in the past 24 hours"
+   }
+  ],
+  "searches_run": 3,
+  "verdict": "qualitative_only"
+ }
+]

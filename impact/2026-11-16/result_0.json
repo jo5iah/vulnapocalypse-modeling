@@ -1,0 +1,262 @@
+[
+ {
+  "cve": "CVE-2026-48356",
+  "vendor": "Adobe",
+  "product": "Commerce and Magento",
+  "campaign_note": "Sansec names this flaw PolyShell (unauthenticated file upload via the Magento REST API); probing began 2026-03-16, mass exploitation 2026-03-19, with Magecart-style loader injection on hundreds of stores; Adobe backported the fix in APSB26-73 on 2026-07-14.",
+  "first_exploitation_claim": {
+   "date": "2026-03-19",
+   "source": "Sansec (PolyShell research page timeline: \"First PolyShell attacks observed in the wild\"; probing noted from 2026-03-16)",
+   "url": "https://sansec.io/research/magento-polyshell"
+  },
+  "evidence": [
+   {
+    "kind": "compromised",
+    "value": 471,
+    "counts_what": "Magento stores detected compromised (loader injected) in a single hour via PolyShell",
+    "measured_by": "Sansec",
+    "measured_on": "2026-03-30",
+    "url": "https://sansec.io/research/polyshell-mass-attack-wave",
+    "quote": "Sansec detected 471 stores compromised in a single hour as attackers exploit the PolyShell vulnerability at scale."
+   },
+   {
+    "kind": "compromised",
+    "value": 471,
+    "counts_what": "Same 471-store figure restated in trade press with the explicit PolyShell = CVE-2026-48356 mapping (article is about a 953-store loader campaign active since July 2025, of which only the 471 are attributed to this CVE)",
+    "measured_by": "Sansec, as reported by The Hacker News",
+    "measured_on": "2026-10-26",
+    "url": "https://thehackernews.com/2026/10/hackers-infect-953-online-stores-with.html",
+    "quote": "471 Magento stores are estimated to have been injected with the loader through the PolyShell"
+   },
+   {
+    "kind": "attack_volume",
+    "value": "82%",
+    "counts_what": "Share of Sansec-monitored stores hit with malicious upload attempts (attack attempts against protected stores, not confirmed compromises)",
+    "measured_by": "Sansec",
+    "measured_on": "2026-04-14",
+    "url": "https://sansec.io/research/magento-polyshell",
+    "quote": "82% of all stores hit with malicious uploads"
+   },
+   {
+    "kind": "attack_volume",
+    "value": "79.5%",
+    "counts_what": "Share of Sansec Shield-protected Magento stores against which PolyShell exploitation attempts were blocked since 2026-03-16",
+    "measured_by": "Sansec",
+    "measured_on": "2026-03-30",
+    "url": "https://sansec.io/research/magento-polyshell",
+    "quote": "has blocked PolyShell exploitation attempts against 79.5% of all protected Magento stores since March 16th."
+   },
+   {
+    "kind": "attack_volume",
+    "value": "more than 50",
+    "counts_what": "Source IPs probing for PolyShell",
+    "measured_by": "Sansec",
+    "measured_on": "since 2026-03-23",
+    "url": "https://sansec.io/research/magento-polyshell",
+    "quote": "Since March 23, Sansec has recorded more than 50 IPs probing for PolyShell attacks."
+   }
+  ],
+  "searches_run": 3,
+  "verdict": "quantified_compromise"
+ },
+ {
+  "cve": "CVE-2024-27834",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "campaign_note": "Sekoia's 'Poisoned Source' report (2026-11-04) describes APT29-attributed watering holes, including a compromise of the Plerdy analytics tracker, serving an iOS 16.7 n-day chain that uses CVE-2024-27834 as a PAC bypass for cookie theft; no device or victim count was published.",
+  "first_exploitation_claim": {
+   "date": "2026-11-04",
+   "source": "Sekoia ('Poisoned Source' report; activity discovered mid-October 2026, Plerdy compromise window 2026-08-27 to 2026-09-03)",
+   "url": "https://www.sekoia.com/blog/poisoned-source-apt29-watering-holes-targets-mobile-devices-with-n-day-exploits"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "hundreds",
+    "counts_what": "Legitimate websites (and their visitors) exposed to the exploit kit through the compromised Plerdy tracker for one week; this is delivery reach, not devices compromised, and covers the whole kit rather than this CVE alone",
+    "measured_by": "Sekoia",
+    "measured_on": "2026-08-27 to 2026-09-03 (published 2026-11-04)",
+    "url": "https://www.sekoia.com/blog/poisoned-source-apt29-watering-holes-targets-mobile-devices-with-n-day-exploits",
+    "quote": "exposing hundreds of legitimate websites and their visitors to its exploit kit for one week."
+   },
+   {
+    "kind": "other",
+    "value": 2,
+    "counts_what": "Lookalike reverse-proxy websites set up by the actor to deliver the exploit kit",
+    "measured_by": "Sekoia",
+    "measured_on": "2026-11-04",
+    "url": "https://www.sekoia.com/blog/poisoned-source-apt29-watering-holes-targets-mobile-devices-with-n-day-exploits",
+    "quote": "We identified two high-profile websites set up by the intrusion set to act as reverse proxies."
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-114625",
+  "vendor": "Arista",
+  "product": "VeloCloud Orchestrator",
+  "campaign_note": "Arista detected active exploitation itself and disclosed it with the patch on 2026-10-22; it is the third exploited VCO flaw since July 2026 (after CVE-2026-16812 and CVE-2026-93952), and Arista says hosted/dedicated VCO instances were impacted, with no victim or exposure count published.",
+  "first_exploitation_claim": {
+   "date": "2026-10-22",
+   "source": "Arista Security Advisory 0199 (\"This issue was detected by Arista and is known to be actively exploited.\")",
+   "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24838-security-advisory-0199"
+  },
+  "evidence": [
+   {
+    "kind": "attack_volume",
+    "value": 2,
+    "counts_what": "Attacker IP addresses listed by the vendor as observed conducting the attacks (74.82.197.86, 38.54.50.151)",
+    "measured_by": "Arista",
+    "measured_on": "2026-10-22",
+    "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24838-security-advisory-0199",
+    "quote": "The following IP addresses have been observed conducting the attacks."
+   },
+   {
+    "kind": "other",
+    "value": "hosted and dedicated VCO impacted (no count)",
+    "counts_what": "Vendor statement that its hosted/dedicated orchestrators were impacted; unquantified",
+    "measured_by": "Arista",
+    "measured_on": "2026-10-22",
+    "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24838-security-advisory-0199",
+    "quote": "Hosted, including Dedicated, versions of VCO were impacted and have already been patched."
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-111560",
+  "vendor": "Barracuda Networks",
+  "product": "Multiple Products",
+  "campaign_note": "Patched 2026-11-02 together with CVE-2026-116606 (chainable on ESG for pre-auth root); Barracuda updated its advisory on 2026-11-09 to report exploitation affecting 'a small number of organizations', with no count and no trade-press quantification found.",
+  "first_exploitation_claim": {
+   "date": "2026-11-09",
+   "source": "Barracuda advisory update (9:00pm EST): exploitation information added",
+   "url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
+  },
+  "evidence": [
+   {
+    "kind": "organizations",
+    "value": "a small number",
+    "counts_what": "Organizations affected by observed exploitation activity (unquantified; advisory covers both chained CVEs)",
+    "measured_by": "Barracuda Networks",
+    "measured_on": "2026-11-09",
+    "url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection",
+    "quote": "We have identified exploitation activity affecting a small number of organizations."
+   }
+  ],
+  "searches_run": 3,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-116606",
+  "vendor": "Barracuda Networks",
+  "product": "Barracuda Email Security Gateway (ESG)",
+  "campaign_note": "ESG authentication bypass chained with CVE-2026-111560 for root; patched 2026-11-02, exploitation affecting 'a small number of organizations' acknowledged by Barracuda on 2026-11-09, no count published.",
+  "first_exploitation_claim": {
+   "date": "2026-11-09",
+   "source": "Barracuda advisory update (9:00pm EST): exploitation information added",
+   "url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
+  },
+  "evidence": [
+   {
+    "kind": "organizations",
+    "value": "a small number",
+    "counts_what": "Organizations affected by observed exploitation activity (unquantified; advisory covers both chained CVEs)",
+    "measured_by": "Barracuda Networks",
+    "measured_on": "2026-11-09",
+    "url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection",
+    "quote": "We added information about exploitation activity that has been observed affecting a small number of organizations."
+   }
+  ],
+  "searches_run": 3,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-102764",
+  "vendor": "BeyondTrust",
+  "product": "Remote Support",
+  "campaign_note": "Zero-day exploited since late August 2026 by a suspected China-nexus espionage actor (Mandiant 'Armory Castle' / CrowdStrike 'Warp Panda') deploying the Sawfly web shell and Bareclaw tunneler; BeyondTrust reports two known compromises (one hosted instance, one self-hosted appliance) and patched SaaS on 2026-10-08 before disclosing on 2026-10-15.",
+  "first_exploitation_claim": {
+   "date": "2026-10-15",
+   "source": "BeyondTrust advisory BT26-05 (vendor page returned HTTP 403; date and claim taken from BleepingComputer and Rapid7 coverage)",
+   "url": "https://www.bleepingcomputer.com/news/security/beyondtrust-patches-zero-day-exploited-in-attacks-since-august/"
+  },
+  "evidence": [
+   {
+    "kind": "compromised",
+    "value": 2,
+    "counts_what": "Known Remote Support compromises: one BeyondTrust-hosted instance and one self-hosted appliance, both dated to 2026-08-29",
+    "measured_by": "BeyondTrust (16 Oct 2026 report), as relayed by Rapid7",
+    "measured_on": "2026-10-16",
+    "url": "https://www.rapid7.com/blog/post/etr-cve-2026-102764-critical-beyondtrust-remote-support-authentication-bypass-exploited-in-the-wild",
+    "quote": "dates the two known Remote Support compromises to August 29, 2026"
+   },
+   {
+    "kind": "exposed",
+    "value": "over 1,400",
+    "counts_what": "BeyondTrust Remote Support instances exposed online (patch status unknown; may include honeypots)",
+    "measured_by": "Shadowserver, as reported by BleepingComputer",
+    "measured_on": "2026-10-16 (article date; measurement date not stated)",
+    "url": "https://www.bleepingcomputer.com/news/security/beyondtrust-patches-zero-day-exploited-in-attacks-since-august/",
+    "quote": "tracks over 1,400 BeyondTrust remote support instances exposed online"
+   },
+   {
+    "kind": "downtime",
+    "value": "credential exposure, no outage reported",
+    "counts_what": "Operational impact described by Mandiant: root on the appliance and access to stored/brokered credentials; no downtime or data-theft volume reported",
+    "measured_by": "Mandiant, as reported by BleepingComputer",
+    "measured_on": "2026-10-16",
+    "url": "https://www.bleepingcomputer.com/news/security/beyondtrust-patches-zero-day-exploited-in-attacks-since-august/",
+    "quote": "access to every credential the appliance stored or brokered"
+   }
+  ],
+  "searches_run": 1,
+  "verdict": "quantified_compromise"
+ },
+ {
+  "cve": "CVE-2026-41709",
+  "vendor": "Broadcom",
+  "product": "VMware ESX",
+  "campaign_note": "CrowdStrike's 2026 Legal Threat Landscape Report (2026-10-28) says China-nexus Warp Panda used this low-severity (CVSS 2.7) logging flaw as a zero-day in several intrusions at US organizations including law firms, continuing into early 2026; no victim count for this CVE was found.",
+  "first_exploitation_claim": {
+   "date": "2026-10-28",
+   "source": "CrowdStrike 2026 Legal Threat Landscape Report, as reported by SecurityWeek (SecurityWeek page returned HTTP 403; claim read from search summary and a secondary write-up, primary report not retrieved)",
+   "url": "https://securityweek.com/chinese-hackers-quietly-used-low-severity-esxi-logging-flaw-as-zero-day"
+  },
+  "evidence": [
+   {
+    "kind": "other",
+    "value": "several intrusions",
+    "counts_what": "Intrusions in which Warp Panda used the flaw (unquantified); quote is from a lower-tier trade outlet relaying CrowdStrike because SecurityWeek blocked fetching",
+    "measured_by": "CrowdStrike, as relayed by Cyber Security News",
+    "measured_on": "2026-10-28",
+    "url": "https://cybersecuritynews.com/vmware-esx-logging-vulnerability-exploited/amp/",
+    "quote": "CrowdStrike identified the group as WARP PANDA and said it used the flaw"
+   }
+  ],
+  "searches_run": 2,
+  "verdict": "qualitative_only"
+ },
+ {
+  "cve": "CVE-2026-123039",
+  "vendor": "Check Point",
+  "product": "Multiple Products",
+  "campaign_note": "",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 2,
+  "verdict": "nothing_found"
+ },
+ {
+  "cve": "CVE-2026-20320",
+  "vendor": "Cisco",
+  "product": "BroadWorks",
+  "campaign_note": "Unauthenticated XXE in the BroadWorks OCI XML parser, patched 2026-08-19; coverage found reflects only the advisory-date status, when Cisco reported no known exploitation, and no report describing the exploitation behind the KEV listing was found.",
+  "first_exploitation_claim": null,
+  "evidence": [],
+  "searches_run": 2,
+  "verdict": "nothing_found"
+ }
+]
