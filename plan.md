@@ -153,11 +153,11 @@ scraped sources carry terms-of-use constraints that structured feeds do not.
 `cve_strata.py`, in the data repository, keeps one row per CVE (`data/cve_strata.csv.gz`: vendor, product families, CVSS exposure
 fields, severity, CWE, CISA's SSVC decision points, KEV date) and refreshes incrementally with
 `update`; `report` writes `cve_stratification_<date>.md`. What the first table says, for the 365 days
-to 2026-11-16 (321 KEV additions against 107,720 publications, 3.0 per 1,000):
+to 2026-11-16 (321 KEV additions against 107,834 publications, 3.0 per 1,000):
 
 | Split | KEV additions per 1,000 published |
 |---|---|
-| Remote, no privileges, no user action / other remote / local | 5.6 / 1.8 / 2.4 |
+| Remote, no privileges, no user action / other remote / local | 5.5 / 1.8 / 2.4 |
 | Microsoft / Google / Linux | 7.4 / 2.4 / 0.9 |
 | Cisco / Fortinet / Ivanti / Citrix | 54 / 43 / 123 / 133 |
 | Critical / High / Medium | 13.0 / 3.2 / 0.9 |
@@ -168,43 +168,57 @@ has to beat.** The top 20 vendors by exploitation hold 56% of additions, so the 
 plus a rest bucket, crossed with three exposure classes; product-level top-N is too long-tailed (the top
 50 products hold 54%). That design is superseded by product type, below.
 
-**Product type, added 2026-11-16.** The table now carries `ptype` (os, prodserver, client, edge, other),
-assigned from CPE product names by an ordered rule list in `cve_strata.py`; `retype` reapplies the rules
-offline. The report and the last section of the data page give the measurement, on imputed denominators
-(only 43% of publications carry CPE; the CPE-only rates are upper bounds):
+**Product type, added 2026-11-16.** The table now carries `ptype` (os, prodserver, client, edge, mgmt,
+other), assigned from CPE product names by an ordered rule list in `cve_strata.py`; `retype` reapplies the
+rules offline. Each vendor a CVE lists gets one vote, and distributions and vendors that only embed the code
+are set aside. The report and the last section of the data page give the measurement, on imputed
+denominators (only 43% of publications carry CPE; the CPE-only rates are upper bounds):
 
 | Product type | Share of publications | Share of KEV additions | KEV additions per 1,000 published [95%] | CPE-only |
 |---|---|---|---|---|
-| Edge device | 3% | 23% | 20.5 [16.1, 25.7] | 44.9 |
-| Productivity server | 7% | 20% | 9.1 [7.0, 11.6] | 15.0 |
-| Operating system | 17% | 14% | 2.5 [1.8, 3.4] | 5.0 |
-| Client / user app | 8% | 7% | 2.3 [1.4, 3.5] | 2.9 |
-| Other | 65% | 36% | 1.7 [1.4, 2.0] | 4.9 |
+| Infrastructure management | 2% | 13% | 23.6 [16.9, 32.0] | 37.4 |
+| Edge device | 3% | 23% | 20.0 [15.7, 25.1] | 43.3 |
+| Productivity server | 6% | 20% | 9.3 [7.2, 11.8] | 15.2 |
+| Client / user app | 9% | 8% | 2.9 [1.9, 4.3] | 3.7 |
+| Operating system | 16% | 13% | 2.4 [1.7, 3.2] | 4.7 |
+| Other | 64% | 23% | 1.1 [0.8, 1.3] | 3.2 |
 
-A single rate misallocates 33% of additions across these five classes. Type is not a proxy for exposure:
-among remote, unauthenticated CVEs, edge devices convert at 54 of 629 and productivity servers at 45 of
-1,007, against 86 of 11,593 for the rest (CPE-typed on both sides). The types also differ in timing.
-Client and OS entries are listed within seven days of publication 83% and 64% of the time; productivity
-servers 33%, with a median of 25 days and the highest ransomware share (33%). Edge has held 14–22% of
-additions in every catalog year. Productivity servers' 22% in 2026 follows 13–16% in 2023–25, so this
-year's rate for them leans high.
+A single rate misallocates 44% of additions across these six classes. Type is not a proxy for exposure:
+among remote, unauthenticated CVEs, infrastructure management converts at 29 of 285, edge devices at 54 of
+647 and productivity servers at 46 of 1,008, against 56 of 11,306 for the rest (CPE-typed on both sides).
+The types also differ in timing. Client and OS entries are listed within seven days of publication 82% and
+63% of the time; productivity servers 34%, with a median of 22 days and the highest ransomware share (32%).
+Edge has held 14–22% of additions in every catalog year. Productivity servers rose from 13% in 2023 to 22%
+in 2026, so this year's rate for them leans high.
 
-This changes the design. Five product types crossed with three exposure classes is 15 cells, against 67 for
+**Infrastructure management was split out of *other*** because it was the one part that behaved like a
+type: 84 KEV additions in the three years to the snapshot (14, 29, 41), more than client applications' 62,
+at a rate above productivity servers'. Below it the subtypes of *other* fall away gradually. A rough split by
+vendor name put middleware, IoT and NAS, databases and firmware at 15 to 28 additions each over the same
+three years, with no second break to justify another class. Two are worth
+watching and not yet promoting: AI and workflow servers and industrial control, where that split put 12 of
+13 and 7 of 8 three-year additions in the last year. Each is one year's evidence on a small count.
+
+What remains in *other* is described along recorded fields, not names: the table carries `channel` (who
+assigned the CVE), `cpe_part` and `target_sw`. Sixty percent of *other* has no CPE and cannot be matched to
+KEV at all. WordPress CNAs, VulnCheck and VulDB assign 42% of it and account for 2 of its 73 additions.
+
+This changes the design. Six product types crossed with three exposure classes is 18 cells, against 67 for
 vendor × exposure, and the cells mean something a program can act on. Vendor remains a check, not an axis.
 
 **Exemplars.** The data side measures, per family, the count and interval of the rate (estimability), the
 number of catalog years with additions (persistence), share of the type, lag, ransomware use and exposure
 mix. The model side owns the choice and the thresholds. SharePoint stays as the productivity-server
-exemplar: most additions of its type this year (8 of 64), tied with Exchange for most in the catalog (20),
+exemplar: most additions of its type this year (8 of 65), tied with Exchange for most in the catalog (20),
 additions in 5 of 6 years, and the only heavily exploited one with a denominator large enough to estimate
 from (184 published; 43 per 1,000 [19, 86]). It is less typical on two counts to carry as caveats: half its
 KEV entries are remote and unauthenticated against 70% for the type, and its lifetime conversion is lower
 than Exchange's, Zimbra's and Confluence's. Candidates for the other types, not yet decided: Windows (OS),
-Chrome or Office (client), FortiOS or NetScaler (edge, where no product holds more than a few percent).
-*Other* is a remainder, not a type, and needs splitting before it can have one.
+Chrome or Office (client), FortiOS or NetScaler (edge). Infrastructure management has no candidate with a
+usable denominator: its most-exploited families each published fewer than ten CVEs in the year.
 
-Remaining work, in order: (0) review the `ptype` rules, which are a judgment about product names, and split
-*other* (management and backup servers, middleware, AI and workflow servers, firmware and IoT); (1) reconcile assigner-supplied vendor names to CPE names, since rates for
+Remaining work, in order: (0) review the `ptype` rules, which are a judgment about product names, and decide
+whether vendors' device-management consoles belong in `edge`, where they are now, or in `mgmt`; (1) reconcile assigner-supplied vendor names to CPE names, since rates for
 vendors split across two spellings are overstated; (2) calibrate class-specific $\beta$ and
 $\varepsilon$ on one period and predict KEV composition on another; (3) decide whether SSVC's `poc`
 flag (19.6% of publications) should condition the hazard on fresh disclosures.

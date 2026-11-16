@@ -8,7 +8,7 @@ source or assumption. A disagreement with a conclusion can therefore be located 
 in a fitted predictor's weights. Time is in days throughout. Snapshot: **2026-11-16**.
 
 The data behind every parameter are on a separate page,
-[The Data Behind the Model](https://jo5iah.github.io/vulnapocalypse-data/). The data and their acquisition
+[Data behind the Vulnapocalypse](https://jo5iah.github.io/vulnapocalypse-data/). The data and their acquisition
 notebook, `VulnData.ipynb`, live in the [vulnapocalypse-data](https://github.com/jo5iah/vulnapocalypse-data) repository. The model and
 every figure here are computed in `ODEtoVuln_daily.ipynb`. This document is
 the only written account of what the model shows.
