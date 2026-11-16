@@ -1,0 +1,89 @@
+vendor,exposure,published,kev_added_in_window,published_in_window_and_in_kev
+microsoft,"remote, no privileges, no user action",775,10,8
+microsoft,"remote, other",1679,16,8
+microsoft,local or physical,3211,16,13
+microsoft,unscored,0,0,0
+cisco,"remote, no privileges, no user action",200,16,16
+cisco,"remote, other",170,3,2
+cisco,local or physical,36,3,2
+cisco,unscored,0,0,0
+apple,"remote, no privileges, no user action",279,1,1
+apple,"remote, other",268,5,3
+apple,local or physical,713,6,3
+apple,unscored,0,0,0
+google,"remote, no privileges, no user action",276,1,1
+google,"remote, other",3827,8,8
+google,local or physical,832,3,3
+google,unscored,0,0,0
+fortinet,"remote, no privileges, no user action",91,9,9
+fortinet,"remote, other",139,2,2
+fortinet,local or physical,26,0,0
+fortinet,unscored,0,0,0
+linux,"remote, no privileges, no user action",1190,1,0
+linux,"remote, other",118,0,0
+linux,local or physical,4270,7,4
+linux,unscored,3744,0,0
+ivanti,"remote, no privileges, no user action",17,5,5
+ivanti,"remote, other",38,2,2
+ivanti,local or physical,10,1,1
+ivanti,unscored,0,0,0
+adobe,"remote, no privileges, no user action",162,3,3
+adobe,"remote, other",543,2,1
+adobe,local or physical,564,2,1
+adobe,unscored,0,0,0
+oracle,"remote, no privileges, no user action",1350,5,3
+oracle,"remote, other",2214,0,0
+oracle,local or physical,590,1,0
+oracle,unscored,0,0,0
+sonicwall,"remote, no privileges, no user action",15,3,3
+sonicwall,"remote, other",30,2,2
+sonicwall,local or physical,8,1,1
+sonicwall,unscored,0,0,0
+citrix,"remote, no privileges, no user action",33,6,6
+citrix,"remote, other",1,0,0
+citrix,local or physical,11,0,0
+citrix,unscored,0,0,0
+synacor,"remote, no privileges, no user action",1,2,1
+synacor,"remote, other",24,3,2
+synacor,local or physical,0,0,0
+synacor,unscored,0,0,0
+vmware,"remote, no privileges, no user action",101,4,2
+vmware,"remote, other",79,1,1
+vmware,local or physical,15,0,0
+vmware,unscored,0,0,0
+langflow,"remote, no privileges, no user action",62,3,3
+langflow,"remote, other",154,2,2
+langflow,local or physical,2,0,0
+langflow,unscored,0,0,0
+paloaltonetworks,"remote, no privileges, no user action",38,4,4
+paloaltonetworks,"remote, other",34,1,1
+paloaltonetworks,local or physical,40,0,0
+paloaltonetworks,unscored,0,0,0
+checkpoint,"remote, no privileges, no user action",14,4,4
+checkpoint,"remote, other",4,0,0
+checkpoint,local or physical,5,1,1
+checkpoint,unscored,0,0,0
+gitlab,"remote, no privileges, no user action",47,4,2
+gitlab,"remote, other",223,0,0
+gitlab,local or physical,1,0,0
+gitlab,unscored,0,0,0
+solarwinds,"remote, no privileges, no user action",11,4,3
+solarwinds,"remote, other",34,0,0
+solarwinds,local or physical,3,0,0
+solarwinds,unscored,0,0,0
+arista,"remote, no privileges, no user action",3,3,3
+arista,"remote, other",6,1,1
+arista,local or physical,0,0,0
+arista,unscored,0,0,0
+jfrog,"remote, no privileges, no user action",6,2,2
+jfrog,"remote, other",38,2,2
+jfrog,local or physical,1,0,0
+jfrog,unscored,0,0,0
+(other vendors),"remote, no privileges, no user action",26065,95,73
+(other vendors),"remote, other",35298,37,23
+(other vendors),local or physical,9589,8,5
+(other vendors),unscored,132,0,0
+(no vendor recorded),"remote, no privileges, no user action",2588,0,0
+(no vendor recorded),"remote, other",2250,0,0
+(no vendor recorded),local or physical,436,0,0
+(no vendor recorded),unscored,2986,0,0
