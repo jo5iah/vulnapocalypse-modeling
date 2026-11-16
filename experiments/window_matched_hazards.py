@@ -28,7 +28,7 @@ from pathlib import Path
 import numpy as np
 
 SNAPSHOTS = ["2026-08-14", "2026-08-27", "2026-09-20", "2026-10-14", "2026-11-16"]
-MODES = ["trailing", "pooled"]
+MODES = ["trailing", "pooled", "quarter"]
 
 NB = json.loads(Path("ODEtoVuln_daily.ipynb").read_text())
 CELL1 = "".join(NB["cells"][1]["source"])
@@ -73,7 +73,7 @@ def realized_today(e, state):
     return e.C * P / (e.C + P), P / e.C
 
 
-def kev_rate_last(snap, days=90):
+def kev_rate_last(snap, days=91):
     d = dt.date.fromisoformat(snap)
     kev = json.loads(Path(f"data/cisa_kev_{snap}.json").read_text())["vulnerabilities"]
     return sum(1 for k in kev if 0 <= (d - dt.date.fromisoformat(k["dateAdded"])).days < days) / days
@@ -120,7 +120,7 @@ for snap in SNAPSHOTS:
                 pc_eq=fp["supply"] / e.C, pc_now=pc_now, I_eq=fp["influx"], I_now=I_now,
                 el_gamma=elasticity(e, "gmult"), el_C=elasticity(e, "cmult"),
                 levers=levers(ns, e))
-        out["kev90"] = kev_rate_last(snap)
+        out["kev91"] = kev_rate_last(snap)
         out["kev_pooled"] = ns["MEAS"]["kev_influx_per_day"]
         rows[(snap, mode)] = out
 
@@ -136,6 +136,8 @@ for (snap, mode), o in rows.items():
           f"{'yes' if g['inside'] else 'NO':>8}{g['target']:>8,.0f}{g['today'] / g['target']:>10.0%}"
           f"   {s['today']:.1f} / {s['anchor']:.1f} = {s['ratio']:.2f} {'in' if s['inside'] else 'OUT'}")
 
+print("   KEV additions per day, last 91 days: " + "  ".join(
+    f"{s} {rows[(s, 'trailing')]['kev91']:.3f}" for s in SNAPSHOTS))
 print("\n2. snapshot-to-snapshot movement, global (08-14 -> 11-16)")
 for mode in MODES:
     seq = [rows[(s, mode)][G] for s in SNAPSHOTS]
@@ -151,7 +153,7 @@ for mode in MODES:
     print(f"   {mode:<9} P/C at equilibrium {g['pc_eq']:.2f}, today {g['pc_now']:.2f}   "
           f"elasticity to gamma {g['el_gamma']:+.2f}, to C {g['el_C']:+.2f}")
     print(f"   {'':<9} realized conversion: equilibrium {g['I_eq']:.3f}/d, today {g['I_now']:.3f}/d   "
-          f"(KEV pooled {rows[('2026-11-16', mode)]['kev_pooled']:.3f}/d, last 90 days "
-          f"{rows[('2026-11-16', mode)]['kev90']:.3f}/d)")
+          f"(KEV pooled {rows[('2026-11-16', mode)]['kev_pooled']:.3f}/d, last 91 days "
+          f"{rows[('2026-11-16', mode)]['kev91']:.3f}/d)")
     ranked = sorted(g["levers"].items(), key=lambda kv: kv[1])
     print("   " + " " * 9 + "  ".join(f"{k} {v:+.1f}%" for k, v in ranked))
