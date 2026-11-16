@@ -18,6 +18,8 @@ Usage
   python build_html.py                        # builds ODEtoVuln_daily.html
   python build_html.py <stem>                 # builds <stem>.html from <stem>.{md,ipynb}
   python build_html.py ODEtoVuln_daily index  # builds index.html, for GitHub Pages
+  python build_html.py VulnData               # builds VulnData.html, the data page; published as
+                                              # index.html of jo5iah.github.io/vulnapocalypse-data
 """
 
 import base64
@@ -103,7 +105,7 @@ PAGE = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Modeling Exploited Vulnerabilities in a Software Ecosystem</title>
+<title>{title}</title>
 
 <!-- KaTeX {katex_v} + markdown-it {mdit_v}, inlined (fonts embedded as base64) -->
 <style>
@@ -408,7 +410,10 @@ def main() -> None:
                          f"figures without a marker: {unplaced or 'none'}")
     inline = {k: data_uri("image/png", pngs[k]) for k in markers}
 
+    # the page title is the document's first top-level heading
+    title = next((line[2:].strip() for line in markdown.splitlines() if line.startswith("# ")), STEM)
     html = PAGE.format(
+        title=title,
         katex_v=KATEX_VERSION,
         mdit_v=MARKDOWNIT_VERSION,
         katex_css=inline_css(),

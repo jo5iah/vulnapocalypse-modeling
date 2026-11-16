@@ -1,4 +1,4 @@
-"""Diagnostics behind the exploited-stock anchor correction in ODEtoVuln_daily.md §2.
+"""Diagnostics behind the exploited-stock anchor correction in VulnData.md (the data page).
 
 The naive anchor, KEV size x (1 - 0.26 ever patched), applies the completed limit for patching and the zero
 limit for decommissioning at the same instant. The document replaces it with the same catalog
