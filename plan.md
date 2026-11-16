@@ -21,8 +21,9 @@ twelve visualizations establishing each result.
 
 What it answers: what sets the standing count of exploited, unremediated vulnerabilities, and which
 control moves it. Headline results at the 2026-11-16 snapshot — completeness of remediation beats
-speed of patching by more than an order of magnitude, and reducing reachable surface does too; discovery volume is nearly inert because conversion is
-capacity-limited; the measured state sits at 47% of the level today's inflow already implies.
+speed of patching by more than an order of magnitude, and reducing reachable surface does too; discovery
+volume raises exploitation far less than proportionally, though by how much turns on the assumed
+supply/throughput ratio; the measured state, 727, sits at 37% of the level today's inflow already implies.
 
 Delivered alongside the model:
 
@@ -47,22 +48,28 @@ every defender parameter are constants, so neither side can adapt — step 4.
   holding 99% of the exploited population. Fit it to how long KEV-listed CVEs stay observable in
   internet-exposure scans. This is Future work §2 in the document.
 - **KEV measures cataloging, not attacker behavior.** Its additions swung 555 / 187 / 186 across
-  2022–2024 on policy alone, so the widening gap between disclosure and cataloged exploitation
-  supports two readings that point opposite ways. No catalog separates them; track A is the
+  2022–2024 on policy alone. Most of the widening gap between disclosure and cataloged exploitation is
+  the backlog lagging the publication surge; what remains supports readings that point different ways
+  (saturation, rising weaponization, a lagging catalog). No catalog separates them; track A is the
   measurement designed to.
 - **$\gamma$ is not stationary.** Publication acceleration was positive from 2018-12 for 69 months (the
   one-month dip at the filter's edge is not a turning point) and the recent quarter runs 1.76× the
   trailing year, so any equilibrium computed from a trailing-year rate has a shelf life of months.
   Re-snapshot before quoting absolute levels.
-- **The hazards are fixed at the trailing-year $\gamma$, and that now shows in the transient.** At
-  2026-11-16 today's state, 575, is **below** the catalog-derived anchor 645 [616, 787] for the first
-  time since the anchor correction (it was 604 inside 627 [596, 770] at 10-14). Diagnosed: $\gamma$ rose
-  14% in a month while the pooled KEV rate rose 1%, so every hazard fell 12%, and constant hazards
-  apply that cut to every past year of the historical drive. The anchor's residual is 2021–2023,
-  which the model under-converts by a third. Two candidate fixes, neither made: hazards that follow
-  $\gamma(t)$, or recalibrating $C$ alongside a fitted $\lambda$ (Future work §2). Separately, KEV's
-  last 90 days ran at 1.23/day, its highest since 2022, against the 0.826/day pooled rate that
-  calibrates throughput; one quarter does not justify switching, but watch it.
+- **$P/C$ is assumed, and the attacker-side findings rest on it.** Set to 1 at 2026-11-16 (it was 2):
+  with the model driven by the monthly publication series, KEV's compounded 2023–2026 growth (+81%) and
+  the widening of publications per exploit (×1.66) sit at 1 (+82%, ×1.72) and between 0.5 and 1, while 2
+  gives +59% and ×1.85. Results that depend on it are reported over 0.5–2: 10× discovery from +126% to
+  +35%, 3× throughput from +34% to +90%. Constant hazards are assumed; a weaponization rate rising with
+  automation fits the same growth at higher saturation. Track A's per-vulnerability claim dates are what
+  would separate them. `anchor_gap.py` reproduces the comparison.
+- **Calibration changed at 2026-11-16; the anchor drift it fixed.** Earlier editions calibrated the
+  hazards and $C$ to an equilibrium at the trailing-year $\gamma$. The history-driven system is about a
+  third of that equilibrium, so a surge in $\gamma$ lowered the conversion assigned to every past year,
+  and today's state fell from 1.12× the KEV anchor (08-14) to 0.89×, below its bracket. The model now
+  calibrates along the measured monthly history to KEV additions from 2023 (2022's build-out excluded;
+  including it raises the level 37%) and sits at 1.13×, inside. The target is now the drifting quantity:
+  $C$ follows today's supply, which the newest pools carry at the latest month's rate.
 
 ---
 
@@ -102,9 +109,11 @@ statement: fix available, workaround or mitigation only, no fix planned, or end 
   KEV addition, per CVE, replaces the bracket with a measured lag.
 - **The divergence test.** Publications per exploitation claim, monthly, beside publications per KEV
   addition (204 for 2025 → 339 for 2026 → 414 over the last ninety days, which narrowed from 439 a
-  month earlier as KEV additions accelerated). If the advisory-derived ratio widens as KEV's does, attackers are
-  saturating and the model's $P/C = 2$ reading holds; if advisory claims rise with disclosure while KEV
+  month earlier as KEV additions accelerated). Most of KEV's widening is the backlog lagging the surge
+  (the model gives ×1.49 with almost no saturation). If the advisory-derived ratio widens as KEV's does,
+  attackers are saturating or the catalog is keeping pace; if advisory claims rise with disclosure while KEV
   additions do not, the catalog is falling behind and every exploitation figure is low by a growing margin.
+  A rising share of newly published flaws claimed exploited would point to rising weaponization instead.
   This is the measurement the second open item says no catalog provides.
 - *A first reading of the onset lag, as a by-product of the step-3 impact ledger (2026-11-16):* for 75 KEV entries added in
   2026 with a dated public exploitation claim from a source other than CISA, KEV followed by a median

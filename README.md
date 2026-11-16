@@ -19,41 +19,45 @@ Four findings bear on where a program should spend.
 - **Finishing remediation and shrinking reachable surface beat patching faster.** About a quarter of
   exploited vulnerabilities are ever fully patched; the rest stay exploitable until the software leaves
   service. A 30% cut in patch delay changes the standing count by **0.2%**. A 30% cut in reachable surface
-  changes it by **12.5%**, 30% more remediations completed by **10.5%**, and a 30% higher rate of
+  changes it by **16.1%**, 30% more remediations completed by **10.5%**, and a 30% higher rate of
   decommissioning exploited software by **22.9%**.
-- **Rising disclosure volume raises exploitation far less than proportionally, but only under an
-  assumption.** The model assumes weaponizable supply runs at twice attacker capacity. On that assumption a
-  tenfold rise in disclosures raises exploitation **43%**, tripling attacker capacity raises it **80%**, and
-  both figures follow directly from the assumed ratio. What is measured is the divergence it is meant to
-  explain. From 2025 to 2026 the disclosure rate rose **130%** and cataloged exploitation **38%**, so
-  publications per cataloged exploit went from 204 to **339**, and to **414** over the last ninety days.
+- **Rising disclosure volume raises exploitation less than proportionally, and by how much is the least
+  certain number here.** A tenfold rise in disclosures raises exploitation **68%** and tripling attacker
+  capacity raises it **58%**, both set by how far weaponizable supply outruns attacker capacity, which no
+  source measures. The model sets the two equal, because that is where the catalog's growth sits; across the
+  plausible range the same two figures run from +126% and +34% to +35% and +90%. What is measured is the
+  divergence: from 2025 to 2026 the disclosure rate rose **130%** and cataloged exploitation **38%**, so
+  publications per cataloged exploit went from 204 to **339**, and to **414** over the last ninety days. Most
+  of that widening is the five-year backlog lagging the surge in publications, not attackers running out of
+  capacity.
 - **The software with the most CVEs is not the software being exploited.** Over the past year the Linux
   kernel was second in CVE volume with 3,338 and ranks **25th** in the exploitation catalog; Windows Server
   leads exploitation and is **fourth** by volume. Prioritizing by counts points at the wrong software.
 - **Nothing a program changes will show in these numbers for years.** The populations that drive
-  exploitation turn over on a five-year clock and sit at **47%** of the level today's disclosure rate already
-  implies. The standing count is the cataloged exploitation rate times a 1,480-day residence time, so a
-  catalog rate rising 38% a year lifts the destination from 1,221 to about **1,690** in one more year. Next
-  quarter's exploited count cannot evaluate a control introduced last quarter.
+  exploitation turn over on a five-year clock and sit at **37%** of the level today's disclosure rate already
+  implies: **727** exploited and unremediated vulnerabilities today against **1,981**. The exploited
+  population needs 13 more years to reach 90% of that level even if publication stops rising. Next quarter's
+  exploited count cannot evaluate a control introduced last quarter.
 
 The practical implication is to move effort from response time toward completing remediations, reducing
 reachable surface and retiring unsupported software, and to expect none of them to register quickly.
 
 **How far to trust these numbers.** The largest uncertainty cannot be resolved from public data. KEV records
 what CISA catalogs, not what attackers do; its annual additions ran 555, 187 and 186 across 2022 to 2024 on
-cataloging policy. The widening gap between disclosure and cataloged exploitation therefore has two readings
-that point opposite ways. Either attackers are saturating, which is what the model assumes and what makes
-rising CVE counts tolerable, or the catalog is falling behind, in which case every exploitation figure here is
-low by a growing margin. Until exploitation telemetry separates them (Future work §5), read the exploitation
-numbers as a floor.
-Beyond that, the absolute counts are orders of magnitude rather than estimates: tested against the catalog on a
-consistent footing, the model runs 11% low (§2), and calibrating to 2025's KEV rate alone (0.671/day) rather
-than the pooled 2022-onward rate (0.826/day) would lower the level by 19%, while calibrating to the last ninety
-days (1.23/day) would raise it by 49%, since the level scales in proportion to the calibrated influx. The
-rankings survive all three. Finally, the model counts vulnerabilities rather than compromised systems, so one
-flaw exploited on a million hosts counts the same as one exploited once. That understates the scenario cheaper
-automated exploitation makes most likely. Stratifying by exposure class and
-adding a layer of compromised systems are the extensions most likely to change these conclusions (Future work).
+cataloging policy. Once the backlog's lag is accounted for, the gap between disclosure and cataloged
+exploitation still admits readings that point different ways: modest attacker saturation, a rate of
+weaponization that is itself rising, or a catalog falling behind, in which case every exploitation figure
+here is low by a growing margin. Until exploitation telemetry separates them (Future work §5), read the
+exploitation numbers as a floor.
+Beyond that, the absolute counts are orders of magnitude rather than estimates. Tested against the catalog on
+a consistent footing, today's count sits 13% above it, inside the range the catalog's dating allows (§2).
+Calibrating to every KEV addition since 2022 instead of since 2023 would raise it 37%, because 2022 holds the
+catalog's initial build-out, and the assumed ratio of supply to capacity moves the attacker-side responses by a
+factor of two or more. The ranking of the defender levers survives all of these. Finally, the model counts
+vulnerabilities rather than compromised systems, so one flaw exploited on a million hosts counts the same as
+one exploited once. That understates the scenario cheaper automated exploitation makes most likely.
+Stratifying by exposure class and adding a layer of compromised systems are the extensions most likely to
+change these conclusions (Future work).
 
 ## Contents of this repository
 
@@ -66,7 +70,7 @@ adding a layer of compromised systems are the extensions most likely to change t
 | `VulnData.ipynb` | Data acquisition. Queries NVD for the CVE corpus, publication rates and the 2008-to-present history, CISA KEV for observed exploitation, and MITRE for disclosure timestamps; derives the parameter sets for both populations. Writes the three files the model notebook reads. Responses are cached, and the snapshot date is the single control at the top. |
 | `build_html.py` | Assembles the self-contained page from the document, the notebook's figures and `vendor/`. `python build_html.py ODEtoVuln_daily index` regenerates `index.html`. |
 | `product_ranks.py` | Top products by CVE count and by observed exploitation, both derived from NVD's CPE applicability data so the two rankings share one taxonomy, with a documented rollup that recovers product families from per-release CPE names. The exploited side reads the cached KEV mirror; the vulnerable side sweeps every CVE in a publication window and aggregates page by page rather than caching ~500 MB of responses. Writes `data/product_ranks_<snapshot>.json` and a standalone report, `product_ranks_<snapshot>.md`; `--report-only` rebuilds the report from the saved JSON without repeating the sweep. |
-| `anchor_gap.py` | Diagnostics behind the exploited-stock anchor in §2 of the document: the decomposition of the discrepancy the naive anchor produced, how much of the corrected anchor lies inside the window that calibrates throughput, the KEV onset history against the model's realized conversion, and how weakly the anchor constrains the decommissioning rate. Imports the model by executing the notebook's first cell rather than restating it, so it cannot drift from the figures. |
+| `anchor_gap.py` | Diagnostics behind the exploited-stock anchor in §2 of the document: the decomposition of the discrepancy the naive anchor produced, how much of the corrected anchor lies inside the window that calibrates throughput, the KEV onset history against the model's realized conversion, and how weakly the anchor constrains the decommissioning rate, plus the two calibration choices the document reports: which KEV window sets the level, and where the catalog's growth places the assumed supply/throughput ratio. Imports the model by executing the notebook's first cell rather than restating it, so it cannot drift from the figures. |
 | `data/` | Cached API responses and the three derived inputs: `derived_params.json` (parameters), `global_history.json` (per-year publication rates), `sharepoint_union.json` (the de-duplicated CVE set for the SharePoint CPE family). Included so the work reproduces without re-querying the sources; delete a file to refetch it. |
 | `plan.md` | The four-step roadmap and one independent track. Step 1 — the vulnerability-count layer in this repository — is built; steps 2 to 4 stratify the population, model exploit-affected systems, and close with the economics of attack versus defense. Track A measures exploitation from vendor zero-day announcements ahead of the catalog, and silent patching, and can be done before any of the steps. |
 | `product_ranks_<snapshot>.md` | Standalone rankings report: top exploited and top vulnerable product families in one taxonomy, and where each volume leader sits in the exploitation catalog. |

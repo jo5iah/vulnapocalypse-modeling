@@ -10,8 +10,9 @@ which puts both sides on one clock. That kernel and the onset proxies live in ce
 notebook, beside the model, and this script imports them rather than restating them. What it
 adds is the reporting the document cites and the figure has no room for: the decomposition of
 the original factor of two, how much of the corrected anchor sits inside the window that
-calibrates C, the onset history against the model's own realized conversion, and how weakly the
-anchor constrains lam.
+calibrates C, the onset history against the model's own realized conversion, how weakly the
+anchor constrains lam, and the two calibration choices the document reports: which KEV window sets the
+level, and what the catalog's growth says about the assumed supply/throughput ratio P/C.
 
     python3 anchor_gap.py
 """
@@ -141,7 +142,9 @@ def influx():
         print(f"  {f'{lo}-{hi}':<12}{obs / days:>21.3f}{m:>16.3f}{obs / days / m:>8.2f}")
     print(f"  onsets before 2008, excluded above: "
           f"{sum(v for y, v in by_year.items() if y < 2008)}")
-    print(f"  C is calibrated to a realized rate of {GLOBAL.realized:.3f}/day\n")
+    start, count, days = M["CAL_WINDOW"][GLOBAL.label]
+    print(f"  C and the hazards are calibrated along this path to {count:,} KEV additions from {start}"
+          f" ({count / days:.3f}/day), with P = {M['SATURATION']:g} C today\n")
 
 
 def constrains_lam():
@@ -151,7 +154,7 @@ def constrains_lam():
     print(f"  {'1/lam (yr)':<12}{'kernel anchor':>15}{'transient E':>13}{'ratio':>8}"
           f"{'equilibrium':>13}")
     for yrs in (3.0, 1 / LAM / DPY, 8.0, 12.0, 20.0):
-        eco = replace(GLOBAL, lam=1.0 / (yrs * DPY)).calibrate()
+        eco = M["fit"](replace(GLOBAL, lam=1.0 / (yrs * DPY)))
         k = kernel_anchor(eco, IDS, "mid")
         t = drive(eco)["state"]["E"]
         note = "   <- measured" if abs(yrs - 1 / LAM / DPY) < 1e-9 else ""
@@ -159,6 +162,55 @@ def constrains_lam():
               f"{eco.fixed_point()['E']:>13,.0f}{note}")
     print("  the ratio is flat from 3 to 8 years and degrades past 12, so the anchor excludes a")
     print("  decade-plus horizon but cannot pick a value inside the 3-to-8 window.")
+
+
+def calibration_choices():
+    """The calibration window, and the supply/throughput ratio against the catalog's growth."""
+    fit_hist, drive, influx_of = M["calibrate_to_history"], M["drive_history"], M["history_influx"]
+    added = M["KEV_ADDED"]
+    a = ANCHOR[GLOBAL.label]
+    print("which KEV additions calibrate the level")
+    print(f"  {'from':<12}{'additions':>10}{'today':>8}{'target':>9}{'today/anchor':>14}")
+    for y in (2022, 2023, 2024):
+        start = dt.date(y, 1, 1)
+        n = sum(1 for v in added.values() if start <= v <= SNAPSHOT)
+        e = fit_hist(GLOBAL, window=(start, n, (SNAPSHOT - start).days))
+        t = drive(e)["state"]["E"]
+        mark = "   <- used" if start == M["CALIBRATION_FROM"] else ""
+        print(f"  {str(start):<12}{n:>10,}{t:>8,.0f}{e.fixed_point()['E']:>9,.0f}{t / a:>14.2f}{mark}")
+    print("  2022 holds the catalog's build-out (555 additions, 226 in March), so it is excluded\n")
+
+    hist = M["HISTORY"]
+    years = (2023, 2024, 2025, 2026)
+    days = {y: hist[str(y)]["days"] for y in years}
+    kev = {y: sum(1 for v in added.values() if v.year == y) / days[y] for y in years}
+    pub = {y: hist[str(y)]["total"] / days[y] for y in years}
+    pairs = [(2023, 2024), (2024, 2025), (2025, 2026)]
+    g = lambda x, p, q: x[q] / x[p] - 1
+    widen = lambda x: (pub[2026] / x[2026]) / (pub[2025] / x[2025])
+    print("the supply/throughput ratio P/C against the catalog's growth")
+    print("  KEV's year-on-year growth swings by about 20 points on policy, so read the compounded column")
+    print(f"  {'':<16}" + "".join(f"{f'{p}-{q}':>11}" for p, q in pairs)
+          + f"{'2023-2026':>11}{'pubs/exploit':>14}{'today/anchor':>14}{'10x disc':>10}{'3x thr':>8}"
+          + f"{'surf -30%':>11}")
+    print(f"  {'publications':<16}" + "".join(f"{g(pub, p, q):>+11.0%}" for p, q in pairs)
+          + f"{g(pub, 2023, 2026):>+11.0%}")
+    print(f"  {'KEV additions':<16}" + "".join(f"{g(kev, p, q):>+11.0%}" for p, q in pairs)
+          + f"{g(kev, 2023, 2026):>+11.0%}{'x' + format(widen(kev), '.2f'):>14}")
+    for r in (0.1, 0.5, 1.0, 2.0, 3.0, 5.0, 10.0):
+        e = fit_hist(GLOBAL, saturation=r)
+        d, P, I = influx_of(e)
+        m = {y: float(np.mean(I[(d["year"] >= y) & (d["year"] < y + 1)])) for y in years}
+        base = e.fixed_point()["E"]
+        mark = "  <- used" if r == M["SATURATION"] else ""
+        print(f"  {f'model, P/C {r:g}':<16}" + "".join(f"{g(m, p, q):>+11.0%}" for p, q in pairs)
+              + f"{g(m, 2023, 2026):>+11.0%}{'x' + format(widen(m), '.2f'):>14}"
+              + f"{d['state']['E'] / a:>14.2f}"
+              + f"{e.fixed_point(gmult=10)['E'] / base - 1:>+10.0%}"
+              + f"{e.fixed_point(cmult=3)['E'] / base - 1:>+8.0%}"
+              + f"{e.fixed_point(eps=0.7)['E'] / base - 1:>+11.1%}{mark}")
+    print("  at P/C 0.1 there is almost no saturation, so the widening it shows is the backlog lagging")
+    print("  the publication surge; low saturation and a rising weaponization rate fit these data alike\n")
 
 
 if __name__ == "__main__":
@@ -169,3 +221,4 @@ if __name__ == "__main__":
     independence()
     influx()
     constrains_lam()
+    calibration_choices()
