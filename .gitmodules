@@ -1,0 +1,3 @@
+[submodule "vulnapocalypse-data"]
+	path = vulnapocalypse-data
+	url = https://github.com/jo5iah/vulnapocalypse-data.git

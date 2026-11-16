@@ -30,9 +30,9 @@ Delivered alongside the model:
 | Artifact | What it is |
 |---|---|
 | `ODEtoVuln_daily.{md,ipynb,html}` | the document, its figures, and the self-contained build |
-| `VulnData.ipynb` | sole acquisition path; writes every model input |
+| `vulnapocalypse-data/VulnData.ipynb` | sole acquisition path; writes every model input (data repository, a submodule here) |
 | `anchor_gap.py` | the KEV anchor correction, reproduced in full |
-| `product_ranks.py` → `product_ranks_<snapshot>.md` | per-product exploited-vs-vulnerable rankings |
+| `vulnapocalypse-data/product_ranks.py` → `product_ranks_<snapshot>.md` | per-product exploited-vs-vulnerable rankings |
 | `build_html.py` | rebuilds the HTML from document, notebook and `vendor/` |
 
 **What step 1 cannot express, which is what motivates the rest.** Every hazard is a population
@@ -150,7 +150,7 @@ scraped sources carry terms-of-use constraints that structured feeds do not.
 
 **Input table built 2026-11-16; the model work is ready to start.**
 
-`cve_strata.py` keeps one row per CVE (`data/cve_strata.csv.gz`: vendor, product families, CVSS exposure
+`cve_strata.py`, in the data repository, keeps one row per CVE (`data/cve_strata.csv.gz`: vendor, product families, CVSS exposure
 fields, severity, CWE, CISA's SSVC decision points, KEV date) and refreshes incrementally with
 `update`; `report` writes `cve_stratification_<date>.md`. What the first table says, for the 365 days
 to 2026-11-16 (321 KEV additions against 107,720 publications, 3.0 per 1,000):
@@ -222,7 +222,7 @@ recorded in the session notes as the worked examples to read before specifying t
 
 **Impact ledger, started 2026-11-16.** The inputs are being collected by walking KEV backwards by date
 added and searching reputable sources, per entry, for exposed instances, compromised hosts, victim
-organizations, attack volume and downtime (`impact_ledger.py`, `impact_ledger_<date>.md`; the research
+organizations, attack volume and downtime (`impact_ledger.py`, `impact_ledger_<date>.md`, in the data repository; the research
 brief and batches are under `_review/2026-11-16/impact/`). 96 of 2026's 297 entries are researched; 201
 are stashed, blocked on a per-session web-search limit, not on method.
 

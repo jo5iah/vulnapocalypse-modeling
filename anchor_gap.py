@@ -1,4 +1,4 @@
-"""Diagnostics behind the exploited-stock anchor correction in VulnData.md (the data page).
+"""Diagnostics behind the exploited-stock anchor correction on the data page (vulnapocalypse-data/VulnData.md).
 
 The naive anchor, KEV size x (1 - 0.26 ever patched), applies the completed limit for patching and the zero
 limit for decommissioning at the same instant. The document replaces it with the same catalog
@@ -38,7 +38,7 @@ def load_model():
     src = "\n".join(l for l in "".join(nb["cells"][1]["source"]).splitlines()
                     if not l.startswith("%config"))
     ns, cwd = {"__name__": "_model"}, Path.cwd()
-    os.chdir(ROOT)                        # cell 1 reads data/ by relative path
+    os.chdir(ROOT)                        # cell 1 reads vulnapocalypse-data/data/ by relative path
     try:
         with redirect_stdout(io.StringIO()):
             exec(compile(src, "ODEtoVuln_daily.ipynb#cell1", "exec"), ns)

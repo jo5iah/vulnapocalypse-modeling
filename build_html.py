@@ -18,8 +18,6 @@ Usage
   python build_html.py                        # builds ODEtoVuln_daily.html
   python build_html.py <stem>                 # builds <stem>.html from <stem>.{md,ipynb}
   python build_html.py ODEtoVuln_daily index  # builds index.html, for GitHub Pages
-  python build_html.py VulnData               # builds VulnData.html, the data page; published as
-                                              # index.html of jo5iah.github.io/vulnapocalypse-data
 """
 
 import base64
