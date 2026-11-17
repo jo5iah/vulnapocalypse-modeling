@@ -176,24 +176,29 @@ denominators (only 43% of publications carry CPE; the CPE-only rates are upper b
 
 | Product type | Share of publications | Share of KEV additions | KEV additions per 1,000 published [95%] | CPE-only |
 |---|---|---|---|---|
-| Infrastructure management | 2% | 13% | 23.6 [16.9, 32.0] | 37.4 |
-| Edge device | 3% | 23% | 20.0 [15.7, 25.1] | 43.3 |
+| Infrastructure management | 2% | 18% | 30.0 [22.9, 38.7] | 46.6 |
+| Edge device | 3% | 17% | 15.8 [11.9, 20.6] | 35.0 |
 | Productivity server | 6% | 20% | 9.3 [7.2, 11.8] | 15.2 |
 | Client / user app | 9% | 8% | 2.9 [1.9, 4.3] | 3.7 |
 | Operating system | 16% | 13% | 2.4 [1.7, 3.2] | 4.7 |
 | Other | 64% | 23% | 1.1 [0.8, 1.3] | 3.2 |
 
 A single rate misallocates 44% of additions across these six classes. Type is not a proxy for exposure:
-among remote, unauthenticated CVEs, infrastructure management converts at 29 of 285, edge devices at 54 of
-647 and productivity servers at 46 of 1,008, against 56 of 11,306 for the rest (CPE-typed on both sides).
+among remote, unauthenticated CVEs, infrastructure management converts at 40 of 343, edge devices at 43 of
+602 and productivity servers at 46 of 1,008, against 56 of 11,293 for the rest (CPE-typed on both sides).
 The types also differ in timing. Client and OS entries are listed within seven days of publication 82% and
 63% of the time; productivity servers 34%, with a median of 22 days and the highest ransomware share (32%).
-Edge has held 14–22% of additions in every catalog year. Productivity servers rose from 13% in 2023 to 22%
+Edge has held 14–21% of additions in every catalog year. Productivity servers rose from 13% in 2023 to 22%
 in 2026, so this year's rate for them leans high.
 
 **Infrastructure management was split out of *other*** because it was the one part that behaved like a
-type: 84 KEV additions in the three years to the snapshot (14, 29, 41), more than client applications' 62,
-at a rate above productivity servers'. Below it the subtypes of *other* fall away gradually. A rough split by
+type: 105 KEV additions in the three years to the snapshot (16, 30, 59), more than client applications' 62,
+at the highest rate of any type. It includes the consoles and controllers that manage network devices
+(Cisco's SD-WAN manager, FortiManager, Panorama, Check Point's security management), moved out of `edge`
+because they administer devices and carry no traffic. That choice sets the order of the top two: the
+consoles hold 18 of the year's additions, and counted with the devices they manage the two types convert at
+23.6 and 20.0 and cannot be told apart. Its 20% share of 2026's additions follows 9–11% in 2023–25, so this
+year's rate leans high. Below it the subtypes of *other* fall away gradually. A rough split by
 vendor name put middleware, IoT and NAS, databases and firmware at 15 to 28 additions each over the same
 three years, with no second break to justify another class. Two are worth
 watching and not yet promoting: AI and workflow servers and industrial control, where that split put 12 of
@@ -215,10 +220,10 @@ from (184 published; 43 per 1,000 [19, 86]). It is less typical on two counts to
 KEV entries are remote and unauthenticated against 70% for the type, and its lifetime conversion is lower
 than Exchange's, Zimbra's and Confluence's. Candidates for the other types, not yet decided: Windows (OS),
 Chrome or Office (client), FortiOS or NetScaler (edge). Infrastructure management has no candidate with a
-usable denominator: its most-exploited families each published fewer than ten CVEs in the year.
+usable denominator: its most-exploited family, Cisco's SD-WAN manager, published 14 CVEs in the year and
+the rest fewer than ten.
 
-Remaining work, in order: (0) review the `ptype` rules, which are a judgment about product names, and decide
-whether vendors' device-management consoles belong in `edge`, where they are now, or in `mgmt`; (1) reconcile assigner-supplied vendor names to CPE names, since rates for
+Remaining work, in order: (0) review the `ptype` rules, which are a judgment about product names; (1) reconcile assigner-supplied vendor names to CPE names, since rates for
 vendors split across two spellings are overstated; (2) calibrate class-specific $\beta$ and
 $\varepsilon$ on one period and predict KEV composition on another; (3) decide whether SSVC's `poc`
 flag (19.6% of publications) should condition the hazard on fresh disclosures.
